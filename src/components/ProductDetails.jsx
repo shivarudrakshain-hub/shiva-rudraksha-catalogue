@@ -10,6 +10,7 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import Gallery from "./Gallery";
 import Logo from "./Logo";
+import PromotionalBanner from "./PromotionalBanner";
 import { emptyImages } from "../data/catalogue";
 
 export default function ProductDetails({ product, onBack }) {
@@ -59,6 +60,7 @@ export default function ProductDetails({ product, onBack }) {
 
   return (
     <div className="details-page">
+      <PromotionalBanner />
       <header className="detail-header">
         <div className="container detail-header-inner">
           <button onClick={onBack}><ArrowLeft /> Back to catalogue</button>
@@ -82,18 +84,24 @@ export default function ProductDetails({ product, onBack }) {
           <p className="description">{product.description}</p>
 
           <div className="variant-selector">
-            <label htmlFor="size-variant">Select bead size</label>
-            <select
-              id="size-variant"
-              value={selectedVariant?.name || ""}
-              onChange={(event) => setSelectedVariantName(event.target.value)}
-            >
-              {variants.map((variant) => (
-                <option key={variant.name} value={variant.name}>
-                  {variant.name} — CAD ${Number(variant.price || 0).toFixed(2)}
-                </option>
-              ))}
-            </select>
+            <label>Select bead size</label>
+            <div className="variant-options" role="group" aria-label="Select bead size">
+              {variants.map((variant) => {
+                const isSelected = variant.name === selectedVariant?.name;
+                return (
+                  <button
+                    key={variant.name}
+                    type="button"
+                    className={isSelected ? "selected" : ""}
+                    aria-pressed={isSelected}
+                    onClick={() => setSelectedVariantName(variant.name)}
+                  >
+                    <span>{variant.name}</span>
+                    <strong>CAD ${Number(variant.price || 0).toFixed(2)}</strong>
+                  </button>
+                );
+              })}
+            </div>
             <small>The gallery, certificate, X-ray, price and Etsy link change with the selected size.</small>
           </div>
 

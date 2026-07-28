@@ -1,1 +1,1 @@
-Add: Front.jpeg, Back.jpeg, Top.jpeg, Bottom.jpeg, Certificate.jpeg, XRay.jpeg
+Add: Front.jpg, Back.jpg, Top.jpg, Bottom.jpg, Certificate.jpg, XRay.jpg
