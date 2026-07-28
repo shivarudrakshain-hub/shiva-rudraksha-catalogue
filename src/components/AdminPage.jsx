@@ -415,7 +415,7 @@ export default function AdminPage() {
                     <span>JPG, PNG or WEBP — maximum 8 MB</span>
                   </div>
                 )}
-                <input type="file" accept="image/jpeg,image/png,image/webp" onChange={chooseImage} />
+                <input type="file" accept="image/jpg,image/png,image/webp" onChange={chooseImage} />
               </label>
 
               {selectedFile && (

@@ -28,11 +28,11 @@ export const products = rudrakshaGuide.map(item => ({
   origin: item.mukhi === 2 || item.mukhi === 14 ? "Indonesia" : "Nepal",
   certified: true,
   images: {
-    front: `products/${item.mukhi}-mukhi/Front.jpeg`,
-    back: `products/${item.mukhi}-mukhi/Back.jpeg`,
-    top: `products/${item.mukhi}-mukhi/Top.jpeg`,
-    bottom: `products/${item.mukhi}-mukhi/Bottom.jpeg`,
-    certificate: `products/${item.mukhi}-mukhi/Certificate.jpeg`,
-    xray: `products/${item.mukhi}-mukhi/XRay.jpeg`
+    front: `products/${item.mukhi}-mukhi/Front.jpg`,
+    back: `products/${item.mukhi}-mukhi/Back.jpg`,
+    top: `products/${item.mukhi}-mukhi/Top.jpg`,
+    bottom: `products/${item.mukhi}-mukhi/Bottom.jpg`,
+    certificate: `products/${item.mukhi}-mukhi/Certificate.jpg`,
+    xray: `products/${item.mukhi}-mukhi/XRay.jpg`
   }
 }));

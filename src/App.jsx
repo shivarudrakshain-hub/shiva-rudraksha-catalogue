@@ -162,7 +162,7 @@ export default function App() {
                 </div>
               </div>
               <div className="hero-product-panel">
-                <img src={`${import.meta.env.BASE_URL}images/products/1-mukhi-nepal-rudraksha/front.jpeg`} alt="Certified Nepal Rudraksha" />
+                <img src={`${import.meta.env.BASE_URL}images/products/11-mukhi-nepal-rudraksha/front.jpg`} alt="Certified Nepal Rudraksha" />
               </div>
             </div>
           </section>
