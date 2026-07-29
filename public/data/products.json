@@ -1202,5 +1202,85 @@
       "certificate": "images/products/14-mukhi-nepal-rudraksha/certificate.jpg",
       "xray": "images/products/14-mukhi-nepal-rudraksha/xray.jpg"
     }
+  },
+  {
+  "id": "12-mukhi-rudraksha-mala",
+  "name": "12 Mukhi Rudraksha Mala",
+  "category": "Bracelets & Malas",
+  "origin": "Indonesia",
+  "description": "Authentic handcrafted Rudraksha Mala.",
+  "certificateAvailable": false,
+  "stockStatus": "Available",
+  "badge": "Non-Certified",
+
+  "images": {
+    "front": "images/products/rudraksha-mala/12-mukhi-rudraksha-mala/front.jpg",
+    "back": "images/products/rudraksha-mala/12-mukhi-rudraksha-mala/back.jpg",
+    "top": "images/products/rudraksha-mala/12-mukhi-rudraksha-mala/top.jpg",
+    "bottom": "images/products/rudraksha-mala/12-mukhi-rudraksha-mala/bottom.jpg",
+    "certificate": "images/products/rudraksha-mala/12-mukhi-rudraksha-mala/certificate.jpg",
+    "xray": "images/products/rudraksha-mala/12-mukhi-rudraksha-mala/xray.jpg"
+  },
+   
+  "variants": [
+    {
+      "name": "Standard",
+      "price": 500,
+      "etsyUrl": ""
+    }
+  ]
+  },
+  {
+  "id": "13-mukhi-rudraksha-mala",
+  "name": "13 Mukhi Rudraksha Mala",
+  "category": "Bracelets & Malas",
+  "origin": "Indonesia",
+  "description": "Authentic handcrafted Rudraksha Mala.",
+  "certificateAvailable": false,
+  "stockStatus": "Available",
+  "badge": "Non-Certified",
+
+  "images": {
+    "front": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/front.jpg",
+    "back": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/back.jpg",
+    "top": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/top.jpg",
+    "bottom": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/bottom.jpg",
+    "certificate": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/certificate.jpg",
+    "xray": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/xray.jpg"
+  },
+  "variants": [
+    {
+      "name": "Small",
+      "price": 500,
+      "etsyUrl": ""
+    }
+  ]
+  },  
+  {
+  "id": "12-mukhi-rudraksha-bracelet",
+  "name": "12 Mukhi Rudraksha Bracelet",
+  "category": "Bracelets & Malas",
+  "origin": "Nepal",
+  "description": "Authentic handcrafted Rudraksha Mala.",
+  "certificateAvailable": true,
+  "stockStatus": "Available",
+  "badge": "Certified",
+
+  "images": {
+    "front": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/front.jpg",
+    "back": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/back.jpg",
+    "top": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/top.jpg",
+    "bottom": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/bottom.jpg",
+    "certificate": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/certificate.jpg",
+    "xray": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/xray.jpg"
+  },
+  "variants": [
+    {
+      "name": "Standard",
+      "price": 600,
+      "etsyUrl": ""
+    }
+  ]
   }
+
 ]

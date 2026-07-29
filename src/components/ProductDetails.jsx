@@ -78,7 +78,7 @@ export default function ProductDetails({ product, onBack }) {
           <div className="information-grid">
             <span><MapPin /> Origin <strong>{product.origin}</strong></span>
             <span><Ruler /> Variants <strong>{variants.length} sizes</strong></span>
-            <span><ShieldCheck /> Certificate <strong>Included</strong></span>
+            <span><ShieldCheck /> Certificate <strong>{product.certificateAvailable ? "Included" : "Not Included"}</strong></span>
           </div>
 
           <p className="description">{product.description}</p>
@@ -115,8 +115,8 @@ export default function ProductDetails({ product, onBack }) {
             <span><CheckCircle2 /> Back view</span>
             <span><CheckCircle2 /> Top view</span>
             <span><CheckCircle2 /> Bottom view</span>
-            <span><CheckCircle2 /> Certificate</span>
-            <span><CheckCircle2 /> X-ray</span>
+            <span><CheckCircle2 /> {product.certificateAvailable ? "Certificate" : "No Certificate"}</span>
+            <span><CheckCircle2 /> {product.certificateAvailable ? "X-ray" : "No X-ray"}</span>
           </div>
 
           <div className="product-action-buttons">

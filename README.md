@@ -13,11 +13,11 @@ npm run dev
 
 Catalogue:
 
-`http://localhost:5173/shiva-rudraksha-react/`
+`http://localhost:5173/shiva-rudraksha-catalogue/`
 
 Product Manager:
 
-`http://localhost:5173/shiva-rudraksha-react/#admin`
+`http://localhost:5173/shiva-rudraksha-catalogue/#admin`
 
 ## Production build
 

@@ -28,7 +28,7 @@ export default function ProductCard({ product, onOpen }) {
 
         <div className="card-meta">
           <span><MapPin /> {product.origin}</span>
-          <span><ShieldCheck /> Certificate included</span>
+          <span><ShieldCheck /> {product.certificateAvailable ? "Certificate included" : "No Certificate"}</span>
         </div>
 
         <div className="card-bottom">

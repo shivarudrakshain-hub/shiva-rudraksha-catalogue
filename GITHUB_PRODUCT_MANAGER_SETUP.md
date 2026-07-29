@@ -16,7 +16,7 @@
 
 Create a GitHub repository named:
 
-`shiva-rudraksha-react`
+`shiva-rudraksha-catalogue`
 
 Upload every file from this project to the `main` branch.
 
@@ -25,7 +25,7 @@ Upload every file from this project to the `main` branch.
 The included `vite.config.js` uses:
 
 ```js
-base: "/shiva-rudraksha-react/"
+base: "/shiva-rudraksha-catalogue/"
 ```
 
 Change it when your repository has a different name.
@@ -56,7 +56,7 @@ Use these settings:
 
 - Resource owner: your GitHub account
 - Repository access: Only select repositories
-- Select: `shiva-rudraksha-react`
+- Select: `shiva-rudraksha-catalogue`
 - Repository permissions:
   - Contents: Read and write
   - Metadata: Read-only
@@ -68,16 +68,16 @@ Do not place the token in `.env`, JavaScript source code, GitHub files or screen
 
 Local:
 
-`http://localhost:5173/shiva-rudraksha-react/#admin`
+`http://localhost:5173/shiva-rudraksha-catalogue/#admin`
 
 GitHub Pages:
 
-`https://YOUR-USERNAME.github.io/shiva-rudraksha-react/#admin`
+`https://YOUR-USERNAME.github.io/shiva-rudraksha-catalogue/#admin`
 
 Enter:
 
 - Owner: your GitHub username
-- Repository: `shiva-rudraksha-react`
+- Repository: `shiva-rudraksha-catalogue`
 - Branch: `main`
 - Token: your fine-grained token
 

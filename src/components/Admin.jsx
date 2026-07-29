@@ -69,7 +69,7 @@ const normalizeVariants = (product = {}) => {
 export default function Admin({ onBack }) {
   const [settings, setSettingsState] = useState({
     owner: "shivarudrakshain-hub",
-    repo: "shiva-rudraksha-react",
+    repo: "shiva-rudraksha-catalogue",
     branch: "main",
     token: "",
     ...getSettings(),
