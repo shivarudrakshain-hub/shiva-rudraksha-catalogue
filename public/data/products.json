@@ -614,7 +614,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 100,
+        "price": 60,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/small/front.jpg",
@@ -627,7 +627,7 @@
       },
       {
         "name": "Medium",
-        "price": 100,
+        "price": 80,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/medium/front.jpg",
@@ -653,7 +653,7 @@
       },
       {
         "name": "Collector",
-        "price": 100,
+        "price": 200,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/collector/front.jpg",
@@ -666,7 +666,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 100,
+        "price": 300,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/super-collector/front.jpg",
@@ -1130,7 +1130,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 100,
+        "price": 500,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/small/front.jpg",
@@ -1143,7 +1143,7 @@
       },
       {
         "name": "Medium",
-        "price": 100,
+        "price": 800,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/medium/front.jpg",
@@ -1156,7 +1156,7 @@
       },
       {
         "name": "Large",
-        "price": 100,
+        "price": 1200,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/large/front.jpg",
@@ -1169,7 +1169,7 @@
       },
       {
         "name": "Collector",
-        "price": 100,
+        "price": 1700,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/collector/front.jpg",
@@ -1182,7 +1182,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 100,
+        "price": 2200,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/super-collector/front.jpg",
@@ -1278,6 +1278,32 @@
     {
       "name": "Standard",
       "price": 600,
+      "etsyUrl": ""
+    }
+  ]
+  },
+  {
+  "id": "rkshani-mukhi-rudraksha-bracelet",
+  "name": "Rahu, Ketu and Shani Kavach Rudraksha Mala",
+  "category": "Bracelets & Malas",
+  "origin": "Nepal",
+  "description": "Authentic handcrafted Rudraksha Mala.",
+  "certificateAvailable": false,
+  "stockStatus": "Available",
+  "badge": "Certified",
+
+  "images": {
+    "front": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/front.jpg",
+    "back": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/back.jpg",
+    "top": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/top.jpg",
+    "bottom": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/bottom.jpg",
+    "certificate": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/certificate.jpg",
+    "xray": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/xray.jpg"
+  },
+  "variants": [
+    {
+      "name": "Standard",
+      "price": 100,
       "etsyUrl": ""
     }
   ]
