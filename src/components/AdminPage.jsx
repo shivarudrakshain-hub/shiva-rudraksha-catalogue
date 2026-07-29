@@ -52,7 +52,7 @@ function createSlug(name) {
 export default function AdminPage() {
   const [settings, setSettings] = useState(() => ({
     owner: "",
-    repo: "shiva-rudraksha-react",
+    repo: "shiva-rudraksha-catalogue",
     branch: "main",
     token: "",
     ...getSettings(),
@@ -302,7 +302,7 @@ export default function AdminPage() {
                   name="repo"
                   value={settings.repo}
                   onChange={updateSetting}
-                  placeholder="shiva-rudraksha-react"
+                  placeholder="shiva-rudraksha-catalogue"
                   required
                 />
               </label>
