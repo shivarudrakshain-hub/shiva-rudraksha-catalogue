@@ -404,13 +404,16 @@ export default function Admin({ onBack }) {
               const variants = normalizeVariants(product);
               const cover = variants.find((variant) => variant.images?.front)?.images?.front || product.images?.front || "";
               const imageCount = variants.reduce((total, variant) => total + Object.values(variant.images || {}).filter(Boolean).length, 0);
+              const availablePrices = (product.variants || []).map((variant) => Number(variant.price || 0)) .filter((price) => price > 0);
+              const lowestPrice = availablePrices.length > 0 ? Math.min(...availablePrices) : 0;
+
               return (
                 <article key={product.id}>
                   <img src={assetUrl(cover)} alt={product.name} />
                   <div>
                     <strong>{product.name}</strong>
-                    <span>{product.origin} • 5 size variants</span>
-                    <b>From CAD ${Math.min(...variants.map((variant) => Number(variant.price) || 0)).toFixed(2)}</b>
+                    <span>{product.origin} • {variants.length} size variants</span>
+                     <b>{lowestPrice > 0 ? `From CAD $${lowestPrice.toFixed(2)}` : "Out of Stock"} </b>
                     <em>{imageCount}/30 size images</em>
                   </div>
                   <div>

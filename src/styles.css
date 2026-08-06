@@ -171,11 +171,88 @@ footer button { padding: 0; border: 0; background: transparent; color: white; }
 .variant-selector { display: grid; gap: 11px; margin: 24px 0; }
 .variant-selector > label { color: var(--maroon); font-weight: 900; }
 .variant-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
-.variant-options button { min-height: 68px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; padding: 11px 14px; border: 1px solid #ddc8aa; border-radius: 13px; background: rgba(255,255,255,.88); color: #37251d; text-align: left; transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+/* .variant-options button { min-height: 68px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; padding: 11px 14px; border: 1px solid #ddc8aa; border-radius: 13px; background: rgba(255,255,255,.88); color: #37251d; text-align: left; transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
 .variant-options button:hover { transform: translateY(-2px); border-color: var(--maroon); box-shadow: 0 8px 20px rgba(79,8,12,.09); }
 .variant-options button.selected { border: 2px solid var(--maroon); padding: 10px 13px; background: #fff2df; box-shadow: 0 8px 20px rgba(79,8,12,.10); }
 .variant-options button span { font-weight: 900; }
-.variant-options button strong { color: var(--maroon); font-size: 13px; }
+.variant-options button strong { color: var(--maroon); font-size: 13px; } */
+
+.variant-options button{
+    position:relative;
+    overflow:hidden;
+    min-height:68px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:4px;
+    padding:11px 14px;
+    border:1px solid #ddc8aa;
+    border-radius:13px;
+    background:rgba(255,255,255,.88);
+    color:#37251d;
+    text-align:left;
+    transition:all .25s ease;
+}
+
+.variant-options button:hover:not(:disabled){
+    transform:translateY(-2px);
+    border-color:var(--maroon);
+    box-shadow:0 8px 20px rgba(79,8,12,.09);
+}
+
+.variant-options button.selected{
+    border:2px solid var(--maroon);
+    padding:10px 13px;
+    background:#fff2df;
+    box-shadow:0 8px 20px rgba(79,8,12,.10);
+}
+
+.variant-options button span{
+    font-weight:900;
+}
+
+.variant-options button strong{
+    color:var(--maroon);
+    font-size:13px;
+}
+
+/* ---------- Disabled Variant ---------- */
+
+.variant-options button:disabled{
+    cursor:not-allowed;
+    opacity:.55;
+    background:#f4f1ed;
+    border:2px dashed #c6b5a5;
+    box-shadow:none;
+}
+
+.variant-options button:disabled span,
+.variant-options button:disabled strong{
+    color:#777;
+}
+
+/* Red Cross */
+
+.variant-options button:disabled::before,
+.variant-options button:disabled::after{
+    content:"";
+    position:absolute;
+    left:8%;
+    width:84%;
+    height:3px;
+    background:#b40000;
+    border-radius:20px;
+}
+
+.variant-options button:disabled::before{
+    transform:rotate(18deg);
+}
+
+.variant-options button:disabled::after{
+    transform:rotate(-18deg);
+}
+
 .variant-selector small { color: var(--muted); line-height: 1.5; }
 .price-box { margin-top: 18px; padding: 20px; background: linear-gradient(135deg,#faecd3,#f6dfbd); border: 1px solid #efd3a8; border-radius: 17px; }
 .price-box small, .price-box strong { display: block; }

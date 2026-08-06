@@ -18,6 +18,7 @@ export default function ProductDetails({ product, onBack }) {
     if (Array.isArray(product.variants) && product.variants.length) {
       return product.variants.map((variant) => ({
         ...variant,
+        price: Number(variant.price || 0),
         images: Object.fromEntries(
           Object.keys(emptyImages()).map((key) => [
             key,
@@ -33,19 +34,31 @@ export default function ProductDetails({ product, onBack }) {
         name: "Medium",
         price: Number(product.price || 0),
         etsyUrl: product.etsyUrl || "",
-        images: { ...emptyImages(), ...(product.images || {}) },
+        images: {
+          ...emptyImages(),
+          ...(product.images || {}),
+        },
       },
     ];
   }, [product]);
 
-  const [selectedVariantName, setSelectedVariantName] = useState(variants[0]?.name || "");
+  const firstAvailableVariant = useMemo(
+    () => variants.find((variant) => variant.price > 0) || variants[0],
+    [variants]
+  );
+
+  const [selectedVariantName, setSelectedVariantName] = useState(
+    firstAvailableVariant?.name || ""
+  );
 
   useEffect(() => {
-    setSelectedVariantName(variants[0]?.name || "");
-  }, [product.id, variants]);
+    setSelectedVariantName(firstAvailableVariant?.name || "");
+  }, [product.id, firstAvailableVariant]);
 
   const selectedVariant =
-    variants.find((variant) => variant.name === selectedVariantName) || variants[0];
+    variants.find((variant) => variant.name === selectedVariantName) ||
+    firstAvailableVariant ||
+    variants[0];
 
   const galleryProduct = {
     ...product,
@@ -54,69 +67,166 @@ export default function ProductDetails({ product, onBack }) {
   };
 
   const price = Number(selectedVariant?.price || 0);
+  const isSelectedVariantAvailable = price > 0;
+
   const message = encodeURIComponent(
-    `Hello Shiva Rudraksha Inc., I am interested in ${product.name} - ${selectedVariant?.name || ""} size (CAD $${price.toFixed(2)}). Please share availability, certificate and ordering details.`
+    `Hello Shiva Rudraksha Inc., I am interested in ${
+      product.name
+    } - ${selectedVariant?.name || ""} size (CAD $${price.toFixed(
+      2
+    )}). Please share availability, certificate and ordering details.`
   );
 
   return (
     <div className="details-page">
       <PromotionalBanner />
+
       <header className="detail-header">
         <div className="container detail-header-inner">
-          <button onClick={onBack}><ArrowLeft /> Back to catalogue</button>
+          <button type="button" onClick={onBack}>
+            <ArrowLeft />
+            Back to catalogue
+          </button>
+
           <Logo compact />
         </div>
       </header>
 
       <main className="container details-layout">
-        <Gallery product={galleryProduct} resetKey={selectedVariant?.name} />
+        <Gallery
+          product={galleryProduct}
+          resetKey={selectedVariant?.name}
+        />
 
         <section className="product-information">
           <span className="premium-label">{product.badge}</span>
+
           <h1>{product.name}</h1>
 
           <div className="information-grid">
-            <span><MapPin /> Origin <strong>{product.origin}</strong></span>
-            <span><Ruler /> Variants <strong>{variants.length} sizes</strong></span>
-            <span><ShieldCheck /> Certificate <strong>{product.certificateAvailable ? "Included" : "Not Included"}</strong></span>
+            <span>
+              <MapPin />
+              Origin
+              <strong>{product.origin}</strong>
+            </span>
+
+            <span>
+              <Ruler />
+              Variants
+              <strong>{variants.length} sizes</strong>
+            </span>
+
+            <span>
+              <ShieldCheck />
+              Certificate
+              <strong>
+                {product.certificateAvailable
+                  ? "Included"
+                  : "Not Included"}
+              </strong>
+            </span>
           </div>
 
           <p className="description">{product.description}</p>
 
           <div className="variant-selector">
             <label>Select bead size</label>
-            <div className="variant-options" role="group" aria-label="Select bead size">
+
+            <div
+              className="variant-options"
+              role="group"
+              aria-label="Select bead size"
+            >
               {variants.map((variant) => {
-                const isSelected = variant.name === selectedVariant?.name;
+                const variantPrice = Number(variant.price || 0);
+                const isAvailable = variantPrice > 0;
+                const isSelected =
+                  variant.name === selectedVariant?.name;
+
                 return (
                   <button
                     key={variant.name}
                     type="button"
-                    className={isSelected ? "selected" : ""}
+                    disabled={Number(variant.price) <= 0}
+                    className={[
+                      "variant-option",
+                      isSelected ? "selected" : "",
+                      !isAvailable ? "disabled" : "",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
                     aria-pressed={isSelected}
-                    onClick={() => setSelectedVariantName(variant.name)}
+                    aria-disabled={!isAvailable}
+                    onClick={() => {
+                      if (isAvailable && Number(variant.price) > 0) {
+                        setSelectedVariantName(variant.name);
+                      }
+                    }}
                   >
                     <span>{variant.name}</span>
-                    <strong>CAD ${Number(variant.price || 0).toFixed(2)}</strong>
+
+                    <strong>
+                      {isAvailable
+                        ? `CAD $${variantPrice.toFixed(2)}`
+                        : "Out of Stock"}
+                    </strong>
                   </button>
                 );
               })}
             </div>
-            <small>The gallery, certificate, X-ray, price and Etsy link change with the selected size.</small>
+
+            <small>
+              The gallery, certificate, X-ray, price and Etsy link
+              change with the selected size.
+            </small>
           </div>
 
           <div className="price-box">
-            <small>{selectedVariant?.name} price in Canadian dollars</small>
-            <strong>CAD ${price.toFixed(2)}</strong>
+            <small>
+              {selectedVariant?.name} price in Canadian dollars
+            </small>
+
+            <strong>
+              {isSelectedVariantAvailable
+                ? `CAD $${price.toFixed(2)}`
+                : "Out of Stock"}
+            </strong>
           </div>
 
           <div className="included-list">
-            <span><CheckCircle2 /> Front view</span>
-            <span><CheckCircle2 /> Back view</span>
-            <span><CheckCircle2 /> Top view</span>
-            <span><CheckCircle2 /> Bottom view</span>
-            <span><CheckCircle2 /> {product.certificateAvailable ? "Certificate" : "No Certificate"}</span>
-            <span><CheckCircle2 /> {product.certificateAvailable ? "X-ray" : "No X-ray"}</span>
+            <span>
+              <CheckCircle2 />
+              Front view
+            </span>
+
+            <span>
+              <CheckCircle2 />
+              Back view
+            </span>
+
+            <span>
+              <CheckCircle2 />
+              Top view
+            </span>
+
+            <span>
+              <CheckCircle2 />
+              Bottom view
+            </span>
+
+            <span>
+              <CheckCircle2 />
+              {product.certificateAvailable
+                ? "Certificate"
+                : "No Certificate"}
+            </span>
+
+            <span>
+              <CheckCircle2 />
+              {product.certificateAvailable
+                ? "X-ray"
+                : "No X-ray"}
+            </span>
           </div>
 
           <div className="product-action-buttons">
@@ -126,24 +236,27 @@ export default function ProductDetails({ product, onBack }) {
               target="_blank"
               rel="noreferrer"
             >
-              <MessageCircle /> Enquire on WhatsApp
+              <MessageCircle />
+              Enquire on WhatsApp
             </a>
 
-            {selectedVariant?.etsyUrl && (
-              <a
-                className="buy-button"
-                href={selectedVariant.etsyUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ShoppingCart /> Buy Now
-              </a>
-            )}
+            {isSelectedVariantAvailable &&
+              selectedVariant?.etsyUrl && (
+                <a
+                  className="buy-button"
+                  href={selectedVariant.etsyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ShoppingCart />
+                  Buy Now
+                </a>
+              )}
           </div>
 
           <p className="disclaimer">
-            Traditional spiritual descriptions are informational and are not
-            medical or financial guarantees.
+            Traditional spiritual descriptions are informational and
+            are not medical or financial guarantees.
           </p>
         </section>
       </main>

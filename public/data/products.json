@@ -5,76 +5,37 @@
     "name": "1 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 1 Mukhi Rudraksha, traditionally revered for spiritual growth, inner peace, meditation, and higher consciousness.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
     "variants": [
       {
-        "name": "Small",
+        "name": "Nepal",
         "price": 150,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "images/products/1-mukhi-nepal-rudraksha/small/front.jpg",
-          "back": "images/products/1-mukhi-nepal-rudraksha/small/back.jpg",
-          "top": "images/products/1-mukhi-nepal-rudraksha/small/top.jpg",
-          "bottom": "images/products/1-mukhi-nepal-rudraksha/small/bottom.jpg",
-          "certificate": "images/products/1-mukhi-nepal-rudraksha/small/certificate.jpg",
-          "xray": "images/products/1-mukhi-nepal-rudraksha/small/xray.jpg"
+          "front": "images/products/1-mukhi-nepal-rudraksha/nepali/front.jpg",
+          "back": "images/products/1-mukhi-nepal-rudraksha/nepali/back.jpg",
+          "top": "images/products/1-mukhi-nepal-rudraksha/nepali/top.jpg",
+          "bottom": "images/products/1-mukhi-nepal-rudraksha/nepali/bottom.jpg",
+          "certificate": "images/products/1-mukhi-nepal-rudraksha/nepali/certificate.jpg",
+          "xray": "images/products/1-mukhi-nepal-rudraksha/nepali/xray.jpg"
         }
       },
       {
-        "name": "Medium",
+        "name": "Indian",
         "price": 200,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "images/products/1-mukhi-nepal-rudraksha/medium/front.jpg",
-          "back": "images/products/1-mukhi-nepal-rudraksha/medium/back.jpg",
-          "top": "images/products/1-mukhi-nepal-rudraksha/medium/top.jpg",
-          "bottom": "images/products/1-mukhi-nepal-rudraksha/medium/bottom.jpg",
-          "certificate": "images/products/1-mukhi-nepal-rudraksha/medium/certificate.jpg",
-          "xray": "images/products/1-mukhi-nepal-rudraksha/medium/xray.jpg"
+          "front": "images/products/1-mukhi-nepal-rudraksha/indian/front.jpg",
+          "back": "images/products/1-mukhi-nepal-rudraksha/indian/back.jpg",
+          "top": "images/products/1-mukhi-nepal-rudraksha/indian/top.jpg",
+          "bottom": "images/products/1-mukhi-nepal-rudraksha/indian/bottom.jpg",
+          "certificate": "images/products/1-mukhi-nepal-rudraksha/indian/certificate.jpg",
+          "xray": "images/products/1-mukhi-nepal-rudraksha/indian/xray.jpg"
         }
-      },
-      {
-        "name": "Large",
-        "price": 300,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/1-mukhi-nepal-rudraksha/large/front.jpg",
-          "back": "images/products/1-mukhi-nepal-rudraksha/large/back.jpg",
-          "top": "images/products/1-mukhi-nepal-rudraksha/large/top.jpg",
-          "bottom": "images/products/1-mukhi-nepal-rudraksha/large/bottom.jpg",
-          "certificate": "images/products/1-mukhi-nepal-rudraksha/large/certificate.jpg",
-          "xray": "images/products/1-mukhi-nepal-rudraksha/large/xray.jpg"
-        }
-      },
-      {
-        "name": "Collector",
-        "price": 500,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/1-mukhi-nepal-rudraksha/collector/front.jpg",
-          "back": "images/products/1-mukhi-nepal-rudraksha/collector/back.jpg",
-          "top": "images/products/1-mukhi-nepal-rudraksha/collector/top.jpg",
-          "bottom": "images/products/1-mukhi-nepal-rudraksha/collector/bottom.jpg",
-          "certificate": "images/products/1-mukhi-nepal-rudraksha/collector/certificate.jpg",
-          "xray": "images/products/1-mukhi-nepal-rudraksha/collector/xray.jpg"
-        }
-      },
-      {
-        "name": "Super Collector",
-        "price": 1000,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/1-mukhi-nepal-rudraksha/super-collector/front.jpg",
-          "back": "images/products/1-mukhi-nepal-rudraksha/super-collector/back.jpg",
-          "top": "images/products/1-mukhi-nepal-rudraksha/super-collector/top.jpg",
-          "bottom": "images/products/1-mukhi-nepal-rudraksha/super-collector/bottom.jpg",
-          "certificate": "images/products/1-mukhi-nepal-rudraksha/super-collector/certificate.jpg",
-          "xray": "images/products/1-mukhi-nepal-rudraksha/super-collector/xray.jpg"
-        }
-      }
+      }      
     ],
     "images": {
       "front": "images/products/1-mukhi-nepal-rudraksha/front.jpg",
@@ -91,14 +52,14 @@
     "name": "2 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 2 Mukhi Rudraksha, traditionally associated with harmony, relationships, unity, and emotional balance.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
     "variants": [
       {
         "name": "Small",
-        "price": 100,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/small/front.jpg",
@@ -111,7 +72,7 @@
       },
       {
         "name": "Medium",
-        "price": 100,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/medium/front.jpg",
@@ -124,7 +85,7 @@
       },
       {
         "name": "Large",
-        "price": 100,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/large/front.jpg",
@@ -137,7 +98,7 @@
       },
       {
         "name": "Collector",
-        "price": 100,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/collector/front.jpg",
@@ -150,7 +111,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 100,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/super-collector/front.jpg",
@@ -177,74 +138,22 @@
     "name": "3 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 3 Mukhi Rudraksha, traditionally linked with confidence, positive energy, and releasing past burdens.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
     "variants": [
       {
-        "name": "Small",
-        "price": 100,
+        "name": "Nepal",
+        "price": 60,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "images/products/3-mukhi-nepal-rudraksha/small/front.jpg",
-          "back": "images/products/3-mukhi-nepal-rudraksha/small/back.jpg",
-          "top": "images/products/3-mukhi-nepal-rudraksha/small/top.jpg",
-          "bottom": "images/products/3-mukhi-nepal-rudraksha/small/bottom.jpg",
-          "certificate": "images/products/3-mukhi-nepal-rudraksha/small/certificate.jpg",
-          "xray": "images/products/3-mukhi-nepal-rudraksha/small/xray.jpg"
-        }
-      },
-      {
-        "name": "Medium",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/3-mukhi-nepal-rudraksha/medium/front.jpg",
-          "back": "images/products/3-mukhi-nepal-rudraksha/medium/back.jpg",
-          "top": "images/products/3-mukhi-nepal-rudraksha/medium/top.jpg",
-          "bottom": "images/products/3-mukhi-nepal-rudraksha/medium/bottom.jpg",
-          "certificate": "images/products/3-mukhi-nepal-rudraksha/medium/certificate.jpg",
-          "xray": "images/products/3-mukhi-nepal-rudraksha/medium/xray.jpg"
-        }
-      },
-      {
-        "name": "Large",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/3-mukhi-nepal-rudraksha/large/front.jpg",
-          "back": "images/products/3-mukhi-nepal-rudraksha/large/back.jpg",
-          "top": "images/products/3-mukhi-nepal-rudraksha/large/top.jpg",
-          "bottom": "images/products/3-mukhi-nepal-rudraksha/large/bottom.jpg",
-          "certificate": "images/products/3-mukhi-nepal-rudraksha/large/certificate.jpg",
-          "xray": "images/products/3-mukhi-nepal-rudraksha/large/xray.jpg"
-        }
-      },
-      {
-        "name": "Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/3-mukhi-nepal-rudraksha/collector/front.jpg",
-          "back": "images/products/3-mukhi-nepal-rudraksha/collector/back.jpg",
-          "top": "images/products/3-mukhi-nepal-rudraksha/collector/top.jpg",
-          "bottom": "images/products/3-mukhi-nepal-rudraksha/collector/bottom.jpg",
-          "certificate": "images/products/3-mukhi-nepal-rudraksha/collector/certificate.jpg",
-          "xray": "images/products/3-mukhi-nepal-rudraksha/collector/xray.jpg"
-        }
-      },
-      {
-        "name": "Super Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/3-mukhi-nepal-rudraksha/super-collector/front.jpg",
-          "back": "images/products/3-mukhi-nepal-rudraksha/super-collector/back.jpg",
-          "top": "images/products/3-mukhi-nepal-rudraksha/super-collector/top.jpg",
-          "bottom": "images/products/3-mukhi-nepal-rudraksha/super-collector/bottom.jpg",
-          "certificate": "images/products/3-mukhi-nepal-rudraksha/super-collector/certificate.jpg",
-          "xray": "images/products/3-mukhi-nepal-rudraksha/super-collector/xray.jpg"
+          "front": "images/products/3-mukhi-nepal-rudraksha/nepali/front.jpg",
+          "back": "images/products/3-mukhi-nepal-rudraksha/nepali/back.jpg",
+          "top": "images/products/3-mukhi-nepal-rudraksha/nepali/top.jpg",
+          "bottom": "images/products/3-mukhi-nepal-rudraksha/nepali/bottom.jpg",
+          "certificate": "images/products/3-mukhi-nepal-rudraksha/nepali/certificate.jpg",
+          "xray": "images/products/3-mukhi-nepal-rudraksha/nepali/xray.jpg"
         }
       }
     ],
@@ -263,74 +172,22 @@
     "name": "4 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 4 Mukhi Rudraksha, traditionally associated with learning, memory, creativity, communication, and wisdom.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
     "variants": [
       {
-        "name": "Small",
-        "price": 100,
+        "name": "Nepal",
+        "price": 40,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "images/products/4-mukhi-nepal-rudraksha/small/front.jpg",
-          "back": "images/products/4-mukhi-nepal-rudraksha/small/back.jpg",
-          "top": "images/products/4-mukhi-nepal-rudraksha/small/top.jpg",
-          "bottom": "images/products/4-mukhi-nepal-rudraksha/small/bottom.jpg",
-          "certificate": "images/products/4-mukhi-nepal-rudraksha/small/certificate.jpg",
-          "xray": "images/products/4-mukhi-nepal-rudraksha/small/xray.jpg"
-        }
-      },
-      {
-        "name": "Medium",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/4-mukhi-nepal-rudraksha/medium/front.jpg",
-          "back": "images/products/4-mukhi-nepal-rudraksha/medium/back.jpg",
-          "top": "images/products/4-mukhi-nepal-rudraksha/medium/top.jpg",
-          "bottom": "images/products/4-mukhi-nepal-rudraksha/medium/bottom.jpg",
-          "certificate": "images/products/4-mukhi-nepal-rudraksha/medium/certificate.jpg",
-          "xray": "images/products/4-mukhi-nepal-rudraksha/medium/xray.jpg"
-        }
-      },
-      {
-        "name": "Large",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/4-mukhi-nepal-rudraksha/large/front.jpg",
-          "back": "images/products/4-mukhi-nepal-rudraksha/large/back.jpg",
-          "top": "images/products/4-mukhi-nepal-rudraksha/large/top.jpg",
-          "bottom": "images/products/4-mukhi-nepal-rudraksha/large/bottom.jpg",
-          "certificate": "images/products/4-mukhi-nepal-rudraksha/large/certificate.jpg",
-          "xray": "images/products/4-mukhi-nepal-rudraksha/large/xray.jpg"
-        }
-      },
-      {
-        "name": "Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/4-mukhi-nepal-rudraksha/collector/front.jpg",
-          "back": "images/products/4-mukhi-nepal-rudraksha/collector/back.jpg",
-          "top": "images/products/4-mukhi-nepal-rudraksha/collector/top.jpg",
-          "bottom": "images/products/4-mukhi-nepal-rudraksha/collector/bottom.jpg",
-          "certificate": "images/products/4-mukhi-nepal-rudraksha/collector/certificate.jpg",
-          "xray": "images/products/4-mukhi-nepal-rudraksha/collector/xray.jpg"
-        }
-      },
-      {
-        "name": "Super Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/4-mukhi-nepal-rudraksha/super-collector/front.jpg",
-          "back": "images/products/4-mukhi-nepal-rudraksha/super-collector/back.jpg",
-          "top": "images/products/4-mukhi-nepal-rudraksha/super-collector/top.jpg",
-          "bottom": "images/products/4-mukhi-nepal-rudraksha/super-collector/bottom.jpg",
-          "certificate": "images/products/4-mukhi-nepal-rudraksha/super-collector/certificate.jpg",
-          "xray": "images/products/4-mukhi-nepal-rudraksha/super-collector/xray.jpg"
+          "front": "images/products/4-mukhi-nepal-rudraksha/nepali/front.jpg",
+          "back": "images/products/4-mukhi-nepal-rudraksha/nepali/back.jpg",
+          "top": "images/products/4-mukhi-nepal-rudraksha/nepali/top.jpg",
+          "bottom": "images/products/4-mukhi-nepal-rudraksha/nepali/bottom.jpg",
+          "certificate": "images/products/4-mukhi-nepal-rudraksha/nepali/certificate.jpg",
+          "xray": "images/products/4-mukhi-nepal-rudraksha/nepali/xray.jpg"
         }
       }
     ],
@@ -349,74 +206,22 @@
     "name": "5 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 5 Mukhi Rudraksha, traditionally valued for peace, spiritual practice, daily meditation, and overall well-being.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
     "variants": [
       {
-        "name": "Small",
-        "price": 100,
+        "name": "Nepal",
+        "price": 40,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "images/products/5-mukhi-nepal-rudraksha/small/front.jpg",
-          "back": "images/products/5-mukhi-nepal-rudraksha/small/back.jpg",
-          "top": "images/products/5-mukhi-nepal-rudraksha/small/top.jpg",
-          "bottom": "images/products/5-mukhi-nepal-rudraksha/small/bottom.jpg",
-          "certificate": "images/products/5-mukhi-nepal-rudraksha/small/certificate.jpg",
-          "xray": "images/products/5-mukhi-nepal-rudraksha/small/xray.jpg"
-        }
-      },
-      {
-        "name": "Medium",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/5-mukhi-nepal-rudraksha/medium/front.jpg",
-          "back": "images/products/5-mukhi-nepal-rudraksha/medium/back.jpg",
-          "top": "images/products/5-mukhi-nepal-rudraksha/medium/top.jpg",
-          "bottom": "images/products/5-mukhi-nepal-rudraksha/medium/bottom.jpg",
-          "certificate": "images/products/5-mukhi-nepal-rudraksha/medium/certificate.jpg",
-          "xray": "images/products/5-mukhi-nepal-rudraksha/medium/xray.jpg"
-        }
-      },
-      {
-        "name": "Large",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/5-mukhi-nepal-rudraksha/large/front.jpg",
-          "back": "images/products/5-mukhi-nepal-rudraksha/large/back.jpg",
-          "top": "images/products/5-mukhi-nepal-rudraksha/large/top.jpg",
-          "bottom": "images/products/5-mukhi-nepal-rudraksha/large/bottom.jpg",
-          "certificate": "images/products/5-mukhi-nepal-rudraksha/large/certificate.jpg",
-          "xray": "images/products/5-mukhi-nepal-rudraksha/large/xray.jpg"
-        }
-      },
-      {
-        "name": "Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/5-mukhi-nepal-rudraksha/collector/front.jpg",
-          "back": "images/products/5-mukhi-nepal-rudraksha/collector/back.jpg",
-          "top": "images/products/5-mukhi-nepal-rudraksha/collector/top.jpg",
-          "bottom": "images/products/5-mukhi-nepal-rudraksha/collector/bottom.jpg",
-          "certificate": "images/products/5-mukhi-nepal-rudraksha/collector/certificate.jpg",
-          "xray": "images/products/5-mukhi-nepal-rudraksha/collector/xray.jpg"
-        }
-      },
-      {
-        "name": "Super Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/5-mukhi-nepal-rudraksha/super-collector/front.jpg",
-          "back": "images/products/5-mukhi-nepal-rudraksha/super-collector/back.jpg",
-          "top": "images/products/5-mukhi-nepal-rudraksha/super-collector/top.jpg",
-          "bottom": "images/products/5-mukhi-nepal-rudraksha/super-collector/bottom.jpg",
-          "certificate": "images/products/5-mukhi-nepal-rudraksha/super-collector/certificate.jpg",
-          "xray": "images/products/5-mukhi-nepal-rudraksha/super-collector/xray.jpg"
+          "front": "images/products/5-mukhi-nepal-rudraksha/nepali/front.jpg",
+          "back": "images/products/5-mukhi-nepal-rudraksha/nepali/back.jpg",
+          "top": "images/products/5-mukhi-nepal-rudraksha/nepali/top.jpg",
+          "bottom": "images/products/5-mukhi-nepal-rudraksha/nepali/bottom.jpg",
+          "certificate": "images/products/5-mukhi-nepal-rudraksha/nepali/certificate.jpg",
+          "xray": "images/products/5-mukhi-nepal-rudraksha/nepali/xray.jpg"
         }
       }
     ],
@@ -435,74 +240,22 @@
     "name": "6 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 6 Mukhi Rudraksha, traditionally associated with discipline, focus, confidence, and balanced self-expression.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
     "variants": [
       {
-        "name": "Small",
-        "price": 100,
+        "name": "Nepal",
+        "price": 40,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "images/products/6-mukhi-nepal-rudraksha/small/front.jpg",
-          "back": "images/products/6-mukhi-nepal-rudraksha/small/back.jpg",
-          "top": "images/products/6-mukhi-nepal-rudraksha/small/top.jpg",
-          "bottom": "images/products/6-mukhi-nepal-rudraksha/small/bottom.jpg",
-          "certificate": "images/products/6-mukhi-nepal-rudraksha/small/certificate.jpg",
-          "xray": "images/products/6-mukhi-nepal-rudraksha/small/xray.jpg"
-        }
-      },
-      {
-        "name": "Medium",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/6-mukhi-nepal-rudraksha/medium/front.jpg",
-          "back": "images/products/6-mukhi-nepal-rudraksha/medium/back.jpg",
-          "top": "images/products/6-mukhi-nepal-rudraksha/medium/top.jpg",
-          "bottom": "images/products/6-mukhi-nepal-rudraksha/medium/bottom.jpg",
-          "certificate": "images/products/6-mukhi-nepal-rudraksha/medium/certificate.jpg",
-          "xray": "images/products/6-mukhi-nepal-rudraksha/medium/xray.jpg"
-        }
-      },
-      {
-        "name": "Large",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/6-mukhi-nepal-rudraksha/large/front.jpg",
-          "back": "images/products/6-mukhi-nepal-rudraksha/large/back.jpg",
-          "top": "images/products/6-mukhi-nepal-rudraksha/large/top.jpg",
-          "bottom": "images/products/6-mukhi-nepal-rudraksha/large/bottom.jpg",
-          "certificate": "images/products/6-mukhi-nepal-rudraksha/large/certificate.jpg",
-          "xray": "images/products/6-mukhi-nepal-rudraksha/large/xray.jpg"
-        }
-      },
-      {
-        "name": "Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/6-mukhi-nepal-rudraksha/collector/front.jpg",
-          "back": "images/products/6-mukhi-nepal-rudraksha/collector/back.jpg",
-          "top": "images/products/6-mukhi-nepal-rudraksha/collector/top.jpg",
-          "bottom": "images/products/6-mukhi-nepal-rudraksha/collector/bottom.jpg",
-          "certificate": "images/products/6-mukhi-nepal-rudraksha/collector/certificate.jpg",
-          "xray": "images/products/6-mukhi-nepal-rudraksha/collector/xray.jpg"
-        }
-      },
-      {
-        "name": "Super Collector",
-        "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
-        "images": {
-          "front": "images/products/6-mukhi-nepal-rudraksha/super-collector/front.jpg",
-          "back": "images/products/6-mukhi-nepal-rudraksha/super-collector/back.jpg",
-          "top": "images/products/6-mukhi-nepal-rudraksha/super-collector/top.jpg",
-          "bottom": "images/products/6-mukhi-nepal-rudraksha/super-collector/bottom.jpg",
-          "certificate": "images/products/6-mukhi-nepal-rudraksha/super-collector/certificate.jpg",
-          "xray": "images/products/6-mukhi-nepal-rudraksha/super-collector/xray.jpg"
+          "front": "images/products/6-mukhi-nepal-rudraksha/nepali/front.jpg",
+          "back": "images/products/6-mukhi-nepal-rudraksha/nepali/back.jpg",
+          "top": "images/products/6-mukhi-nepal-rudraksha/nepali/top.jpg",
+          "bottom": "images/products/6-mukhi-nepal-rudraksha/nepali/bottom.jpg",
+          "certificate": "images/products/6-mukhi-nepal-rudraksha/nepali/certificate.jpg",
+          "xray": "images/products/6-mukhi-nepal-rudraksha/nepali/xray.jpg"
         }
       }
     ],
@@ -521,14 +274,14 @@
     "name": "7 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 7 Mukhi Rudraksha, traditionally linked with prosperity, stability, abundance, and positive opportunities.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
     "variants": [
       {
         "name": "Small",
-        "price": 100,
+        "price": 30,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/small/front.jpg",
@@ -541,7 +294,7 @@
       },
       {
         "name": "Medium",
-        "price": 100,
+        "price": 50,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/medium/front.jpg",
@@ -554,7 +307,7 @@
       },
       {
         "name": "Large",
-        "price": 100,
+        "price": 70,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/large/front.jpg",
@@ -580,7 +333,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 100,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/super-collector/front.jpg",
@@ -607,7 +360,7 @@
     "name": "8 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 8 Mukhi Rudraksha, traditionally associated with protection, strength, and spiritual growth.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -640,7 +393,7 @@
       },
       {
         "name": "Large",
-        "price": 100,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/large/front.jpg",
@@ -693,7 +446,7 @@
     "name": "9 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 9 Mukhi Rudraksha, traditionally revered for courage, strength, confidence, and spiritual protection.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -779,7 +532,7 @@
     "name": "10 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 10 Mukhi Rudraksha, traditionally associated with peace of mind, positivity, and protection from negative influences.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -865,7 +618,7 @@
     "name": "11 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 11 Mukhi Rudraksha, traditionally associated with wisdom, spiritual growth, and protection from negative energies.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -951,7 +704,7 @@
     "name": "12 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 12 Mukhi Rudraksha, traditionally associated with confidence, vitality, leadership, and radiant positive energy.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -1037,7 +790,7 @@
     "name": "13 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 13 Mukhi Rudraksha, traditionally connected with attraction, creativity, fulfillment, and personal success.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -1123,7 +876,7 @@
     "name": "14 Mukhi Nepal Rudraksha",
     "category": "Nepal Rudraksha",
     "origin": "Nepal",
-    "description": "Test",
+    "description": "Authentic Nepal 14 Mukhi Rudraksha, traditionally revered for intuition, wisdom, clarity, and confident decision-making.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -1208,7 +961,7 @@
     "name": "12 Mukhi Rudraksha Mala",
     "category": "Bracelets & Malas",
     "origin": "Indonesia",
-    "description": "Authentic handcrafted Rudraksha Mala.",
+    "description": "Authentic Indonesian 12 Mukhi Rudraksha Mala, traditionally associated with confidence, leadership, vitality, and positive energy. Ideal for meditation, daily wear, and spiritual practice.",
     "certificateAvailable": false,
     "stockStatus": "Available",
     "badge": "Non-Certified",
@@ -1223,7 +976,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": "",
+        "price": "0",
         "etsyUrl": "",
         "images": {
           "front": "",
@@ -1236,7 +989,7 @@
       },
       {
         "name": "Medium",
-        "price": "",
+        "price": "400",
         "etsyUrl": "",
         "images": {
           "front": "",
@@ -1249,7 +1002,7 @@
       },
       {
         "name": "Large",
-        "price": "",
+        "price": "0",
         "etsyUrl": "",
         "images": {
           "front": "",
@@ -1262,7 +1015,7 @@
       },
       {
         "name": "Collector",
-        "price": "",
+        "price": "0",
         "etsyUrl": "",
         "images": {
           "front": "",
@@ -1275,7 +1028,7 @@
       },
       {
         "name": "Super Collector",
-        "price": "",
+        "price": "0",
         "etsyUrl": "",
         "images": {
           "front": "",
@@ -1293,7 +1046,7 @@
     "name": "13 Mukhi Rudraksha Mala",
     "category": "Bracelets & Malas",
     "origin": "Indonesia",
-    "description": "Authentic handcrafted Rudraksha Mala.",
+    "description": "Authentic Indonesian 13 Mukhi Rudraksha Mala, traditionally associated with creativity, confidence, fulfillment, and spiritual growth. Ideal for meditation and daily spiritual practice.",
     "certificateAvailable": false,
     "stockStatus": "Available",
     "badge": "Non-Certified",
@@ -1308,7 +1061,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 500,
+        "price": 0,
         "etsyUrl": "",
         "images": {
           "front": "",
@@ -1321,15 +1074,15 @@
       },
       {
         "name": "Medium",
-        "price": "",
+        "price": "500",
         "etsyUrl": "",
         "images": {
-          "front": "",
-          "back": "",
-          "top": "",
-          "bottom": "",
-          "certificate": "",
-          "xray": ""
+          "front": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/front.jpg",
+          "back": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/back.jpg",
+          "top": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/top.jpg",
+          "bottom": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/bottom.jpg",
+          "certificate": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/certificate.jpg",
+          "xray": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/xray.jpg"
         }
       },
       {
@@ -1378,7 +1131,7 @@
     "name": "12 Mukhi Rudraksha Bracelet",
     "category": "Bracelets & Malas",
     "origin": "Nepal",
-    "description": "Authentic handcrafted Rudraksha Mala.",
+    "description": "Authentic Nepal 12 Mukhi Rudraksha Bracelet, traditionally associated with confidence, leadership, vitality, and positive energy. Comfortable for daily wear and suitable for meditation and spiritual practice.",
     "certificateAvailable": true,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -1406,15 +1159,15 @@
       },
       {
         "name": "Medium",
-        "price": "",
+        "price": "600",
         "etsyUrl": "",
         "images": {
-          "front": "",
-          "back": "",
-          "top": "",
-          "bottom": "",
-          "certificate": "",
-          "xray": ""
+        "front": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/front.jpg",
+        "back": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/back.jpg",
+        "top": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/top.jpg",
+        "bottom": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/bottom.jpg",
+        "certificate": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/certificate.jpg",
+        "xray": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/xray.jpg"
         }
       },
       {
@@ -1461,9 +1214,9 @@
   {
     "id": "rkshani-mukhi-rudraksha-bracelet",
     "name": "Rahu, Ketu and Shani Kavach Rudraksha Mala",
-    "category": "Bracelets & Malas",
+    "category": "Rudraksha Combinations",
     "origin": "Nepal",
-    "description": "Authentic handcrafted Rudraksha Mala.",
+    "description": "Authentic Handcrafted Rudraksha Bracelet.",
     "certificateAvailable": false,
     "stockStatus": "Available",
     "badge": "Certified",
@@ -1478,69 +1231,103 @@
     "variants": [
       {
         "name": "Small",
-        "price": "",
+        "price": "80",
         "etsyUrl": "",
         "images": {
-          "front": "",
-          "back": "",
-          "top": "",
-          "bottom": "",
-          "certificate": "",
-          "xray": ""
+          "front": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/front.jpg",
+          "back": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/back.jpg",
+          "top": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/top.jpg",
+          "bottom": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/bottom.jpg",
+          "certificate": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/certificate.jpg",
+          "xray": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/xray.jpg"
+        }
+      }
+    ]
+  },
+   {
+    "id": "Gowri-Shankar-nepal-rudraksha",
+    "mukhi": "Gowri Shankar",
+    "name": "Gowri Shankar Nepal Rudraksha",
+    "category": "Gaurishankar",
+    "origin": "Nepal",
+    "description": "Authentic Nepal Gauri Shankar Rudraksha, naturally joined twin beads traditionally symbolizing harmony, love, family unity, and spiritual balance.",
+    "certificateAvailable": true,
+    "stockStatus": "Available",
+    "badge": "Certified",
+    "variants": [
+      {
+        "name": "Small",
+        "price": 0,
+        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
+        "images": {
+          "front": "images/products/gowri-shankar-nepal-rudraksha/small/front.jpg",
+          "back": "images/products/gowri-shankar-nepal-rudraksha/small/back.jpg",
+          "top": "images/products/gowri-shankar-nepal-rudraksha/small/top.jpg",
+          "bottom": "images/products/gowri-shankar-nepal-rudraksha/small/bottom.jpg",
+          "certificate": "images/products/gowri-shankar-nepal-rudraksha/small/certificate.jpg",
+          "xray": "images/products/gowri-shankar-nepal-rudraksha/small/xray.jpg"
         }
       },
       {
         "name": "Medium",
-        "price": "",
-        "etsyUrl": "",
+        "price": 0,
+        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "",
-          "back": "",
-          "top": "",
-          "bottom": "",
-          "certificate": "",
-          "xray": ""
+          "front": "images/products/gowri-shankar-nepal-rudraksha/medium/front.jpg",
+          "back": "images/products/gowri-shankar-nepal-rudraksha/medium/back.jpg",
+          "top": "images/products/gowri-shankar-nepal-rudraksha/medium/top.jpg",
+          "bottom": "images/products/gowri-shankar-nepal-rudraksha/medium/bottom.jpg",
+          "certificate": "images/products/gowri-shankar-nepal-rudraksha/medium/certificate.jpg",
+          "xray": "images/products/gowri-shankar-nepal-rudraksha/medium/xray.jpg"
         }
       },
       {
         "name": "Large",
-        "price": "",
-        "etsyUrl": "",
+        "price": 170,
+        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "",
-          "back": "",
-          "top": "",
-          "bottom": "",
-          "certificate": "",
-          "xray": ""
+          "front": "images/products/gowri-shankar-nepal-rudraksha/large/front.jpg",
+          "back": "images/products/gowri-shankar-nepal-rudraksha/large/back.jpg",
+          "top": "images/products/gowri-shankar-nepal-rudraksha/large/top.jpg",
+          "bottom": "images/products/gowri-shankar-nepal-rudraksha/large/bottom.jpg",
+          "certificate": "images/products/gowri-shankar-nepal-rudraksha/large/certificate.jpg",
+          "xray": "images/products/gowri-shankar-nepal-rudraksha/large/xray.jpg"
         }
       },
       {
         "name": "Collector",
-        "price": "",
-        "etsyUrl": "",
+        "price": 200,
+        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "",
-          "back": "",
-          "top": "",
-          "bottom": "",
-          "certificate": "",
-          "xray": ""
+          "front": "images/products/gowri-shankar-nepal-rudraksha/collector/front.jpg",
+          "back": "images/products/gowri-shankar-nepal-rudraksha/collector/back.jpg",
+          "top": "images/products/gowri-shankar-nepal-rudraksha/collector/top.jpg",
+          "bottom": "images/products/gowri-shankar-nepal-rudraksha/collector/bottom.jpg",
+          "certificate": "images/products/gowri-shankar-nepal-rudraksha/collector/certificate.jpg",
+          "xray": "images/products/gowri-shankar-nepal-rudraksha/collector/xray.jpg"
         }
       },
       {
         "name": "Super Collector",
-        "price": "",
-        "etsyUrl": "",
+        "price": 0,
+        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
-          "front": "",
-          "back": "",
-          "top": "",
-          "bottom": "",
-          "certificate": "",
-          "xray": ""
+          "front": "images/products/gowri-shankar-nepal-rudraksha/super-collector/front.jpg",
+          "back": "images/products/gowri-shankar-nepal-rudraksha/super-collector/back.jpg",
+          "top": "images/products/gowri-shankar-nepal-rudraksha/super-collector/top.jpg",
+          "bottom": "images/products/gowri-shankar-nepal-rudraksha/super-collector/bottom.jpg",
+          "certificate": "images/products/gowri-shankar-nepal-rudraksha/super-collector/certificate.jpg",
+          "xray": "images/products/gowri-shankar-nepal-rudraksha/super-collector/xray.jpg"
         }
       }
-    ]
+    ],
+    "images": {
+      "front": "images/products/gowri-shankar-nepal-rudraksha/front.jpg",
+      "back": "images/products/gowri-shankar-nepal-rudraksha/back.jpg",
+      "top": "images/products/gowri-shankar-nepal-rudraksha/top.jpg",
+      "bottom": "images/products/gowri-shankar-nepal-rudraksha/bottom.jpg",
+      "certificate": "images/products/gowri-shankar-nepal-rudraksha/certificate.jpg",
+      "xray": "images/products/gowri-shankar-nepal-rudraksha/xray.jpg"
+    }
   }
 ]
