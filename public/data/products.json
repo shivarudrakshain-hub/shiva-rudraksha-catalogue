@@ -883,7 +883,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 500,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/small/front.jpg",
@@ -909,7 +909,7 @@
       },
       {
         "name": "Large",
-        "price": 1200,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/large/front.jpg",
@@ -922,7 +922,7 @@
       },
       {
         "name": "Collector",
-        "price": 1700,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/collector/front.jpg",
@@ -935,7 +935,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 2200,
+        "price": 0,
         "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/super-collector/front.jpg",
