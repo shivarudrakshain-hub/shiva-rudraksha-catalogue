@@ -522,3 +522,341 @@ footer button { padding: 0; border: 0; background: transparent; color: white; }
     display: none;
   }
 }
+
+/* =========================================================
+   Rudraksha Knowledge / Maintenance / Lord Shiva pages
+   ========================================================= */
+.rs-info-page {
+  --rs-maroon: #661419;
+  --rs-deep: #35100f;
+  --rs-gold: #c8942e;
+  --rs-cream: #fff9ed;
+  --rs-warm: #f7e9cf;
+  --rs-text: #43251d;
+  --rs-muted: #765b50;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 5%, rgba(200,148,46,.08), transparent 30%), var(--rs-cream);
+  color: var(--rs-text);
+}
+
+.rs-info-hero {
+  padding: 92px 24px 82px;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(53,16,15,.98), rgba(102,20,25,.94));
+  color: #fff;
+}
+.rs-info-hero > span { display:block; margin-bottom:12px; color:#e7bc62; font-size:12px; font-weight:900; letter-spacing:.22em; }
+.rs-info-hero h1 { max-width:900px; margin:0 auto; font: 500 clamp(42px,7vw,74px)/1.05 Georgia,serif; }
+.rs-info-hero p { max-width:760px; margin:20px auto 0; color:#f3e7d8; font-size:18px; line-height:1.7; }
+.maintenance-hero { background: linear-gradient(145deg, #432017, #6b321e); }
+.shiva-hero { background: radial-gradient(circle at 50% 10%, rgba(208,151,44,.20), transparent 30%), linear-gradient(145deg,#23100f,#5f1719); }
+
+.rs-info-section { width:min(1180px,calc(100% - 40px)); margin:0 auto; padding:70px 0; }
+.rs-intro { padding-bottom:40px; }
+.rs-intro > p { max-width:980px; font-size:17px; line-height:1.85; color:#5c4136; }
+.rs-intro > p:first-of-type { font-size:20px; color:#3e221c; }
+.rs-section-title { display:flex; gap:20px; align-items:center; margin-bottom:34px; }
+.rs-section-title > span { width:56px; height:56px; display:grid; place-items:center; flex:none; border:1px solid var(--rs-gold); border-radius:50%; color:var(--rs-gold); font:700 14px Georgia,serif; }
+.rs-section-title small { display:block; margin-bottom:5px; color:#a36e1c; font-size:11px; font-weight:900; letter-spacing:.19em; }
+.rs-section-title h2 { margin:0; color:var(--rs-maroon); font:500 clamp(29px,4vw,42px)/1.1 Georgia,serif; }
+
+.rs-step-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.rs-step-card { position:relative; min-height:245px; padding:30px 24px 26px; overflow:hidden; background:#fff; border:1px solid #ead6b6; border-radius:18px; box-shadow:0 12px 32px rgba(83,41,19,.07); }
+.rs-step-card > b { position:absolute; top:10px; right:16px; color:rgba(200,148,46,.23); font:600 42px Georgia,serif; }
+.rs-step-icon,.rs-maintenance-icon { width:62px; height:62px; display:grid; place-items:center; margin-bottom:18px; border-radius:50%; background:var(--rs-warm); color:var(--rs-maroon); }
+.rs-step-icon svg,.rs-maintenance-icon svg { width:27px; height:27px; }
+.rs-step-card h3 { margin:0 0 10px; color:var(--rs-maroon); font:600 21px Georgia,serif; }
+.rs-step-card p { margin:0; color:var(--rs-muted); line-height:1.68; }
+.rs-callout { display:flex; gap:18px; align-items:flex-start; margin-top:25px; padding:22px 24px; border-left:4px solid var(--rs-gold); border-radius:10px; background:var(--rs-warm); }
+.rs-callout > svg { width:29px; height:29px; flex:none; color:var(--rs-maroon); }
+.rs-callout strong { color:var(--rs-maroon); }
+.rs-callout p { margin:5px 0 0; color:#6e4b3d; line-height:1.6; }
+
+.rs-dark-section { width:100%; max-width:none; padding:72px max(20px,calc((100% - 1180px)/2)); background:var(--rs-deep); color:#fff; }
+.rs-dark-section .rs-section-title h2 { color:#fff; }
+.rs-dark-section .rs-section-title small,.rs-dark-section .rs-section-title > span { color:#e4b654; }
+.rs-guidance-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.rs-guidance-card { display:flex; gap:18px; padding:23px; border:1px solid rgba(229,184,92,.25); border-radius:13px; background:rgba(255,255,255,.055); }
+.rs-guidance-card > span { color:#e3b557; font:500 25px Georgia,serif; }
+.rs-guidance-card h3 { margin:0 0 7px; color:#efc66a; font-size:18px; }
+.rs-guidance-card p { margin:0; color:#f2e6dc; font-size:15px; line-height:1.65; }
+
+.rs-final-note { width:min(1030px,calc(100% - 40px)); margin:68px auto; padding:36px 40px; display:flex; gap:26px; align-items:center; border:2px solid var(--rs-gold); border-radius:17px; background:#fffdf8; }
+.rs-final-note > div:first-child { font-size:49px; }
+.rs-final-note small { color:#a36e1c; font-size:11px; font-weight:900; letter-spacing:.2em; }
+.rs-final-note h2 { margin:5px 0 9px; color:var(--rs-maroon); font:500 31px Georgia,serif; }
+.rs-final-note p { margin:0; color:#664a3f; line-height:1.7; }
+.rs-disclaimer { width:min(930px,calc(100% - 40px)); margin:0 auto 70px; padding:22px; text-align:center; border-top:1px solid #dbc39c; color:#7a6257; }
+.rs-disclaimer p { margin:7px 0 0; line-height:1.6; font-size:13px; }
+
+.rs-maintenance-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.rs-maintenance-card { position:relative; min-height:270px; padding:34px; background:#fff; border:1px solid #e7d3b1; border-radius:20px; box-shadow:0 12px 32px rgba(83,41,19,.06); }
+.rs-maintenance-number { position:absolute; right:22px; top:16px; color:rgba(200,148,46,.23); font:600 46px Georgia,serif; }
+.rs-maintenance-card h2 { margin:0 0 12px; color:var(--rs-maroon); font:500 27px Georgia,serif; }
+.rs-maintenance-card p { margin:0; color:var(--rs-muted); line-height:1.75; }
+.rs-care-callout { margin-top:30px; }
+
+.rs-shiva-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.rs-shiva-card { padding:29px; background:#fff; border:1px solid #ead6b6; border-radius:18px; box-shadow:0 12px 30px rgba(83,41,19,.06); }
+.rs-shiva-card > div { width:58px; height:58px; display:grid; place-items:center; margin-bottom:17px; border-radius:50%; background:var(--rs-warm); color:var(--rs-maroon); }
+.rs-shiva-card svg { width:27px; height:27px; }
+.rs-shiva-card h3 { margin:0 0 9px; color:var(--rs-maroon); font:600 22px Georgia,serif; }
+.rs-shiva-card p { margin:0; color:var(--rs-muted); line-height:1.7; }
+.rs-shiva-story-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.rs-shiva-story-grid article { padding:27px; border:1px solid rgba(229,184,92,.25); border-radius:14px; background:rgba(255,255,255,.055); }
+.rs-shiva-story-grid h3 { margin:0 0 10px; color:#efc66a; font:600 22px Georgia,serif; }
+.rs-shiva-story-grid p { margin:0; color:#f2e6dc; line-height:1.7; }
+
+.knowledge-dropdown { min-width:240px; }
+
+@media (max-width: 900px) {
+  .rs-step-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .rs-guidance-grid,.rs-maintenance-grid,.rs-shiva-grid,.rs-shiva-story-grid { grid-template-columns:1fr; }
+}
+
+@media (max-width: 640px) {
+  .rs-info-hero { padding:68px 20px 58px; }
+  .rs-info-hero h1 { font-size:42px; }
+  .rs-info-hero p { font-size:16px; }
+  .rs-info-section { width:min(100% - 28px,1180px); padding:52px 0; }
+  .rs-step-grid { grid-template-columns:1fr; }
+  .rs-step-card { min-height:0; }
+  .rs-section-title { align-items:flex-start; gap:14px; }
+  .rs-section-title > span { width:48px; height:48px; }
+  .rs-final-note { padding:27px 23px; align-items:flex-start; }
+  .rs-final-note > div:first-child { font-size:36px; }
+  .rs-maintenance-card { min-height:0; padding:28px 24px; }
+}
+
+/* Rich image layout for the Rudraksha energizing guide */
+.rs-step-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.rs-step-image-card {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e4c58f;
+  border-radius: 20px;
+  box-shadow: 0 14px 34px rgba(75, 34, 16, 0.10);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.rs-step-image-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(75, 34, 16, 0.14);
+}
+
+.rs-step-image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: #f9edda;
+}
+
+.rs-step-image-card h3 {
+  margin: 0;
+  padding: 16px 18px 18px;
+  text-align: center;
+  color: var(--rs-maroon);
+  font: 600 22px Georgia, serif;
+}
+
+.rs-step-image-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  padding: 8px 13px;
+  border: 1px solid #d1a340;
+  border-radius: 999px;
+  background: rgba(73, 14, 14, .94);
+  color: #fff7e3;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  box-shadow: 0 5px 16px rgba(0,0,0,.14);
+}
+
+@media (max-width: 780px) {
+  .rs-step-image-grid { grid-template-columns: 1fr; }
+  .rs-step-image-card h3 { font-size: 20px; }
+}
+
+/* Premium vertical timeline for Rudraksha energizing steps */
+.rs-energize-timeline {
+  position: relative;
+  margin-top: 34px;
+  padding: 6px 0 12px;
+}
+
+.rs-energize-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #d3a54a 6%, #d3a54a 94%, transparent);
+  transform: translateX(-50%);
+}
+
+.rs-timeline-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 82px minmax(260px, .8fr);
+  align-items: center;
+  gap: 28px;
+  min-height: 360px;
+  margin: 0 0 54px;
+}
+
+.rs-timeline-step--reverse {
+  grid-template-columns: minmax(260px, .8fr) 82px minmax(0, 1.2fr);
+}
+
+.rs-timeline-step--reverse .rs-timeline-image-wrap { grid-column: 3; grid-row: 1; }
+.rs-timeline-step--reverse .rs-timeline-marker { grid-column: 2; grid-row: 1; }
+.rs-timeline-step--reverse .rs-timeline-copy { grid-column: 1; grid-row: 1; text-align: right; align-items: flex-end; }
+
+.rs-timeline-image-wrap {
+  overflow: hidden;
+  border-radius: 28px;
+  background: #f7ead4;
+  box-shadow: 0 22px 54px rgba(76, 34, 14, .14);
+}
+
+.rs-timeline-image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.rs-timeline-step:hover .rs-timeline-image-wrap img { transform: scale(1.018); }
+
+.rs-timeline-marker {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+
+.rs-timeline-marker span {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid #c9932f;
+  background: #fff8eb;
+  color: var(--rs-maroon);
+  font: 700 17px Georgia, serif;
+  box-shadow: 0 0 0 10px #fff7e9, 0 8px 24px rgba(85, 41, 18, .12);
+}
+
+.rs-timeline-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 360px;
+}
+
+.rs-timeline-copy small {
+  margin-bottom: 7px;
+  color: #ad6b10;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+
+.rs-timeline-copy h3 {
+  margin: 0 0 12px;
+  color: var(--rs-maroon);
+  font: 600 clamp(28px, 3vw, 43px) Georgia, serif;
+  line-height: 1.05;
+}
+
+.rs-timeline-copy p {
+  margin: 0;
+  color: var(--rs-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .rs-energize-timeline::before { left: 27px; }
+  .rs-timeline-step,
+  .rs-timeline-step--reverse {
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 16px;
+    min-height: 0;
+    margin-bottom: 42px;
+  }
+  .rs-timeline-image-wrap,
+  .rs-timeline-step--reverse .rs-timeline-image-wrap {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .rs-timeline-marker,
+  .rs-timeline-step--reverse .rs-timeline-marker {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: start;
+    margin-top: 24px;
+  }
+  .rs-timeline-copy,
+  .rs-timeline-step--reverse .rs-timeline-copy {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+    align-items: flex-start;
+    max-width: none;
+    padding: 16px 8px 0;
+  }
+  .rs-timeline-marker span {
+    width: 48px;
+    height: 48px;
+    font-size: 14px;
+    box-shadow: 0 0 0 7px #fff7e9, 0 7px 18px rgba(85, 41, 18, .10);
+  }
+}
+
+@media (max-width: 560px) {
+  .rs-energize-timeline::before { display: none; }
+  .rs-timeline-step,
+  .rs-timeline-step--reverse {
+    display: block;
+    margin-bottom: 34px;
+  }
+  .rs-timeline-marker,
+  .rs-timeline-step--reverse .rs-timeline-marker {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    margin: 0;
+  }
+  .rs-timeline-marker span {
+    width: 46px;
+    height: 46px;
+    background: rgba(73,14,14,.96);
+    color: #fff7e3;
+    border-color: #d3a54a;
+    box-shadow: 0 6px 18px rgba(0,0,0,.16);
+  }
+  .rs-timeline-image-wrap { border-radius: 20px; }
+  .rs-timeline-copy,
+  .rs-timeline-step--reverse .rs-timeline-copy {
+    padding: 15px 4px 0;
+  }
+  .rs-timeline-copy p { display: none; }
+  .rs-timeline-copy h3 { font-size: 26px; margin-bottom: 0; }
+}

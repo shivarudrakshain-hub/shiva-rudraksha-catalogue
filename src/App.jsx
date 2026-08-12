@@ -16,6 +16,9 @@ import ProductDetails from "./components/ProductDetails";
 import Admin from "./components/Admin";
 import BirthChartRecommendation from "./components/BirthChartRecommendation";
 import PromotionalBanner from "./components/PromotionalBanner";
+import RudrakshaKnowledge from "./components/RudrakshaKnowledge";
+import RudrakshaMaintenance from "./components/RudrakshaMaintenance";
+import LordShiva from "./components/LordShiva";
 import { loadProducts } from "./data/catalogue";
 
 const categories = [
@@ -37,6 +40,7 @@ export default function App() {
   const [category, setCategory] = useState("Nepal Rudraksha");
   const [shopOpen, setShopOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [knowledgeOpen, setKnowledgeOpen] = useState(false);
 
   useEffect(() => {
     const listener = () => setRoute(window.location.hash || "#home");
@@ -76,6 +80,7 @@ export default function App() {
     setRoute(hash);
     setMobileOpen(false);
     setShopOpen(false);
+    setKnowledgeOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -126,6 +131,21 @@ export default function App() {
               )}
             </div>
             <button className={active === "guide" ? "active" : ""} onClick={() => navigate("#guide")}>Rudraksha Guide</button>
+            <div className="shop-menu knowledge-menu" onMouseEnter={() => setKnowledgeOpen(true)} onMouseLeave={() => setKnowledgeOpen(false)}>
+              <button
+                className={["knowledge", "maintenance", "lord-shiva"].includes(active) ? "active" : ""}
+                onClick={() => setKnowledgeOpen((open) => !open)}
+              >
+                Knowledge <ChevronDown />
+              </button>
+              {knowledgeOpen && (
+                <div className="shop-dropdown knowledge-dropdown">
+                  <button onClick={() => navigate("#knowledge")}>Energizing & Do’s/Don’ts</button>
+                  <button onClick={() => navigate("#maintenance")}>Rudraksha Maintenance</button>
+                  <button onClick={() => navigate("#lord-shiva")}>Who is Lord Shiva?</button>
+                </div>
+              )}
+            </div>
             <button className={active === "recommendations" ? "active" : ""} onClick={() => navigate("#recommendations")}>Recommendations</button>
             <button className={active === "about" ? "active" : ""} onClick={() => navigate("#about")}>About</button>
             <button className={active === "contact" ? "active" : ""} onClick={() => navigate("#contact")}>Contact</button>
@@ -240,6 +260,13 @@ export default function App() {
           </div>
         </main>
       )}
+
+
+      {active === "knowledge" && <RudrakshaKnowledge />}
+
+      {active === "maintenance" && <RudrakshaMaintenance />}
+
+      {active === "lord-shiva" && <LordShiva />}
 
       {active === "recommendations" && (
         <main className="recommendation-page">
@@ -384,7 +411,7 @@ export default function App() {
       <footer>
         <div className="container footer-layout">
           <Logo />
-          <div><strong>Explore</strong><button onClick={() => navigate("#shop")}>Shop</button><button onClick={() => navigate("#guide")}>Rudraksha Guide</button></div>
+          <div><strong>Explore</strong><button onClick={() => navigate("#shop")}>Shop</button><button onClick={() => navigate("#guide")}>Rudraksha Guide</button><button onClick={() => navigate("#knowledge")}>Rudraksha Knowledge</button><button onClick={() => navigate("#maintenance")}>Maintenance</button><button onClick={() => navigate("#lord-shiva")}>Lord Shiva</button></div>
           <div><strong>Contact</strong><a href="tel:+14372671257">437-267-1257</a><a href="mailto:shivarudrakshain@gmail.com">shivarudrakshain@gmail.com</a></div>
           <div><strong>Manage</strong><a href="#admin">Product Manager</a></div>
         </div>
