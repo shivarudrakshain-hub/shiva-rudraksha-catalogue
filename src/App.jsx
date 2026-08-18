@@ -31,6 +31,127 @@ const categories = [
   "Bracelets & Malas",  
 ];
 
+
+function GuideAccordionCard({ item }) {
+  const [openSection, setOpenSection] = useState("description");
+
+  const toggleSection = (section) => {
+    setOpenSection((current) => (current === section ? "" : section));
+  };
+
+  const AccordionButton = ({ section, label }) => {
+    const isOpen = openSection === section;
+
+    return (
+      <button
+        type="button"
+        className={`guide-accordion-trigger ${isOpen ? "open" : ""}`}
+        onClick={() => toggleSection(section)}
+        aria-expanded={isOpen}
+      >
+        <span>{label}</span>
+        <ChevronDown />
+      </button>
+    );
+  };
+
+  return (
+    <article className="guide-card detailed-guide-card">
+      <div className="guide-summary-grid">
+        <div className="guide-summary-copy">
+          <span className="guide-entry-type">
+            {item.section === "special" ? "SPECIAL RUDRAKSHA FORM" : "TRADITIONAL MUKHI"}
+          </span>
+          <h2>{item.title || `${item.mukhi} Mukhi Rudraksha`}</h2>
+          <p className="guide-benefits">{item.benefits}</p>
+        </div>
+
+        <div className="guide-summary-image">
+          <img
+            src={`${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.jpg`}
+            alt={`${item.title || `${item.mukhi} Mukhi Rudraksha`} Super Collector`}
+            onError={(event) => {
+              const fallback =
+                `${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.jpg`;
+
+              if (event.currentTarget.src !== fallback) {
+                event.currentTarget.src = fallback;
+              }
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="guide-accordion">
+        <div className="guide-accordion-item">
+          <AccordionButton section="description" label="Description" />
+          {openSection === "description" && (
+            <div className="guide-accordion-content">
+              <div className="guide-facts">
+                <div><span>Presiding Deity</span><strong>{item.deity}</strong></div>
+                <div><span>Ruling Planet</span><strong>{item.planet}</strong></div>
+                <div><span>Beej / Wearing Mantra</span><strong>{item.mantra}</strong></div>
+                <div><span>Origin</span><strong>{item.origin}</strong></div>
+                <div><span>Nakshatra</span><strong>{item.nakshatra}</strong></div>
+                <div><span>Chakra</span><strong>{item.chakra}</strong></div>
+              </div>
+
+              <div className="guide-about">
+                <h3>About</h3>
+                <p>{item.about}</p>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="guide-accordion-item">
+          <AccordionButton section="benefits" label="Benefits" />
+          {openSection === "benefits" && (
+            <div className="guide-accordion-content guide-benefit-sections">
+              {(item.benefitDetails || []).map((benefit) => (
+                <div key={benefit.title}>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.text}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="guide-accordion-item">
+          <AccordionButton section="who" label="Who Should Wear" />
+          {openSection === "who" && (
+            <div className="guide-accordion-content">
+              <ul className="guide-list-content">
+                {(item.whoShouldWear || []).map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <div className="guide-accordion-item">
+          <AccordionButton section="wearing" label="Wearing Rules & Energization" />
+          {openSection === "wearing" && (
+            <div className="guide-accordion-content">
+              <ul className="guide-list-content">
+                {(item.wearingRules || []).map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+              <div className="guide-mantra-callout">
+                <span>Traditional mantra</span>
+                <strong>{item.mantra}</strong>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function App() {
   const [route, setRoute] = useState(window.location.hash || "#home");
   const [products, setProducts] = useState([]);
@@ -234,28 +355,51 @@ export default function App() {
             <div className="page-heading">
               <span>RUDRAKSHA GUIDE</span>
               <h1>1–21 Mukhi traditional guide</h1>
-              <p>Traditional associations for educational and spiritual reference.</p>
+              <p>
+                Traditional associations for educational and spiritual reference.
+                Expand any section for detailed guidance.
+              </p>
             </div>
-            <div className="guide-grid">
-              {guide.map((item) => (
-                <article className="guide-card" key={item.mukhi}>
-                  <div ></div>
-                  <div>
-                    <h2>{item.mukhi} Mukhi Rudraksha</h2>
-                    <p className="guide-benefits">{item.benefits}</p>
-                    <dl>
-                      <div><dt>Ruling deity</dt><dd>{item.deity}</dd></div>
-                      <div><dt>Planet</dt><dd>{item.planet}</dd></div>
-                      <div><dt>Nakshatra</dt><dd>{item.nakshatra}</dd></div>
-                      <div><dt>Chakra</dt><dd>{item.chakra}</dd></div>
-                    </dl>
-                  </div>
-                </article>
-              ))}
-            </div>
+
+            <section className="guide-section">
+              <div className="guide-section-heading">
+                <span>1–21 MUKHI</span>
+                <h2>Traditional Mukhi Guide</h2>
+              </div>
+
+              <div className="guide-grid detailed-guide-grid">
+                {guide
+                  .filter((item) => item.section !== "special")
+                  .map((item) => (
+                    <GuideAccordionCard key={item.id || item.mukhi} item={item} />
+                  ))}
+              </div>
+            </section>
+
+            <section className="guide-section special-guide-section">
+              <div className="guide-section-heading">
+                <span>SPECIAL RUDRAKSHA FORMS</span>
+                <h2>Rare & Naturally Formed Rudraksha</h2>
+                <p>
+                  Ganesh, Gauri Shankar, Trijuti, Garbh Gauri and 1 Mukhi Savaar
+                  are special natural formations rather than additional Mukhi counts.
+                </p>
+              </div>
+
+              <div className="guide-grid detailed-guide-grid">
+                {guide
+                  .filter((item) => item.section === "special")
+                  .map((item) => (
+                    <GuideAccordionCard key={item.id} item={item} />
+                  ))}
+              </div>
+            </section>
+
             <p className="tradition-note">
-              Deity, planetary, nakshatra and chakra associations differ among traditions and teachers.
-              These descriptions are spiritual information, not medical, legal or financial advice.
+              Deity, planetary, nakshatra, chakra, mantra and wearing associations
+              can differ among scriptures, lineages and teachers. These descriptions
+              are provided as traditional spiritual information and are not medical,
+              legal or financial advice.
             </p>
           </div>
         </main>
