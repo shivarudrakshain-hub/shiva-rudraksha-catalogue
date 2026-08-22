@@ -261,9 +261,9 @@ export default function App() {
               </button>
               {knowledgeOpen && (
                 <div className="shop-dropdown knowledge-dropdown">
-                  <button onClick={() => navigate("#knowledge")}>Energizing & Do’s/Don’ts</button>
-                  <button onClick={() => navigate("#maintenance")}>Rudraksha Maintenance</button>
                   <button onClick={() => navigate("#lord-shiva")}>Who is Lord Shiva?</button>
+                  <button onClick={() => navigate("#maintenance")}>Rudraksha Maintenance</button>
+                  <button onClick={() => navigate("#knowledge")}>Energizing & Do’s/Don’ts</button>
                 </div>
               )}
             </div>
