@@ -14,6 +14,7 @@ const aspects = [
 export default function LordShiva() {
   return (
     <main className="rs-info-page">
+      <div className="container rs-info-container">
       <section className="rs-info-hero shiva-hero">
         <span>THE ADIYOGI • MAHADEVA</span>
         <h1>Who Is Lord Shiva?</h1>
@@ -49,6 +50,7 @@ export default function LordShiva() {
         <div>🔱</div>
         <div><small>SPIRITUAL SIGNIFICANCE</small><h2>Transformation Through Awareness</h2><p>For millions of devotees, Lord Shiva represents inner stillness, courage, transformation, compassion and the search for liberation. His symbolism continues to inspire meditation, devotion and self-inquiry.</p></div>
       </section>
+          </div>
     </main>
   );
 }

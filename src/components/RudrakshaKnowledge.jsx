@@ -28,6 +28,7 @@ const steps = [
 export default function RudrakshaKnowledge() {
   return (
     <main className="rs-info-page">
+      <div className="container rs-info-container">
       <section className="rs-info-hero">
         <span>RUDRAKSHA KNOWLEDGE</span>
         <h1>Basic Energizing Method</h1>
@@ -80,6 +81,7 @@ export default function RudrakshaKnowledge() {
       </section>
 
       <section className="rs-disclaimer"><strong>Traditional & Cultural Information</strong><p>Information on this page reflects traditional, spiritual and cultural beliefs associated with Rudraksha. It is not medical, psychological, financial or professional advice.</p></section>
+          </div>
     </main>
   );
 }

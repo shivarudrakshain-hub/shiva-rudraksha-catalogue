@@ -30,6 +30,7 @@ const tips = [
 export default function RudrakshaMaintenance() {
   return (
     <main className="rs-info-page">
+      <div className="container rs-info-container">
       <section className="rs-info-hero maintenance-hero">
         <span>RUDRAKSHA CARE</span>
         <h1>Rudraksha Maintenance</h1>
@@ -63,6 +64,7 @@ export default function RudrakshaMaintenance() {
         <div>📿</div>
         <div><small>DAILY CARE</small><h2>Make It Part of Your Routine</h2><p>Handle your Rudraksha respectfully, keep it clean, and inspect the thread or mounting periodically. Replace damaged thread or cord before continuing to wear it.</p></div>
       </section>
+          </div>
     </main>
   );
 }
