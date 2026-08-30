@@ -554,6 +554,11 @@ Route::get('/about', function () {
     return view('frontend.rudraspirit.about');
 })->name('rudraspirit.about');
 
+// 3D supplement storefront (static page in public/forge, models in public/assets/3d)
+Route::get('/forge', function () {
+    return response()->file(public_path('forge/index.html'));
+})->name('forge');
+
 Route::controller(PageController::class)->group(function () {
     //mobile app balnk page for webview
     Route::get('/mobile-page/{slug}', 'mobile_custom_page')->name('mobile.custom-pages');
