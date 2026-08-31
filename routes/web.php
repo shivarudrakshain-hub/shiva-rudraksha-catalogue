@@ -714,6 +714,15 @@ foreach ([
     'page'   => 'stationery',
 ] as $slug => $catSlug) {
     Route::get('/' . $slug, function () use ($slug, $catSlug, $renderStorefront) {
+        // Full themed storefront (re-skin of the base theme) if built; else the standalone template.
+        if (view()->exists("frontend.$slug.index")) {
+            session(['sf_skin' => $slug]);
+            $cat = \App\Models\Category::where('slug', $catSlug)->first();
+            $products = $cat
+                ? \App\Models\Product::where('category_id', $cat->id)->where('published', 1)->orderBy('id')->get()
+                : collect();
+            return view("frontend.$slug.index", compact('products', 'catSlug'));
+        }
         return $renderStorefront($slug, $catSlug);
     })->name('store.page.' . $slug);
 }
