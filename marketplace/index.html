@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Storefront Templates — Animazon Marketplace</title>
-<meta name="description" content="Live, engine-wired e-commerce storefront templates across 11 niches — from 3D supplements to AR eyewear.">
+<meta name="description" content="Live, engine-wired e-commerce storefront templates across 11 niches — each its own theme, menu and product pages.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,24 +13,26 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 1.4rem}
-  header.top{padding:5rem 0 3rem;text-align:center;background:radial-gradient(90% 120% at 50% -10%,rgba(93,140,255,.18),transparent 60%)}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 1.4rem}
+  header.top{padding:4.5rem 0 2.5rem;text-align:center;background:radial-gradient(90% 120% at 50% -10%,rgba(93,140,255,.18),transparent 60%)}
   .eyebrow{font-family:"Space Grotesk",sans-serif;letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:#5d8cff}
   h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(2.2rem,5.5vw,3.8rem);margin:.5rem 0 .6rem;line-height:1.03}
-  header.top p{color:var(--muted);max-width:600px;margin:0 auto;font-size:1.05rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem;padding:1rem 0 5rem}
-  .card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
-  .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -28px rgba(0,0,0,.8);border-color:color-mix(in srgb,var(--ac) 60%,var(--line))}
-  .thumb{height:150px;display:flex;align-items:center;justify-content:center;font-size:3.4rem;
-    background:radial-gradient(120% 120% at 30% 20%,color-mix(in srgb,var(--ac) 40%,transparent),transparent 60%),linear-gradient(160deg,#0e1119,var(--surface))}
-  .body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
-  .niche{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);font-weight:600}
-  .name{font-family:"Space Grotesk",sans-serif;font-size:1.35rem;font-weight:700}
-  .tag{color:var(--muted);font-size:.86rem;flex:1}
-  .go{margin-top:.7rem;display:inline-flex;align-items:center;gap:.4rem;align-self:flex-start;padding:.55rem 1rem;border-radius:999px;
-    background:var(--ac);color:#06101c;font-weight:700;font-size:.82rem}
-  .badge{position:absolute;top:.9rem;right:.9rem;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    background:rgba(0,0,0,.4);border:1px solid var(--line);color:#fff;padding:.25rem .55rem;border-radius:999px;backdrop-filter:blur(6px)}
+  header.top p{color:var(--muted);max-width:620px;margin:0 auto;font-size:1.05rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1.6rem;padding:1.5rem 0 5rem}
+  .card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -28px #000;border-color:color-mix(in srgb,var(--ac) 60%,var(--line))}
+  .preview{position:relative;height:250px;overflow:hidden;background:#0e1119;border-bottom:1px solid var(--line)}
+  .preview iframe{position:absolute;top:0;left:0;width:1300px;height:960px;border:0;transform:scale(.315);transform-origin:top left;pointer-events:none}
+  .preview .load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.8rem}
+  .preview .open{position:absolute;top:.7rem;right:.7rem;z-index:2;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--ac);color:#06101c;padding:.32rem .6rem;border-radius:999px;opacity:0;transition:opacity .2s}
+  .card:hover .preview .open{opacity:1}
+  .badge{position:absolute;top:.7rem;left:.7rem;z-index:2;font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.5);border:1px solid var(--line);color:#fff;padding:.25rem .55rem;border-radius:999px;backdrop-filter:blur(6px)}
+  .body{padding:1.1rem 1.25rem 1.3rem;display:flex;align-items:center;gap:.8rem}
+  .emoji{font-size:1.7rem}
+  .meta{flex:1}
+  .niche{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);font-weight:600}
+  .name{font-family:"Space Grotesk",sans-serif;font-size:1.25rem;font-weight:700}
+  .go{padding:.5rem 1rem;border-radius:999px;background:var(--ac);color:#06101c;font-weight:700;font-size:.8rem;white-space:nowrap}
   footer{border-top:1px solid var(--line);padding:2.2rem 1.4rem;text-align:center;color:var(--muted);font-size:.82rem}
   footer b{color:var(--ink)}
 </style>
@@ -39,36 +41,37 @@
   <header class="top">
     <div class="wrap">
       <div class="eyebrow">Animazon · Marketplace</div>
-      <h1>Storefront templates,<br>wired &amp; ready.</h1>
-      <p>Eleven live e-commerce storefronts — each running on a real cart, checkout and account engine. Click any demo, add to cart, place a cash-on-delivery order. Every one is a template you can ship.</p>
+      <h1>Storefront templates,<br>each its own world.</h1>
+      <p>Eleven live e-commerce storefronts — every one with its own theme, menu, product pages and checkout, running on one real engine. Hover a card for a live preview, then open the full demo.</p>
     </div>
   </header>
   <main class="wrap">
     <div class="grid" id="grid"></div>
   </main>
-  <footer>Powered by the <b>Zolo Cart</b> engine · demos hosted at zolocart.animazon.in · <b>Animazon</b></footer>
+  <footer>Powered by the <b>Zolo Cart</b> engine · demos at zolocart.animazon.in · <b>Animazon</b></footer>
 
   <script>
     var B='https://zolocart.animazon.in/';
     var CARDS=[
-      {slug:'forge', name:'FORGE', niche:'Supplements', emoji:'⚡', ac:'#6cff8f', tag:'Interactive 3D protein storefront with scroll-driven flavours.', badge:'3D'},
-      {slug:'volt', name:'VOLT', niche:'Electronics', emoji:'🎧', ac:'#4d7cff', tag:'Audio, wearables and phones with colour & storage options.'},
-      {slug:'spex', name:'SPEX', niche:'Eyewear', emoji:'🕶️', ac:'#2b6df6', tag:'Frames you try on your face, live, in the browser.', badge:'AR try-on'},
-      {slug:'crave', name:'CRAVE', niche:'Food & Beverage', emoji:'☕', ac:'#e8a04b', tag:'Small-batch coffee, sauces and snacks.'},
-      {slug:'thread', name:'THREAD', niche:'Clothing', emoji:'👕', ac:'#8a8f98', tag:'Heavyweight essentials in size & colour.'},
-      {slug:'stride', name:'STRIDE', niche:'Footwear', emoji:'👟', ac:'#b5d40a', tag:'Sneakers, runners and boots by UK size.'},
-      {slug:'luxe', name:'LUXE', niche:'Beauty', emoji:'💄', ac:'#c2687a', tag:'Skincare and colour with shades & finishes.'},
-      {slug:'nest', name:'NEST', niche:'Furniture', emoji:'🪑', ac:'#b0895a', tag:'Furniture and lighting in wood & finish options.'},
-      {slug:'aurum', name:'AURUM', niche:'Jewelry', emoji:'💍', ac:'#d4af37', tag:'Rings, watches and pendants in metal & size.'},
-      {slug:'apex', name:'APEX', niche:'Fitness', emoji:'🏋️', ac:'#ff5a3c', tag:'Weights, mats and gear by weight & colour.'},
-      {slug:'page', name:'PAGE', niche:'Stationery', emoji:'📓', ac:'#4f8f79', tag:'Notebooks, pens and planners in cover & ruling.'}
+      {slug:'forge', name:'FORGE', niche:'Supplements', emoji:'⚡', ac:'#6cff8f', badge:'3D'},
+      {slug:'volt', name:'VOLT', niche:'Electronics', emoji:'🎧', ac:'#4d7cff'},
+      {slug:'spex', name:'SPEX', niche:'Eyewear', emoji:'🕶️', ac:'#2b6df6', badge:'AR try-on'},
+      {slug:'crave', name:'CRAVE', niche:'Food & Beverage', emoji:'☕', ac:'#e8a04b'},
+      {slug:'thread', name:'THREAD', niche:'Clothing', emoji:'👕', ac:'#8a8f98'},
+      {slug:'stride', name:'STRIDE', niche:'Footwear', emoji:'👟', ac:'#b5d40a'},
+      {slug:'luxe', name:'LUXE', niche:'Beauty', emoji:'💄', ac:'#c2687a'},
+      {slug:'nest', name:'NEST', niche:'Furniture', emoji:'🪑', ac:'#b0895a'},
+      {slug:'aurum', name:'AURUM', niche:'Jewelry', emoji:'💍', ac:'#d4af37'},
+      {slug:'apex', name:'APEX', niche:'Fitness', emoji:'🏋️', ac:'#ff5a3c'},
+      {slug:'page', name:'PAGE', niche:'Stationery', emoji:'📓', ac:'#4f8f79'}
     ];
     document.getElementById('grid').innerHTML=CARDS.map(function(c){
       return '<a class="card" style="--ac:'+c.ac+'" href="'+B+c.slug+'" target="_blank" rel="noopener">'+
-        (c.badge?'<span class="badge">'+c.badge+'</span>':'')+
-        '<div class="thumb">'+c.emoji+'</div>'+
-        '<div class="body"><span class="niche">'+c.niche+'</span><span class="name">'+c.name+'</span>'+
-        '<span class="tag">'+c.tag+'</span><span class="go">View live demo →</span></div></a>';
+        '<div class="preview">'+(c.badge?'<span class="badge">'+c.badge+'</span>':'')+'<span class="open">Open demo ↗</span>'+
+          '<div class="load">Loading preview…</div>'+
+          '<iframe loading="lazy" scrolling="no" title="'+c.name+' preview" src="'+B+c.slug+'"></iframe></div>'+
+        '<div class="body"><span class="emoji">'+c.emoji+'</span><div class="meta"><div class="niche">'+c.niche+'</div>'+
+          '<div class="name">'+c.name+'</div></div><span class="go">View →</span></div></a>';
     }).join('');
   </script>
 </body>

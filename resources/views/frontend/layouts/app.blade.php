@@ -273,12 +273,24 @@
             $system_language = get_system_language();
         @endphp
         <!-- Header -->
-        @include('frontend.inc.nav')
+        @php
+            if (request()->is('/') || request()->is('home')) { session()->forget('sf_skin'); } // leaving a store via the base home resets it
+            $sfActive = session('sf_skin') && config('storefronts.' . session('sf_skin'));
+        @endphp
+        @if ($sfActive)
+            @include('frontend.partials.sf_nav')
+        @else
+            @include('frontend.inc.nav')
+        @endif
 
         @yield('content')
 
         <!-- footer -->
-        @include('frontend.inc.footer')
+        @if ($sfActive)
+            @include('frontend.partials.sf_footer')
+        @else
+            @include('frontend.inc.footer')
+        @endif
 
         @if(get_setting('use_floating_buttons') == 1)
             <!-- Floating Buttons -->
