@@ -554,12 +554,14 @@ Route::get('/about', function () {
     return view('frontend.rudraspirit.about');
 })->name('rudraspirit.about');
 
-// 3D supplement storefront (static page in public/forge, models in public/assets/3d).
+// 3D supplement storefront (page source in resources/forge, models in public/assets/3d).
+// NOTE: the HTML lives OUTSIDE public/ on purpose — a physical public/forge/ dir would let
+// the web server serve it statically and bypass this route (LiteSpeed DirectorySlash 301).
 // Injects a CSRF token + the seeded product/attribute ids so the page can post to the
 // real cart (products come from ForgeSupplementsSeeder). Falls back to demo mode if the
 // products aren't seeded yet.
 Route::get('/forge', function () {
-    $html = file_get_contents(public_path('forge/index.html'));
+    $html = file_get_contents(resource_path('forge/index.html'));
 
     $wheyId = \App\Models\Product::where('slug', 'whey-protein')->value('id');
     $creaId = \App\Models\Product::where('slug', 'creatine')->value('id');
