@@ -554,10 +554,72 @@ Route::get('/about', function () {
     return view('frontend.rudraspirit.about');
 })->name('rudraspirit.about');
 
-// 3D supplement storefront (static page in public/forge, models in public/assets/3d)
+// 3D supplement storefront (static page in public/forge, models in public/assets/3d).
+// Injects a CSRF token + the seeded product/attribute ids so the page can post to the
+// real cart (products come from ForgeSupplementsSeeder). Falls back to demo mode if the
+// products aren't seeded yet.
 Route::get('/forge', function () {
-    return response()->file(public_path('forge/index.html'));
+    $html = file_get_contents(public_path('forge/index.html'));
+
+    $wheyId = \App\Models\Product::where('slug', 'whey-protein')->value('id');
+    $creaId = \App\Models\Product::where('slug', 'creatine')->value('id');
+
+    // per-variant prices straight from the stock table (source of truth = what's charged)
+    $prices = [];
+    foreach (['whey' => $wheyId, 'crea' => $creaId] as $k => $pid) {
+        $prices[$k] = [];
+        if ($pid) {
+            foreach (\App\Models\ProductStock::where('product_id', $pid)->get() as $s) {
+                $prices[$k][$s->variant] = (float) $s->price;
+            }
+        }
+    }
+    $curId = get_setting('system_default_currency');
+    $currency = optional(\App\Models\Currency::find($curId))->symbol ?: '₹';
+
+    $engine = [
+        'addUrl'       => route('cart.addToCart'),
+        'cartUrl'      => route('cart'),
+        'checkoutUrl'  => route('checkout'),
+        'cartDataUrl'  => route('forge.cart'),
+        'cartUpdateUrl' => route('forge.cartUpdate'),
+        'cartRemoveUrl' => route('forge.cartRemove'),
+        'placeOrderUrl' => route('forge.placeOrder'),
+        'meUrl'        => route('forge.me'),
+        'loginUrl'     => route('forge.login'),
+        'registerUrl'  => route('forge.register'),
+        'logoutUrl'    => route('forge.logout'),
+        'ordersUrl'    => route('forge.orders'),
+        'flavorAttr' => \App\Models\Attribute::where('name', 'Flavor')->value('id'),
+        'sizeAttr'   => \App\Models\Attribute::where('name', 'Size')->value('id'),
+        'currency'   => $currency,
+        'prices'     => $prices,
+        'products'   => ['whey' => $wheyId, 'crea' => $creaId],
+    ];
+
+    $inject = '';
+    if ($engine['products']['whey'] && $engine['products']['crea'] && $engine['flavorAttr'] && $engine['sizeAttr']) {
+        $inject = '<meta name="csrf-token" content="' . csrf_token() . '">'
+            . '<script>window.FORGE_ENGINE=' . json_encode($engine) . ';</script>';
+    }
+
+    $html = str_replace('<!--FORGE_ENGINE-->', $inject, $html);
+
+    return response($html)->header('Content-Type', 'text/html; charset=utf-8');
 })->name('forge');
+
+// In-page FORGE cart (JSON) so cart interactions stay in the 3D page, not the shop theme.
+Route::controller(\App\Http\Controllers\ForgeController::class)->prefix('forge')->group(function () {
+    Route::get('cart-data', 'cartData')->name('forge.cart');
+    Route::post('cart-update', 'updateQty')->name('forge.cartUpdate');
+    Route::post('cart-remove', 'removeItem')->name('forge.cartRemove');
+    Route::post('place-order', 'placeOrder')->name('forge.placeOrder');
+    Route::get('me', 'me')->name('forge.me');
+    Route::post('login', 'login')->name('forge.login');
+    Route::post('register', 'register')->name('forge.register');
+    Route::post('logout', 'logout')->name('forge.logout');
+    Route::get('orders', 'orders')->name('forge.orders');
+});
 
 Route::controller(PageController::class)->group(function () {
     //mobile app balnk page for webview
