@@ -1,0 +1,92 @@
+/* Base storefront components — driven by CSS custom properties each template overrides.
+ * Tokens: --st-bg --st-surface --st-ink --st-muted --st-line --st-accent --st-on-accent
+ *         --st-radius --st-font --st-head */
+:root{
+  --st-bg:#0d0f14; --st-surface:#161a22; --st-ink:#eef1f6; --st-muted:#9aa3b2;
+  --st-line:rgba(255,255,255,.10); --st-accent:#6cff8f; --st-on-accent:#04140a;
+  --st-radius:16px; --st-font:"Inter",system-ui,sans-serif; --st-head:var(--st-font);
+}
+*{box-sizing:border-box}
+.st-empty{color:var(--st-muted);text-align:center;padding:2rem}
+
+/* product grid */
+.st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.st-card{background:var(--st-surface);border:1px solid var(--st-line);border-radius:var(--st-radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+.st-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(0,0,0,.7)}
+.st-media{position:relative;aspect-ratio:4/3;background:
+  radial-gradient(120% 120% at 30% 20%,color-mix(in srgb,var(--st-accent) 22%,transparent),transparent 60%),
+  linear-gradient(160deg,color-mix(in srgb,var(--st-ink) 6%,var(--st-surface)),var(--st-surface));
+  display:flex;align-items:center;justify-content:center}
+.st-thumb{font-family:var(--st-head);font-size:3.4rem;font-weight:800;color:color-mix(in srgb,var(--st-ink) 30%,transparent)}
+.st-badge{position:absolute;top:.7rem;left:.7rem;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  background:color-mix(in srgb,var(--st-accent) 16%,transparent);color:var(--st-ink);border:1px solid var(--st-line);padding:.25rem .55rem;border-radius:999px}
+.st-cbody{padding:1rem 1.05rem 1.15rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.st-name{margin:0;font-family:var(--st-head);font-size:1.05rem;font-weight:700}
+.st-desc{margin:0;color:var(--st-muted);font-size:.82rem;line-height:1.45}
+.st-opt{display:flex;flex-direction:column;gap:.3rem}
+.st-optlabel{font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--st-muted)}
+.st-chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.st-chip{padding:.32rem .6rem;border-radius:999px;border:1px solid var(--st-line);background:transparent;color:var(--st-muted);font:inherit;font-size:.78rem;cursor:pointer;transition:.2s}
+.st-chip:hover{color:var(--st-ink)}
+.st-chip.on{border-color:var(--st-accent);color:var(--st-ink);background:color-mix(in srgb,var(--st-accent) 14%,transparent)}
+.st-cfoot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding-top:.4rem}
+.st-price{font-family:var(--st-head);font-weight:800;font-size:1.15rem}
+.st-add{padding:.6rem 1.1rem;border-radius:999px;border:none;cursor:pointer;background:var(--st-accent);color:var(--st-on-accent);font:inherit;font-weight:700;font-size:.85rem;transition:transform .15s,filter .2s}
+.st-add:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.st-add.ok{background:#39c46a;color:#04140a}
+.st-add:disabled{opacity:.7;cursor:default}
+
+/* overlay system */
+.st-ui{position:fixed;inset:0;z-index:120;pointer-events:none}
+.st-scrim{position:absolute;inset:0;background:rgba(3,5,10,.6);opacity:0;transition:opacity .3s;pointer-events:none}
+.st-ui.st-open-cart .st-scrim,.st-ui.st-open-co .st-scrim,.st-ui.st-open-confirm .st-scrim,.st-ui.st-open-acct .st-scrim{opacity:1;pointer-events:auto}
+.st-x{background:none;border:none;color:var(--st-ink);font-size:1.4rem;cursor:pointer;line-height:1}
+.st-sum{display:flex;justify-content:space-between;font-family:var(--st-head);font-weight:700;padding:.6rem 0}
+
+/* drawer */
+.st-drawer{position:absolute;top:0;right:0;height:100%;width:min(400px,92vw);background:var(--st-surface);border-left:1px solid var(--st-line);
+  transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.1,1);display:flex;flex-direction:column;padding:1.1rem;pointer-events:auto}
+.st-ui.st-open-cart .st-drawer{transform:none}
+.st-drawer header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem;font-family:var(--st-head)}
+.st-items{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:.6rem}
+.st-item{display:grid;grid-template-columns:1fr auto auto;gap:.5rem;align-items:center;border:1px solid var(--st-line);border-radius:12px;padding:.6rem}
+.st-iinfo b{display:block;font-size:.9rem}.st-iinfo span{color:var(--st-muted);font-size:.75rem}
+.st-iqty{display:flex;align-items:center;gap:.35rem}
+.st-iqty button{width:26px;height:26px;border-radius:7px;border:1px solid var(--st-line);background:transparent;color:var(--st-ink);cursor:pointer}
+.st-iline{text-align:right;font-weight:700;font-size:.9rem}
+.st-rm{display:block;background:none;border:none;color:var(--st-muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;margin-top:.2rem}
+.st-checkout{margin-top:.7rem;padding:.9rem;border-radius:12px;border:none;background:var(--st-accent);color:var(--st-on-accent);font:inherit;font-weight:700;cursor:pointer}
+.st-checkout:disabled{opacity:.5;cursor:default}
+
+/* full sheets (checkout / confirm / account) */
+.st-sheet{position:absolute;inset:0;background:var(--st-bg);overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .3s}
+.st-ui.st-open-co .st-co,.st-ui.st-open-confirm .st-confirm,.st-ui.st-open-acct .st-acct{opacity:1;pointer-events:auto}
+.st-cowrap{max-width:960px;margin:0 auto;padding:2.2rem 1.3rem}
+.st-cowrap h2{font-family:var(--st-head)}
+.st-coback{position:static;margin-bottom:.4rem}
+.st-cogrid{display:grid;grid-template-columns:1.3fr 1fr;gap:1.6rem;margin-top:1rem}
+.st-form{display:flex;flex-direction:column;gap:.7rem}
+.st-form label{display:flex;flex-direction:column;gap:.3rem;font-size:.78rem;color:var(--st-muted)}
+.st-form input{padding:.75rem .9rem;border-radius:10px;border:1px solid var(--st-line);background:var(--st-surface);color:var(--st-ink);font:inherit}
+.st-2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.st-pay{display:flex;gap:1rem;flex-wrap:wrap;color:var(--st-ink);font-size:.85rem;padding:.3rem 0}
+.st-place{padding:.9rem;border-radius:12px;border:none;background:var(--st-accent);color:var(--st-on-accent);font:inherit;font-weight:700;cursor:pointer}
+.st-err,.st-err2{color:#ff6b6b;font-size:.8rem;min-height:1rem}
+.st-osum{background:var(--st-surface);border:1px solid var(--st-line);border-radius:var(--st-radius);padding:1.2rem;height:fit-content}
+.st-orows{display:flex;flex-direction:column;gap:.4rem;margin:.6rem 0}
+.st-orow{display:flex;justify-content:space-between;font-size:.85rem;color:var(--st-muted)}
+.st-confirmbox,.st-acctbox{max-width:460px;margin:8vh auto 0;background:var(--st-surface);border:1px solid var(--st-line);border-radius:20px;padding:2rem;text-align:center;position:relative}
+.st-acctbox{text-align:left}
+.st-check{width:64px;height:64px;border-radius:50%;background:var(--st-accent);color:var(--st-on-accent);font-size:2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.st-done,.st-logout{margin-top:1rem;padding:.8rem 1.4rem;border-radius:10px;border:1px solid var(--st-line);background:var(--st-accent);color:var(--st-on-accent);font:inherit;font-weight:700;cursor:pointer}
+.st-logout{background:transparent;color:var(--st-ink)}
+.st-tabs{display:flex;gap:.5rem;margin-bottom:1rem}
+.st-tabs button{flex:1;padding:.6rem;border-radius:10px;border:1px solid var(--st-line);background:transparent;color:var(--st-muted);font:inherit;cursor:pointer}
+.st-tabs button.on{background:var(--st-accent);color:var(--st-on-accent);font-weight:700;border-color:transparent}
+.st-acct form{display:flex;flex-direction:column;gap:.6rem}
+.st-acct label{display:flex;flex-direction:column;gap:.3rem;font-size:.78rem;color:var(--st-muted)}
+.st-acct input{padding:.7rem .85rem;border-radius:10px;border:1px solid var(--st-line);background:var(--st-bg);color:var(--st-ink);font:inherit}
+.st-acct form button{padding:.8rem;border-radius:10px;border:none;background:var(--st-accent);color:var(--st-on-accent);font:inherit;font-weight:700;cursor:pointer}
+.st-muted{color:var(--st-muted)}
+.st-myorders{display:flex;flex-direction:column;gap:.4rem;margin:.5rem 0}
+@media(max-width:720px){.st-cogrid{grid-template-columns:1fr}}

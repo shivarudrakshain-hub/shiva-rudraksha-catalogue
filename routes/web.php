@@ -623,6 +623,101 @@ Route::controller(\App\Http\Controllers\ForgeController::class)->prefix('forge')
     Route::get('orders', 'orders')->name('forge.orders');
 });
 
+// ─── Marketplace storefront templates (10 niches) ────────────────────────────
+// Each niche = resources/<slug>/index.html + real products (MarketplaceTemplatesSeeder).
+// Nothing hardcoded: the page reads window.STORE_ENGINE (products/prices/variations from DB).
+// All templates share the generic cart/checkout/account endpoints below (ForgeController is niche-agnostic).
+Route::controller(\App\Http\Controllers\ForgeController::class)->prefix('store')->group(function () {
+    Route::get('cart-data', 'cartData')->name('store.cart');
+    Route::post('cart-update', 'updateQty')->name('store.cartUpdate');
+    Route::post('cart-remove', 'removeItem')->name('store.cartRemove');
+    Route::post('place-order', 'placeOrder')->name('store.placeOrder');
+    Route::get('me', 'me')->name('store.me');
+    Route::post('login', 'login')->name('store.login');
+    Route::post('register', 'register')->name('store.register');
+    Route::post('logout', 'logout')->name('store.logout');
+    Route::get('orders', 'orders')->name('store.orders');
+});
+
+$renderStorefront = function (string $slug, string $catSlug) {
+    $file = resource_path("$slug/index.html");
+    if (!is_file($file)) abort(404);
+    $html = file_get_contents($file);
+
+    $curId = get_setting('system_default_currency');
+    $currency = optional(\App\Models\Currency::find($curId))->symbol ?: '₹';
+
+    $products = [];
+    $cat = \App\Models\Category::where('slug', $catSlug)->first();
+    if ($cat) {
+        foreach (\App\Models\Product::where('category_id', $cat->id)->where('published', 1)->orderBy('id')->get() as $pr) {
+            $co = json_decode($pr->choice_options, true) ?: [];
+            $attributes = [];
+            foreach ($co as $opt) {
+                $a = \App\Models\Attribute::find($opt['attribute_id']);
+                $attributes[] = ['id' => (int) $opt['attribute_id'], 'name' => $a ? $a->name : ('Attr' . $opt['attribute_id']), 'values' => $opt['values']];
+            }
+            $stock = [];
+            foreach (\App\Models\ProductStock::where('product_id', $pr->id)->get() as $s) {
+                $stock[$s->variant] = (float) $s->price;
+            }
+            $products[] = [
+                'id'         => $pr->id,
+                'slug'       => $pr->slug,
+                'name'       => $pr->getTranslation('name'),
+                'desc'       => trim(strip_tags((string) $pr->getTranslation('description'))),
+                'attributes' => $attributes,
+                'stock'      => $stock,
+                'min'        => $stock ? min($stock) : (float) $pr->unit_price,
+            ];
+        }
+    }
+
+    $engine = [
+        'niche'    => $slug,
+        'currency' => $currency,
+        'products' => $products,
+        'urls'     => [
+            'add'        => route('cart.addToCart'),
+            'cart'       => route('store.cart'),
+            'update'     => route('store.cartUpdate'),
+            'remove'     => route('store.cartRemove'),
+            'placeOrder' => route('store.placeOrder'),
+            'me'         => route('store.me'),
+            'login'      => route('store.login'),
+            'register'   => route('store.register'),
+            'logout'     => route('store.logout'),
+            'orders'     => route('store.orders'),
+        ],
+    ];
+
+    $inject = '';
+    if (!empty($products)) {
+        $inject = '<meta name="csrf-token" content="' . csrf_token() . '">'
+            . '<script>window.STORE_ENGINE=' . json_encode($engine) . ';</script>';
+    }
+    $html = str_replace('<!--STORE_ENGINE-->', $inject, $html);
+
+    return response($html)->header('Content-Type', 'text/html; charset=utf-8');
+};
+
+foreach ([
+    'volt'   => 'electronics',
+    'crave'  => 'food-beverage',
+    'thread' => 'clothing',
+    'stride' => 'footwear',
+    'spex'   => 'eyewear',
+    'luxe'   => 'beauty',
+    'nest'   => 'furniture',
+    'aurum'  => 'jewelry',
+    'apex'   => 'fitness',
+    'page'   => 'stationery',
+] as $slug => $catSlug) {
+    Route::get('/' . $slug, function () use ($slug, $catSlug, $renderStorefront) {
+        return $renderStorefront($slug, $catSlug);
+    })->name('store.page.' . $slug);
+}
+
 Route::controller(PageController::class)->group(function () {
     //mobile app balnk page for webview
     Route::get('/mobile-page/{slug}', 'mobile_custom_page')->name('mobile.custom-pages');

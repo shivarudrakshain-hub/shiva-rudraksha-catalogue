@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOLT — Electronics</title>
+<!--STORE_ENGINE-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/store/store.css">
+<style>
+  :root{
+    --st-bg:#080a11; --st-surface:#12141d; --st-ink:#eaf0ff; --st-muted:#8a93a8;
+    --st-line:rgba(120,150,255,.14); --st-accent:#4d7cff; --st-on-accent:#061024;
+    --st-radius:18px; --st-font:"Inter",system-ui,sans-serif; --st-head:"Space Grotesk",sans-serif;
+  }
+  body{margin:0;background:var(--st-bg);color:var(--st-ink);font-family:var(--st-font);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 1.3rem}
+  nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+    padding:.9rem 1.3rem;background:rgba(8,10,17,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--st-line)}
+  .brand{font-family:var(--st-head);font-weight:700;font-size:1.25rem;letter-spacing:.02em}
+  .brand b{color:var(--st-accent)}
+  .navr{display:flex;gap:.5rem;align-items:center}
+  .ibtn{position:relative;width:42px;height:42px;border-radius:50%;border:1px solid var(--st-line);background:transparent;color:var(--st-ink);cursor:pointer;font-size:1.05rem}
+  #cartCount{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;border-radius:999px;background:var(--st-accent);color:var(--st-on-accent);font-size:.66rem;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 4px}
+  .hero{position:relative;overflow:hidden;padding:5rem 0 4rem;text-align:center;
+    background:radial-gradient(90% 120% at 50% -10%,rgba(77,124,255,.28),transparent 60%)}
+  .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--st-line) 1px,transparent 1px),linear-gradient(90deg,var(--st-line) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(70% 70% at 50% 0,#000,transparent);mask-image:radial-gradient(70% 70% at 50% 0,#000,transparent);opacity:.5}
+  .hero .eyebrow{position:relative;font-family:var(--st-head);letter-spacing:.28em;text-transform:uppercase;font-size:.72rem;color:var(--st-accent)}
+  .hero h1{position:relative;font-family:var(--st-head);font-size:clamp(2.4rem,6vw,4.4rem);margin:.6rem 0 .5rem;line-height:1.02}
+  .hero p{position:relative;color:var(--st-muted);max-width:540px;margin:0 auto;font-size:1.02rem}
+  .section-h{font-family:var(--st-head);font-size:1.5rem;margin:2.6rem 0 1.2rem}
+  main{padding-bottom:4rem}
+  footer{border-top:1px solid var(--st-line);padding:2rem 1.3rem;text-align:center;color:var(--st-muted);font-size:.8rem}
+  footer a{color:var(--st-accent)}
+</style>
+</head>
+<body>
+  <nav>
+    <div class="brand">⚡ <b>VOLT</b></div>
+    <div class="navr">
+      <button class="ibtn" id="acctBtn" title="Account">👤</button>
+      <button class="ibtn" id="cartBtn" title="Cart">🛒<span id="cartCount" style="display:none">0</span></button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">Next-gen electronics</div>
+    <h1>Power your<br>everyday.</h1>
+    <p>Audio, wearables and phones engineered to keep up. Free shipping, cash on delivery.</p>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h2 class="section-h">Featured gear</h2>
+      <div id="products" class="st-grid"></div>
+    </div>
+  </main>
+
+  <footer>
+    VOLT — a Zolo Cart marketplace template · wired to the live engine · <a href="/">Zolo Cart</a>
+  </footer>
+
+  <script src="/assets/store/runtime.js"></script>
+</body>
+</html>
