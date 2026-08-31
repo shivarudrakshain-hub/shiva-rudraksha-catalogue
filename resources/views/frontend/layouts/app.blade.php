@@ -257,6 +257,7 @@
     echo get_setting('header_gtm_script');
 @endphp
 
+@includeIf('frontend.partials.sf_skin')
 </head>
 <body @if(get_setting('homepage_select') == 'rudraspirit') class="aiz-rudraspirit" @endif>
     <!-- aiz-main-wrapper -->
