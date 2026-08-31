@@ -357,7 +357,7 @@ var MODEL_URLS={protein:"/assets/3d/protein.glb",creatine:"/assets/3d/creatine.g
   var canvas=$('#scene');
   var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.02;renderer.physicallyCorrectLights=false;
+  renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=0.94;renderer.physicallyCorrectLights=false;
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   var scene=new THREE.Scene();
   var camera=new THREE.PerspectiveCamera(40,1,0.1,100);camera.position.set(0,0.35,7.2);
@@ -409,11 +409,11 @@ var MODEL_URLS={protein:"/assets/3d/protein.glb",creatine:"/assets/3d/creatine.g
   // only light MeshStandard/Physical (our GLB + floor qualify) and can't cast shadows,
   // so one dim DirectionalLight rides along purely to drop the soft ground shadow.
   if(THREE.RectAreaLightUniformsLib)THREE.RectAreaLightUniformsLib.init();
-  var keyBox=new THREE.RectAreaLight(0xfff4e8,3.4,7,9);keyBox.position.set(4.2,5.2,7);keyBox.lookAt(0,-0.2,0);scene.add(keyBox);   // big front-right softbox (dimmer = contrast)
-  var fillBox=new THREE.RectAreaLight(0xe4eefc,1.1,7,8);fillBox.position.set(-5.5,3,6);fillBox.lookAt(0,0.2,0);scene.add(fillBox); // low front-left fill (keeps shadow side dark)
-  var sun=new THREE.DirectionalLight(0xffffff,0.3);sun.position.set(3,9,7);                            // soft top key, NO cast shadow
+  var keyBox=new THREE.RectAreaLight(0xfff4e8,2.8,7,9);keyBox.position.set(4.2,5.2,7);keyBox.lookAt(0,-0.2,0);scene.add(keyBox);   // big front-right softbox (dimmer = contrast)
+  var fillBox=new THREE.RectAreaLight(0xe4eefc,0.6,7,8);fillBox.position.set(-5.5,3,6);fillBox.lookAt(0,0.2,0);scene.add(fillBox); // low front-left fill (keeps shadow side dark)
+  var sun=new THREE.DirectionalLight(0xffffff,0.2);sun.position.set(3,9,7);                            // soft top key, NO cast shadow
   sun.target.position.set(0,-0.5,0);scene.add(sun);scene.add(sun.target);
-  var lift=new THREE.AmbientLight(0xffffff,0.06);scene.add(lift);                                     // minimal floor so blacks stay deep
+  var lift=new THREE.AmbientLight(0xffffff,0.03);scene.add(lift);                                     // minimal floor so blacks stay deep
 
   // real PBR floor from the compressed industrial-tile maps (albedo/normal/rough/ao).
   var floorTL=new THREE.TextureLoader(),FREP=2;   // tiling for the smaller circular disc (keeps tile size)
