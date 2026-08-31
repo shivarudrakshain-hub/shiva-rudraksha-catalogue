@@ -38,7 +38,8 @@
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
   #stage{position:fixed;inset:0;z-index:1;pointer-events:none}
-  #scene{width:100%;height:100%;display:block;pointer-events:auto;touch-action:pan-y;cursor:grab}
+  #scene{width:100%;height:100%;display:block;pointer-events:auto;touch-action:pan-y;cursor:grab;
+    filter:contrast(1.17) brightness(0.93) saturate(1.04)}   /* levels/gamma crush: blacks -> black, keep label whites */
   #scene:active{cursor:grabbing}
   #kinetic{position:fixed;z-index:0;top:50%;left:50%;transform:translate(-50%,-50%);font-family:"Archivo",sans-serif;font-weight:900;
     font-size:clamp(6rem,25vw,21rem);line-height:.8;letter-spacing:-.03em;color:var(--kinetic);white-space:nowrap;user-select:none;
