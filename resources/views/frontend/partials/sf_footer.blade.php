@@ -32,7 +32,7 @@
         </div>
         <div><h4>Shop</h4><ul>
             <li><a href="{{ url('/' . $sfSlug) }}">Home</a></li>
-            <li><a href="{{ route('products.category', $cfg['cat']) }}">All products</a></li>
+            <li><a href="{{ url('/' . $sfSlug . '/shop') }}">All products</a></li>
             <li><a href="{{ route('cart') }}">Cart</a></li>
         </ul></div>
         <div><h4>Account</h4><ul>

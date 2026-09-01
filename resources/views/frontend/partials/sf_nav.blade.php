@@ -49,8 +49,8 @@
     <a class="sfbrand" href="{{ url('/' . $sfSlug) }}">{{ $cfg['emoji'] }} <b>{{ $cfg['brand'] }}</b></a>
     <nav class="sfmenu">
         <a href="{{ url('/' . $sfSlug) }}">Home</a>
-        <a href="{{ route('products.category', $cfg['cat']) }}">Shop</a>
-        <a href="{{ route('products.category', $cfg['cat']) }}">New in</a>
+        <a href="{{ url('/' . $sfSlug . '/shop') }}">Shop</a>
+        <a href="{{ url('/' . $sfSlug . '/shop') }}">New in</a>
         <a href="https://animazon.in/marketplace/">All templates</a>
     </nav>
     <div class="sfact">

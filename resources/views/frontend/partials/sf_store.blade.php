@@ -37,7 +37,7 @@
         <div class="eb">{{ $s['eb'] }}</div>
         <h1>{!! $s['h1'] !!}</h1>
         <p>{{ $s['p'] }}</p>
-        <a href="{{ route('products.category', $catSlug) }}" class="sf-cta">{{ $s['cta'] }}</a>
+        <a href="{{ url('/' . session('sf_skin') . '/shop') }}" class="sf-cta">{{ $s['cta'] }}</a>
     </section>
     <div class="sf-strip">
         <span>✅ <b>Free shipping</b> over ₹999</span><span>🔁 <b>7-day</b> returns</span><span>🔒 <b>Secure</b> checkout</span><span>💬 <b>Real</b> support</span>

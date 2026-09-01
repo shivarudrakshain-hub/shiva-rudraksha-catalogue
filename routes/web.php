@@ -725,6 +725,14 @@ foreach ([
         }
         return $renderStorefront($slug, $catSlug);
     })->name('store.page.' . $slug);
+
+    // Themed product listing for the niche (Stitch "All Products Listing").
+    Route::get('/' . $slug . '/shop', function () use ($slug, $catSlug) {
+        session(['sf_skin' => $slug]);
+        $cat = \App\Models\Category::where('slug', $catSlug)->first();
+        $products = $cat ? \App\Models\Product::where('category_id', $cat->id)->where('published', 1)->orderBy('id')->get() : collect();
+        return view('frontend.partials.sf_list', compact('products', 'catSlug', 'slug'));
+    })->name('store.shop.' . $slug);
 }
 
 Route::controller(PageController::class)->group(function () {

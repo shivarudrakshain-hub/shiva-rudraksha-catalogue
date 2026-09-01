@@ -40,7 +40,7 @@
     <section class="sf-hero">
         <div><div class="eb">Small-batch provisions</div><h1>Taste, bottled boldly.</h1>
             <p>Coffee, sauces and snacks made in tiny batches. Free shipping, cash on delivery.</p>
-            <a href="{{ route('products.category', $catSlug) }}" class="sf-cta">Shop the pantry →</a></div>
+            <a href="{{ url('/crave/shop') }}" class="sf-cta">Shop the pantry →</a></div>
         <div class="art"><img loading="lazy" src="/assets/store/img/hero-crave.jpg" alt="CRAVE" onerror="this.onerror=null;this.src='https://loremflickr.com/800/800/coffee,roastery';"></div>
     </section>
     <div class="sf-strip"><span>☕ <b>Fresh</b> roasted</span><span>🚚 <b>Free shipping</b> over ₹999</span><span>🔒 <b>Secure</b> checkout</span></div>

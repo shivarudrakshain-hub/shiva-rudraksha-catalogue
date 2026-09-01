@@ -51,7 +51,7 @@
         <div class="eb">Next-gen electronics</div>
         <h1>Power your everyday.</h1>
         <p>Audio, wearables and phones engineered to keep up. Free shipping, cash on delivery, easy returns.</p>
-        <a href="{{ route('products.category', 'electronics') }}" class="sf-cta">Shop all electronics →</a>
+        <a href="{{ url('/volt/shop') }}" class="sf-cta">Shop all electronics →</a>
     </section>
 
     <div class="sf-strip">
