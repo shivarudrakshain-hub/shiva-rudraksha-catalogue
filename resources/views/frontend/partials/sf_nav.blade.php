@@ -35,13 +35,15 @@
     .sfnav .sfmenu a:after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:{{ $ac }};transition:right .25s}
     .sfnav .sfmenu a:hover:after{right:0}
     .sfnav .sfact{margin-left:auto;display:flex;align-items:center;gap:.7rem}
-    .sfnav .sfsearch{display:flex;align-items:center;background:{{ $dark ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.05)' }};border:1px solid {{ $line }};border-radius:999px;padding:.15rem .15rem .15rem .8rem}
+    .sfnav .sfsearch{display:flex;align-items:center;background:{{ $dark ? 'rgba(255,255,255,.06)' : 'rgba(0,0,0,.04)' }};border:1px solid {{ $line }};border-radius:999px;padding:.2rem .2rem .2rem .95rem}
     .sfnav .sfsearch input{background:none;border:none;outline:none;color:{{ $ink }};font:inherit;font-size:.82rem;width:150px}
-    .sfnav .sfsearch button{border:none;background:{{ $ac }};color:{{ $on }};width:30px;height:30px;border-radius:50%;cursor:pointer}
-    .sfnav .sfsel{background:none;border:1px solid {{ $line }};color:{{ $ink }};border-radius:8px;padding:.3rem .4rem;font:inherit;font-size:.78rem;cursor:pointer}
+    .sfnav .sfsearch input::placeholder{color:{{ $muted }}}
+    .sfnav .sfsearch button{border:none;background:{{ $ac }};color:{{ $on }};width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem}
+    .sfnav .sfsel{background:{{ $dark ? 'rgba(255,255,255,.04)' : '#fff' }};border:1px solid {{ $line }};color:{{ $ink }};border-radius:999px;padding:.42rem .7rem;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23{{ $dark ? '9aa3b2' : '6b7280' }}' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .55rem center;padding-right:1.6rem}
     .sfnav .sfsel option{color:#111}
-    .sfnav .sfic{position:relative;width:40px;height:40px;border-radius:50%;border:1px solid {{ $line }};display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+    .sfnav .sfic{position:relative;width:38px;height:38px;border-radius:50%;border:1px solid {{ $line }};display:flex;align-items:center;justify-content:center;font-size:1rem}
     .sfnav .sfic:hover{border-color:{{ $ac }}}
+    .sfnav .sfic.acct{background:{{ $ac }};color:{{ $on }};border-color:transparent}
     .sfnav .sfcc{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;border-radius:999px;background:{{ $ac }};color:{{ $on }};font-size:.66rem;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 4px}
     @media(max-width:900px){.sfnav .sfmenu{display:none}.sfnav .sfsearch input{width:90px}}
 </style>
@@ -55,20 +57,20 @@
     </nav>
     <div class="sfact">
         <form class="sfsearch" action="{{ route('search') }}" method="GET">
-            <input name="keyword" placeholder="Search {{ $cfg['brand'] }}…" aria-label="Search">
-            <button type="submit" aria-label="Search">🔎</button>
+            <input name="keyword" placeholder="Search {{ $cfg['brand'] }}..." aria-label="Search">
+            <button type="submit" aria-label="Search">&#10148;</button>
         </form>
-        @if ($sfCur->count() > 1)
+        @if ($sfCur->count())
             <select class="sfsel" onchange="changeCurrency(this.value)" title="Currency">
                 @foreach ($sfCur as $c)<option value="{{ $c->code }}" @if($c->id == get_setting('system_default_currency')) selected @endif>{{ $c->code }}</option>@endforeach
             </select>
         @endif
-        @if ($sfLang->count() > 1)
+        @if ($sfLang->count())
             <select class="sfsel" onchange="changeLanguage(this.value)" title="Language">
                 @foreach ($sfLang as $l)<option value="{{ $l->code }}">{{ strtoupper($l->code) }}</option>@endforeach
             </select>
         @endif
-        <a class="sfic" href="{{ auth()->user() ? route('dashboard') : route('user.login') }}" title="Account">👤</a>
+        <a class="sfic acct" href="{{ auth()->user() ? route('dashboard') : route('user.login') }}" title="Account">&#128100;</a>
         <a class="sfic" href="{{ route('cart') }}" title="Cart">🛒 @if ($sfCC > 0)<span class="sfcc">{{ $sfCC }}</span>@endif</a>
     </div>
 </header>
