@@ -448,6 +448,12 @@ class HomeController extends Controller
                 $fb = new FacebookConversionService();
                 $fb->sendViewContent($detailedProduct);
             }
+            // Marketplace storefront: themed product page for niche products while in that store.
+            $sfSkin = session('sf_skin');
+            $sfCfg = $sfSkin ? config('storefronts.' . $sfSkin) : null;
+            if ($sfCfg && optional(\App\Models\Category::find($detailedProduct->category_id))->slug === $sfCfg['cat']) {
+                return view('frontend.partials.sf_pdp', compact('detailedProduct'));
+            }
             return view('frontend.' . get_setting('homepage_select') . '.product_details', compact('detailedProduct', 'product_queries', 'total_query', 'reviews', 'review_status', 'order_id'));
         }
         abort(404);

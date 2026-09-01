@@ -2,7 +2,7 @@
 @section('meta_title', 'CRAVE — Food & Beverage | ' . get_setting('website_name'))
 @php
     $sf_imgkw = ['crave-coffee' => 'coffee,beans', 'crave-hotsauce' => 'hot,sauce', 'crave-granola' => 'granola,cereal'];
-    $sf_img = function ($p) use ($sf_imgkw) { return 'https://source.unsplash.com/600x600/?' . ($sf_imgkw[$p->slug] ?? urlencode($p->getTranslation('name'))) . '&sig=' . $p->id; };
+    $sf_img = function ($p) { return '/assets/store/img/' . $p->slug . '.jpg'; };
 @endphp
 @section('content')
 <style>
@@ -41,14 +41,14 @@
         <div><div class="eb">Small-batch provisions</div><h1>Taste, bottled boldly.</h1>
             <p>Coffee, sauces and snacks made in tiny batches. Free shipping, cash on delivery.</p>
             <a href="{{ route('products.category', $catSlug) }}" class="sf-cta">Shop the pantry →</a></div>
-        <div class="art"><img loading="lazy" src="https://source.unsplash.com/800x800/?coffee,roastery" alt="CRAVE" onerror="this.onerror=null;this.src='https://picsum.photos/seed/crave/800';"></div>
+        <div class="art"><img loading="lazy" src="/assets/store/img/hero-crave.jpg" alt="CRAVE" onerror="this.onerror=null;this.src='https://loremflickr.com/800/800/coffee,roastery';"></div>
     </section>
     <div class="sf-strip"><span>☕ <b>Fresh</b> roasted</span><span>🚚 <b>Free shipping</b> over ₹999</span><span>🔒 <b>Secure</b> checkout</span></div>
     <div class="sf-wrap"><h2 class="sf-h2">Fresh drops</h2><p class="sf-sub">Made in small batches, shipped fresh.</p>
         <div class="sf-grid">
             @forelse ($products as $product)
                 <a class="sf-card" href="{{ route('product', $product->slug) }}">
-                    <div class="sf-thumb"><img loading="lazy" src="{{ $sf_img($product) }}" alt="{{ $product->getTranslation('name') }}" onerror="this.onerror=null;this.src='https://picsum.photos/seed/{{ $product->id }}/600';"></div>
+                    <div class="sf-thumb"><img loading="lazy" src="{{ $sf_img($product) }}" alt="{{ $product->getTranslation('name') }}" onerror="this.onerror=null;this.src='https://loremflickr.com/600/600/{{ $sf_imgkw[$product->slug] ?? 'food' }}';"></div>
                     <div class="sf-cb"><div class="sf-nm">{{ $product->getTranslation('name') }}</div>
                         <div class="sf-ds">{{ \Illuminate\Support\Str::limit(strip_tags($product->getTranslation('description')), 60) }}</div>
                         <div class="sf-cf"><span class="sf-pr">{!! home_base_price($product) !!}</span><span class="sf-view">View →</span></div></div>

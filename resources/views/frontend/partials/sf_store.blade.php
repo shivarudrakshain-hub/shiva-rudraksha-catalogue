@@ -33,7 +33,7 @@
     .{{ $cls }} .sf-foot a{color:var(--ac)}
 </style>
 <div class="{{ $cls }}">
-    <section class="sf-hero">
+    <section class="sf-hero" style="background:linear-gradient(color-mix(in srgb,var(--bg) 74%,transparent),color-mix(in srgb,var(--bg) 92%,transparent)),url('/assets/store/img/hero-{{ session('sf_skin') }}.jpg') center/cover">
         <div class="eb">{{ $s['eb'] }}</div>
         <h1>{!! $s['h1'] !!}</h1>
         <p>{{ $s['p'] }}</p>
@@ -49,7 +49,7 @@
             @forelse ($products as $product)
                 @php $kw = $s['imgkw'][$product->slug] ?? urlencode($product->getTranslation('name')); @endphp
                 <a class="sf-card" href="{{ route('product', $product->slug) }}">
-                    <div class="sf-thumb"><img loading="lazy" src="https://source.unsplash.com/600x600/?{{ $kw }}&sig={{ $product->id }}" alt="{{ $product->getTranslation('name') }}" onerror="this.onerror=null;this.src='https://picsum.photos/seed/{{ $product->id }}/600';"></div>
+                    <div class="sf-thumb"><img loading="lazy" src="/assets/store/img/{{ $product->slug }}.jpg" alt="{{ $product->getTranslation('name') }}" onerror="this.onerror=null;this.src='https://loremflickr.com/600/600/{{ $kw }}';"></div>
                     <div class="sf-cb">
                         <div class="sf-nm">{{ $product->getTranslation('name') }}</div>
                         <div class="sf-ds">{{ \Illuminate\Support\Str::limit(strip_tags($product->getTranslation('description')), 60) }}</div>

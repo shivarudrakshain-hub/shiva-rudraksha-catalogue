@@ -9,10 +9,7 @@
         'volt-smartwatch' => 'smartwatch',
         'volt-phone'      => 'smartphone',
     ];
-    $sf_img = function ($p) use ($sf_imgkw) {
-        $kw = $sf_imgkw[$p->slug] ?? urlencode($p->getTranslation('name'));
-        return 'https://source.unsplash.com/600x600/?' . $kw . '&sig=' . $p->id;
-    };
+    $sf_img = function ($p) { return '/assets/store/img/' . $p->slug . '.jpg'; };
 @endphp
 
 @section('content')
@@ -50,7 +47,7 @@
 </style>
 
 <div class="sf-volt">
-    <section class="sf-hero">
+    <section class="sf-hero" style="background:linear-gradient(rgba(8,10,17,.7),rgba(8,10,17,.93)),url('/assets/store/img/hero-volt.jpg') center/cover">
         <div class="eb">Next-gen electronics</div>
         <h1>Power your everyday.</h1>
         <p>Audio, wearables and phones engineered to keep up. Free shipping, cash on delivery, easy returns.</p>
@@ -72,7 +69,7 @@
                 <a class="sf-card" href="{{ route('product', $product->slug) }}">
                     <div class="sf-thumb">
                         <img loading="lazy" src="{{ $sf_img($product) }}" alt="{{ $product->getTranslation('name') }}"
-                             onerror="this.onerror=null;this.src='https://picsum.photos/seed/{{ $product->id }}/600';">
+                             onerror="this.onerror=null;this.src='https://loremflickr.com/600/600/{{ $sf_imgkw[$product->slug] ?? 'gadget' }}';">
                     </div>
                     <div class="sf-cb">
                         <div class="sf-nm">{{ $product->getTranslation('name') }}</div>
