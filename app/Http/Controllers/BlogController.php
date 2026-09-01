@@ -200,6 +200,10 @@ class BlogController extends Controller
 
         $recent_blogs = Blog::where('status', 1)->orderBy('created_at', 'desc')->limit(9)->get();
 
+        if (session('sf_skin') && config('storefronts.' . session('sf_skin'))) {
+            return view('frontend.partials.sf_blog', compact('blogs', 'recent_blogs'));
+        }
+
         return view(get_setting('homepage_select') == 'rudraspirit' ? 'frontend.rudraspirit.blog.listing' : 'frontend.blog.listing', compact('blogs', 'selected_categories', 'search', 'recent_blogs'));
     }
 

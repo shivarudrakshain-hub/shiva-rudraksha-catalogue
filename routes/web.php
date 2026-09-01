@@ -548,6 +548,9 @@ Route::controller(BlogController::class)->group(function () {
 // dedicated routes here. Must be registered before the PageController catch-all
 // '/{slug}' route below, otherwise that wildcard would swallow these URIs first.
 Route::get('/faq', function () {
+    if (session('sf_skin') && config('storefronts.' . session('sf_skin'))) {
+        return view('frontend.partials.sf_faq');
+    }
     return view('frontend.rudraspirit.faq');
 })->name('faq');
 Route::get('/about', function () {

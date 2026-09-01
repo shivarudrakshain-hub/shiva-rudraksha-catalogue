@@ -371,13 +371,15 @@ class HomeController extends Controller
 
     public function trackOrder(Request $request)
     {
+        $sfSkin = session('sf_skin') && config('storefronts.' . session('sf_skin'));
+        $trackView = $sfSkin ? 'frontend.partials.sf_track' : 'frontend.track_order';
         if ($request->has('order_code')) {
             $order = Order::where('code', $request->order_code)->first();
             if ($order != null) {
-                return view('frontend.track_order', compact('order'));
+                return view($trackView, compact('order'));
             }
         }
-        return view('frontend.track_order');
+        return view($trackView);
     }
 
     public function product(Request $request, $slug)

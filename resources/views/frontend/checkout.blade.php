@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @includeIf('frontend.partials.sf_checkout_skin')
+
     <section class="my-4 gry-bg">
         <div class="container">
             <div class="row cols-xs-space cols-sm-space cols-md-space">

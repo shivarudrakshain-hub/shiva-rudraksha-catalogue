@@ -42,6 +42,10 @@ class CartController extends Controller
             $carts = $carts->fresh();
         }
 
+        if (session('sf_skin') && config('storefronts.' . session('sf_skin'))) {
+            return view('frontend.partials.sf_cart', compact('carts'));
+        }
+
         return view(get_setting('homepage_select') == 'rudraspirit' ? 'frontend.rudraspirit.view_cart' : 'frontend.view_cart', compact('carts'));
     }
 
