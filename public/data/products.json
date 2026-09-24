@@ -13,7 +13,6 @@
       {
         "name": "Nepal",
         "price": 150,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/1-mukhi-nepal-rudraksha/nepali/front.jpg",
           "back": "images/products/1-mukhi-nepal-rudraksha/nepali/back.jpg",
@@ -26,7 +25,6 @@
       {
         "name": "Indian",
         "price": 200,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/1-mukhi-nepal-rudraksha/indian/front.jpg",
           "back": "images/products/1-mukhi-nepal-rudraksha/indian/back.jpg",
@@ -35,7 +33,7 @@
           "certificate": "images/products/1-mukhi-nepal-rudraksha/indian/certificate.jpg",
           "xray": "images/products/1-mukhi-nepal-rudraksha/indian/xray.jpg"
         }
-      }      
+      }
     ],
     "images": {
       "front": "images/products/1-mukhi-nepal-rudraksha/front.jpg",
@@ -60,7 +58,6 @@
       {
         "name": "Small",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/2-mukhi-nepal-rudraksha/small/back.jpg",
@@ -73,7 +70,6 @@
       {
         "name": "Medium",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/2-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -86,7 +82,6 @@
       {
         "name": "Large",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/2-mukhi-nepal-rudraksha/large/back.jpg",
@@ -99,7 +94,6 @@
       {
         "name": "Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/2-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -112,7 +106,6 @@
       {
         "name": "Super Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/2-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/2-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -146,7 +139,6 @@
       {
         "name": "Nepal",
         "price": 60,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/3-mukhi-nepal-rudraksha/nepali/front.jpg",
           "back": "images/products/3-mukhi-nepal-rudraksha/nepali/back.jpg",
@@ -180,7 +172,6 @@
       {
         "name": "Nepal",
         "price": 40,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/4-mukhi-nepal-rudraksha/nepali/front.jpg",
           "back": "images/products/4-mukhi-nepal-rudraksha/nepali/back.jpg",
@@ -214,7 +205,6 @@
       {
         "name": "Nepal",
         "price": 40,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/5-mukhi-nepal-rudraksha/nepali/front.jpg",
           "back": "images/products/5-mukhi-nepal-rudraksha/nepali/back.jpg",
@@ -248,7 +238,6 @@
       {
         "name": "Nepal",
         "price": 40,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/6-mukhi-nepal-rudraksha/nepali/front.jpg",
           "back": "images/products/6-mukhi-nepal-rudraksha/nepali/back.jpg",
@@ -282,7 +271,6 @@
       {
         "name": "Small",
         "price": 30,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/7-mukhi-nepal-rudraksha/small/back.jpg",
@@ -295,7 +283,6 @@
       {
         "name": "Medium",
         "price": 50,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/7-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -308,7 +295,6 @@
       {
         "name": "Large",
         "price": 70,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/7-mukhi-nepal-rudraksha/large/back.jpg",
@@ -321,7 +307,6 @@
       {
         "name": "Collector",
         "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/7-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -334,7 +319,6 @@
       {
         "name": "Super Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/7-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -368,7 +352,6 @@
       {
         "name": "Small",
         "price": 60,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/8-mukhi-nepal-rudraksha/small/back.jpg",
@@ -381,7 +364,6 @@
       {
         "name": "Medium",
         "price": 80,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/8-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -394,7 +376,6 @@
       {
         "name": "Large",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/8-mukhi-nepal-rudraksha/large/back.jpg",
@@ -407,7 +388,6 @@
       {
         "name": "Collector",
         "price": 200,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/8-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -420,7 +400,6 @@
       {
         "name": "Super Collector",
         "price": 300,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/8-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -454,7 +433,6 @@
       {
         "name": "Small",
         "price": 80,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/9-mukhi-nepal-rudraksha/small/back.jpg",
@@ -467,7 +445,6 @@
       {
         "name": "Medium",
         "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/9-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -480,7 +457,6 @@
       {
         "name": "Large",
         "price": 120,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/9-mukhi-nepal-rudraksha/large/back.jpg",
@@ -493,7 +469,6 @@
       {
         "name": "Collector",
         "price": 200,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/9-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -506,7 +481,6 @@
       {
         "name": "Super Collector",
         "price": 300,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/9-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -540,7 +514,6 @@
       {
         "name": "Small",
         "price": 60,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439607930/10-mukhi-rudraksha-original-nepal-lord?variation0=6203860234",
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/10-mukhi-nepal-rudraksha/small/back.jpg",
@@ -553,7 +526,6 @@
       {
         "name": "Medium",
         "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439607930/10-mukhi-rudraksha-original-nepal-lord?variation0=6189871785",
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/10-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -566,7 +538,6 @@
       {
         "name": "Large",
         "price": 200,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439607930/10-mukhi-rudraksha-original-nepal-lord?variation0=6203860240",
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/10-mukhi-nepal-rudraksha/large/back.jpg",
@@ -579,7 +550,6 @@
       {
         "name": "Collector",
         "price": 300,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439607930/10-mukhi-rudraksha-original-nepal-lord?variation0=6189871795",
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/10-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -592,7 +562,6 @@
       {
         "name": "Super Collector",
         "price": 500,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439607930/10-mukhi-rudraksha-original-nepal-lord?variation0=6189871801",
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/10-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -626,7 +595,6 @@
       {
         "name": "Small",
         "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/11-mukhi-nepal-rudraksha/small/back.jpg",
@@ -639,7 +607,6 @@
       {
         "name": "Medium",
         "price": 150,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/11-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -652,7 +619,6 @@
       {
         "name": "Large",
         "price": 300,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/11-mukhi-nepal-rudraksha/large/back.jpg",
@@ -665,7 +631,6 @@
       {
         "name": "Collector",
         "price": 500,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/11-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -678,7 +643,6 @@
       {
         "name": "Super Collector",
         "price": 600,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/11-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -712,7 +676,6 @@
       {
         "name": "Small",
         "price": 60,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402/12-mukhi-rudraksha-original-nepal-lord?variation0=6189731787",
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/12-mukhi-nepal-rudraksha/small/back.jpg",
@@ -725,7 +688,6 @@
       {
         "name": "Medium",
         "price": 100,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402/12-mukhi-rudraksha-original-nepal-lord?variation0=6203729902",
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/12-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -738,7 +700,6 @@
       {
         "name": "Large",
         "price": 200,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402/12-mukhi-rudraksha-original-nepal-lord?variation0=6189731789",
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/12-mukhi-nepal-rudraksha/large/back.jpg",
@@ -751,7 +712,6 @@
       {
         "name": "Collector",
         "price": 350,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402/12-mukhi-rudraksha-original-nepal-lord?variation0=6203729904",
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/12-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -764,7 +724,6 @@
       {
         "name": "Super Collector",
         "price": 500,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402/12-mukhi-rudraksha-original-nepal-lord?variation0=6203729906",
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/12-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -798,7 +757,6 @@
       {
         "name": "Small",
         "price": 80,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439640130/13-mukhi-rudraksha-original-nepal-lord?variation0=6203798900",
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/13-mukhi-nepal-rudraksha/small/back.jpg",
@@ -811,7 +769,6 @@
       {
         "name": "Medium",
         "price": 130,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439640130/13-mukhi-rudraksha-original-nepal-lord?variation0=6189806043",
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/13-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -824,7 +781,6 @@
       {
         "name": "Large",
         "price": 250,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439640130/13-mukhi-rudraksha-original-nepal-lord?variation0=6189806045",
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/13-mukhi-nepal-rudraksha/large/back.jpg",
@@ -837,7 +793,6 @@
       {
         "name": "Collector",
         "price": 350,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439640130/13-mukhi-rudraksha-original-nepal-lord?variation0=6189806047",
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/13-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -850,7 +805,6 @@
       {
         "name": "Super Collector",
         "price": 500,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439640130/13-mukhi-rudraksha-original-nepal-lord?variation0=6189806055",
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/13-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -884,7 +838,6 @@
       {
         "name": "Small",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/small/front.jpg",
           "back": "images/products/14-mukhi-nepal-rudraksha/small/back.jpg",
@@ -897,7 +850,6 @@
       {
         "name": "Medium",
         "price": 800,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/14-mukhi-nepal-rudraksha/medium/back.jpg",
@@ -910,7 +862,6 @@
       {
         "name": "Large",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/large/front.jpg",
           "back": "images/products/14-mukhi-nepal-rudraksha/large/back.jpg",
@@ -923,7 +874,6 @@
       {
         "name": "Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/14-mukhi-nepal-rudraksha/collector/back.jpg",
@@ -936,7 +886,6 @@
       {
         "name": "Super Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/14-mukhi-nepal-rudraksha/super-collector/back.jpg",
@@ -977,7 +926,6 @@
       {
         "name": "Small",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -990,7 +938,6 @@
       {
         "name": "Medium",
         "price": "400",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1003,7 +950,6 @@
       {
         "name": "Large",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1016,7 +962,6 @@
       {
         "name": "Collector",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1029,7 +974,6 @@
       {
         "name": "Super Collector",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1062,7 +1006,6 @@
       {
         "name": "Small",
         "price": 0,
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1075,7 +1018,6 @@
       {
         "name": "Medium",
         "price": "500",
-        "etsyUrl": "",
         "images": {
           "front": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/front.jpg",
           "back": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/back.jpg",
@@ -1088,7 +1030,6 @@
       {
         "name": "Large",
         "price": "",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1101,7 +1042,6 @@
       {
         "name": "Collector",
         "price": "",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1114,7 +1054,6 @@
       {
         "name": "Super Collector",
         "price": "",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1147,7 +1086,6 @@
       {
         "name": "Small",
         "price": "",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1160,20 +1098,18 @@
       {
         "name": "Medium",
         "price": "600",
-        "etsyUrl": "",
         "images": {
-        "front": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/front.jpg",
-        "back": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/back.jpg",
-        "top": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/top.jpg",
-        "bottom": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/bottom.jpg",
-        "certificate": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/certificate.jpg",
-        "xray": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/xray.jpg"
+          "front": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/front.jpg",
+          "back": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/back.jpg",
+          "top": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/top.jpg",
+          "bottom": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/bottom.jpg",
+          "certificate": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/certificate.jpg",
+          "xray": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/xray.jpg"
         }
       },
       {
         "name": "Large",
         "price": "",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1186,7 +1122,6 @@
       {
         "name": "Collector",
         "price": "",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1199,7 +1134,6 @@
       {
         "name": "Super Collector",
         "price": "",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1232,7 +1166,6 @@
       {
         "name": "Small",
         "price": "80",
-        "etsyUrl": "",
         "images": {
           "front": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/front.jpg",
           "back": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/back.jpg",
@@ -1258,7 +1191,6 @@
       {
         "name": "Small",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/gowri-shankar-nepal-rudraksha/small/front.jpg",
           "back": "images/products/gowri-shankar-nepal-rudraksha/small/back.jpg",
@@ -1271,7 +1203,6 @@
       {
         "name": "Medium",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/gowri-shankar-nepal-rudraksha/medium/front.jpg",
           "back": "images/products/gowri-shankar-nepal-rudraksha/medium/back.jpg",
@@ -1284,7 +1215,6 @@
       {
         "name": "Large",
         "price": 170,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/gowri-shankar-nepal-rudraksha/large/front.jpg",
           "back": "images/products/gowri-shankar-nepal-rudraksha/large/back.jpg",
@@ -1297,7 +1227,6 @@
       {
         "name": "Collector",
         "price": 200,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/gowri-shankar-nepal-rudraksha/collector/front.jpg",
           "back": "images/products/gowri-shankar-nepal-rudraksha/collector/back.jpg",
@@ -1310,7 +1239,6 @@
       {
         "name": "Super Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/gowri-shankar-nepal-rudraksha/super-collector/front.jpg",
           "back": "images/products/gowri-shankar-nepal-rudraksha/super-collector/back.jpg",
@@ -1344,7 +1272,6 @@
       {
         "name": "Small",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/ganesh-rudraksha/small/front.jpg",
           "back": "images/products/ganesh-rudraksha/small/back.jpg",
@@ -1357,7 +1284,6 @@
       {
         "name": "Medium",
         "price": 60,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/ganesh-rudraksha/medium/front.jpg",
           "back": "images/products/ganesh-rudraksha/medium/back.jpg",
@@ -1370,7 +1296,6 @@
       {
         "name": "Large",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/ganesh-rudraksha/large/front.jpg",
           "back": "images/products/ganesh-rudraksha/large/back.jpg",
@@ -1383,7 +1308,6 @@
       {
         "name": "Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/ganesh-rudraksha/collector/front.jpg",
           "back": "images/products/ganesh-rudraksha/collector/back.jpg",
@@ -1396,7 +1320,6 @@
       {
         "name": "Super Collector",
         "price": 0,
-        "etsyUrl": "https://www.etsy.com/ca/listing/4439620402",
         "images": {
           "front": "images/products/ganesh-rudraksha/super-collector/front.jpg",
           "back": "images/products/ganesh-rudraksha/super-collector/back.jpg",
@@ -1437,7 +1360,6 @@
       {
         "name": "Small",
         "price": "200",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1450,7 +1372,6 @@
       {
         "name": "Medium",
         "price": "350",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1463,7 +1384,6 @@
       {
         "name": "Large",
         "price": "430",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1476,7 +1396,6 @@
       {
         "name": "Collector",
         "price": "500",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1489,7 +1408,6 @@
       {
         "name": "Super Collector",
         "price": "650",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1522,7 +1440,6 @@
       {
         "name": "Small",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1535,7 +1452,6 @@
       {
         "name": "Medium",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1548,7 +1464,6 @@
       {
         "name": "Large",
         "price": "1500",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1561,7 +1476,6 @@
       {
         "name": "Collector",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1574,7 +1488,6 @@
       {
         "name": "Super Collector",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1607,7 +1520,6 @@
       {
         "name": "Small",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1620,7 +1532,6 @@
       {
         "name": "Medium",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1633,7 +1544,6 @@
       {
         "name": "Large",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1646,7 +1556,6 @@
       {
         "name": "Collector",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",
@@ -1659,7 +1568,6 @@
       {
         "name": "Super Collector",
         "price": "0",
-        "etsyUrl": "",
         "images": {
           "front": "",
           "back": "",

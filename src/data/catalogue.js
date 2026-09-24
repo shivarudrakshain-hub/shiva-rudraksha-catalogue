@@ -29,15 +29,16 @@ export function normalizeProduct(product) {
     front: product.images?.front || product.image || "",
   };
 
-  const variants = Array.isArray(product.variants) && product.variants.length
-    ? product.variants.map((variant) => ({
-        ...variant,
-        etsyUrl: variant.etsyUrl || product.etsyUrl || "",
-        // Keep only true size-specific image paths here. Product-level images
-        // remain available as a fallback until a size receives its own photos.
-        images: { ...emptyImages(), ...(variant.images || {}) },
-      }))
-    : [];
+  const variants =
+    Array.isArray(product.variants) && product.variants.length
+      ? product.variants.map((variant) => ({
+          ...variant,
+          images: {
+            ...emptyImages(),
+            ...(variant.images || {}),
+          },
+        }))
+      : [];
 
   return {
     ...product,
@@ -51,6 +52,10 @@ export async function loadProducts() {
     `${import.meta.env.BASE_URL}data/products.json?t=${Date.now()}`,
     { cache: "no-store" }
   );
-  if (!response.ok) throw new Error("Unable to load product catalogue.");
+
+  if (!response.ok) {
+    throw new Error("Unable to load product catalogue.");
+  }
+
   return (await response.json()).map(normalizeProduct);
 }
