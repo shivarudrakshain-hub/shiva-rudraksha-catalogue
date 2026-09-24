@@ -3,7 +3,6 @@ import {
   CheckCircle2,
   MapPin,
   MessageCircle,
-  ShoppingCart,
   Ruler,
   ShieldCheck,
 } from "lucide-react";
@@ -25,7 +24,6 @@ export default function ProductDetails({ product, onBack }) {
             variant.images?.[key] || product.images?.[key] || "",
           ])
         ),
-        etsyUrl: variant.etsyUrl || product.etsyUrl || "",
       }));
     }
 
@@ -33,7 +31,6 @@ export default function ProductDetails({ product, onBack }) {
       {
         name: "Medium",
         price: Number(product.price || 0),
-        etsyUrl: product.etsyUrl || "",
         images: {
           ...emptyImages(),
           ...(product.images || {}),
@@ -87,43 +84,23 @@ export default function ProductDetails({ product, onBack }) {
             <ArrowLeft />
             Back to catalogue
           </button>
-
           <Logo compact />
         </div>
       </header>
 
       <main className="container details-layout">
-        <Gallery
-          product={galleryProduct}
-          resetKey={selectedVariant?.name}
-        />
+        <Gallery product={galleryProduct} resetKey={selectedVariant?.name} />
 
         <section className="product-information">
           <span className="premium-label">{product.badge}</span>
-
           <h1>{product.name}</h1>
 
           <div className="information-grid">
+            <span><MapPin />Origin<strong>{product.origin}</strong></span>
+            <span><Ruler />Variants<strong>{variants.length} sizes</strong></span>
             <span>
-              <MapPin />
-              Origin
-              <strong>{product.origin}</strong>
-            </span>
-
-            <span>
-              <Ruler />
-              Variants
-              <strong>{variants.length} sizes</strong>
-            </span>
-
-            <span>
-              <ShieldCheck />
-              Certificate
-              <strong>
-                {product.certificateAvailable
-                  ? "Included"
-                  : "Not Included"}
-              </strong>
+              <ShieldCheck />Certificate
+              <strong>{product.certificateAvailable ? "Included" : "Not Included"}</strong>
             </span>
           </div>
 
@@ -131,132 +108,63 @@ export default function ProductDetails({ product, onBack }) {
 
           <div className="variant-selector">
             <label>Select bead size</label>
-
-            <div
-              className="variant-options"
-              role="group"
-              aria-label="Select bead size"
-            >
+            <div className="variant-options" role="group" aria-label="Select bead size">
               {variants.map((variant) => {
                 const variantPrice = Number(variant.price || 0);
                 const isAvailable = variantPrice > 0;
-                const isSelected =
-                  variant.name === selectedVariant?.name;
+                const isSelected = variant.name === selectedVariant?.name;
 
                 return (
                   <button
                     key={variant.name}
                     type="button"
-                    disabled={Number(variant.price) <= 0}
-                    className={[
-                      "variant-option",
-                      isSelected ? "selected" : "",
-                      !isAvailable ? "disabled" : "",
-                    ]
+                    disabled={!isAvailable}
+                    className={["variant-option", isSelected ? "selected" : "", !isAvailable ? "disabled" : ""]
                       .filter(Boolean)
                       .join(" ")}
                     aria-pressed={isSelected}
                     aria-disabled={!isAvailable}
-                    onClick={() => {
-                      if (isAvailable && Number(variant.price) > 0) {
-                        setSelectedVariantName(variant.name);
-                      }
-                    }}
+                    onClick={() => isAvailable && setSelectedVariantName(variant.name)}
                   >
                     <span>{variant.name}</span>
-
-                    <strong>
-                      {isAvailable
-                        ? `CAD $${variantPrice.toFixed(2)}`
-                        : "Out of Stock"}
-                    </strong>
+                    <strong>{isAvailable ? `CAD $${variantPrice.toFixed(2)}` : "Out of Stock"}</strong>
                   </button>
                 );
               })}
             </div>
-
-            <small>
-              The gallery, certificate, X-ray, price and Etsy link
-              change with the selected size.
-            </small>
+            <small>The gallery, certificate, X-ray and price change with the selected size.</small>
           </div>
 
           <div className="price-box">
-            <small>
-              {selectedVariant?.name} price in Canadian dollars
-            </small>
-
-            <strong>
-              {isSelectedVariantAvailable
-                ? `CAD $${price.toFixed(2)}`
-                : "Out of Stock"}
-            </strong>
+            <small>{selectedVariant?.name} price in Canadian dollars</small>
+            <strong>{isSelectedVariantAvailable ? `CAD $${price.toFixed(2)}` : "Out of Stock"}</strong>
           </div>
 
           <div className="included-list">
-            <span>
-              <CheckCircle2 />
-              Front view
-            </span>
-
-            <span>
-              <CheckCircle2 />
-              Back view
-            </span>
-
-            <span>
-              <CheckCircle2 />
-              Top view
-            </span>
-
-            <span>
-              <CheckCircle2 />
-              Bottom view
-            </span>
-
-            <span>
-              <CheckCircle2 />
-              {product.certificateAvailable
-                ? "Certificate"
-                : "No Certificate"}
-            </span>
-
-            <span>
-              <CheckCircle2 />
-              {product.certificateAvailable
-                ? "X-ray"
-                : "No X-ray"}
-            </span>
+            <span><CheckCircle2 />Front view</span>
+            <span><CheckCircle2 />Back view</span>
+            <span><CheckCircle2 />Top view</span>
+            <span><CheckCircle2 />Bottom view</span>
+            <span><CheckCircle2 />{product.certificateAvailable ? "Certificate" : "No Certificate"}</span>
+            <span><CheckCircle2 />{product.certificateAvailable ? "X-ray" : "No X-ray"}</span>
           </div>
 
           <div className="product-action-buttons">
-            <a
-              className="whatsapp-button"
-              href={`https://wa.me/14372671257?text=${message}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <MessageCircle />
-              Enquire on WhatsApp
-            </a>
-
-            {isSelectedVariantAvailable &&
-              selectedVariant?.etsyUrl && (
-                <a
-                  className="buy-button"
-                  href={selectedVariant.etsyUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <ShoppingCart />
-                  Buy Now
-                </a>
-              )}
+            {isSelectedVariantAvailable && (
+              <a
+                className="whatsapp-button"
+                href={`https://wa.me/14372671257?text=${message}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MessageCircle />
+                Enquire on WhatsApp
+              </a>
+            )}
           </div>
 
           <p className="disclaimer">
-            Traditional spiritual descriptions are informational and
-            are not medical or financial guarantees.
+            Traditional spiritual descriptions are informational and are not medical or financial guarantees.
           </p>
         </section>
       </main>

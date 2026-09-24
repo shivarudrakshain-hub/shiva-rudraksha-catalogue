@@ -28,7 +28,6 @@ const VARIANT_NAMES = ["Small", "Medium", "Large", "Collector", "Super Collector
 const emptyVariant = (name) => ({
   name,
   price: "",
-  etsyUrl: "",
   images: emptyImages(),
 });
 
@@ -55,7 +54,6 @@ const normalizeVariants = (product = {}) => {
     return {
       name,
       price: found.price ?? product.price ?? "",
-      etsyUrl: found.etsyUrl || product.etsyUrl || "",
       // Do not copy legacy product images into every variant. They are shown
       // as a preview fallback until this size gets its own uploaded image.
       images: {
@@ -208,7 +206,6 @@ export default function Admin({ onBack }) {
         variants.push({
           name: variant.name,
           price: Number(variant.price || 0),
-          etsyUrl: (variant.etsyUrl || "").trim(),
           images,
         });
       }
@@ -224,7 +221,6 @@ export default function Admin({ onBack }) {
       // Preserve the original product-level six images as the fallback for
       // every size that does not yet have its own uploaded photos.
       saved.images = { ...emptyImages(), ...(form.images || {}) };
-      delete saved.etsyUrl;
       delete saved.price;
       delete saved.size;
       delete saved.weight;
@@ -347,10 +343,6 @@ export default function Admin({ onBack }) {
                 <label>
                   Price (CAD)
                   <input type="number" min="0" step="0.01" value={selected.price} onChange={(e) => updateVariant(activeVariant, "price", e.target.value)} required />
-                </label>
-                <label className="wide">
-                  Etsy URL for {selected.name}
-                  <input type="url" value={selected.etsyUrl || ""} onChange={(e) => updateVariant(activeVariant, "etsyUrl", e.target.value)} placeholder="https://www.etsy.com/ca/listing/..." />
                 </label>
               </div>
 
