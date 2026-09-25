@@ -7,6 +7,7 @@ import {
   MessageCircle,
   Search,
   ShieldCheck,
+  ShoppingBag,
   Sparkles,
   X,
 } from "lucide-react";
@@ -20,6 +21,7 @@ import RudrakshaKnowledge from "./components/RudrakshaKnowledge";
 import RudrakshaMaintenance from "./components/RudrakshaMaintenance";
 import LordShiva from "./components/LordShiva";
 import { loadProducts } from "./data/catalogue";
+import { getStoreUrl } from "./data/storeConfig";
 
 const categories = [
   "Nepal Rudraksha",
@@ -270,10 +272,14 @@ export default function App() {
             <button className={active === "recommendations" ? "active" : ""} onClick={() => navigate("#recommendations")}>Recommendations</button>
             <button className={active === "about" ? "active" : ""} onClick={() => navigate("#about")}>About</button>
             <button className={active === "contact" ? "active" : ""} onClick={() => navigate("#contact")}>Contact</button>
+            <a href={getStoreUrl("/")} className="external-store-link" title="Visit RudraSpirit E-Commerce Store">Online Store ↗</a>
           </nav>
 
           <div className="nav-actions">
             <button className="outline-button" onClick={() => navigate("#shop")}>View Catalog</button>
+            <a className="store-nav-button" href={getStoreUrl("/")} title="Visit RudraSpirit E-Commerce Store">
+              <ShoppingBag size={17} /> Store
+            </a>
             <a className="green-button" href="https://wa.me/14372671257" target="_blank" rel="noreferrer">
               <MessageCircle /> Chat
             </a>
@@ -556,6 +562,7 @@ export default function App() {
         <div className="container footer-layout">
           <Logo />
           <div><strong>Explore</strong><button onClick={() => navigate("#shop")}>Shop</button><button onClick={() => navigate("#guide")}>Rudraksha Guide</button><button onClick={() => navigate("#knowledge")}>Rudraksha Knowledge</button><button onClick={() => navigate("#maintenance")}>Maintenance</button><button onClick={() => navigate("#lord-shiva")}>Lord Shiva</button></div>
+          <div><strong>Online Store</strong><a href={getStoreUrl("/")}>Store Home</a><a href={getStoreUrl("/cart")}>Shopping Bag</a><a href={getStoreUrl("/track-your-order")}>Track Order</a><a href={getStoreUrl("/users/login")}>Account Login</a></div>
           <div><strong>Contact</strong><a href="tel:+14372671257">437-267-1257</a><a href="mailto:shivarudrakshain@gmail.com">shivarudrakshain@gmail.com</a></div>
           <div><strong>Manage</strong><a href="#admin">Product Manager</a></div>
         </div>

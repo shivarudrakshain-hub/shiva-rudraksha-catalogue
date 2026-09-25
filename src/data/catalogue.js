@@ -57,5 +57,40 @@ export async function loadProducts() {
     throw new Error("Unable to load product catalogue.");
   }
 
-  return (await response.json()).map(normalizeProduct);
+  const catalogueList = (await response.json()).map(normalizeProduct);
+
+  // Attempt optional live store enrichment (non-blocking)
+  try {
+    const storeApi = await fetch(`/api/v2/catalogue/products`)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+
+    if (Array.isArray(storeApi) && storeApi.length) {
+      const storeMap = new Map();
+      storeApi.forEach((item) => {
+        if (item.mukhi) storeMap.set(`mukhi-${item.mukhi}`, item);
+        if (item.slug) storeMap.set(`slug-${item.slug}`, item);
+      });
+
+      return catalogueList.map((item) => {
+        const live =
+          (item.mukhi && storeMap.get(`mukhi-${item.mukhi}`)) ||
+          storeMap.get(`slug-${item.id}`);
+
+        if (live) {
+          return {
+            ...item,
+            storeUrl: live.url,
+            storeStock: live.stock,
+            storePrice: live.price,
+          };
+        }
+        return item;
+      });
+    }
+  } catch (e) {
+    // Graceful fallback to catalogue JSON
+  }
+
+  return catalogueList;
 }

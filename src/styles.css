@@ -108,6 +108,15 @@ img { max-width: 100%; }
 .details-button { border: 1px solid var(--maroon); color: var(--maroon); background: white; }
 .card-bottom a { background: var(--green); color: white; }
 
+.store-nav-button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 0 18px; font-weight: 800; color: white; background: var(--maroon); border: 0; text-decoration: none; transition: transform .2s ease, opacity .2s ease; }
+.store-nav-button:hover { transform: translateY(-1px); opacity: .95; }
+.store-nav-button svg { width: 17px; height: 17px; }
+.external-store-link { display: flex; align-items: center; gap: 4px; font-weight: 600; color: var(--maroon); padding: 11px 14px; border-radius: 999px; text-decoration: none; }
+.external-store-link:hover { background: #f4ead9; }
+.card-store-banner { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; padding: 9px 12px; background: #fbf5eb; border: 1px solid #ebd9c2; border-radius: 999px; color: var(--maroon); font-size: 12px; font-weight: 700; text-decoration: none; transition: all .2s ease; }
+.card-store-banner:hover { background: var(--maroon); color: white; border-color: var(--maroon); }
+
+
 .guide-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
 .guide-card { display: grid; grid-template-columns: 66px 1fr; gap: 20px; background: white; border: 1px solid var(--border); border-radius: 18px; padding: 25px; transition: transform .3s ease, box-shadow .3s ease; }
 .guide-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(70,40,20,.1); }

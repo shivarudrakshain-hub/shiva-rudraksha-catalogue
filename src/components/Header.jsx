@@ -1,5 +1,6 @@
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, ShoppingBag } from "lucide-react";
 import { useState } from "react";
+import { getStoreUrl } from "../data/storeConfig";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Header() {
           <button onClick={() => scrollTo("recommendation")}>Recommendations</button>
           <button onClick={() => scrollTo("about")}>About</button>
           <button onClick={() => scrollTo("contact")}>Contact</button>
+          <a href={getStoreUrl("/")} className="external-store-link" style={{ padding: "8px 12px", color: "inherit" }}>Online Store ↗</a>
         </nav>
 
         <a
