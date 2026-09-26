@@ -35,7 +35,7 @@
         'image' => $rsMetaImage,
         'description' => $rsMetaDesc,
         'sku' => (string) $detailedProduct->id,
-        'brand' => ['@type' => 'Brand', 'name' => optional($detailedProduct->brand)->name ?: get_setting('website_name', 'Rudra Spirit')],
+        'brand' => ['@type' => 'Brand', 'name' => optional($detailedProduct->brand)->name ?: get_setting('website_name', 'Shiva Rudraksha')],
         'offers' => [
             '@type' => 'Offer',
             'priceCurrency' => $rsMetaCurrency,

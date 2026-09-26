@@ -1,4 +1,4 @@
-# RudraSpirit — robots.txt
+# Shiva Rudraksha — robots.txt
 User-agent: *
 Allow: /
 Disallow: /admin
@@ -31,4 +31,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://rudraspirit.com/sitemap.xml
+Sitemap: https://shivarudraksha.in/sitemap.xml

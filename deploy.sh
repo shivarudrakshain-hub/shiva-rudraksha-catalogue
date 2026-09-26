@@ -70,6 +70,10 @@ else
     echo "✅ Per-file migration pass complete."
 fi
 
+# 4b. Sync Shiva Rudraksha branding & purge demo categories
+echo "🕉️ Syncing Shiva Rudraksha branding & catalogue..."
+php artisan shivarudraksha:sync 2>&1 || true
+
 # 5. Rebuild caches
 echo "⚡ Rebuilding caches..."
 # NOTE: config is deliberately NOT cached. Many gateway/integration code paths

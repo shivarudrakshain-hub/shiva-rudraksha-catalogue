@@ -631,9 +631,23 @@ class HomeController extends Controller
 
     public function all_categories(Request $request)
     {
-        $categories = Category::with('childrenCategories')->where('parent_id', 0)->orderBy('order_level', 'desc')->get();
+        $categories = Category::with(['childrenCategories' => function ($q) {
+                $q->orderBy('order_level', 'desc');
+            }])
+            ->where('parent_id', 0)
+            ->whereNotIn('slug', ['supplements', 'demo'])
+            ->where(function ($q) {
+                $q->where('slug', 'rudraksha-beads')
+                  ->orWhereHas('products', function ($pq) {
+                      $pq->where('published', 1);
+                  })
+                  ->orWhereHas('childrenCategories.products', function ($pq) {
+                      $pq->where('published', 1);
+                  });
+            })
+            ->orderBy('order_level', 'desc')
+            ->get();
 
-        // dd($categories);
         return view('frontend.all_category', compact('categories'));
     }
 

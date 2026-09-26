@@ -16,16 +16,22 @@
     <meta name="app-url" content="{{ getBaseURL() }}">
     <meta name="file-base-url" content="{{ getFileBaseURL() }}">
 
-    <title>@yield('meta_title', get_setting('website_name') . ' | ' . get_setting('site_motto'))</title>
+    @php
+        $siteName = get_setting('website_name') ?: (get_setting('site_name') ?: 'Shiva Rudraksha');
+        if (in_array(trim($siteName), ['Rudra Spirit', 'RudraSpirit', 'Zolo Cart'])) {
+            $siteName = 'Shiva Rudraksha';
+        }
+        $siteMotto = get_setting('site_motto') ?: 'Authentic Certified Rudraksha from Nepal';
+        $defaultMetaTitle = $siteName . ' | ' . $siteMotto;
+        $rsDefaultDescription = get_setting('meta_description')
+            ?: ('Authentic, lab-certified Nepal Rudraksha beads and malas (1 to 21 Mukhi). Shop sacred Rudraksha online with worldwide shipping from ' . $siteName . '.');
+    @endphp
+
+    <title>@yield('meta_title', $defaultMetaTitle)</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    @php
-        $rsDefaultDescription = get_setting('meta_description')
-            ?: (get_setting('site_motto')
-            ?: 'Authentic, lab-certified Nepal Rudraksha beads and malas (1 to 14 Mukhi). Shop sacred Rudraksha online with worldwide shipping from ' . get_setting('website_name', 'RudraSpirit') . '.');
-    @endphp
     <meta name="description" content="@yield('meta_description', $rsDefaultDescription)" />
     <meta name="keywords" content="@yield('meta_keywords', get_setting('meta_keywords') ?: 'rudraksha, nepal rudraksha, mukhi, rudraksha mala, certified rudraksha')">
 
@@ -37,9 +43,9 @@
     {!! json_encode([
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
-        'name' => get_setting('website_name'),
+        'name' => $siteName,
         'url' => route('home'),
-        'logo' => get_setting('header_logo') ? uploaded_asset(get_setting('header_logo')) : static_asset('assets/img/pages/rudraspirit/Logo_02-scaled.webp'),
+        'logo' => get_setting('header_logo') ? uploaded_asset(get_setting('header_logo')) : asset('images/brand/shiva-rudraksha-logo.png'),
         'sameAs' => array_values(array_filter([
             get_setting('facebook_link'), get_setting('instagram_link'),
             get_setting('twitter_link'), get_setting('youtube_link'), get_setting('linkedin_link'),
@@ -50,7 +56,7 @@
     {!! json_encode([
         '@context' => 'https://schema.org',
         '@type' => 'WebSite',
-        'name' => get_setting('website_name'),
+        'name' => $siteName,
         'url' => route('home'),
         'potentialAction' => [
             '@type' => 'SearchAction',
@@ -62,34 +68,34 @@
 
     @if (!isset($detailedProduct) && !isset($customer_product) && !isset($shop) && !isset($page) && !isset($blog))
         @php
-            $meta_image = uploaded_asset(get_setting('meta_image'));
+            $meta_image = get_setting('meta_image') ? uploaded_asset(get_setting('meta_image')) : asset('images/brand/shiva-rudraksha-logo.png');
         @endphp
         <!-- Schema.org markup for Google+ -->
-        <meta itemprop="name" content="{{ get_setting('meta_title') }}">
-        <meta itemprop="description" content="{{ $rsDefaultDescription }}">
+        <meta itemprop="name" content="@yield('meta_title', $defaultMetaTitle)">
+        <meta itemprop="description" content="@yield('meta_description', $rsDefaultDescription)">
         <meta itemprop="image" content="{{ $meta_image }}">
 
         <!-- Twitter Card data -->
         <meta name="twitter:card" content="product">
         <meta name="twitter:site" content="@publisher_handle">
-        <meta name="twitter:title" content="{{ get_setting('meta_title') }}">
-        <meta name="twitter:description" content="{{ $rsDefaultDescription }}">
+        <meta name="twitter:title" content="@yield('meta_title', $defaultMetaTitle)">
+        <meta name="twitter:description" content="@yield('meta_description', $rsDefaultDescription)">
         <meta name="twitter:creator" content="@author_handle">
         <meta name="twitter:image" content="{{ $meta_image }}">
 
         <!-- Open Graph data -->
-        <meta property="og:title" content="{{ get_setting('meta_title') }}" />
+        <meta property="og:title" content="@yield('meta_title', $defaultMetaTitle)" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ route('home') }}" />
         <meta property="og:image" content="{{ $meta_image }}" />
-        <meta property="og:description" content="{{ $rsDefaultDescription }}" />
-        <meta property="og:site_name" content="{{ config('app.name') }}" />
+        <meta property="og:description" content="@yield('meta_description', $rsDefaultDescription)" />
+        <meta property="og:site_name" content="{{ $siteName }}" />
         <meta property="fb:app_id" content="{{ config('rudraspirit.facebook_pixel_id') }}">
     @endif
 
     <!-- Favicon -->
     @php
-        $site_icon = uploaded_asset(get_setting('site_icon'));
+        $site_icon = get_setting('site_icon') ? uploaded_asset(get_setting('site_icon')) : asset('images/brand/shiva-rudraksha-logo.png');
     @endphp
     <link rel="icon" href="{{ $site_icon }}">
     <link rel="apple-touch-icon" href="{{ $site_icon }}">

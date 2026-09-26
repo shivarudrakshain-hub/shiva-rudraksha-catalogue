@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Zolo Cart'),
+    'name' => env('APP_NAME', 'Shiva Rudraksha'),
 
     /*
     |--------------------------------------------------------------------------
