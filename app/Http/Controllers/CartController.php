@@ -65,7 +65,10 @@ class CartController extends Controller
             $total += $lineTotal;
 
             $items[] = [
+                'id' => $cart->id,
+                'product_id' => $product->id,
                 'name' => $product->getTranslation('name'),
+                'slug' => $product->slug,
                 'qty' => $cart->quantity,
                 'image' => $product->thumbnail ? get_image($product->thumbnail) : uploaded_asset($product->thumbnail_img),
                 'unit_price_formatted' => single_price($unitPrice),
@@ -74,6 +77,8 @@ class CartController extends Controller
         }
 
         return response()->json([
+            'status' => 1,
+            'cart_count' => count($carts),
             'items' => $items,
             'total_formatted' => single_price($total),
         ]);
@@ -143,6 +148,10 @@ class CartController extends Controller
         //check the color enabled or disabled for the product
         $str = CartUtility::create_cart_variant($product, $request->all());
         $product_stock = $product->stocks->where('variant', $str)->first();
+        if (!$product_stock && $product->stocks->count() > 0) {
+            $product_stock = $product->stocks->first();
+            $str = $product_stock ? $product_stock->variant : $str;
+        }
 
         if($authUser != null) {
             $user_id = $authUser->id;

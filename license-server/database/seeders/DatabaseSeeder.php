@@ -84,6 +84,10 @@ class DatabaseSeeder extends Seeder
                     // Every RudraSpirit finance/utility add-on (full platform)
                     'indian_pincode', 'live_currency_rates', 'profit_reports',
                     'accounting', 'gst_reports', 'partner_share', 'purchase_inventory',
+                    // Core engine feature flags gated via feature_allowed() in the
+                    // shop. Enterprise = full platform, so entitle all of them.
+                    'product_variations', 'payment_gateways', 'shipping_methods',
+                    'seo_tools', 'wishlist',
                 ],
                 'features'         => [
                     'Everything in Business',

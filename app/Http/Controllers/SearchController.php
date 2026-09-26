@@ -728,4 +728,57 @@ class SearchController extends Controller
 
         return view('frontend.rudraspirit.mukhi_info', compact('product', 'mukhiNumber', 'mukhiInfo'));
     }
+
+    public function catalogueBuy($identifier)
+    {
+        // Try matching by exact slug
+        $product = Product::where('slug', $identifier)->where('published', 1)->first();
+
+        // If not found, extract mukhi number if present (e.g. '5-mukhi' or '5')
+        if (!$product && preg_match('/(\d+)/', $identifier, $matches)) {
+            $mukhiNum = $matches[1];
+            $product = Product::where('published', 1)
+                ->where(function ($q) use ($mukhiNum) {
+                    $q->where('name', 'like', "%{$mukhiNum}%Mukhi%")
+                      ->orWhere('slug', 'like', "%{$mukhiNum}-mukhi%");
+                })
+                ->first();
+        }
+
+        // If not found, try matching by name or tags
+        if (!$product) {
+            $cleanName = str_replace(['-', '_'], ' ', $identifier);
+            $product = Product::where('published', 1)
+                ->where('name', 'like', "%{$cleanName}%")
+                ->first();
+        }
+
+        if ($product) {
+            return redirect()->route('product', $product->slug);
+        }
+
+        // Fallback to search
+        return redirect()->route('search', ['keyword' => str_replace(['-', '_'], ' ', $identifier)]);
+    }
+
+    public function catalogueApiProducts()
+    {
+        $products = Product::where('published', 1)
+            ->select('id', 'name', 'slug', 'unit_price', 'current_stock')
+            ->get()
+            ->map(function ($p) {
+                return [
+                    'id' => $p->id,
+                    'name' => $p->getTranslation('name'),
+                    'slug' => $p->slug,
+                    'price' => (float) $p->unit_price,
+                    'stock' => (int) $p->current_stock,
+                    'url' => route('product', $p->slug),
+                    'mukhi' => function_exists('rudraspirit_mukhi_number') ? rudraspirit_mukhi_number($p) : null,
+                ];
+            });
+
+        return response()->json($products);
+    }
 }
+

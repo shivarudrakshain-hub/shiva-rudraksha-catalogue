@@ -475,6 +475,9 @@ Route::group(['prefix' => 'v2', 'middleware' => ['app_language']], function () {
     Route::controller(PageController::class)->group(function () {
         Route::get('get-page', 'get_page_data');
     });
+
+    // Shiva Rudraksha catalogue live product sync API
+    Route::get('catalogue/products', [\App\Http\Controllers\SearchController::class, 'catalogueApiProducts']);
 });
 
 Route::fallback(function () {

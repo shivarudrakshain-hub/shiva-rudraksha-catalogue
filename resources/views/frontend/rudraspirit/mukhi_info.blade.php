@@ -208,9 +208,12 @@
                 <div class="rs-embedded-card">
                     @include('frontend.rudraspirit.partials.product_card', ['product' => $product])
                 </div>
-                <div style="margin-top:16px; text-align:center;">
+                <div style="margin-top:16px; text-align:center; display:flex; flex-direction:column; gap:8px;">
                     <a href="{{ route('product', $product->slug) }}" class="rs-btn" style="display:block; text-align:center; width:100%; text-decoration:none; padding:12px 0; font-size:13px;">
                         {{ translate('View Purchase Page') }} &rarr;
+                    </a>
+                    <a href="{{ url('/#guide') }}" class="rs-btn" style="display:flex; align-items:center; justify-content:center; gap:6px; width:100%; text-decoration:none; padding:10px 0; font-size:12px; background:var(--rs-cream); color:var(--rs-ink); border:1px solid var(--rs-gold);">
+                        <span>&#128302;</span> {{ translate('Explore Complete Mukhi Guide') }} &rarr;
                     </a>
                 </div>
             </div>

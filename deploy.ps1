@@ -23,12 +23,11 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-# --- Server (Hostinger) ---------------------------------------------------
-$SshHost = "u362580417@217.21.74.44"
-$SshPort = "65002"
-# Absolute path of the project on the server. Find it once with:
-#   ssh -p 65002 u362580417@217.21.74.44 'cd <wherever> && pwd'
-$ServerDir = "~/domains/rudraspirit.com/public_html"
+# --- Server (shivarudraksha.in) -------------------------------------------
+$SshHost = "shivarud1@45.199.139.25"
+$SshPort = "22"
+$SshKey  = "$env:USERPROFILE\.ssh\animazon_deploy"
+$ServerDir = "~/public_html"
 # --------------------------------------------------------------------------
 
 $msg = if ($Message) { $Message -join " " } else { "deploy: " + (Get-Date -Format "yyyy-MM-dd HH:mm") }
@@ -49,11 +48,11 @@ git push origin main
 
 if ($Direct) {
     Write-Host "==> Running deploy.sh on server over SSH..." -ForegroundColor Cyan
-    ssh -p $SshPort $SshHost "cd $ServerDir && bash deploy.sh"
+    ssh -i $SshKey -p $SshPort $SshHost "cd $ServerDir && bash deploy.sh"
     Write-Host "Done (direct)." -ForegroundColor Green
 } else {
-    Write-Host "Pushed. GitHub Actions will trigger the deploy webhook." -ForegroundColor Green
+    Write-Host "Pushed. GitHub Actions will trigger direct SSH deployment." -ForegroundColor Green
     Write-Host "   Auto: pull + composer + DB migrate + cache rebuild on the server." -ForegroundColor Green
     Write-Host "   Watch:   https://github.com/nandha3d/rudraspirit/actions" -ForegroundColor DarkGray
-    Write-Host "   Log:     ssh -p $SshPort $SshHost 'tail -n 50 $ServerDir/storage/logs/deploy.log'" -ForegroundColor DarkGray
+    Write-Host "   Log:     ssh -i $SshKey -p $SshPort $SshHost 'tail -n 50 $ServerDir/storage/logs/deploy.log'" -ForegroundColor DarkGray
 }

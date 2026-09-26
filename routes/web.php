@@ -242,7 +242,18 @@ Route::controller(SearchController::class)->group(function () {
     Route::get('/category/{category_slug}', 'listingByCategory')->name('products.category');
     Route::get('/brand/{brand_slug}', 'listingByBrand')->name('products.brand');
     Route::get('/rudraksha/{slug}', 'mukhi_info')->name('mukhi.info');
+    Route::get('/catalogue-buy/{identifier}', 'catalogueBuy')->name('catalogue.buy');
 });
+
+// Shiva Rudraksha Public Catalogue Integration (Redirect all to Root Website)
+Route::get('/catalogue', function () {
+    return redirect('/', 301);
+})->name('catalogue.index');
+
+Route::get('/shivarudraksha/{any?}', function () {
+    return redirect('/', 301);
+})->where('any', '.*')->name('shivarudraksha.catalogue');
+
 
 // Cart
 Route::controller(CartController::class)->group(function () {
@@ -553,9 +564,37 @@ Route::get('/faq', function () {
     }
     return view('frontend.rudraspirit.faq');
 })->name('faq');
+Route::get('/shop', function () {
+    return view('frontend.rudraspirit.shop');
+})->name('rudraspirit.shop');
+
+Route::get('/guide', function () {
+    return view('frontend.rudraspirit.guide');
+})->name('rudraspirit.guide');
+
+Route::get('/knowledge', function () {
+    return view('frontend.rudraspirit.knowledge');
+})->name('rudraspirit.knowledge');
+
+Route::get('/maintenance', function () {
+    return view('frontend.rudraspirit.maintenance');
+})->name('rudraspirit.maintenance');
+
+Route::get('/lord-shiva', function () {
+    return view('frontend.rudraspirit.lord_shiva');
+})->name('rudraspirit.lord_shiva');
+
+Route::get('/recommendations', function () {
+    return view('frontend.rudraspirit.recommendations');
+})->name('rudraspirit.recommendations');
+
 Route::get('/about', function () {
     return view('frontend.rudraspirit.about');
 })->name('rudraspirit.about');
+
+Route::get('/contact', function () {
+    return view('frontend.rudraspirit.contact');
+})->name('rudraspirit.contact');
 
 // 3D supplement storefront (page source in resources/forge, models in public/assets/3d).
 // NOTE: the HTML lives OUTSIDE public/ on purpose — a physical public/forge/ dir would let

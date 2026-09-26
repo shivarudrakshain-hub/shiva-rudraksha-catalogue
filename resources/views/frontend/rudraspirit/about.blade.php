@@ -1,28 +1,120 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-<section style="background:var(--rs-dark);color:var(--rs-cream);text-align:center;padding:90px 32px;">
-    <div style="font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--rs-gold-light);margin-bottom:18px;">{{ translate('Our Story') }}</div>
-    <h1 class="rs-serif" style="font-weight:500;font-size:50px;letter-spacing:.04em;text-transform:uppercase;margin:0;">{{ translate('Rooted in') }} <em style="color:var(--rs-gold-light);font-style:italic;">{{ translate('Devotion') }}</em></h1>
-    <p style="font-size:18px;color:var(--rs-on-dark-muted);max-width:600px;margin:24px auto 0;line-height:1.9;">{{ translate('From the foothills of the Himalayas to your altar — every bead carries a lineage of faith, craft, and care.') }}</p>
-</section>
+<main class="page-shell">
+    <div class="container text-page" style="padding-top:50px;padding-bottom:80px;">
 
-<section style="max-width:1080px;margin:0 auto;padding:80px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
-    <div style="aspect-ratio:4/5;border-radius:10px;overflow:hidden;">
-        <img src="{{ static_asset('assets/img/pages/rudraspirit/Gemini_Generated_Image_9keguo9keguo9keg.webp') }}" alt="{{ translate('Rudra Spirit') }}" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-    <div>
-        <h2 class="rs-serif" style="font-weight:500;font-size:35px;color:var(--rs-ink);margin:0 0 20px;">{{ translate('A bead is a') }} <em style="color:var(--rs-gold);font-style:italic;">{{ translate('promise') }}</em></h2>
-        <p style="font-size:17px;color:var(--rs-ink-soft);line-height:1.9;margin:0 0 16px;">{{ translate('Rudra Spirit began with a simple belief: that authenticity is sacred. Too many seekers receive carved, fused, or mislabelled beads. We set out to change that — working directly with trusted growers in Nepal and certifying every single bead before it ships.') }}</p>
-        <p style="font-size:17px;color:var(--rs-ink-soft);line-height:1.9;margin:0;">{{ translate('Each Rudraksha is cleaned, energised through traditional ritual, and paired with a lab certificate so you can wear it with complete trust.') }}</p>
-    </div>
-</section>
+        <div class="page-heading">
+            <span>ABOUT SHIVA RUDRAKSHA</span>
+            <h1>Every Rudraksha Has a Story. So Does Ours.</h1>
+        </div>
 
-<section style="background:var(--rs-cream);padding:70px 32px;">
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:34px;text-align:center;">
-        <div><div class="rs-serif" style="font-size:45px;color:var(--rs-gold);">100%</div><div style="font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--rs-ink-soft);margin-top:8px;">{{ translate('Certified Authentic') }}</div></div>
-        <div><div class="rs-serif" style="font-size:45px;color:var(--rs-gold);">14</div><div style="font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--rs-ink-soft);margin-top:8px;">{{ translate('Mukhi Types') }}</div></div>
-        <div><div class="rs-serif" style="font-size:45px;color:var(--rs-gold);">40+</div><div style="font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--rs-ink-soft);margin-top:8px;">{{ translate('Countries Served') }}</div></div>
+        <p>
+            At <strong>Shiva Rudraksha Inc.</strong>, we believe that every Rudraksha carries
+            a unique spiritual significance, and choosing one should be a journey built on
+            trust, authenticity, and transparency.
+        </p>
+
+        <p>
+            Based in Canada, we carefully source authentic Rudraksha beads from trusted
+            partners in Nepal and Indonesia. Every product on our website is presented
+            with actual photographs of the exact bead you will receive—not stock images
+            or AI-generated representations.
+        </p>
+
+        <h3 style="margin-top:40px;margin-bottom:12px;">🌿 Our Mission</h3>
+
+        <p>
+            To make authentic Rudraksha accessible worldwide while providing honest
+            guidance, transparent product information, and exceptional customer service
+            before and after every purchase.
+        </p>
+
+        <h3 style="margin-top:44px;margin-bottom:16px;">✨ Why Choose Shiva Rudraksha?</h3>
+
+        <div class="about-features">
+            <div class="about-card">
+                <h4>📸 Actual Product Photography</h4>
+                <p>
+                    Every Rudraksha displayed on our website is photographed individually.
+                    What you see is exactly what you receive.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h4>📜 Certificate & X-Ray</h4>
+                <p>
+                    Wherever available, products include certification and X-ray verification
+                    for additional confidence and transparency.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h4>🌿 Authentic Sourcing</h4>
+                <p>
+                    Our Rudraksha beads are sourced from trusted partners in Nepal and
+                    Indonesia and carefully inspected before listing.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h4>🧘 Personal Guidance</h4>
+                <p>
+                    We are happy to recommend suitable Rudraksha based on your birth details,
+                    spiritual practices, and personal preferences.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h4>📿 Custom Mala Design</h4>
+                <p>
+                    We create customized Rudraksha malas and bracelets according to your
+                    spiritual requirements.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <h4>🌍 Worldwide Shipping</h4>
+                <p>
+                    Secure shipping is available across Canada, the USA, and many countries
+                    around the world.
+                </p>
+            </div>
+        </div>
+
+        <h3 style="margin-top:44px;margin-bottom:16px;">❤️ Our Promise</h3>
+
+        <ul class="about-promise">
+            <li>Authentic Rudraksha from trusted sources</li>
+            <li>Actual product photographs</li>
+            <li>Certificate & X-Ray wherever available</li>
+            <li>Honest pricing with no hidden surprises</li>
+            <li>Personalized customer guidance</li>
+            <li>Secure worldwide delivery</li>
+        </ul>
+
+        <div class="about-quote">
+            <h2>
+                “We don't just sell Rudraksha.
+                <br>
+                We help preserve a tradition built on faith, authenticity, and trust.”
+            </h2>
+        </div>
+
+        <h3 style="margin-top:40px;margin-bottom:12px;">🙏 A Gentle Note</h3>
+
+        <p style="color:var(--muted);font-size:16px;line-height:1.7;">
+            The spiritual significance and traditional benefits described on this website
+            are based on Hindu scriptures and long-standing cultural traditions.
+            Individual experiences may vary, and our products are not intended to
+            diagnose, treat, cure, or prevent any medical condition.
+        </p>
+
+        <p style="margin-top:28px;font-size:16px;">
+            Thank you for visiting <strong>Shiva Rudraksha Inc.</strong> We are honored
+            to be part of your spiritual journey.
+        </p>
+
     </div>
-</section>
+</main>
 @endsection

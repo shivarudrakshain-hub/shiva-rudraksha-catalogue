@@ -21,10 +21,19 @@ yarn-error.log
 .idea/
 /public/*
 !/public/assets/css/rudraspirit.css
+!/public/assets/css/shivarudraksha.css
 !/public/assets/js/rudraspirit.js
+!/public/data/
+!/public/data/**
 !/public/index.php
 !/public/.htaccess
 !/public/robots.txt
+/.claude/
+/.phpunit.result.cache
+/PROJECT_AUDIT.docx
+/sqlbackups/
+/sqlupdates/
+/shivarudraksha/
 updates/
 # composer.lock
 # *.lock

@@ -1,3 +1,6 @@
+@if (get_setting('homepage_select') == 'rudraspirit')
+    @include('frontend.rudraspirit.partials.footer')
+@else
 <!-- Last Viewed Products  -->
 @if(get_setting('last_viewed_product_activation') == 1 && Auth::check() && auth()->user()->user_type == 'customer')
 <div class="border-top" id="section_last_viewed_products" style="background-color: #fcfcfc;">
@@ -558,9 +561,6 @@
 @endif
 
 <!-- FOOTER -->
-@if (get_setting('homepage_select') == 'rudraspirit')
-    @include('frontend.rudraspirit.partials.footer')
-@else
 <footer class="pt-3 pb-7 pb-xl-3 bg-black text-soft-light">
     <div class="container">
         <div class="row align-items-center py-3">

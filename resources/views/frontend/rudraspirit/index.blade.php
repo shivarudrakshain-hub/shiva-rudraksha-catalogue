@@ -3,213 +3,166 @@
 @section('content')
 @php
     $rsParent = rudraspirit_root_category();
-    $rsMukhiPicks = $rsParent ? \App\Models\Product::where('category_id', $rsParent->id)->where('published', 1)->orderBy('id')->get() : collect();
-    $rsTrendy = filter_products(\App\Models\Product::where('published', 1)->latest())->take(8)->get();
-    $rsPosts = \App\Models\Blog::where('status', 1)->latest()->take(3)->get();
-    $rsShopUrl = $rsParent ? route('products.category', $rsParent->slug) : route('categories.all');
-    $rsMukhiCount = $rsMukhiPicks->count();
-    $rsLowestPrice = $rsMukhiPicks->count() ? $rsMukhiPicks->min('unit_price') : null;
+    $rsFeaturedProducts = \App\Models\Product::where('published', 1)->orderBy('id')->take(3)->get();
+    
+    // Load catalogue metadata
+    $catalogueJsonPath = public_path('data/products.json');
+    $catalogueProducts = file_exists($catalogueJsonPath) ? json_decode(file_get_contents($catalogueJsonPath), true) : [];
 
-    // Admin-managed hero slides take over when present; otherwise use the built-in defaults.
-    // Guarded so a not-yet-migrated table can never fatal the homepage.
-    try {
-        $rsDbSlides = \App\Models\RudraspiritHeroSlide::where('status', 1)->orderBy('sort_order')->orderBy('id')->get();
-    } catch (\Throwable $e) {
-        $rsDbSlides = collect();
-    }
-    $rsHeroSlides = [];
-
-    if ($rsDbSlides->count() > 0) {
-        foreach ($rsDbSlides as $rsSlide) {
-            $rsHeroSlides[] = [
-                'kicker' => $rsSlide->kicker,
-                'title' => $rsSlide->title,
-                'title_em' => $rsSlide->title_em,
-                'title_end' => '',
-                'text' => $rsSlide->text,
-                'cta' => $rsSlide->cta_text ?: translate('Shop Collection'),
-                'image_url' => $rsSlide->image ? uploaded_asset($rsSlide->image) : static_asset('assets/img/pages/rudraspirit/Gemini_Generated_Image_9jfh569jfh569jfh.webp'),
-                'link' => $rsSlide->cta_link ?: $rsShopUrl,
-            ];
-        }
-    } else {
-        $rsDefaultSlides = [
-            ['img' => 'Gemini_Generated_Image_9jfh569jfh569jfh.webp', 'kicker' => translate('Nepal Origin · Lab Certified'), 'title' => translate('Discover'), 'title_em' => translate('Our Rudraksha'), 'text' => translate('Embrace ancient wisdom and spirituality with our hand-picked, lab-certified Rudraksha beads sourced from the Himalayas.'), 'cta' => translate('Shop Collection')],
-            ['img' => 'Gemini_Generated_Image_uw5h9puw5h9puw5h.webp', 'kicker' => translate('Blessed & Energised'), 'title' => translate('Crafted'), 'title_em' => translate('For Calm'), 'text' => translate('Connect with the divine vibration of natural Rudraksha. Empower your journey and protect your aura.'), 'cta' => translate('Shop Collection')],
-            ['img' => 'Gemini_Generated_Image_9keguo9keguo9keg.webp', 'kicker' => $rsMukhiCount > 0 ? $rsMukhiCount . ' ' . translate('Sacred Mukhi Types') : translate('Sacred Mukhi Types'), 'title' => translate('Worn'), 'title_em' => translate('With Intention'), 'text' => $rsLowestPrice ? translate('From 1 Mukhi to 14 Mukhi — find the bead that resonates with your path, starting from') . ' ' . single_price($rsLowestPrice) . '.' : translate('From 1 Mukhi to 14 Mukhi — find the bead that resonates with your path, worn daily by thousands.'), 'cta' => translate('View All Mukhis')],
-        ];
-        foreach ($rsDefaultSlides as $rsSlide) {
-            $rsHeroSlides[] = [
-                'kicker' => $rsSlide['kicker'],
-                'title' => $rsSlide['title'],
-                'title_em' => $rsSlide['title_em'],
-                'title_end' => '',
-                'text' => $rsSlide['text'],
-                'cta' => $rsSlide['cta'],
-                'image_url' => static_asset('assets/img/pages/rudraspirit/' . $rsSlide['img']),
-                'link' => $rsShopUrl,
-            ];
+    $catalogueByMukhi = [];
+    foreach ($catalogueProducts as $cp) {
+        if (!empty($cp['mukhi'])) {
+            $catalogueByMukhi[$cp['mukhi']] = $cp;
         }
     }
 @endphp
 
-<!-- HERO -->
-<section class="rs-hero">
-    @foreach ($rsHeroSlides as $i => $slide)
-        <div class="rs-hero-slide @if ($i == 0) active @endif" data-slide="{{ $i }}">
-            <div class="rs-hero-content">
-                <div class="rs-hero-kicker">{{ $slide['kicker'] }}</div>
-                <h1 class="rs-hero-title">{{ $slide['title'] }} <em>{{ $slide['title_em'] }}</em> {{ $slide['title_end'] }}</h1>
-                <p class="rs-hero-text">{{ $slide['text'] }}</p>
-                <a href="{{ $slide['link'] }}" class="rs-btn">{{ $slide['cta'] }} <span>&rarr;</span></a>
+<!-- HERO SECTION (Screenshot 1 / Original Repo Home) -->
+<section class="lovable-hero">
+    <div class="container lovable-hero-grid">
+        <div>
+            <span class="source-pill">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange);"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                DIRECTLY SOURCED • CERTIFIED
+            </span>
+            <h1>Authentic Certified Rudraksha from <em>Nepal</em>.</h1>
+            <p>
+                Carefully selected Rudraksha beads, malas and spiritual combinations—supplied in Canada, the United States and worldwide.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ route('rudraspirit.shop') }}" class="maroon-button" style="text-decoration:none;">
+                    Shop Rudraksha
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="{{ route('rudraspirit.recommendations') }}" class="outline-button large" style="text-decoration:none;">
+                    Get a Recommendation
+                </a>
             </div>
-            <div class="rs-hero-visual">
-                <img src="{{ $slide['image_url'] }}" alt="{{ $slide['title'] }} {{ $slide['title_em'] }}">
-            </div>
-        </div>
-    @endforeach
-    <div class="rs-hero-dots">
-        @foreach ($rsHeroSlides as $i => $slide)
-            <button type="button" class="rs-hero-dot @if ($i == 0) active @endif" data-slide-target="{{ $i }}" aria-label="{{ translate('Slide') }} {{ $i + 1 }}"></button>
-        @endforeach
-    </div>
-</section>
-
-<!-- SHOP BY MUKHI -->
-@if ($rsMukhiPicks->count() > 0)
-<section class="rs-section">
-    <h2 class="rs-section-title"><em>{{ translate('Shop By') }}</em> {{ translate('Mukhi') }}</h2>
-    <p class="rs-section-sub">{{ translate('Explore our collection of sacred, certified beads — from single power beads to woven malas. Find the one that calls to you.') }}</p>
-    <div class="rs-cat-rail">
-        @foreach ($rsMukhiPicks as $rsMukhiPick)
-            <a href="{{ route('product', $rsMukhiPick->slug) }}" class="rs-cat-item">
-                <span class="rs-cat-circle">
-                    @if ($rsMukhiPick->thumbnail)
-                        <img src="{{ get_image($rsMukhiPick->thumbnail) }}" alt="{{ $rsMukhiPick->getTranslation('name') }}">
-                    @else
-                        <img src="{{ static_asset('assets/img/pages/rudraspirit/Gemini_Generated_Image_9jfh569jfh569jfh.webp') }}" alt="{{ $rsMukhiPick->getTranslation('name') }}">
-                    @endif
+            <div class="promise-grid">
+                <span>
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange);"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    Authentic Rudraksha
                 </span>
-                <span class="rs-cat-name">{{ $rsMukhiPick->getTranslation('name') }}</span>
-            </a>
-        @endforeach
-    </div>
-</section>
-@endif
-
-<!-- BEST SELLERS BAND -->
-<section class="rs-band">
-    <h2 class="rs-section-title">{{ translate('Shop Our Best') }} <em>{{ translate('Sellers') }}</em></h2>
-    <p class="rs-section-sub" style="margin-bottom:0;">{{ translate("Discover the beads our community returns to — from the calming 5 Mukhi to the obstacle-clearing Ganesha bead. These are the trusted favourites you'll want close.") }}</p>
-</section>
-
-<!-- TRENDY COLLECTION -->
-@if ($rsTrendy->count() > 0)
-<section class="rs-section">
-    <h2 class="rs-section-title"><em>{{ translate('Trendy') }}</em> {{ translate('Collection') }}</h2>
-    <p class="rs-section-sub">{{ translate('The beads our customers love most — from everyday companions to rare, high-mukhi treasures. Hand-selected and certified.') }}</p>
-    <div class="rs-product-grid">
-        @foreach ($rsTrendy as $product)
-            @include('frontend.rudraspirit.partials.product_card', ['product' => $product])
-        @endforeach
-    </div>
-</section>
-@endif
-
-<!-- LIMITED DEAL -->
-@php
-    // Use a real, currently-active flash deal when present; otherwise fall back to
-    // the configurable/rolling countdown and the catalog link.
-    try {
-        $rsToday = strtotime(date('Y-m-d H:i:s'));
-        $rsFlashDeal = \App\Models\FlashDeal::where('status', 1)
-            ->where('start_date', '<=', $rsToday)
-            ->where('end_date', '>', $rsToday)
-            ->orderBy('end_date', 'asc')->first();
-    } catch (\Throwable $e) {
-        $rsFlashDeal = null;
-    }
-    $rsDealLink = $rsFlashDeal
-        ? route('flash-deal-details', $rsFlashDeal->slug)
-        : ($rsParent ? route('products.category', $rsParent->slug) : route('categories.all'));
-    $rsDealEndMs = $rsFlashDeal
-        ? max(0, ($rsFlashDeal->end_date - time()) * 1000)
-        : max(0, (rudraspirit_deal_ends_at() - time()) * 1000);
-@endphp
-<section class="rs-deal">
-    <div class="rs-deal-content">
-        <div class="rs-hero-kicker" style="color:var(--rs-gold-deep);">{{ translate("Don't Miss Out!") }}</div>
-        <h2 class="rs-serif" style="font-weight:500;font-size:42px;letter-spacing:.06em;text-transform:uppercase;color:var(--rs-brown);margin:0 0 14px;"><em style="color:var(--rs-gold-deep);font-style:italic;">{{ translate('Limited') }}</em> {{ translate('Time Deal') }}</h2>
-        <p style="font-size:17px;color:var(--rs-ink-soft);line-height:1.8;max-width:420px;margin:0 0 26px;">{{ translate("Exclusive savings on our most-loved certified beads. These blessings won't last long — begin your practice today.") }}</p>
-        <div class="rs-deal-timer">
-            <div><div id="rs-deal-days">00</div><span>{{ translate('Days') }}</span></div>
-            <div><div id="rs-deal-hours">00</div><span>{{ translate('Hours') }}</span></div>
-            <div><div id="rs-deal-mins">00</div><span>{{ translate('Mins') }}</span></div>
-            <div><div id="rs-deal-secs">00</div><span>{{ translate('Secs') }}</span></div>
+                <span>
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange);"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    Certificate Available
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange);"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    Canada-Based Business
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange);"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    Worldwide Shipping
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--orange);"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    Personal Consultation
+                </span>
+            </div>
         </div>
-        <a href="{{ $rsDealLink }}" class="rs-btn">{{ translate('Shop Now') }} <span>&rarr;</span></a>
-    </div>
-    <div class="rs-deal-visual">
-        @php
-            $rsDealImage = $rsMukhiPicks->count() && $rsMukhiPicks->last()->thumbnail
-                ? get_image($rsMukhiPicks->last()->thumbnail)
-                : static_asset('assets/img/pages/rudraspirit/Gemini_Generated_Image_2ht5mi2ht5mi2ht5.webp');
-        @endphp
-        <img src="{{ $rsDealImage }}" alt="{{ translate('Limited Time Rudraksha Deal') }}" loading="lazy">
-    </div>
-</section>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        rsStartCountdownBoxes(
-            document.getElementById('rs-deal-days'), document.getElementById('rs-deal-hours'),
-            document.getElementById('rs-deal-mins'), document.getElementById('rs-deal-secs'),
-            {{ $rsDealEndMs }}
-        );
-    });
-</script>
-
-<!-- FEATURES -->
-<section class="rs-features">
-    <div class="rs-feature">
-        <div class="rs-feature-icon">&#10022;</div>
-        <div class="rs-feature-title">{{ translate('Free Shipping') }}</div>
-        <div class="rs-feature-sub">{{ translate('On all certified orders worldwide') }}</div>
-    </div>
-    <div class="rs-feature">
-        <div class="rs-feature-icon">&#10022;</div>
-        <div class="rs-feature-title">{{ translate('Flexible Payment') }}</div>
-        <div class="rs-feature-sub">{{ translate('Secured multi-currency checkout') }}</div>
-    </div>
-    <div class="rs-feature">
-        <div class="rs-feature-icon">&#10022;</div>
-        <div class="rs-feature-title">{{ translate('14-Day Returns') }}</div>
-        <div class="rs-feature-sub">{{ translate('On unworn, certified beads') }}</div>
-    </div>
-    <div class="rs-feature">
-        <div class="rs-feature-icon">&#10022;</div>
-        <div class="rs-feature-title">{{ translate('Premium Support') }}</div>
-        <div class="rs-feature-sub">{{ translate('Guidance from our bead experts') }}</div>
+        <div class="hero-product-panel">
+            <img src="{{ asset('images/products/12-mukhi-nepal-rudraksha/top.jpg') }}" alt="Authentic Certified Nepal Rudraksha" onerror="this.onerror=null;this.src='{{ asset('shivarudraksha/images/products/12-mukhi-nepal-rudraksha/top.jpg') }}';">
+        </div>
     </div>
 </section>
 
-<!-- BEHIND THE BRAND -->
-@if ($rsPosts->count() > 0)
-<section class="rs-section">
-    <h2 class="rs-section-title"><em>{{ translate('Behind') }}</em> {{ translate('The Brand') }}</h2>
-    <p class="rs-section-sub">{{ translate('Our journey, our values, and the stories woven through every certified bead. Discover what makes Rudra Spirit different.') }}</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:left;">
-        @foreach ($rsPosts as $post)
-            <a href="{{ route('blog.details', $post->slug) }}" style="text-decoration:none;color:inherit;">
-                <div style="position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:linear-gradient(150deg,var(--rs-tan-light),var(--rs-tan));">
-                    @if ($post->banner)
-                        <img src="{{ uploaded_asset($post->banner) }}" alt="{{ $post->title }}" style="width:100%;height:100%;object-fit:cover;">
-                    @endif
+<!-- FEATURED COLLECTION (Matching Original Repo Home Screen) -->
+<section class="home-featured container" style="padding-top:70px;padding-bottom:90px;">
+    <div class="section-kicker">FEATURED COLLECTION</div>
+    <h2>Discover authentic Nepal Rudraksha</h2>
+
+    <!-- Product Grid (Top 3 Products like original repo) -->
+    <div class="product-grid" style="margin-top:28px;">
+        @foreach ($rsFeaturedProducts as $product)
+            @php
+                $mukhiNum = function_exists('rudraspirit_mukhi_number') ? rudraspirit_mukhi_number($product) : null;
+                $catMeta = ($mukhiNum && isset($catalogueByMukhi[$mukhiNum])) ? $catalogueByMukhi[$mukhiNum] : null;
+
+                $cardImg = uploaded_asset($product->thumbnail_img);
+                if (!$cardImg || strpos($cardImg, 'placeholder') !== false) {
+                    if ($catMeta && !empty($catMeta['images']['top'])) {
+                        $cardImg = asset($catMeta['images']['top']);
+                    } else {
+                        $cardImg = asset('images/products/1-mukhi-nepal-rudraksha/top.jpg');
+                    }
+                }
+
+                $productName = $product->getTranslation('name');
+                $waMessage = rawurlencode("Hello Shiva Rudraksha Inc., I am interested in " . $productName . ". Please share size availability and certificate details.");
+            @endphp
+
+            <article class="product-card">
+                <a href="{{ route('product', $product->slug) }}" class="card-open" style="display:block;text-decoration:none;">
+                    <div class="gallery-slider">
+                        <div class="gallery-image-wrap">
+                            <img src="{{ $cardImg }}" alt="{{ $productName }}" onerror="this.onerror=null;this.src='{{ asset('images/products/1-mukhi-nepal-rudraksha/front.jpg') }}';" loading="lazy">
+                        </div>
+                    </div>
+                </a>
+
+                <div class="card-content">
+                    <div class="card-badges">
+                        <span>CERTIFIED</span>
+                        <span>{{ $product->current_stock > 0 ? 'IN STOCK' : 'AVAILABLE' }}</span>
+                    </div>
+
+                    <a href="{{ route('product', $product->slug) }}" class="product-name" style="display:block;text-decoration:none;">
+                        {{ $productName }}
+                    </a>
+
+                    <p style="min-height:42px;font-size:14px;color:var(--muted);margin:8px 0 14px;line-height:1.5;">
+                        {{ $catMeta['description'] ?? 'Authentic holy Rudraksha bead, laboratory certified with individual X-ray test report.' }}
+                    </p>
+
+                    <div class="card-meta" style="display:flex;gap:14px;font-size:12px;color:var(--muted);margin-bottom:14px;">
+                        <span style="display:flex;align-items:center;gap:4px;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Nepal
+                        </span>
+                        <span style="display:flex;align-items:center;gap:4px;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            Certificate Included
+                        </span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <div>
+                            <small style="font-size:11px;color:var(--muted);text-transform:uppercase;">Price</small>
+                            <strong style="color:var(--maroon);font-size:22px;font-family:Georgia,serif;">{{ single_price($product->unit_price) }}</strong>
+                        </div>
+
+                        <a href="{{ route('product', $product->slug) }}" class="details-button" style="text-decoration:none;">
+                            View Details
+                        </a>
+
+                        <a href="https://wa.me/14372671257?text={{ $waMessage }}" target="_blank" rel="noreferrer" style="text-decoration:none;background:var(--green);color:#fff;" title="Enquire on WhatsApp">
+                            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            Enquire
+                        </a>
+                    </div>
+
+                    <div style="margin-top:10px;">
+                        <button type="button" class="card-store-banner" onclick="addToCart({{ $product->id }})" style="width:100%;border:none;cursor:pointer;">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                            Add to Bag &rarr;
+                        </button>
+                    </div>
                 </div>
-                <h3 class="rs-serif" style="font-size:22px;font-weight:500;color:var(--rs-ink);margin:18px 0 10px;">{{ $post->title }}</h3>
-                <span style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--rs-gold);">{{ translate('Read More') }} &rarr;</span>
-            </a>
+            </article>
         @endforeach
     </div>
+
+    <!-- View Full Collection CTA Link -->
+    <div style="text-align:center;margin-top:50px;">
+        <a href="{{ route('rudraspirit.shop') }}" class="maroon-button" style="text-decoration:none;font-size:16px;padding:0 36px;min-height:52px;">
+            View Full Rudraksha Collection &rarr;
+        </a>
+    </div>
 </section>
-@endif
+
+<!-- Floating WhatsApp Button -->
+<a class="floating-whatsapp" href="https://wa.me/14372671257" target="_blank" rel="noreferrer" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</a>
 @endsection

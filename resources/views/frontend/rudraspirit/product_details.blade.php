@@ -257,7 +257,20 @@
                 <span style="color:var(--rs-danger);font-size:15px;text-transform:uppercase;letter-spacing:.1em;">{{ translate('Out of stock') }}</span>
             @endif
 
-
+            @php
+                $rsMukhiNum = function_exists('rudraspirit_mukhi_number') ? rudraspirit_mukhi_number($detailedProduct) : null;
+            @endphp
+            @if ($rsMukhiNum)
+                <div style="margin-top:18px;padding:14px 18px;background:var(--rs-cream);border:1px dashed var(--rs-gold);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                    <div style="font-size:13px;color:var(--rs-ink);">
+                        <strong style="color:var(--rs-gold-deep);">&#128302; {{ translate('Certified Bead Verification') }}</strong>:
+                        <span style="color:var(--rs-ink-muted);">{{ translate('Inspect multi-angle photos, X-Ray & ISO lab certificate.') }}</span>
+                    </div>
+                    <a href="{{ url('/#guide') }}" class="rs-btn" style="white-space:nowrap;padding:9px 16px;font-size:12px;text-decoration:none;">
+                        {{ translate('View Mukhi Guide') }} &rarr;
+                    </a>
+                </div>
+            @endif
         </div>
     </div>
 

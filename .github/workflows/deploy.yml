@@ -1,33 +1,30 @@
-name: Deploy to Hostinger
+name: Direct Deployment CI/CD (shivarudraksha.in)
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
+    name: Deploy to Production via SSH
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Deployment Webhook
-        run: |
-          echo "🚀 Triggering deployment webhook..."
-          RESPONSE=$(curl -s -w "\n%{http_code}" \
-            -X POST \
-            -H "Content-Type: application/json" \
-            -H "X-Deploy-Key: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}" \
-            "https://rudraspirit.com/deploy-webhook.php")
-          
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          BODY=$(echo "$RESPONSE" | head -n -1)
-          
-          echo "Response: $BODY"
-          echo "HTTP Code: $HTTP_CODE"
-          
-          if [ "$HTTP_CODE" = "200" ]; then
-            echo "✅ Deployment triggered successfully!"
-          else
-            echo "❌ Webhook returned HTTP $HTTP_CODE"
-            exit 1
-          fi
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy on server via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script_stop: true
+          script: |
+            echo "🚀 Connecting to server for automated deployment..."
+            cd ~/public_html
+            bash deploy.sh
+
 

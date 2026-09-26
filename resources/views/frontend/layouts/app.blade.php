@@ -114,6 +114,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ static_asset('assets/css/rudraspirit.css?v=') }}{{ rand(1000, 9999) }}">
+    <link rel="stylesheet" href="{{ static_asset('assets/css/shivarudraksha.css?v=') }}{{ rand(1000, 9999) }}">
     @endif
 
     <script>
@@ -529,10 +530,10 @@
 
     <!-- Offcanvas -->
     <div id="rightOffcanvas"
-        class="position-fixed top-0 fullscreen bg-white py-20px z-1045 {{ $offcanvas_class ?? 'right-offcanvas-md' }}">
+        class="position-fixed top-0 fullscreen bg-white py-20px z-1045 {{ $offcanvas_class ?? 'right-offcanvas-md' }}" style="display: none;">
     </div>
     <!-- Overlay -->
-    <div id="rightOffcanvasOverlay" class="position-fixed top-0 left-0 h-100 w-100"></div>
+    <div id="rightOffcanvasOverlay" class="position-fixed top-0 left-0 h-100 w-100" style="display: none;"></div>
 
 
     @yield('modal')
@@ -882,8 +883,14 @@
             if ($social_chat.length) {
                 $social_chat.addClass('d-none');
             }
-            rightOffcanvas.classList.add('active');
-            overlay.classList.add('active');
+            if (rightOffcanvas) {
+                rightOffcanvas.style.display = 'block';
+                rightOffcanvas.classList.add('active');
+            }
+            if (overlay) {
+                overlay.style.display = 'block';
+                overlay.classList.add('active');
+            }
             document.body.classList.add('body-no-scroll');
             rightOffcanvas.innerHTML = '<div class="h-100 w-100 d-flex justify-content-center align-items-center"><div class="footable-loader" style="height: 100vh !important;"><span class="fooicon fooicon-loader"></span></div> </div>';
 
@@ -910,8 +917,14 @@
 
             // Close function
             function closeRightcanvas() {
-                rightOffcanvas.classList.remove('active');
-                overlay.classList.remove('active');
+                if (rightOffcanvas) {
+                    rightOffcanvas.classList.remove('active');
+                    rightOffcanvas.style.display = 'none';
+                }
+                if (overlay) {
+                    overlay.classList.remove('active');
+                    overlay.style.display = 'none';
+                }
                 document.body.classList.remove('body-no-scroll');
                 const $social_chat = $('.sc-q8c6tt-3');
                 if ($social_chat.length) {
