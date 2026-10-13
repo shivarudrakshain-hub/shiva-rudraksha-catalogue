@@ -11,10 +11,7 @@
                 <img src="{{ static_asset('assets/img/pages/rudraspirit/Gemini_Generated_Image_2ht5mi2ht5mi2ht5.webp') }}" alt="{{ $product->getTranslation('name') }}">
             @endif
         </a>
-        @if (discount_in_percentage($product) > 0)
-            <span class="rs-card-badge rs-card-badge-sale">-{{ discount_in_percentage($product) }}%</span>
-        @endif
-        <div class="rs-card-quick">
+            <div class="rs-card-quick">
             @if (feature_allowed('wishlist'))
             <button type="button" class="rs-card-quick-btn" title="{{ translate('Add to Wishlist') }}"
                 @if (Auth::check())
@@ -38,10 +35,9 @@
         <div class="rs-card-deity">{{ translate('Ruling Deity') }}: {{ explode(',', $product->tags)[0] }}</div>
     @endif
     <div class="rs-card-price">
-        @if (home_base_price($product) != home_discounted_base_price($product))
-            <del>{{ home_base_price($product) }}</del>
-        @endif
-        {{ home_discounted_base_price($product) }}
+        <a href="https://wa.me/14372671257?text={{ rawurlencode('Om Namah Shivaya 🙏 I am interested in ' . $product->getTranslation('name') . '. Please share the price and availability. Product: ' . $rsProductUrl) }}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">
+            {{ translate('Contact for Price') }}
+        </a>
     </div>
     @if ($product->current_stock > 0)
         <div class="rs-card-stock-status">
