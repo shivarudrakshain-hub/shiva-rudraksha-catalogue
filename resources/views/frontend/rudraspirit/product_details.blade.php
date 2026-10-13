@@ -7,7 +7,6 @@
     $rsMetaImage = $detailedProduct->thumbnail ? get_image($detailedProduct->thumbnail) : static_asset('assets/img/pages/rudraspirit/Gemini_Generated_Image_2ht5mi2ht5mi2ht5.webp');
     $rsMetaQty = 0;
     foreach ($detailedProduct->stocks as $rsStock) { $rsMetaQty += $rsStock->qty; }
-    $rsMetaCurrency = optional(get_system_currency())->code ?? 'INR';
 @endphp
 
 @section('meta_title'){{ $rsMetaTitle }}@stop
@@ -36,13 +35,6 @@
         'description' => $rsMetaDesc,
         'sku' => (string) $detailedProduct->id,
         'brand' => ['@type' => 'Brand', 'name' => optional($detailedProduct->brand)->name ?: get_setting('website_name', 'Shiva Rudraksha')],
-        'offers' => [
-            '@type' => 'Offer',
-            'priceCurrency' => $rsMetaCurrency,
-            'price' => (string) $detailedProduct->unit_price,
-            'availability' => $rsMetaQty > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-            'url' => route('product', $detailedProduct->slug),
-        ],
         'aggregateRating' => $reviews->count() > 0 ? [
             '@type' => 'AggregateRating',
             'ratingValue' => (string) round($detailedProduct->rating, 1),
@@ -141,7 +133,7 @@
 
             <p style="font-size:17px;color:var(--rs-ink-soft);line-height:1.85;margin:0 0 26px;">{!! $detailedProduct->description !!}</p>
 
-            @if ($rsQty > 0 || $detailedProduct->digital)
+            @if (true)
                 <form id="option-choice-form">
                     @csrf
                     <input type="hidden" name="id" value="{{ $detailedProduct->id }}">
@@ -164,69 +156,12 @@
                         <input type="hidden" name="quantity" value="1">
                     @endif
 
-                    @php
-                        $rsDefaultVariant = '';
-                        if ($detailedProduct->variant_product && $detailedProduct->choice_options) {
-                            $rsChoiceOptions = json_decode($detailedProduct->choice_options);
-                            $rsVariantParts = [];
-                            foreach ($rsChoiceOptions as $choice) {
-                                if (isset($choice->values[0])) {
-                                    $rsVariantParts[] = str_replace(' ', '', $choice->values[0]);
-                                }
-                            }
-                            $rsDefaultVariant = implode('-', $rsVariantParts);
-                        }
-                        
-                        $rsDefaultStock = null;
-                        if ($rsDefaultVariant) {
-                            $rsDefaultStock = $detailedProduct->stocks->where('variant', $rsDefaultVariant)->first();
-                        }
-                        
-                        $rsInitialPrice = $rsDefaultStock ? $rsDefaultStock->price : $detailedProduct->unit_price;
-                        
-                        $rsDiscountApplicable = false;
-                        if ($detailedProduct->discount_start_date == null) {
-                            $rsDiscountApplicable = true;
-                        } elseif (
-                            strtotime(date('d-m-Y H:i:s')) >= $detailedProduct->discount_start_date &&
-                            strtotime(date('d-m-Y H:i:s')) <= $detailedProduct->discount_end_date
-                        ) {
-                            $rsDiscountApplicable = true;
-                        }
-                        
-                        if ($rsDiscountApplicable) {
-                            if ($detailedProduct->discount_type == 'percent') {
-                                $rsInitialPrice -= ($rsInitialPrice * $detailedProduct->discount) / 100;
-                            } elseif ($detailedProduct->discount_type == 'amount') {
-                                $rsInitialPrice -= $detailedProduct->discount;
-                            }
-                        }
-                        
-                        $rsTax = 0;
-                        foreach ($detailedProduct->taxes as $product_tax) {
-                            if ($product_tax->tax_type == 'percent') {
-                                $rsTax += ($rsInitialPrice * $product_tax->tax) / 100;
-                            } elseif ($product_tax->tax_type == 'amount') {
-                                $rsTax += $product_tax->tax;
-                            }
-                        }
-                        $rsInitialPrice += $rsTax;
-                        if (addon_is_activated('gst_system')) {
-                            $rsInitialPrice += ($rsInitialPrice * $detailedProduct->gst_rate) / 100;
-                        }
-                        
-                        $rsInitialPrice = $rsInitialPrice * ($detailedProduct->min_qty ?? 1);
-                        $rsInitialPriceFormatted = single_price($rsInitialPrice);
-                    @endphp
-
-                    <!-- Dynamic Price Display -->
-                    <div id="chosen_price_div" style="display:flex;align-items:center;gap:12px;margin-bottom:20px;margin-top:14px;">
-                        <span id="chosen_price" style="font-size:28px;color:var(--rs-gold-deep);font-family:'Playfair Display',serif;font-weight:500;">
-                            {{ $rsInitialPriceFormatted }}
-                        </span>
-                        @if ($rsQty > 0)
-                            <span class="rs-pdp-badge" style="background:var(--rs-success);">{{ translate('In Stock') }}</span>
-                        @endif
+                    <div style="margin:20px 0;">
+                        <a class="rs-btn" target="_blank" rel="noopener noreferrer"
+                           href="https://wa.me/14372671257?text={{ rawurlencode('Om Namah Shivaya 🙏 I am interested in ' . $detailedProduct->getTranslation('name') . '. Please share the price and availability. Product: ' . route('product', $detailedProduct->slug)) }}"
+                           style="display:inline-flex;text-decoration:none;">
+                            {{ translate('Contact for Price') }} &rarr;
+                        </a>
                     </div>
                     <p style="font-size:15px;color:var(--rs-ink-muted);margin:0 0 16px;">
                         <span id="available-quantity">{{ $rsQty }}</span> {{ translate('Available') }} &middot;
@@ -247,11 +182,7 @@
                         <p style="font-size:15px;color:var(--rs-ink-muted);margin:0 0 14px;">{{ translate('Selected') }}: <span id="selected_variant"></span></p>
                     @endif
 
-                    <div style="display:flex;gap:14px;">
-                        <button type="button" id="added_to_cart_btn" @if (Auth::check() || get_setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif class="rs-btn add-to-cart" style="flex:1;justify-content:center;">{{ translate('Add to Bag') }} <span id="add_to_cart_count">(01)</span></button>
-                        <button type="button" @if (Auth::check() || get_setting('guest_checkout_activation') == 1) onclick="buyNow()" @else onclick="showLoginModal()" @endif class="rs-btn-outline buy-now" style="flex:1;">{{ translate('Buy It Now') }}</button>
-                    </div>
-                    <button type="button" class="out-of-stock d-none rs-btn-outline" style="width:100%;margin-top:14px;" disabled>{{ translate('Out of Stock') }}</button>
+
                 </form>
             @else
                 <span style="color:var(--rs-danger);font-size:15px;text-transform:uppercase;letter-spacing:.1em;">{{ translate('Out of stock') }}</span>
@@ -351,20 +282,7 @@
     }
 
     $(document).ready(function() {
-        // Trigger variant price calculation on page load
-        getVariantPrice();
-
-        // Listen for quantity change to update price
-        $('#option-choice-form input[name="quantity"]').on('keyup change', function() {
-            getVariantPrice();
-        });
-
-        // Trigger change event when clicking plus/minus buttons
-        $(document).on('click', '[data-type="plus"], [data-type="minus"]', function() {
-            setTimeout(function() {
-                $('#option-choice-form input[name="quantity"]').trigger('change');
-            }, 50);
-        });
+        // Pricing is handled privately through WhatsApp inquiries.
     });
 </script>
 @endsection
