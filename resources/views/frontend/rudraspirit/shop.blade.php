@@ -21,7 +21,7 @@
         <div class="page-heading">
             <span>SHOP</span>
             <h1>The full collection</h1>
-            <p>Every bead is individually inspected and laboratory certified with X-ray verification. Prices are in {{ get_system_currency()->code ?? 'CAD' }}.</p>
+            <p>Every bead is individually inspected and laboratory certified with X-ray verification. Contact us on WhatsApp for pricing.</p>
         </div>
 
         <!-- Catalogue controls: Search & Category Pills -->
@@ -94,10 +94,7 @@
                         </div>
 
                         <div class="card-bottom">
-                            <div>
-                                <small style="font-size:11px;color:var(--muted);text-transform:uppercase;">Price</small>
-                                <strong style="color:var(--maroon);font-size:22px;font-family:Georgia,serif;">{{ single_price($product->unit_price) }}</strong>
-                            </div>
+                            <a href="https://wa.me/14372671257?text={{ $waMessage }}" target="_blank" rel="noopener noreferrer" style="color:var(--maroon);font-weight:600;text-decoration:underline;">Contact for Price</a>
 
                             <a href="{{ route('product', $product->slug) }}" class="details-button" style="text-decoration:none;">
                                 View Details
