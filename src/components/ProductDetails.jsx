@@ -64,14 +64,12 @@ export default function ProductDetails({ product, onBack }) {
   };
 
   const price = Number(selectedVariant?.price || 0);
-  const isSelectedVariantAvailable = price > 0;
+  const isSelectedVariantAvailable = price >= 0;
 
   const message = encodeURIComponent(
     `Hello Shiva Rudraksha Inc., I am interested in ${
       product.name
-    } - ${selectedVariant?.name || ""} size (CAD $${price.toFixed(
-      2
-    )}). Please share availability, certificate and ordering details.`
+    } (${selectedVariant?.name || "Standard"} size). Please share size availability, certificate details and price.`
   );
 
   return (
@@ -111,7 +109,7 @@ export default function ProductDetails({ product, onBack }) {
             <div className="variant-options" role="group" aria-label="Select bead size">
               {variants.map((variant) => {
                 const variantPrice = Number(variant.price || 0);
-                const isAvailable = variantPrice > 0;
+                const isAvailable = variantPrice >= 0;
                 const isSelected = variant.name === selectedVariant?.name;
 
                 return (
@@ -127,17 +125,17 @@ export default function ProductDetails({ product, onBack }) {
                     onClick={() => isAvailable && setSelectedVariantName(variant.name)}
                   >
                     <span>{variant.name}</span>
-                    <strong>{isAvailable ? `CAD $${variantPrice.toFixed(2)}` : "Out of Stock"}</strong>
+                    <strong>Available</strong>
                   </button>
                 );
               })}
             </div>
-            <small>The gallery, certificate, X-ray and price change with the selected size.</small>
+            <small>The gallery, certificate and X-ray details change with the selected size.</small>
           </div>
 
           <div className="price-box">
-            <small>{selectedVariant?.name} price in Canadian dollars</small>
-            <strong>{isSelectedVariantAvailable ? `CAD $${price.toFixed(2)}` : "Out of Stock"}</strong>
+            <small>{selectedVariant?.name || "Authentic Nepal Bead"}</small>
+            <strong style={{ color: "var(--maroon)", fontSize: "24px", fontFamily: "Georgia, serif" }}>Price on Request</strong>
           </div>
 
           <div className="included-list">
@@ -150,17 +148,15 @@ export default function ProductDetails({ product, onBack }) {
           </div>
 
           <div className="product-action-buttons">
-            {isSelectedVariantAvailable && (
-              <a
-                className="whatsapp-button"
-                href={`https://wa.me/14372671257?text=${message}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <MessageCircle />
-                Enquire on WhatsApp
-              </a>
-            )}
+            <a
+              className="whatsapp-button"
+              href={`https://wa.me/14372671257?text=${message}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MessageCircle />
+              Contact for Details via WhatsApp
+            </a>
           </div>
 
           <p className="disclaimer">

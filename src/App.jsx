@@ -196,9 +196,19 @@ export default function App() {
     });
   }, [products, search, category]);
 
+  const featuredProducts = useMemo(() => {
+    if (!products || !products.length) return [];
+    const p1 = products.find((p) => p.mukhi === 1 || p.id?.includes("1-mukhi"));
+    const p4 = products.find((p) => p.mukhi === 4 || p.id?.includes("4-mukhi"));
+    const p3 = products.find((p) => p.mukhi === 3 || p.id?.includes("3-mukhi"));
+    const result = [p1, p4, p3].filter(Boolean);
+    return result.length === 3 ? result : products.slice(0, 3);
+  }, [products]);
+
   const navigate = (hash) => {
-    window.location.hash = hash;
-    setRoute(hash);
+    const target = hash === "#shop" ? "#home" : hash;
+    window.location.hash = target;
+    setRoute(target);
     setMobileOpen(false);
     setShopOpen(false);
     setKnowledgeOpen(false);
@@ -218,7 +228,7 @@ export default function App() {
     return (
       <ProductDetails
         product={selected}
-        onBack={() => navigate("#shop")}
+        onBack={() => navigate("#home")}
       />
     );
   }
@@ -237,20 +247,6 @@ export default function App() {
 
           <nav className={mobileOpen ? "open" : ""}>
             <button className={active === "home" ? "active" : ""} onClick={() => navigate("#home")}>Home</button>
-            <div className="shop-menu" onMouseEnter={() => setShopOpen(true)} onMouseLeave={() => setShopOpen(false)}>
-              <button className={active === "shop" ? "active" : ""} onClick={() => navigate("#shop")}>
-                Shop <ChevronDown />
-              </button>
-              {shopOpen && (
-                <div className="shop-dropdown">
-                  {categories.map((item) => (
-                    <button key={item} onClick={() => { setCategory(item); navigate("#shop"); }}>
-                      {item}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
             <button className={active === "guide" ? "active" : ""} onClick={() => navigate("#guide")}>Rudraksha Guide</button>
             <div className="shop-menu knowledge-menu" onMouseEnter={() => setKnowledgeOpen(true)} onMouseLeave={() => setKnowledgeOpen(false)}>
               <button
@@ -273,7 +269,7 @@ export default function App() {
           </nav>
 
           <div className="nav-actions">
-            <button className="outline-button" onClick={() => navigate("#shop")}>View Catalog</button>
+            <button className="outline-button" onClick={() => navigate("#guide")}>Rudraksha Guide</button>
             <a className="green-button" href="https://wa.me/14372671257" target="_blank" rel="noreferrer">
               <MessageCircle /> Chat
             </a>
@@ -293,8 +289,8 @@ export default function App() {
                   combinations—supplied in Canada, the United States and worldwide.
                 </p>
                 <div className="hero-actions">
-                  <button className="maroon-button" onClick={() => navigate("#shop")}>Shop Rudraksha <ArrowRight /></button>
-                  <button className="outline-button large" onClick={() => navigate("#recommendations")}>Get a Recommendation</button>
+                  <button className="maroon-button" onClick={() => navigate("#recommendations")}>Get a Recommendation <ArrowRight /></button>
+                  <button className="outline-button large" onClick={() => navigate("#guide")}>Rudraksha Guide</button>
                 </div>
                 <div className="promise-grid">
                   <span><BadgeCheck /> Authentic Rudraksha</span>
@@ -314,38 +310,11 @@ export default function App() {
             <div className="section-kicker">FEATURED COLLECTION</div>
             <h2>Discover authentic Nepal Rudraksha</h2>
             <div className="product-grid">
-              {products.slice(0, 3).map((product) => (
+              {featuredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} onOpen={openProduct} />
               ))}
             </div>
           </section>
-        </main>
-      )}
-
-      {active === "shop" && (
-        <main className="page-shell shop-page">
-          <div className="container">
-            <div className="page-heading">
-              <span>SHOP</span>
-              <h1>The full collection</h1>
-              <p>Every bead is inspected and, where applicable, certified. Prices are in CAD.</p>
-            </div>
-
-            <div className="catalogue-controls">
-              <label className="search-box"><Search /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search products" /></label>
-              <div className="category-pills">
-                {categories.map((item) => (
-                  <button key={item} className={category === item ? "selected" : ""} onClick={() => setCategory(item)}>{item}</button>
-                ))}
-              </div>
-            </div>
-
-            <div className="product-grid lovable-grid">
-              {visible.map((product) => (
-                <ProductCard key={product.id} product={product} onOpen={openProduct} />
-              ))}
-            </div>
-          </div>
         </main>
       )}
 
@@ -555,7 +524,7 @@ export default function App() {
       <footer>
         <div className="container footer-layout">
           <Logo />
-          <div><strong>Explore</strong><button onClick={() => navigate("#shop")}>Shop</button><button onClick={() => navigate("#guide")}>Rudraksha Guide</button><button onClick={() => navigate("#knowledge")}>Rudraksha Knowledge</button><button onClick={() => navigate("#maintenance")}>Maintenance</button><button onClick={() => navigate("#lord-shiva")}>Lord Shiva</button></div>
+          <div><strong>Explore</strong><button onClick={() => navigate("#recommendations")}>Recommendations</button><button onClick={() => navigate("#guide")}>Rudraksha Guide</button><button onClick={() => navigate("#knowledge")}>Rudraksha Knowledge</button><button onClick={() => navigate("#maintenance")}>Maintenance</button><button onClick={() => navigate("#lord-shiva")}>Lord Shiva</button></div>
           <div><strong>Contact</strong><a href="tel:+14372671257">437-267-1257</a><a href="mailto:shivarudrakshain@gmail.com">shivarudrakshain@gmail.com</a></div>
           <div><strong>Manage</strong><a href="#admin">Product Manager</a></div>
         </div>

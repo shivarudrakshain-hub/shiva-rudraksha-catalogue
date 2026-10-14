@@ -14,7 +14,7 @@ export default function ProductCard({ product, onOpen }) {
   const isAvailable = startingPrice !== null;
 
   const message = encodeURIComponent(
-    `Hello Shiva Rudraksha Inc., I am interested in ${product.name}. Please share size availability and ordering details.`
+    `Hello Shiva Rudraksha Inc., I am interested in ${product.name}. Please share details, size availability, certificate and price.`
   );
 
   return (
@@ -30,7 +30,7 @@ export default function ProductCard({ product, onOpen }) {
       <div className="card-content">
         <div className="card-badges">
           <span>{product.badge}</span>
-          <span>{isAvailable ? product.stockStatus : "Out of Stock"}</span>
+          <span>{isAvailable ? product.stockStatus : "Available"}</span>
         </div>
 
         <button
@@ -59,14 +59,8 @@ export default function ProductCard({ product, onOpen }) {
 
         <div className="card-bottom">
           <div>
-            {isAvailable ? (
-              <>
-                <small>From CAD</small>
-                <strong>${startingPrice.toFixed(2)}</strong>
-              </>
-            ) : (
-              <strong>Out of Stock</strong>
-            )}
+            <small style={{ textTransform: "uppercase", fontSize: "11px", color: "var(--muted)" }}>Price</small>
+            <strong style={{ fontSize: "14px", color: "var(--maroon)", fontFamily: "Georgia, serif", lineHeight: 1.2 }}>On Request</strong>
           </div>
 
           <button
@@ -77,20 +71,15 @@ export default function ProductCard({ product, onOpen }) {
             View details
           </button>
 
-          {isAvailable ? (
-            <a
-              href={`https://wa.me/14372671257?text=${message}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <MessageCircle />
-              Enquire
-            </a>
-          ) : (
-            <span className="card-unavailable">
-              Unavailable
-            </span>
-          )}
+          <a
+            href={`https://wa.me/14372671257?text=${message}`}
+            target="_blank"
+            rel="noreferrer"
+            title="Enquire on WhatsApp"
+          >
+            <MessageCircle />
+            Enquire
+          </a>
         </div>
       </div>
     </article>
