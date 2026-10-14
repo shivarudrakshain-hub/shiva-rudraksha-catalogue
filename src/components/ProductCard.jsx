@@ -1,6 +1,5 @@
-import { MapPin, MessageCircle, ShieldCheck, ShoppingBag } from "lucide-react";
+import { MapPin, MessageCircle, ShieldCheck } from "lucide-react";
 import Gallery from "./Gallery";
-import { getStoreBuyUrl } from "../data/storeConfig";
 
 export default function ProductCard({ product, onOpen }) {
   const availablePrices = (product.variants || [])
@@ -93,17 +92,6 @@ export default function ProductCard({ product, onOpen }) {
             </span>
           )}
         </div>
-
-        {isAvailable && (
-          <a
-            href={getStoreBuyUrl(product)}
-            target="_blank"
-            rel="noreferrer"
-            className="card-store-banner"
-          >
-            <ShoppingBag size={14} /> Buy on RudraSpirit Store &rarr;
-          </a>
-        )}
       </div>
     </article>
   );

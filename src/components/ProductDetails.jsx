@@ -5,14 +5,12 @@ import {
   MessageCircle,
   Ruler,
   ShieldCheck,
-  ShoppingBag,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Gallery from "./Gallery";
 import Logo from "./Logo";
 import PromotionalBanner from "./PromotionalBanner";
 import { emptyImages } from "../data/catalogue";
-import { getStoreBuyUrl } from "../data/storeConfig";
 
 export default function ProductDetails({ product, onBack }) {
   const variants = useMemo(() => {
@@ -152,17 +150,6 @@ export default function ProductDetails({ product, onBack }) {
           </div>
 
           <div className="product-action-buttons">
-            {isSelectedVariantAvailable && (
-              <a
-                className="buy-button"
-                href={getStoreBuyUrl(product, selectedVariant)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ShoppingBag />
-                Order on RudraSpirit Store
-              </a>
-            )}
             {isSelectedVariantAvailable && (
               <a
                 className="whatsapp-button"
