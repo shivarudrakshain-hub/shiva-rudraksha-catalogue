@@ -1,3 +1,5 @@
+import { cataloguePrice } from "./pricing.js";
+
 // ==========================================================================
 // CART & COMMERCE STORE
 // Shiva Rudraksha Inc.
@@ -10,7 +12,7 @@ const RECENT_STORAGE_KEY = "rudraspirit_recent_views";
 export function getCart() {
   try {
     const raw = localStorage.getItem(CART_STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
+    return raw ? JSON.parse(raw).map((item) => ({ ...item, price: cataloguePrice(item.price) })) : [];
   } catch (e) {
     console.error("Error reading cart from localStorage", e);
     return [];
@@ -30,7 +32,7 @@ export function addToCart(product, selectedVariant, sizeName, certName, quantity
   const cart = getCart();
   const variantName = selectedVariant?.name || "Standard";
   const itemId = `${product.id}_${variantName}`;
-  const price = Number(selectedVariant?.price || product.price || 0);
+  const price = cataloguePrice(selectedVariant?.price ?? product.price);
   const image =
     selectedVariant?.images?.front ||
     selectedVariant?.images?.top ||
@@ -136,7 +138,7 @@ export function recordRecentProduct(product) {
     recent.unshift({
       id: product.id,
       name: product.name,
-      price: product.price || 0,
+      price: cataloguePrice(product.price),
       origin: product.origin || "Nepal",
       mukhi: product.mukhi || null,
       badge: product.badge || "Authentic",
@@ -154,7 +156,7 @@ export function recordRecentProduct(product) {
 export function getRecentProducts() {
   try {
     const raw = localStorage.getItem(RECENT_STORAGE_KEY);
-    return raw ? JSON.parse(raw) : [];
+    return raw ? JSON.parse(raw).map((item) => ({ ...item, price: cataloguePrice(item.price) })) : [];
   } catch (e) {
     return [];
   }
