@@ -1,3 +1,5 @@
+import { PRICES_ON_REQUEST, cataloguePrice } from "./pricing.js";
+
 export const IMAGE_SLOTS = [
   { key: "front", label: "Front" },
   { key: "back", label: "Back" },
@@ -43,6 +45,7 @@ export function normalizeProduct(product) {
     Array.isArray(product.variants) && product.variants.length
       ? product.variants.map((variant) => ({
           ...variant,
+          price: cataloguePrice(variant.price),
           images: mapToAvif({
             ...emptyImages(),
             ...(variant.images || {}),
@@ -52,6 +55,9 @@ export function normalizeProduct(product) {
 
   return {
     ...product,
+    price: cataloguePrice(product.price ?? product.unit_price),
+    unit_price: cataloguePrice(product.unit_price ?? product.price),
+    disable_price: PRICES_ON_REQUEST || Boolean(product.disable_price),
     rating: typeof product.rating === "number" ? product.rating : parseFloat(product.rating || 0),
     rating_count: typeof product.rating_count === "number" ? product.rating_count : parseInt(product.rating_count || 0, 10),
     reviews: Array.isArray(product.reviews) ? product.reviews : [],
@@ -74,10 +80,10 @@ export async function loadProducts() {
     if (sessionCached) {
       const parsed = JSON.parse(sessionCached);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        inMemoryProductsCache = parsed;
+        inMemoryProductsCache = parsed.map(normalizeProduct);
         // Trigger background refresh silently
         refreshProductsInBackground();
-        return parsed;
+        return inMemoryProductsCache;
       }
     }
   } catch {

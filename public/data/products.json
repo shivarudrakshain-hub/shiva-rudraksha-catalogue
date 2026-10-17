@@ -12,7 +12,7 @@
     "variants": [
       {
         "name": "Nepal",
-        "price": 150,
+        "price": 0,
         "images": {
           "front": "images/products/1-mukhi-nepal-rudraksha/nepali/front.avif",
           "back": "images/products/1-mukhi-nepal-rudraksha/nepali/back.avif",
@@ -24,7 +24,7 @@
       },
       {
         "name": "Indian",
-        "price": 200,
+        "price": 0,
         "images": {
           "front": "images/products/1-mukhi-nepal-rudraksha/indian/front.avif",
           "back": "images/products/1-mukhi-nepal-rudraksha/indian/back.avif",
@@ -138,7 +138,7 @@
     "variants": [
       {
         "name": "Nepal",
-        "price": 60,
+        "price": 0,
         "images": {
           "front": "images/products/3-mukhi-nepal-rudraksha/nepali/front.avif",
           "back": "images/products/3-mukhi-nepal-rudraksha/nepali/back.avif",
@@ -171,7 +171,7 @@
     "variants": [
       {
         "name": "Nepal",
-        "price": 40,
+        "price": 0,
         "images": {
           "front": "images/products/4-mukhi-nepal-rudraksha/nepali/front.avif",
           "back": "images/products/4-mukhi-nepal-rudraksha/nepali/back.avif",
@@ -204,7 +204,7 @@
     "variants": [
       {
         "name": "Nepal",
-        "price": 40,
+        "price": 0,
         "images": {
           "front": "images/products/5-mukhi-nepal-rudraksha/nepali/front.avif",
           "back": "images/products/5-mukhi-nepal-rudraksha/nepali/back.avif",
@@ -237,7 +237,7 @@
     "variants": [
       {
         "name": "Nepal",
-        "price": 40,
+        "price": 0,
         "images": {
           "front": "images/products/6-mukhi-nepal-rudraksha/nepali/front.avif",
           "back": "images/products/6-mukhi-nepal-rudraksha/nepali/back.avif",
@@ -270,7 +270,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 30,
+        "price": 0,
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/small/front.avif",
           "back": "images/products/7-mukhi-nepal-rudraksha/small/back.avif",
@@ -282,7 +282,7 @@
       },
       {
         "name": "Medium",
-        "price": 50,
+        "price": 0,
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/7-mukhi-nepal-rudraksha/medium/back.avif",
@@ -294,7 +294,7 @@
       },
       {
         "name": "Large",
-        "price": 70,
+        "price": 0,
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/large/front.avif",
           "back": "images/products/7-mukhi-nepal-rudraksha/large/back.avif",
@@ -306,7 +306,7 @@
       },
       {
         "name": "Collector",
-        "price": 100,
+        "price": 0,
         "images": {
           "front": "images/products/7-mukhi-nepal-rudraksha/collector/front.avif",
           "back": "images/products/7-mukhi-nepal-rudraksha/collector/back.avif",
@@ -351,7 +351,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 60,
+        "price": 0,
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/small/front.avif",
           "back": "images/products/8-mukhi-nepal-rudraksha/small/back.avif",
@@ -363,7 +363,7 @@
       },
       {
         "name": "Medium",
-        "price": 80,
+        "price": 0,
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/8-mukhi-nepal-rudraksha/medium/back.avif",
@@ -387,7 +387,7 @@
       },
       {
         "name": "Collector",
-        "price": 200,
+        "price": 0,
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/collector/front.avif",
           "back": "images/products/8-mukhi-nepal-rudraksha/collector/back.avif",
@@ -399,7 +399,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 300,
+        "price": 0,
         "images": {
           "front": "images/products/8-mukhi-nepal-rudraksha/super-collector/front.avif",
           "back": "images/products/8-mukhi-nepal-rudraksha/super-collector/back.avif",
@@ -432,7 +432,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 80,
+        "price": 0,
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/small/front.avif",
           "back": "images/products/9-mukhi-nepal-rudraksha/small/back.avif",
@@ -444,7 +444,7 @@
       },
       {
         "name": "Medium",
-        "price": 100,
+        "price": 0,
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/9-mukhi-nepal-rudraksha/medium/back.avif",
@@ -456,7 +456,7 @@
       },
       {
         "name": "Large",
-        "price": 120,
+        "price": 0,
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/large/front.avif",
           "back": "images/products/9-mukhi-nepal-rudraksha/large/back.avif",
@@ -468,7 +468,7 @@
       },
       {
         "name": "Collector",
-        "price": 200,
+        "price": 0,
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/collector/front.avif",
           "back": "images/products/9-mukhi-nepal-rudraksha/collector/back.avif",
@@ -480,7 +480,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 300,
+        "price": 0,
         "images": {
           "front": "images/products/9-mukhi-nepal-rudraksha/super-collector/front.avif",
           "back": "images/products/9-mukhi-nepal-rudraksha/super-collector/back.avif",
@@ -513,7 +513,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 60,
+        "price": 0,
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/small/front.avif",
           "back": "images/products/10-mukhi-nepal-rudraksha/small/back.avif",
@@ -525,7 +525,7 @@
       },
       {
         "name": "Medium",
-        "price": 100,
+        "price": 0,
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/10-mukhi-nepal-rudraksha/medium/back.avif",
@@ -537,7 +537,7 @@
       },
       {
         "name": "Large",
-        "price": 200,
+        "price": 0,
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/large/front.avif",
           "back": "images/products/10-mukhi-nepal-rudraksha/large/back.avif",
@@ -549,7 +549,7 @@
       },
       {
         "name": "Collector",
-        "price": 300,
+        "price": 0,
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/collector/front.avif",
           "back": "images/products/10-mukhi-nepal-rudraksha/collector/back.avif",
@@ -561,7 +561,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 500,
+        "price": 0,
         "images": {
           "front": "images/products/10-mukhi-nepal-rudraksha/super-collector/front.avif",
           "back": "images/products/10-mukhi-nepal-rudraksha/super-collector/back.avif",
@@ -594,7 +594,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 100,
+        "price": 0,
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/small/front.avif",
           "back": "images/products/11-mukhi-nepal-rudraksha/small/back.avif",
@@ -606,7 +606,7 @@
       },
       {
         "name": "Medium",
-        "price": 150,
+        "price": 0,
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/11-mukhi-nepal-rudraksha/medium/back.avif",
@@ -618,7 +618,7 @@
       },
       {
         "name": "Large",
-        "price": 300,
+        "price": 0,
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/large/front.avif",
           "back": "images/products/11-mukhi-nepal-rudraksha/large/back.avif",
@@ -630,7 +630,7 @@
       },
       {
         "name": "Collector",
-        "price": 500,
+        "price": 0,
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/collector/front.avif",
           "back": "images/products/11-mukhi-nepal-rudraksha/collector/back.avif",
@@ -642,7 +642,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 600,
+        "price": 0,
         "images": {
           "front": "images/products/11-mukhi-nepal-rudraksha/super-collector/front.avif",
           "back": "images/products/11-mukhi-nepal-rudraksha/super-collector/back.avif",
@@ -675,7 +675,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 60,
+        "price": 0,
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/small/front.avif",
           "back": "images/products/12-mukhi-nepal-rudraksha/small/back.avif",
@@ -687,7 +687,7 @@
       },
       {
         "name": "Medium",
-        "price": 100,
+        "price": 0,
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/12-mukhi-nepal-rudraksha/medium/back.avif",
@@ -699,7 +699,7 @@
       },
       {
         "name": "Large",
-        "price": 200,
+        "price": 0,
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/large/front.avif",
           "back": "images/products/12-mukhi-nepal-rudraksha/large/back.avif",
@@ -711,7 +711,7 @@
       },
       {
         "name": "Collector",
-        "price": 350,
+        "price": 0,
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/collector/front.avif",
           "back": "images/products/12-mukhi-nepal-rudraksha/collector/back.avif",
@@ -723,7 +723,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 500,
+        "price": 0,
         "images": {
           "front": "images/products/12-mukhi-nepal-rudraksha/super-collector/front.avif",
           "back": "images/products/12-mukhi-nepal-rudraksha/super-collector/back.avif",
@@ -756,7 +756,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": 80,
+        "price": 0,
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/small/front.avif",
           "back": "images/products/13-mukhi-nepal-rudraksha/small/back.avif",
@@ -768,7 +768,7 @@
       },
       {
         "name": "Medium",
-        "price": 130,
+        "price": 0,
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/13-mukhi-nepal-rudraksha/medium/back.avif",
@@ -780,7 +780,7 @@
       },
       {
         "name": "Large",
-        "price": 250,
+        "price": 0,
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/large/front.avif",
           "back": "images/products/13-mukhi-nepal-rudraksha/large/back.avif",
@@ -792,7 +792,7 @@
       },
       {
         "name": "Collector",
-        "price": 350,
+        "price": 0,
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/collector/front.avif",
           "back": "images/products/13-mukhi-nepal-rudraksha/collector/back.avif",
@@ -804,7 +804,7 @@
       },
       {
         "name": "Super Collector",
-        "price": 500,
+        "price": 0,
         "images": {
           "front": "images/products/13-mukhi-nepal-rudraksha/super-collector/front.avif",
           "back": "images/products/13-mukhi-nepal-rudraksha/super-collector/back.avif",
@@ -849,7 +849,7 @@
       },
       {
         "name": "Medium",
-        "price": 800,
+        "price": 0,
         "images": {
           "front": "images/products/14-mukhi-nepal-rudraksha/medium/front.avif",
           "back": "images/products/14-mukhi-nepal-rudraksha/medium/back.avif",
@@ -941,7 +941,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -953,7 +953,7 @@
       },
       {
         "name": "Medium",
-        "price": "400",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -965,7 +965,7 @@
       },
       {
         "name": "Large",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -977,7 +977,7 @@
       },
       {
         "name": "Collector",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -989,7 +989,7 @@
       },
       {
         "name": "Super Collector",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1033,7 +1033,7 @@
       },
       {
         "name": "Medium",
-        "price": "500",
+        "price": 0,
         "images": {
           "front": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/front.avif",
           "back": "images/products/rudraksha-mala/13-mukhi-rudraksha-mala/back.avif",
@@ -1045,7 +1045,7 @@
       },
       {
         "name": "Large",
-        "price": "",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1057,7 +1057,7 @@
       },
       {
         "name": "Collector",
-        "price": "",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1069,7 +1069,7 @@
       },
       {
         "name": "Super Collector",
-        "price": "",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1101,7 +1101,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": "",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1113,7 +1113,7 @@
       },
       {
         "name": "Medium",
-        "price": "600",
+        "price": 0,
         "images": {
           "front": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/front.avif",
           "back": "images/products/rudraksha-bracelet/12-mukhi-rudraksha-bracelet/back.avif",
@@ -1125,7 +1125,7 @@
       },
       {
         "name": "Large",
-        "price": "",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1137,7 +1137,7 @@
       },
       {
         "name": "Collector",
-        "price": "",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1149,7 +1149,7 @@
       },
       {
         "name": "Super Collector",
-        "price": "",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1181,7 +1181,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": "80",
+        "price": 0,
         "images": {
           "front": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/front.avif",
           "back": "images/products/rudraksha-mala/rahu-ketu-shani-rudraksha-mala/back.avif",
@@ -1230,7 +1230,7 @@
       },
       {
         "name": "Large",
-        "price": 170,
+        "price": 0,
         "images": {
           "front": "images/products/gowri-shankar-nepal-rudraksha/large/front.avif",
           "back": "images/products/gowri-shankar-nepal-rudraksha/large/back.avif",
@@ -1242,7 +1242,7 @@
       },
       {
         "name": "Collector",
-        "price": 200,
+        "price": 0,
         "images": {
           "front": "images/products/gowri-shankar-nepal-rudraksha/collector/front.avif",
           "back": "images/products/gowri-shankar-nepal-rudraksha/collector/back.avif",
@@ -1299,7 +1299,7 @@
       },
       {
         "name": "Medium",
-        "price": 60,
+        "price": 0,
         "images": {
           "front": "images/products/ganesh-rudraksha/medium/front.avif",
           "back": "images/products/ganesh-rudraksha/medium/back.avif",
@@ -1375,7 +1375,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": "200",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1387,7 +1387,7 @@
       },
       {
         "name": "Medium",
-        "price": "350",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1399,7 +1399,7 @@
       },
       {
         "name": "Large",
-        "price": "430",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1411,7 +1411,7 @@
       },
       {
         "name": "Collector",
-        "price": "500",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1423,7 +1423,7 @@
       },
       {
         "name": "Super Collector",
-        "price": "650",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1455,7 +1455,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1467,7 +1467,7 @@
       },
       {
         "name": "Medium",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1479,7 +1479,7 @@
       },
       {
         "name": "Large",
-        "price": "1500",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1491,7 +1491,7 @@
       },
       {
         "name": "Collector",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1503,7 +1503,7 @@
       },
       {
         "name": "Super Collector",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1535,7 +1535,7 @@
     "variants": [
       {
         "name": "Small",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1547,7 +1547,7 @@
       },
       {
         "name": "Medium",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1559,7 +1559,7 @@
       },
       {
         "name": "Large",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1571,7 +1571,7 @@
       },
       {
         "name": "Collector",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
@@ -1583,7 +1583,7 @@
       },
       {
         "name": "Super Collector",
-        "price": "0",
+        "price": 0,
         "images": {
           "front": "",
           "back": "",
