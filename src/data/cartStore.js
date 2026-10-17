@@ -1,4 +1,5 @@
 import { cataloguePrice } from "./pricing.js";
+import { isCatalogueProductVisible } from "./catalogueVisibility.js";
 
 // ==========================================================================
 // CART & COMMERCE STORE
@@ -156,7 +157,7 @@ export function recordRecentProduct(product) {
 export function getRecentProducts() {
   try {
     const raw = localStorage.getItem(RECENT_STORAGE_KEY);
-    return raw ? JSON.parse(raw).map((item) => ({ ...item, price: cataloguePrice(item.price) })) : [];
+    return raw ? JSON.parse(raw).filter(isCatalogueProductVisible).map((item) => ({ ...item, price: cataloguePrice(item.price) })) : [];
   } catch (e) {
     return [];
   }

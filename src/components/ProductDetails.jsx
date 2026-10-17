@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Gallery from "./Gallery";
+import "./ProductGallery.css";
 import Logo from "./Logo";
 import PromotionalBanner from "./PromotionalBanner";
 

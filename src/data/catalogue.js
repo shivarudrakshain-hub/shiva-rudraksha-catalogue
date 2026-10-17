@@ -1,4 +1,5 @@
 import { PRICES_ON_REQUEST, cataloguePrice } from "./pricing.js";
+import { isCatalogueProductVisible } from "./catalogueVisibility.js";
 
 export const IMAGE_SLOTS = [
   { key: "front", label: "Front" },
@@ -80,7 +81,7 @@ export async function loadProducts() {
     if (sessionCached) {
       const parsed = JSON.parse(sessionCached);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        inMemoryProductsCache = parsed.map(normalizeProduct);
+        inMemoryProductsCache = parsed.filter(isCatalogueProductVisible).map(normalizeProduct);
         // Trigger background refresh silently
         refreshProductsInBackground();
         return inMemoryProductsCache;
@@ -181,6 +182,8 @@ async function fetchAndMergeProducts() {
     }
     finalProducts = merged;
   }
+
+  finalProducts = finalProducts.filter(isCatalogueProductVisible);
 
   if (finalProducts.length > 0) {
     inMemoryProductsCache = finalProducts;
