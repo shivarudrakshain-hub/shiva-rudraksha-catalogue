@@ -21,6 +21,7 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; }
 .guide-card, .home-featured, footer { content-visibility: auto; contain-intrinsic-size: 0 350px; }
 .container { width: min(1210px, calc(100% - 40px)); margin: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 .luxury-header { position: sticky; top: 0; z-index: 100; background: rgba(255,250,240,.97); border-bottom: 1px solid #e8dccb; backdrop-filter: blur(12px); }
 .luxury-nav { min-height: 82px; display: flex; align-items: center; gap: 24px; }

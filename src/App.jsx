@@ -294,8 +294,10 @@ export default function App() {
           target="_blank"
           rel="noreferrer"
           title="WhatsApp Us"
+          aria-label="Chat with Shiva Rudraksha Inc. on WhatsApp"
         >
           <MessageCircle />
+          <span className="sr-only">Chat with Shiva Rudraksha Inc. on WhatsApp</span>
         </a>
         <Footer onNavigate={navigate} />
       </Suspense>
@@ -600,7 +602,7 @@ export default function App() {
         </main>
       )}
 
-      <a className="floating-whatsapp" href="https://wa.me/14372671257" target="_blank" rel="noreferrer"><MessageCircle /></a>
+      <a className="floating-whatsapp" href="https://wa.me/14372671257" target="_blank" rel="noreferrer" aria-label="Chat with Shiva Rudraksha Inc. on WhatsApp" title="WhatsApp Us"><MessageCircle /><span className="sr-only">Chat with Shiva Rudraksha Inc. on WhatsApp</span></a>
 
       {isCartOpen && (
         <Suspense fallback={null}>
