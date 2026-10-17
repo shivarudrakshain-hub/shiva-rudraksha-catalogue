@@ -45,87 +45,6 @@
     }
   },
   {
-    "id": "2-mukhi-nepal-rudraksha",
-    "mukhi": 2,
-    "name": "2 Mukhi Nepal Rudraksha",
-    "category": "Nepal Rudraksha",
-    "origin": "Nepal",
-    "description": "Authentic Nepal 2 Mukhi Rudraksha, traditionally associated with harmony, relationships, unity, and emotional balance.",
-    "certificateAvailable": true,
-    "stockStatus": "Available",
-    "badge": "Certified",
-    "variants": [
-      {
-        "name": "Small",
-        "price": 0,
-        "images": {
-          "front": "images/products/2-mukhi-nepal-rudraksha/small/front.avif",
-          "back": "images/products/2-mukhi-nepal-rudraksha/small/back.avif",
-          "top": "images/products/2-mukhi-nepal-rudraksha/small/top.avif",
-          "bottom": "images/products/2-mukhi-nepal-rudraksha/small/bottom.avif",
-          "certificate": "images/products/2-mukhi-nepal-rudraksha/small/certificate.avif",
-          "xray": "images/products/2-mukhi-nepal-rudraksha/small/xray.avif"
-        }
-      },
-      {
-        "name": "Medium",
-        "price": 0,
-        "images": {
-          "front": "images/products/2-mukhi-nepal-rudraksha/medium/front.avif",
-          "back": "images/products/2-mukhi-nepal-rudraksha/medium/back.avif",
-          "top": "images/products/2-mukhi-nepal-rudraksha/medium/top.avif",
-          "bottom": "images/products/2-mukhi-nepal-rudraksha/medium/bottom.avif",
-          "certificate": "images/products/2-mukhi-nepal-rudraksha/medium/certificate.avif",
-          "xray": "images/products/2-mukhi-nepal-rudraksha/medium/xray.avif"
-        }
-      },
-      {
-        "name": "Large",
-        "price": 0,
-        "images": {
-          "front": "images/products/2-mukhi-nepal-rudraksha/large/front.avif",
-          "back": "images/products/2-mukhi-nepal-rudraksha/large/back.avif",
-          "top": "images/products/2-mukhi-nepal-rudraksha/large/top.avif",
-          "bottom": "images/products/2-mukhi-nepal-rudraksha/large/bottom.avif",
-          "certificate": "images/products/2-mukhi-nepal-rudraksha/large/certificate.avif",
-          "xray": "images/products/2-mukhi-nepal-rudraksha/large/xray.avif"
-        }
-      },
-      {
-        "name": "Collector",
-        "price": 0,
-        "images": {
-          "front": "images/products/2-mukhi-nepal-rudraksha/collector/front.avif",
-          "back": "images/products/2-mukhi-nepal-rudraksha/collector/back.avif",
-          "top": "images/products/2-mukhi-nepal-rudraksha/collector/top.avif",
-          "bottom": "images/products/2-mukhi-nepal-rudraksha/collector/bottom.avif",
-          "certificate": "images/products/2-mukhi-nepal-rudraksha/collector/certificate.avif",
-          "xray": "images/products/2-mukhi-nepal-rudraksha/collector/xray.avif"
-        }
-      },
-      {
-        "name": "Super Collector",
-        "price": 0,
-        "images": {
-          "front": "images/products/2-mukhi-nepal-rudraksha/super-collector/front.avif",
-          "back": "images/products/2-mukhi-nepal-rudraksha/super-collector/back.avif",
-          "top": "images/products/2-mukhi-nepal-rudraksha/super-collector/top.avif",
-          "bottom": "images/products/2-mukhi-nepal-rudraksha/super-collector/bottom.avif",
-          "certificate": "images/products/2-mukhi-nepal-rudraksha/super-collector/certificate.avif",
-          "xray": "images/products/2-mukhi-nepal-rudraksha/super-collector/xray.avif"
-        }
-      }
-    ],
-    "images": {
-      "front": "images/products/2-mukhi-nepal-rudraksha/front.avif",
-      "back": "images/products/2-mukhi-nepal-rudraksha/back.avif",
-      "top": "images/products/2-mukhi-nepal-rudraksha/top.avif",
-      "bottom": "images/products/2-mukhi-nepal-rudraksha/bottom.avif",
-      "certificate": "images/products/2-mukhi-nepal-rudraksha/certificate.avif",
-      "xray": "images/products/2-mukhi-nepal-rudraksha/xray.avif"
-    }
-  },
-  {
     "id": "3-mukhi-nepal-rudraksha",
     "mukhi": 3,
     "name": "3 Mukhi Nepal Rudraksha",
@@ -904,7 +823,7 @@
       "certificate": "images/products/14-mukhi-nepal-rudraksha/certificate.avif",
       "xray": "images/products/14-mukhi-nepal-rudraksha/xray.avif"
     },
-    "rating": 5.0,
+    "rating": 5,
     "rating_count": 1,
     "reviews": [
       {
@@ -914,7 +833,7 @@
         "verified": true,
         "rating": 5,
         "date": "October 8, 2026",
-        "variant": "14 Mukhi Nepal Rudraksha \u2022 Lab Certified",
+        "variant": "14 Mukhi Nepal Rudraksha • Lab Certified",
         "title": "Authentic & Consecrated Nepal Bead",
         "comment": "The bead arrived in Canada within 4 days via DHL Express. The X-ray digital verification clearly showed all internal compartments intact without any tampering. The accompanying Panchamrit energization report gave tremendous peace of mind. Felt an immediate calming grounding aura during morning meditation. Har Har Mahadev!",
         "helpful": 12
