@@ -17,7 +17,8 @@ body { margin: 0; background: var(--cream); }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
-img { max-width: 100%; }
+img { max-width: 100%; height: auto; }
+.guide-card, .home-featured, footer { content-visibility: auto; contain-intrinsic-size: 0 350px; }
 .container { width: min(1210px, calc(100% - 40px)); margin: auto; }
 
 .luxury-header { position: sticky; top: 0; z-index: 100; background: rgba(255,250,240,.97); border-bottom: 1px solid #e8dccb; backdrop-filter: blur(12px); }
