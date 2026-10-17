@@ -5,7 +5,7 @@ import "./HeroCarousel.css";
 const slides = [
   {
     id: 1,
-    image: "images/hero/slide-1.avif",
+    image: "images/hero/divine-legacy-wide.avif",
     mobileImage: "images/hero/slide-1-mobile.avif",
     kicker: "DIRECTLY SOURCED FROM THE HIMALAYAS",
     title: "Authentic Certified Rudraksha from",
@@ -30,7 +30,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "images/hero/siddha-indra-mala-banner-v2.avif",
+    image: "images/hero/siddha-indra-wide.avif",
     mobileImage: "images/hero/siddha-indra-mala-banner-v2-mobile.avif",
     kicker: "SACRED 1 TO 21 MUKHI ENERGIZED BEADS",
     title: "Master the Energies of the",
@@ -56,7 +56,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "images/hero/birth-chart-banner-v2.avif",
+    image: "images/hero/birth-chart-wide.avif",
     mobileImage: "images/hero/birth-chart-banner-v2-mobile.avif",
     kicker: "PERSONALIZED VEDIC ASTROLOGY",
     title: "Find Your Divine Bead by",
@@ -251,8 +251,8 @@ export default function HeroCarousel({ compact = false, product = null }) {
                   <img
                     src={`${baseUrl}${s.image}`}
                     alt={altText}
-                    width="1376"
-                    height="768"
+                    width="2172"
+                    height="724"
                     fetchPriority={idx === 0 ? "high" : "low"}
                     loading={idx === 0 ? "eager" : "lazy"}
                     decoding={idx === 0 ? "sync" : "async"}
