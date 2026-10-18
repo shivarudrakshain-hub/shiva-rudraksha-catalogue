@@ -1,3 +1,5 @@
+import guideEntries from "../../public/data/rudraksha-guide.json";
+
 /**
  * Sacred Spiritual Guide Catalogue & Vedic Template Data
  * Extracted and modeled directly from the reference PDF (DOC-20260926-WA0028.pdf)
@@ -215,38 +217,25 @@ export const spiritualGuideData = {
   },
 };
 
-/**
- * Resolver function: extracts or generates the spiritual guide card data
- * for any product in the catalog.
- */
+/** Resolve only documented product-specific guidance; never substitute another bead. */
 export function getSpiritualGuideForProduct(product) {
   if (!product) return null;
-
-  // Try direct mukhi match
-  const mukhiNumber = Number(product.mukhi);
-  if (mukhiNumber && spiritualGuideData[mukhiNumber]) {
-    return spiritualGuideData[mukhiNumber];
-  }
-
-  // Check by ID if starts with a number (e.g. "1-mukhi-nepal-rudraksha")
-  const idMatch = String(product.id || "").match(/^(\d+)-mukhi/i);
-  if (idMatch && spiritualGuideData[Number(idMatch[1])]) {
-    return spiritualGuideData[Number(idMatch[1])];
-  }
-
-  // Dynamic template fallback: construct guide structure from product info
-  const name = product.name || "Rudraksha";
-  const num = mukhiNumber || (idMatch ? Number(idMatch[1]) : 1);
-
+  const match = String(product.id || product.slug || product.name || "").match(/^(\d+)[-\s]*mukhi/i);
+  const num = Number(product.mukhi) || (match ? Number(match[1]) : null);
+  if (!num) return null;
+  if (spiritualGuideData[num]) return spiritualGuideData[num];
+  const entry = guideEntries.find(item => Number(item.mukhi) === num && item.section === "mukhi");
+  if (!entry) return null;
+  const name = entry.title;
   return {
     mukhi: num,
     title: name.toUpperCase(),
-    subtitle: "Authentic Sacred Nepal Bead",
+    subtitle: "Traditional Vedic Associations",
     brand: "Shiva Rudraksha Inc.",
     tagline: "CONNECT ✦ BALANCE ✦ TRANSFORM",
     motto: "Ancient Wisdom for a Better Tomorrow",
-    deityMantraSanskrit: "ॐ नमः शिवाय",
-    deityMantraEnglish: "OM NAMAH SHIVAYA",
+    deityMantraSanskrit: "",
+    deityMantraEnglish: entry.mantra,
     deityArt: `images/spiritual-guide/${num}-mukhi/deity-banner.avif`,
     brochureCards: {
       specsCard: `images/spiritual-guide/${num}-mukhi/card1-specs.avif`,
@@ -254,55 +243,24 @@ export function getSpiritualGuideForProduct(product) {
       fullSpread: `images/spiritual-guide/${num}-mukhi/full-spread.avif`,
     },
     specs: [
-      { id: "god", label: "Associated God", value: "Lord Shiva / Sacred Deity", icon: "trishul" },
-      { id: "planet", label: "Planet", value: "Cosmic Ruler", icon: "sun" },
-      { id: "origin", label: "Origin", value: product.origin || "Nepal", icon: "star" },
-      { id: "chakra", label: "Chakra", value: "Spiritual Energy Center", icon: "lotus" },
-      { id: "wearer", label: "Who Should Wear", value: "Spiritual seekers and devotees looking for balance, focus and divine grace.", icon: "people" },
-      { id: "when", label: "When to Wear", value: "Monday, preferably in the morning.", icon: "calendar" },
-      { id: "mantra", label: "Mantra", value: "Om Namah Shivaya – 108 times.", icon: "om" },
-    ],
-    card1Footer: "HIGHER AWARENESS ✦ A BRIGHTER LIFE",
+      { id: "god", label: "Associated God", value: entry.deity, icon: "trishul" },
+      { id: "planet", label: "Planet", value: entry.planet, icon: "sun" },
+      { id: "origin", label: "Origin", value: product.origin || entry.origin, icon: "star" },
+      { id: "chakra", label: "Chakra", value: entry.chakra, icon: "lotus" },
+      { id: "nakshatra", label: "Nakshatra", value: entry.nakshatra, icon: "star" },
+      { id: "wearer", label: "Who Should Wear", value: entry.whoShouldWear.join(" "), icon: "people" },
+      { id: "when", label: "Wearing Guidance", value: entry.wearingRules[0], icon: "calendar" },
+      { id: "mantra", label: "Mantra", value: entry.mantra, icon: "om" },
+    ].filter(item => item.value),
+    card1Footer: entry.mantra,
     benefitsTitle: name.toUpperCase(),
     benefitsSubtitle: "Traditional Benefits",
-    benefits: [
-      {
-        id: 1,
-        icon: "shiva_dhyana",
-        title: "SPIRITUAL CONNECTION & AWAKENING",
-        text: product.description || "Supports deep spiritual connection, personal protection and divine alignment.",
-      },
-      {
-        id: 2,
-        icon: "mental_focus",
-        title: "MENTAL CLARITY & PURPOSE",
-        text: "Aids in clear thinking, decision-making and focused meditation on life goals.",
-      },
-      {
-        id: 3,
-        icon: "deep_meditation",
-        title: "INNER STRENGTH & BALANCE",
-        text: "Provides grounding energy and harmony between physical vitality and emotional calm.",
-      },
-      {
-        id: 4,
-        icon: "leadership_sun",
-        title: "REMOVAL OF LIMITATIONS",
-        text: "Assists in dissolving negative influences and cultivating confidence and perseverance.",
-      },
-      {
-        id: 5,
-        icon: "detachment_mountain",
-        title: "EMOTIONAL & ENERGETIC HEALING",
-        text: "Fosters self-acceptance, calmness and harmonious resonance in daily activities.",
-      },
-      {
-        id: 6,
-        icon: "inner_peace_tree",
-        title: "PEACE, PROSPERITY & WELL-BEING",
-        text: "Creates an aura of sacred serenity, protective grace and holistic prosperity.",
-      },
-    ],
-    card2Footer: "OM NAMAH SHIVAYA",
+    benefits: entry.benefitDetails.map((benefit, index) => ({
+      id: index + 1,
+      icon: ["mental_focus", "deep_meditation", "inner_peace_tree"][index % 3],
+      title: benefit.title.toUpperCase(),
+      text: benefit.text,
+    })),
+    card2Footer: entry.mantra,
   };
 }

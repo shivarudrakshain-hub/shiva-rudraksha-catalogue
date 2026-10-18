@@ -93,7 +93,7 @@ export default function Footer({ onNavigate }) {
           <div className="footer-contact-info">
             <a href="tel:+14372671257" className="footer-contact-link">
               <Phone size={15} />
-              <span>437-267-1257</span>
+              <span>+1 437-267-1257</span>
             </a>
             <a href="mailto:shivarudrakshain@gmail.com" className="footer-contact-link">
               <Mail size={15} />

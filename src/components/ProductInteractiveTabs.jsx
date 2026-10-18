@@ -4,7 +4,6 @@ import {
   Sparkles,
   ShieldCheck,
   HelpCircle,
-  Flame,
   CheckCircle2,
   Scan,
   Compass,
@@ -100,15 +99,6 @@ export default function ProductInteractiveTabs({ product }) {
                 </div>
               </div>
 
-              <div className="energize-callout-box">
-                <Flame size={24} className="flame-icon" />
-                <div>
-                  <strong>Personalized Vidhi Included with Your Order</strong>
-                  <p>
-                    Your parcel includes a step-by-step energization certificate, holy Gangajal vial, and the exact auspicious tithi to put on your bead.
-                  </p>
-                </div>
-              </div>
             </div>
           )}
 
