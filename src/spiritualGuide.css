@@ -963,3 +963,68 @@
     width: 100%;
   }
 }
+
+/* Keep each product guide within its panel, including long Vedic names. */
+.sg-cards-spread, .sg-brochure-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.sg-card, .sg-benefit-content, .sg-spec-value-col, .sg-spec-label-col { min-width: 0; }
+.sg-card { overflow-wrap: anywhere; }
+.sg-spec-row { grid-template-columns: minmax(0, 145px) 14px minmax(0, 1fr); }
+.sg-spec-value-col { flex-wrap: wrap; }
+.sg-deity-banner { aspect-ratio: auto; }
+.sg-deity-img { height: auto; object-fit: contain; }
+.sg-card-left:hover .sg-deity-img { transform: none; }
+@media (max-width: 992px) {
+  .sg-cards-spread, .sg-brochure-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .sg-spec-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .sg-spec-divider { display: none; }
+}
+
+/* Editorial product guide */
+.spiritual-guide-section { padding: 42px 0 56px; background: #faf7f0; }
+.spiritual-guide-section > .container { width: 100%; max-width: 1120px; padding: 0 22px; box-sizing: border-box; }
+.sg-section-header { margin-bottom: 32px; }
+.sg-trident-crest { display: none; }
+.sg-main-title { font-size: clamp(25px, 3.2vw, 40px); letter-spacing: .02em; }
+.sg-badge-kicker { font-size: 10px; letter-spacing: .16em; }
+.sg-subtitle { max-width: 580px; margin: 12px auto 0; font-size: 14px; }
+.sg-view-switcher { border-radius: 12px; padding: 5px; margin-top: 22px; box-shadow: none; background: #eee6d8; }
+.sg-switch-btn { border-radius: 9px; padding: 12px 18px; font-size: 13px; }
+.vedic-editorial { color: #392b23; }
+.vedic-overview { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 44px; align-items: start; }
+.vedic-reference { margin: 0; padding: 20px; background: #eee7db; border: 1px solid #e0d4c1; border-radius: 18px; text-align: center; }
+.vedic-reference-label { display: flex; gap: 8px; align-items: center; justify-content: center; color: #775b32; font-size: 12px; margin-bottom: 16px; }
+.vedic-reference img { display: block; width: 100%; height: auto; max-width: 310px; margin: auto; border-radius: 9px; box-shadow: 0 8px 24px #392b231a; }
+.vedic-reference figcaption { font-size: 11px; color: #766b5c; margin: 14px 0 12px; line-height: 1.5; }
+.vedic-reference button, .vedic-mantra button { display: inline-flex; gap: 8px; align-items: center; justify-content: center; border: 1px solid #cfc0a9; border-radius: 8px; background: transparent; color: inherit; padding: 9px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+.vedic-eyebrow { font-size: 10px; letter-spacing: .14em; color: #8b6737; font-weight: 700; }
+.vedic-details h3, .vedic-benefits-header h3 { font-family: Georgia, serif; font-size: clamp(26px, 3vw, 36px); font-weight: 500; line-height: 1.2; margin: 10px 0 12px; color: #59171a; }
+.vedic-intro { font-size: 14px; color: #77695d; line-height: 1.7; margin: 0 0 20px; }
+.vedic-facts { margin: 0; }
+.vedic-facts > div { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid #e6ddce; }
+.vedic-facts dt { font-size: 12px; color: #817263; }
+.vedic-facts dd { font-size: 14px; line-height: 1.6; margin: 0; font-weight: 500; overflow-wrap: anywhere; }
+.vedic-mantra { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px; margin-top: 24px; background: #58171b; border-radius: 12px; color: #fff5df; }
+.vedic-mantra .vedic-eyebrow { color: #e7c896; }
+.vedic-mantra p { font-family: Georgia, serif; margin: 9px 0 0; line-height: 1.5; font-size: 19px; }
+.vedic-mantra button { flex-shrink: 0; border-color: #b68a64; }
+.vedic-practice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.vedic-practice-grid article { padding: 24px; border: 1px solid #e4daca; border-radius: 14px; background: #fffdf8; }
+.vedic-practice-grid h3 { font-family: Georgia, serif; font-size: 23px; font-weight: 500; margin: 12px 0; }
+.vedic-practice-grid p, .vedic-benefit-grid p { font-size: 14px; line-height: 1.8; color: #746557; margin: 0; }
+.vedic-benefits-header { margin: 38px 0 20px; }
+.vedic-benefit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.vedic-benefit-grid article { padding: 24px; background: #f0eade; border-radius: 14px; }
+.vedic-number { font-family: Georgia, serif; color: #a38860; font-size: 25px; }
+.vedic-benefit-grid h4 { font-size: 13px; letter-spacing: .04em; line-height: 1.6; margin: 14px 0 10px; color: #59171a; }
+.vedic-editorial article, .vedic-details { min-width: 0; overflow-wrap: anywhere; }
+@media(max-width: 760px) {
+ .vedic-overview { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+ .vedic-reference img { max-width: 270px; }
+ .vedic-practice-grid, .vedic-benefit-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+ .spiritual-guide-section > .container { padding: 0 14px; }
+ .sg-view-switcher { flex-direction: row; width: auto; max-width: 100%; }
+ .sg-switch-btn { padding: 10px 12px; font-size: 12px; flex: 1; }
+ .vedic-mantra { padding: 18px; }
+}

@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Gallery from "./Gallery";
+import "./ProductGallery.css";
 import Logo from "./Logo";
 import PromotionalBanner from "./PromotionalBanner";
 
@@ -528,7 +529,7 @@ export default function ProductDetails({
                   title="Direct Phone Call"
                 >
                   <Phone size={17} />
-                  <span>Call 437-267-1257</span>
+                  <span>Call +1 437-267-1257</span>
                 </a>
                 <a
                   className="enquire-secondary-btn"

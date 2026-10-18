@@ -163,7 +163,7 @@ export default function ProductSpiritualGuide({ product }) {
   if (!guide) return null;
 
   const handleCopyMantra = () => {
-    const mantraText = `${guide.deityMantraSanskrit} (${guide.deityMantraEnglish})`;
+    const mantraText = [guide.deityMantraSanskrit, guide.deityMantraEnglish].filter(Boolean).join(" — ");
     navigator.clipboard?.writeText(mantraText);
     setCopiedMantra(true);
     setTimeout(() => setCopiedMantra(false), 2500);
@@ -209,7 +209,7 @@ export default function ProductSpiritualGuide({ product }) {
           <span className="sg-badge-kicker">SACRED VEDIC SPECIFICATIONS & BENEFITS</span>
           <h2 className="sg-main-title">{guide.title}</h2>
           <p className="sg-subtitle">
-            Authentic divine guidance extracted directly from the sacred Shiva Rudraksha Inc. catalogue
+            Discover the meaning, associations and wearing traditions of your sacred bead.
           </p>
 
           {/* View Mode Switcher */}
@@ -222,7 +222,7 @@ export default function ProductSpiritualGuide({ product }) {
               onClick={() => setActiveTab("interactive")}
             >
               <BookOpen size={16} />
-              Interactive Vedic Guide
+              Explore the guide
             </button>
             <button
               type="button"
@@ -232,7 +232,7 @@ export default function ProductSpiritualGuide({ product }) {
               onClick={() => setActiveTab("brochure")}
             >
               <ImageIcon size={16} />
-              Authentic Reference Cards (from PDF)
+              Reference cards
             </button>
           </div>
         </div>
@@ -241,150 +241,44 @@ export default function ProductSpiritualGuide({ product }) {
         {/* TAB 1: INTERACTIVE SACRED VEDIC CARDS (Pure CSS/SVG/HTML)    */}
         {/* ============================================================ */}
         {activeTab === "interactive" && (
-          <div className="sg-cards-spread">
-            {/* ---------------- CARD 1: LEFT CARD (SPECS & DEITY) ---------------- */}
-            <article className="sg-card sg-card-left">
-              {/* Ornate Gold Filigree Corners */}
-              <OrnateCorner position="top-left" />
-              <OrnateCorner position="top-right" />
-              <OrnateCorner position="bottom-left" />
-              <OrnateCorner position="bottom-right" />
-
-              {/* Card 1 Top Parchment Brand Header */}
-              <div className="sg-card1-top-header">
-                <div className="sg-brand-trident">
-                  <span className="sg-small-filigree" />
-                  <span className="sg-gold-trishul">🔱</span>
-                  <span className="sg-small-filigree" />
-                </div>
-                <h3 className="sg-brand-name">{guide.brand}</h3>
-                <div className="sg-brand-tagline">
-                  {guide.tagline}
-                </div>
-              </div>
-
-              {/* Lord Shiva / Mount Kailash Artwork Banner */}
-              <div className="sg-deity-banner">
-                <img
-                  src={`${baseUrl}${guide.deityArt}`}
-                  alt={`${guide.title} Deity Sacred Artwork`}
-                  className="sg-deity-img"
+          <div className="vedic-editorial">
+            <div className="vedic-overview">
+              <figure className="vedic-reference">
+                <div className="vedic-reference-label"><Sparkles size={15} /> Sacred heritage</div>
+                {guide.mukhi <= 15 && <img
+                  src={`${baseUrl}${guide.brochureCards.specsCard}`}
+                  alt={`${guide.title} reference card with ${guide.specs.find(item => item.id === "god")?.value}`}
                   loading="lazy"
-                  decoding="async"
-                  onError={(e) => {
-                    e.currentTarget.src = `${baseUrl}${guide.brochureCards.specsCard}`;
-                  }}
-                />
-              </div>
-
-              {/* Card 1 Bottom Midnight Navy Panel */}
-              <div className="sg-card1-bottom-panel">
-                <div className="sg-product-lead">
-                  <h4 className="sg-card-bead-title">{guide.title}</h4>
-                  <div className="sg-card-bead-subtitle">{guide.subtitle}</div>
-                  <div className="sg-gold-separator">
-                    <span className="sg-sep-diamond">✦</span>
-                  </div>
-                </div>
-
-                {/* Vedic Specifications Table */}
-                <div className="sg-specs-table">
-                  {guide.specs.map((item) => (
-                    <div key={item.id} className="sg-spec-row">
-                      <div className="sg-spec-label-col">
-                        <span className="sg-gold-medallion-sm">
-                          <MedallionIcon type={item.icon} />
-                        </span>
-                        <span className="sg-spec-label">{item.label}</span>
-                      </div>
-                      <div className="sg-spec-divider">|</div>
-                      <div className="sg-spec-value-col">
-                        <span className="sg-spec-value">{item.value}</span>
-                        {item.id === "mantra" && (
-                          <button
-                            type="button"
-                            className="sg-copy-mantra-btn"
-                            onClick={handleCopyMantra}
-                            title="Copy sacred mantra"
-                          >
-                            {copiedMantra ? <Check size={13} /> : <Copy size={13} />}
-                            {copiedMantra ? "Copied" : "Copy"}
-                          </button>
-                        )}
-                      </div>
-                    </div>
+                />}
+                <figcaption>From the Shiva Rudraksha reference collection</figcaption>
+                {guide.mukhi <= 15 && <button type="button" onClick={() => openInLightbox(`${baseUrl}${guide.brochureCards.specsCard}`, guide.title)}>
+                  <Maximize2 size={15} /> View full reference
+                </button>}
+              </figure>
+              <div className="vedic-details">
+                <span className="vedic-eyebrow">THE BEAD & ITS TRADITION</span>
+                <h3>A deeper connection</h3>
+                <p className="vedic-intro">Explore the traditional associations and practices of {guide.title.toLowerCase()}.</p>
+                <dl className="vedic-facts">
+                  {guide.specs.filter(item => !["wearer", "when", "mantra"].includes(item.id)).map(item => (
+                    <div key={item.id}><dt>{item.label}</dt><dd>{item.value}</dd></div>
                   ))}
-                </div>
-
-                {/* Card 1 Footer */}
-                <div className="sg-card1-footer">
-                  <div className="sg-footer-motto">
-                    <span className="sg-foot-diamond">✦</span>
-                    <span>{guide.card1Footer}</span>
-                    <span className="sg-foot-diamond">✦</span>
-                  </div>
+                </dl>
+                <div className="vedic-mantra">
+                  <div><span className="vedic-eyebrow">SACRED MANTRA</span><p>{guide.specs.find(item => item.id === "mantra")?.value}</p></div>
+                  <button type="button" onClick={handleCopyMantra} aria-label="Copy sacred mantra">{copiedMantra ? <Check size={18} /> : <Copy size={18} />}{copiedMantra ? "Copied" : "Copy"}</button>
                 </div>
               </div>
-            </article>
-
-            {/* ---------------- CARD 2: RIGHT CARD (TRADITIONAL BENEFITS) ---------------- */}
-            <article className="sg-card sg-card-right">
-              {/* Ornate Gold Filigree Corners */}
-              <OrnateCorner position="top-left" />
-              <OrnateCorner position="top-right" />
-              <OrnateCorner position="bottom-left" />
-              <OrnateCorner position="bottom-right" />
-
-              {/* Card 2 Midnight Navy Header Banner */}
-              <div className="sg-card2-header-banner">
-                <h3 className="sg-card2-title">{guide.benefitsTitle}</h3>
-                <div className="sg-card2-subtitle">
-                  <em>{guide.benefitsSubtitle}</em>
-                </div>
-                <div className="sg-card2-header-divider">
-                  <span className="sg-head-line" />
-                  <span className="sg-head-diamond">✦</span>
-                  <span className="sg-head-line" />
-                </div>
-              </div>
-
-              {/* Card 2 Parchment Body with 6 Embossed Gold Medallions */}
-              <div className="sg-card2-body">
-                <div className="sg-benefits-list">
-                  {guide.benefits.map((benefit, index) => (
-                    <div key={benefit.id} className="sg-benefit-item">
-                      <div className="sg-benefit-medallion-wrap">
-                        <div className="sg-gold-medallion-lg">
-                          <div className="sg-medallion-inner">
-                            <MedallionIcon type={benefit.icon} />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="sg-benefit-copy">
-                        <h4 className="sg-benefit-heading">{benefit.title}</h4>
-                        <p className="sg-benefit-desc">{benefit.text}</p>
-                      </div>
-                      {index < guide.benefits.length - 1 && (
-                        <div className="sg-benefit-divider">
-                          <span className="sg-div-diamond">✦</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Card 2 Bottom Bar */}
-              <div className="sg-card2-footer-bar">
-                <div className="sg-card2-footer-content">
-                  <span className="sg-foot-line" />
-                  <span className="sg-foot-diamond">✦</span>
-                  <strong className="sg-foot-mantra">{guide.card2Footer}</strong>
-                  <span className="sg-foot-diamond">✦</span>
-                  <span className="sg-foot-line" />
-                </div>
-              </div>
-            </article>
+            </div>
+            <div className="vedic-practice-grid">
+              {guide.specs.filter(item => ["wearer", "when"].includes(item.id)).map(item => (
+                <article key={item.id}><span className="vedic-eyebrow">{item.id === "wearer" ? "IS THIS BEAD FOR YOU?" : "BEGIN YOUR PRACTICE"}</span><h3>{item.label}</h3><p>{item.value}</p></article>
+              ))}
+            </div>
+            <div className="vedic-benefits-header"><span className="vedic-eyebrow">TRADITIONAL PERSPECTIVES</span><h3>Meaning & benefits</h3></div>
+            <div className="vedic-benefit-grid">
+              {guide.benefits.map((benefit, index) => <article key={benefit.id}><span className="vedic-number">{String(index + 1).padStart(2, "0")}</span><h4>{benefit.title}</h4><p>{benefit.text}</p></article>)}
+            </div>
           </div>
         )}
 

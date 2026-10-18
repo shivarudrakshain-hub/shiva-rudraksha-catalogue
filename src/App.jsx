@@ -594,7 +594,7 @@ export default function App() {
             <div className="page-heading"><span>CONTACT</span><h1>We reply personally.</h1><p>Message us and you will hear back from a person, not an auto-responder.</p></div>
             <div className="contact-grid">
               <a href="https://wa.me/14372671257"><MessageCircle /><span><small>WHATSAPP (FASTEST)</small><strong>Chat with us</strong></span></a>
-              <a href="tel:+14372671257"><span className="contact-icon">☎</span><span><small>CALL</small><strong>437-267-1257</strong></span></a>
+              <a href="tel:+14372671257"><span className="contact-icon">☎</span><span><small>CALL</small><strong>+1 437-267-1257</strong></span></a>
               <a href="mailto:shivarudrakshain@gmail.com"><span className="contact-icon">✉</span><span><small>EMAIL</small><strong>shivarudrakshain@gmail.com</strong></span></a>
               <div><span className="contact-icon">⌖</span><span><small>ADDRESS</small><strong>Scarborough, Ontario, Canada</strong></span></div>
             </div>

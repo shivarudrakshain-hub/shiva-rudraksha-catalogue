@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { IMAGE_SLOTS } from "../data/catalogue";
 
+const REFERENCE_NOTICE = "Product photos and certificates are for reference only, not the exact item supplied. The actual bead, size, appearance and certificate may vary. Contact us for current photos and certification before ordering.";
+
 export default function Gallery({ product, compact = false, onOpen, resetKey = "" }) {
   const images = useMemo(
     () =>
@@ -86,6 +88,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
         )}
         <span className="image-type">{active.label}</span>
         <span className="image-count">{index + 1}/{images.length}</span>
+        <p className="card-reference-note" title={REFERENCE_NOTICE}>Reference photos & certificates • Actual item may vary</p>
       </div>
     );
   }
@@ -95,11 +98,14 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
       <div className="detail-gallery">
         <div
           className="detail-main-image"
+        >
+          <div className="gallery-stage"
           onTouchStart={touchStart}
           onTouchEnd={touchEnd}
         >
           <img
             src={active.src || active.fallbackSrc}
+            key={active.src || active.fallbackSrc}
             onError={(event) => useFallback(event, active.fallbackSrc)}
             alt={`${product.name} ${active.label}`}
             decoding="async"
@@ -117,6 +123,11 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           </button>
           <span className="image-type">{active.label}</span>
           <span className="image-count">{index + 1}/{images.length}</span>
+          </div>
+          <div className="gallery-reference-notice">
+            <strong>Reference images only</strong>
+            <p>{REFERENCE_NOTICE}</p>
+          </div>
         </div>
 
         <div className="thumbnails">
@@ -124,6 +135,8 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
             <button
               key={item.key}
               className={i === index ? "active" : ""}
+              aria-label={`Show ${item.label.toLowerCase()} reference image`}
+              aria-pressed={i === index}
               onClick={() => setIndex(i)}
             >
               <img
@@ -146,16 +159,17 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           <button className="close-fullscreen" aria-label="Close product image" onClick={() => setFullscreen(false)}>
             <X />
           </button>
-          <button className="full-arrow left" onClick={previous}>
+          <button className="full-arrow left" aria-label="Previous reference image" onClick={previous}>
             <ChevronLeft />
           </button>
           <figure>
             <img src={active.src || active.fallbackSrc} onError={(event) => useFallback(event, active.fallbackSrc)} alt={`${product.name} ${active.label}`} />
             <figcaption>
               {product.name} — {active.label} ({index + 1}/{images.length})
+              <p className="fullscreen-reference-note">{REFERENCE_NOTICE}</p>
             </figcaption>
           </figure>
-          <button className="full-arrow right" onClick={next}>
+          <button className="full-arrow right" aria-label="Next reference image" onClick={next}>
             <ChevronRight />
           </button>
         </div>

@@ -4,7 +4,6 @@ import {
   Sparkles,
   ShieldCheck,
   HelpCircle,
-  Flame,
   CheckCircle2,
   Scan,
   Compass,
@@ -13,6 +12,8 @@ import ProductSpiritualGuide from "./ProductSpiritualGuide";
 
 export default function ProductInteractiveTabs({ product }) {
   const [activeTab, setActiveTab] = useState("guide");
+
+  const sampleReportBase = `${import.meta.env.BASE_URL}images/samples/12-mukhi`;
 
   const tabs = [
     { id: "guide", label: "Spiritual Guide & Vedic Vidhi", icon: BookOpen },
@@ -100,15 +101,6 @@ export default function ProductInteractiveTabs({ product }) {
                 </div>
               </div>
 
-              <div className="energize-callout-box">
-                <Flame size={24} className="flame-icon" />
-                <div>
-                  <strong>Personalized Vidhi Included with Your Order</strong>
-                  <p>
-                    Your parcel includes a step-by-step energization certificate, holy Gangajal vial, and the exact auspicious tithi to put on your bead.
-                  </p>
-                </div>
-              </div>
             </div>
           )}
 
@@ -129,6 +121,13 @@ export default function ProductInteractiveTabs({ product }) {
                     <Scan size={26} />
                   </div>
                   <h4>Digital X-Ray Radiography</h4>
+                  <figure className="auth-report-sample">
+                    <a href={`${sampleReportBase}-xray-redacted.png`} target="_blank" rel="noopener noreferrer" aria-label="Open sample 12 Mukhi X-ray image in a new tab">
+                      <img src={`${sampleReportBase}-xray-redacted.png`} alt="Sample 12 Mukhi Rudraksha X-ray report" loading="lazy" />
+                      <span>View full X-ray ↗</span>
+                    </a>
+                    <figcaption>Sample 12 Mukhi report · Reference only</figcaption>
+                  </figure>
                   <p>
                     High-resolution digital X-Ray imaging proves internal seed compartment chambers match the exact outer mukhi lines, confirming 100% botanical authenticity.
                   </p>
@@ -143,7 +142,19 @@ export default function ProductInteractiveTabs({ product }) {
                   <div className="auth-icon-wrap">
                     <ShieldCheck size={26} />
                   </div>
-                  <h4>Government Laboratory Certificate</h4>
+                  <h4>ISO Certified</h4>
+                  <figure className="auth-report-sample">
+                    <a href={`${sampleReportBase}-certificate-redacted.png`} target="_blank" rel="noopener noreferrer" aria-label="Open sample 12 Mukhi certificate in a new tab">
+                      <img src={`${sampleReportBase}-certificate-redacted.png`} alt="Sample 12 Mukhi Rudraksha laboratory certificate" loading="lazy" />
+                      <span>View full certificate ↗</span>
+                    </a>
+                    <figcaption>Sample 12 Mukhi certificate · Reference only</figcaption>
+                  </figure>
+                  <dl className="auth-report-fields">
+                    <div><dt>Dimensions (mm)</dt><dd>The report records the specimen’s measured size in millimeters.</dd></div>
+                    <div><dt>Weight (g)</dt><dd>The weight shown belongs to the tested specimen, measured in grams.</dd></div>
+                    <div><dt>Report details</dt><dd>Use the report number and any verification details printed on the certificate to identify the tested specimen.</dd></div>
+                  </dl>
                   <p>
                     Each collector bead is certified by an ISO 9001:2015 accredited gemological laboratory with unique online verifiable QR code and hologram seal.
                   </p>
@@ -154,6 +165,7 @@ export default function ProductInteractiveTabs({ product }) {
                   </ul>
                 </div>
               </div>
+              <p className="auth-sample-disclaimer">These sample images explain the reports and are for reference only. They do not identify the actual bead supplied. Dimensions, weight, appearance and report details vary by specimen. Contact us for the available bead’s photos, measurements and certificate before ordering.</p>
             </div>
           )}
 
