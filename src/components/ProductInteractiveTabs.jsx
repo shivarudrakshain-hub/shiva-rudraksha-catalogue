@@ -133,7 +133,7 @@ export default function ProductInteractiveTabs({ product }) {
                   <div className="auth-icon-wrap">
                     <ShieldCheck size={26} />
                   </div>
-                  <h4>Government Laboratory Certificate</h4>
+                  <h4>ISO Certified</h4>
                   <p>
                     Each collector bead is certified by an ISO 9001:2015 accredited gemological laboratory with unique online verifiable QR code and hologram seal.
                   </p>
