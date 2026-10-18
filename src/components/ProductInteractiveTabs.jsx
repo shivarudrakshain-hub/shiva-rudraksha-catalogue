@@ -13,7 +13,7 @@ import ProductSpiritualGuide from "./ProductSpiritualGuide";
 export default function ProductInteractiveTabs({ product }) {
   const [activeTab, setActiveTab] = useState("guide");
 
-  const sampleReportBase = `${import.meta.env.BASE_URL}images/products/1-mukhi-nepal-rudraksha`;
+  const sampleReportBase = `${import.meta.env.BASE_URL}images/samples/12-mukhi`;
 
   const tabs = [
     { id: "guide", label: "Spiritual Guide & Vedic Vidhi", icon: BookOpen },
@@ -122,11 +122,11 @@ export default function ProductInteractiveTabs({ product }) {
                   </div>
                   <h4>Digital X-Ray Radiography</h4>
                   <figure className="auth-report-sample">
-                    <a href={`${sampleReportBase}/xray.avif`} target="_blank" rel="noopener noreferrer" aria-label="Open sample 1 Mukhi X-ray image in a new tab">
-                      <img src={`${sampleReportBase}/xray.avif`} alt="Sample 1 Mukhi Rudraksha X-ray report" loading="lazy" />
+                    <a href={`${sampleReportBase}-xray-redacted.png`} target="_blank" rel="noopener noreferrer" aria-label="Open sample 12 Mukhi X-ray image in a new tab">
+                      <img src={`${sampleReportBase}-xray-redacted.png`} alt="Sample 12 Mukhi Rudraksha X-ray report" loading="lazy" />
                       <span>View full X-ray ↗</span>
                     </a>
-                    <figcaption>Sample 1 Mukhi report · Reference only</figcaption>
+                    <figcaption>Sample 12 Mukhi report · Reference only</figcaption>
                   </figure>
                   <p>
                     High-resolution digital X-Ray imaging proves internal seed compartment chambers match the exact outer mukhi lines, confirming 100% botanical authenticity.
@@ -144,11 +144,11 @@ export default function ProductInteractiveTabs({ product }) {
                   </div>
                   <h4>ISO Certified</h4>
                   <figure className="auth-report-sample">
-                    <a href={`${sampleReportBase}/certificate.avif`} target="_blank" rel="noopener noreferrer" aria-label="Open sample 1 Mukhi certificate in a new tab">
-                      <img src={`${sampleReportBase}/certificate.avif`} alt="Sample 1 Mukhi Rudraksha laboratory certificate" loading="lazy" />
+                    <a href={`${sampleReportBase}-certificate-redacted.png`} target="_blank" rel="noopener noreferrer" aria-label="Open sample 12 Mukhi certificate in a new tab">
+                      <img src={`${sampleReportBase}-certificate-redacted.png`} alt="Sample 12 Mukhi Rudraksha laboratory certificate" loading="lazy" />
                       <span>View full certificate ↗</span>
                     </a>
-                    <figcaption>Sample 1 Mukhi certificate · Reference only</figcaption>
+                    <figcaption>Sample 12 Mukhi certificate · Reference only</figcaption>
                   </figure>
                   <dl className="auth-report-fields">
                     <div><dt>Dimensions (mm)</dt><dd>The report records the specimen’s measured size in millimeters.</dd></div>
