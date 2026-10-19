@@ -214,7 +214,7 @@ export default function FAQPage() {
   }, [query, category]);
   return (
     <main className="faq-page page-shell">
-      <div className="container faq-wrap">
+      <div className="faq-banner" aria-label="Shiva Rudraksha spiritual banner">\n        <div className="faq-banner-copy"><span>SHIVA RUDRAKSHA INC.</span><h2>Divine Guidance<br/><em>for a Balanced Life</em></h2><p>AUTHENTIC RUDRAKSHA · TRADITIONAL WISDOM</p></div>\n      </div>\n      <div className="container faq-wrap">
         <header className="faq-hero">
           <span className="faq-kicker">SHIVA RUDRAKSHA INC. · HELP CENTRE</span>
           <h1>Frequently Asked Questions</h1>
