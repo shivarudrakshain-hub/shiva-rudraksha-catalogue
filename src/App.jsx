@@ -67,9 +67,10 @@ function GuideAccordionCard({ item }) {
   };
 
   return (
-    <article className="guide-card detailed-guide-card">
+    <article className="guide-card detailed-guide-card" id={`mukhi-${item.mukhi || item.id}`}>
       <div className="guide-summary-grid">
         <div className="guide-summary-copy">
+          {item.section !== "special" && <span className="guide-mukhi-medallion">{String(item.mukhi).padStart(2, "0")} <small>MUKHI</small></span>}
           <span className="guide-entry-type">
             {item.section === "special" ? "SPECIAL RUDRAKSHA FORM" : "TRADITIONAL MUKHI"}
           </span>
@@ -172,6 +173,7 @@ export default function App() {
   const [route, setRoute] = useState(window.location.hash || "#home");
   const [products, setProducts] = useState([]);
   const [guide, setGuide] = useState([]);
+  const [guideSearch, setGuideSearch] = useState("");
   const [selected, setSelected] = useState(null);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("Nepal Rudraksha");
@@ -392,13 +394,17 @@ export default function App() {
       {active === "guide" && (
         <main className="page-shell guide-page">
           <div className="container">
-            <div className="page-heading">
-              <span>RUDRAKSHA GUIDE</span>
-              <h1>1–21 Mukhi traditional guide</h1>
-              <p>
-                Traditional associations for educational and spiritual reference.
-                Expand any section for detailed guidance.
-              </p>
+            <div className="guide-luxury-hero">
+              <span className="guide-hero-eyebrow">ॐ · SHIVA RUDRAKSHA INC. · SACRED KNOWLEDGE</span>
+              <h1>Discover the <em>21 Mukhi</em><br />Rudraksha Traditions</h1>
+              <p>Explore each sacred bead's traditional deity, ruling planet, mantra, spiritual associations and wearing guidance.</p>
+              <div className="guide-hero-features"><span>✦ 1–21 Mukhi</span><span>✦ Traditional wisdom</span><span>✦ Special formations</span></div>
+            </div>
+            <div className="guide-discovery">
+              <div className="guide-discovery-heading"><div><span>EXPLORE BY MUKHI</span><h2>Find your Rudraksha</h2></div><label className="guide-search-box"><Search size={19} /><input type="search" placeholder="Search deity, planet, mantra or Mukhi…" aria-label="Search Rudraksha guide" value={guideSearch} onChange={(event) => setGuideSearch(event.target.value)} />{guideSearch && <button type="button" aria-label="Clear guide search" onClick={() => setGuideSearch("")}><X size={16}/></button>}</label></div>
+              <nav className="guide-number-nav" aria-label="Jump to Mukhi guide">
+                {Array.from({length:21},(_,i)=>i+1).map(n=><a key={n} href={`#mukhi-${n}`} onClick={(event)=>{event.preventDefault();document.getElementById(`mukhi-${n}`)?.scrollIntoView({behavior:"smooth",block:"start"});}}>{n}<small>MUKHI</small></a>)}
+              </nav>
             </div>
 
             <section className="guide-section">
@@ -409,7 +415,7 @@ export default function App() {
 
               <div className="guide-grid detailed-guide-grid">
                 {guide
-                  .filter((item) => item.section !== "special")
+                  .filter((item) => item.section !== "special" && (!guideSearch.trim() || [item.title, item.mukhi, item.deity, item.planet, item.mantra, item.benefits, item.about].some((v) => String(v ?? "").toLowerCase().includes(guideSearch.trim().toLowerCase()))))
                   .map((item) => (
                     <GuideAccordionCard key={item.id || item.mukhi} item={item} />
                   ))}
@@ -428,7 +434,7 @@ export default function App() {
 
               <div className="guide-grid detailed-guide-grid">
                 {guide
-                  .filter((item) => item.section === "special")
+                  .filter((item) => item.section === "special" && (!guideSearch.trim() || [item.title, item.deity, item.planet, item.benefits, item.about].some((v) => String(v ?? "").toLowerCase().includes(guideSearch.trim().toLowerCase()))))
                   .map((item) => (
                     <GuideAccordionCard key={item.id} item={item} />
                   ))}
