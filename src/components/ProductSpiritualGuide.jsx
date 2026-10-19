@@ -178,6 +178,8 @@ export default function ProductSpiritualGuide({ product }) {
   };
 
   const baseUrl = import.meta.env.BASE_URL;
+  const newGuideImage = `${baseUrl}images/guide/${guide.mukhi}-mukhi-guide.webp`;
+
 
   return (
     <section className="spiritual-guide-section" aria-label="Spiritual Guide & Vedic Benefits">
@@ -246,12 +248,12 @@ export default function ProductSpiritualGuide({ product }) {
               <figure className="vedic-reference">
                 <div className="vedic-reference-label"><Sparkles size={15} /> Sacred heritage</div>
                 {guide.mukhi <= 15 && <img
-                  src={`${baseUrl}${guide.brochureCards.specsCard}`}
+                  src={newGuideImage}
                   alt={`${guide.title} reference card with ${guide.specs.find(item => item.id === "god")?.value}`}
                   loading="lazy"
                 />}
                 <figcaption>From the Shiva Rudraksha reference collection</figcaption>
-                {guide.mukhi <= 15 && <button type="button" onClick={() => openInLightbox(`${baseUrl}${guide.brochureCards.specsCard}`, guide.title)}>
+                {guide.mukhi <= 15 && <button type="button" onClick={() => openInLightbox(newGuideImage, guide.title)}>
                   <Maximize2 size={15} /> View full reference
                 </button>}
               </figure>
@@ -289,74 +291,30 @@ export default function ProductSpiritualGuide({ product }) {
           <div className="sg-brochure-view">
             <div className="sg-brochure-intro">
               <p>
-                Below is the exact 1:1 high-resolution page spread extracted directly from the official{" "}
+                Below is the updated illustrated reference guide from the{" "}
                 <strong>Shiva Rudraksha Inc. Reference Catalog</strong> (PDF). Click any card to expand in high-definition.
               </p>
             </div>
 
-            <div className="sg-brochure-grid">
-              <div
-                className="sg-brochure-card-item"
-                onClick={() =>
-                  openInLightbox(
-                    `${baseUrl}${guide.brochureCards.specsCard}`,
-                    `${guide.title} — Vedic Specifications Card`
-                  )
-                }
-              >
+            <div className="sg-brochure-grid" style={{ display: "block" }}>
+              <div className="sg-brochure-card-item" onClick={() => openInLightbox(newGuideImage, guide.title)}>
                 <div className="sg-brochure-img-container">
-                  <img
-                    src={`${baseUrl}${guide.brochureCards.specsCard}`}
-                    alt={`${guide.title} Vedic Specifications`}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="sg-brochure-overlay">
-                    <Maximize2 size={24} />
-                    <span>View Fullscreen</span>
-                  </div>
+                  <img src={newGuideImage} alt={`${guide.title} — illustrated specifications and traditional benefits`} loading="lazy" decoding="async" style={{ width: "100%", height: "auto", objectFit: "contain" }} />
+                  <div className="sg-brochure-overlay"><Maximize2 size={24} /><span>View Fullscreen</span></div>
                 </div>
-                <div className="sg-brochure-card-caption">
-                  <strong>Page Left:</strong> Sacred Identity & Vedic Specifications
-                </div>
-              </div>
-
-              <div
-                className="sg-brochure-card-item"
-                onClick={() =>
-                  openInLightbox(
-                    `${baseUrl}${guide.brochureCards.benefitsCard}`,
-                    `${guide.title} — Traditional Benefits Card`
-                  )
-                }
-              >
-                <div className="sg-brochure-img-container">
-                  <img
-                    src={`${baseUrl}${guide.brochureCards.benefitsCard}`}
-                    alt={`${guide.title} Traditional Benefits`}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="sg-brochure-overlay">
-                    <Maximize2 size={24} />
-                    <span>View Fullscreen</span>
-                  </div>
-                </div>
-                <div className="sg-brochure-card-caption">
-                  <strong>Page Right:</strong> Traditional Sacred Benefits
-                </div>
+                <div className="sg-brochure-card-caption">Sacred Identity, Vedic Specifications & Traditional Benefits</div>
               </div>
             </div>
 
             <div className="sg-brochure-actions">
               <a
-                href={`${baseUrl}${guide.brochureCards.fullSpread}`}
+                href={newGuideImage}
                 target="_blank"
                 rel="noreferrer"
                 className="sg-action-btn primary"
               >
                 <Download size={16} />
-                Open Full 2-Page Spread (Ultra-HD)
+                Open Full Reference Image
               </a>
               <button
                 type="button"
