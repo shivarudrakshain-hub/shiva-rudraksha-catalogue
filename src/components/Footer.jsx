@@ -53,6 +53,7 @@ export default function Footer({ onNavigate }) {
             <button type="button" onClick={() => handleNav("#lord-shiva")}>
               Who is Lord Shiva?
             </button>
+            <button type="button" onClick={() => handleNav("#faq")}>Frequently Asked Questions</button>
             <button type="button" onClick={() => handleNav("#about")}>
               About Shiva Rudraksha
             </button>

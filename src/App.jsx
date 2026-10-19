@@ -26,6 +26,7 @@ const BirthChartRecommendation = lazy(() => import("./components/BirthChartRecom
 const RudrakshaKnowledge = lazy(() => import("./components/RudrakshaKnowledge"));
 const RudrakshaMaintenance = lazy(() => import("./components/RudrakshaMaintenance"));
 const LordShiva = lazy(() => import("./components/LordShiva"));
+const FAQPage = lazy(() => import("./components/FAQPage"));
 const CartDrawer = lazy(() => import("./components/CartDrawer"));
 import { loadProducts } from "./data/catalogue";
 import { getCartCount } from "./data/cartStore";
@@ -340,6 +341,7 @@ export default function App() {
             </div>
             <button className={active === "recommendations" ? "active" : ""} onClick={() => navigate("#recommendations")}>Recommendations</button>
             <button className={active === "about" ? "active" : ""} onClick={() => navigate("#about")}>About</button>
+            <button className={active === "faq" ? "active" : ""} onClick={() => navigate("#faq")}>FAQ</button>
             <button className={active === "contact" ? "active" : ""} onClick={() => navigate("#contact")}>Contact</button>
             <a className="mobile-account-link" href="/profile">Account & Orders</a>
           </nav>
@@ -586,6 +588,10 @@ export default function App() {
 </div>
           </div>
         </main>
+      )}
+
+      {active === "faq" && (
+        <Suspense fallback={<div className="page-shell container"><p>Loading FAQs…</p></div>}><FAQPage /></Suspense>
       )}
 
       {active === "contact" && (
