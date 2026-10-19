@@ -1037,3 +1037,7 @@
 .vedic-reference-featured figcaption{font-size:13px}
 .vedic-overview-featured .vedic-details{max-width:900px;width:100%;margin-inline:auto}
 @media(max-width:760px){.vedic-overview-featured{gap:22px}.vedic-reference-featured{padding:10px;border-radius:12px}.vedic-reference-featured img{max-width:100%}}
+
+/* Display only the left/front half of the uploaded two-panel guide image. */
+.vedic-front-card-crop{width:100%;overflow:hidden;aspect-ratio:3/4;border-radius:12px;box-shadow:0 14px 35px #392b2320}
+.vedic-reference-featured .vedic-front-card-crop img{display:block;width:200%;max-width:none;height:auto;border-radius:0;box-shadow:none;margin:0}
