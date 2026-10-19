@@ -1340,3 +1340,29 @@ footer button { padding: 0; border: 0; background: transparent; color: white; }
 .guide-summary-image{height:auto;min-height:0;aspect-ratio:3/2;overflow:visible;background:#fff;border:0}
 .guide-summary-image img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:12px}
 @media(max-width:620px){.guide-summary-image{height:auto;aspect-ratio:3/2}}
+
+/* Approved premium Mukhi guide: clean maroon/cream layout with tabbed information. */
+.guide-section:not(.special-guide-section) .guide-grid{gap:28px}
+.guide-section:not(.special-guide-section) .detailed-guide-card{border:1px solid #dfc8a4;border-radius:20px;background:#fffdf7;box-shadow:0 12px 36px #4b241211;overflow:hidden}
+.guide-section:not(.special-guide-section) .guide-summary-grid{grid-template-columns:minmax(0,1.05fr) minmax(270px,.95fr);gap:clamp(20px,4vw,52px);padding:clamp(24px,4vw,48px);align-items:center}
+.guide-section:not(.special-guide-section) .guide-summary-copy h2{font:500 clamp(32px,3.6vw,46px)/1.15 Georgia,serif;color:#65151d;margin:10px 0 15px}
+.guide-section:not(.special-guide-section) .guide-entry-type{color:#a77b35;font-size:11px;letter-spacing:.2em}
+.guide-section:not(.special-guide-section) .guide-summary-image{height:clamp(270px,32vw,410px);aspect-ratio:auto;border-radius:18px;background:linear-gradient(135deg,#f7ebd8,#e8d6b7);border:1px solid #e4d2b8;overflow:hidden;box-shadow:0 12px 30px #4b24111a}
+.guide-section:not(.special-guide-section) .guide-summary-image img{width:100%;height:100%;max-height:100%;object-fit:contain}
+.guide-premium-tabs{margin:0 clamp(18px,3vw,40px) clamp(22px,3vw,40px);border:1px solid #e6d8c4;border-radius:14px;overflow:hidden;background:#fff}
+.guide-premium-tabbar{display:flex;flex-wrap:wrap;background:#f7f0e4;border-bottom:1px solid #e6d8c4;gap:0}
+.guide-premium-tabbar button{appearance:none;border:0;border-bottom:3px solid transparent;padding:16px 22px;background:transparent;color:#685647;font-weight:700;cursor:pointer;font:600 14px inherit}
+.guide-premium-tabbar button.active{background:#fffaf2;color:#68141c;border-bottom-color:#b18a41}
+.guide-premium-tabbar button:focus-visible{outline:3px solid #b18a41;outline-offset:-3px}
+.guide-premium-panel{padding:clamp(20px,3vw,34px);min-height:170px}
+.guide-premium-panel h3{font:500 28px Georgia,serif;color:#65151d;margin:0 0 20px}
+.guide-premium-panel p{line-height:1.65;color:#65564a}
+.guide-premium-benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.guide-premium-benefits article{display:flex;gap:13px;align-items:start;padding:14px;background:#fdf8ef;border-radius:12px}
+.guide-premium-benefits article>span{color:#ad873e;font-size:23px;line-height:1}
+.guide-premium-benefits h4{margin:0 0 5px;color:#552022;font-size:16px}
+.guide-premium-benefits p{margin:0;font-size:14px}
+.guide-premium-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.guide-premium-specs>div{padding:12px;background:#fcf6ed;border-radius:8px;display:grid;gap:5px}
+.guide-premium-specs span{font-size:12px;color:#856e54}
+@media(max-width:760px){.guide-section:not(.special-guide-section) .guide-summary-grid{grid-template-columns:1fr;padding:20px}.guide-section:not(.special-guide-section) .guide-summary-image{height:270px}.guide-premium-tabbar button{padding:13px 12px;font-size:12px}.guide-premium-benefits{grid-template-columns:1fr}.guide-premium-tabs{margin:0 14px 20px}}
