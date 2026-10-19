@@ -70,9 +70,9 @@ function GuideAccordionCard({ item }) {
     <article className="guide-card detailed-guide-card" id={`mukhi-${item.mukhi || item.id}`}>
       <div className="guide-summary-grid">
         <div className="guide-summary-copy">
-          {item.section !== "special" && <span className="guide-mukhi-medallion">{String(item.mukhi).padStart(2, "0")} <small>MUKHI</small></span>}
+          
           <span className="guide-entry-type">
-            {item.section === "special" ? "SPECIAL RUDRAKSHA FORM" : "TRADITIONAL MUKHI"}
+            {item.section === "special" ? "SPECIAL RUDRAKSHA FORM" : "SACRED RUDRAKSHA"}
           </span>
           <h2>{item.title || `${item.mukhi} Mukhi Rudraksha`}</h2>
           <p className="guide-benefits">{item.benefits}</p>
@@ -407,8 +407,8 @@ export default function App() {
 
             <section className="guide-section">
               <div className="guide-section-heading">
-                <span>1–21 MUKHI</span>
-                <h2>Traditional Mukhi Guide</h2>
+                <span>EXPLORE THE SACRED BEADS</span>
+                <h2>1–21 Mukhi Rudraksha</h2>
               </div>
 
               <div className="guide-grid detailed-guide-grid">
