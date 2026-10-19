@@ -4,3 +4,7 @@
 .faq-banner{width:100%;aspect-ratio:2048/358;min-height:0;background:#f4e2c6 url('/shiva-faq-banner.webp') center/cover no-repeat}
 .faq-wrap{padding-top:20px}
 @media(max-width:700px){.faq-banner{aspect-ratio:2.7/1;background-position:center}.faq-wrap{padding-top:14px}}
+
+/* Remove inherited page-shell side padding so the FAQ banner meets both viewport edges. */
+.faq-page.page-shell{padding-left:0;padding-right:0;margin-left:0;margin-right:0;max-width:none;width:100%;overflow-x:clip}
+.faq-banner{display:block;width:100%;margin:0;border:0}
