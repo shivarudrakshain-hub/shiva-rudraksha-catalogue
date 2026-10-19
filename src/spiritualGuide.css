@@ -1041,3 +1041,20 @@
 /* Display only the left/front half of the uploaded two-panel guide image. */
 .vedic-front-card-crop{width:100%;overflow:hidden;aspect-ratio:3/4;border-radius:12px;box-shadow:0 14px 35px #392b2320}
 .vedic-reference-featured .vedic-front-card-crop img{display:block;width:200%;max-width:none;height:auto;border-radius:0;box-shadow:none;margin:0}
+
+/* Restore the original side-by-side guide layout on tablet and desktop. */
+@media (min-width: 761px) {
+  .vedic-overview.vedic-overview-featured {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(20px, 3vw, 44px);
+    align-items: start;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+  .vedic-overview-featured .vedic-reference-featured,
+  .vedic-overview-featured .vedic-details { min-width: 0; width: 100%; }
+}
+@media (max-width: 760px) {
+  .vedic-overview.vedic-overview-featured { grid-template-columns: minmax(0, 1fr); }
+}
