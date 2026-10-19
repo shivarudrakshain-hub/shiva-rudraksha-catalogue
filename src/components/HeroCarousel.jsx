@@ -284,35 +284,7 @@ export default function HeroCarousel({ compact = false, product = null }) {
         <ChevronRight size={28} />
       </button>
 
-      {/* Bottom Indicator Dots & Progress Bars */}
-      <div className="hero-carousel-pagination">
-        {activeSlides.map((s, idx) => (
-          <button
-            key={s.id}
-            type="button"
-            className={`hero-dot-btn ${idx === current ? "active" : ""}`}
-            onClick={() => goToSlide(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-          >
-            <span className="hero-dot-pill">
-              <span className="hero-dot-number">{`0${idx + 1}`}</span>
-              <span className="hero-dot-label">
-                {product
-                  ? idx === 0
-                    ? "Authentic Bead"
-                    : idx === 1
-                    ? "Vedic Energy"
-                    : "Consultation"
-                  : idx === 0
-                  ? "Divine Heritage"
-                  : idx === 1
-                  ? "1–21 Mukhi"
-                  : "Birth Chart"}
-              </span>
-            </span>
-          </button>
-        ))}
-      </div>
+
     </section>
   );
 }
