@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { calculateVedicChart } from "../lib/vedicChart";
 import {
   CalendarDays,
   Clock3,
@@ -13,11 +14,15 @@ const initialForm = {
   dateOfBirth: "",
   placeOfBirth: "",
   timeOfBirth: "",
+  latitude: "",
+  longitude: "",
+  timeZone: "",
 };
 
 export default function BirthChartRecommendation() {
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState("");
+  const [chart, setChart] = useState(null);
 
   const updateField = (event) => {
     setForm((current) => ({
@@ -25,6 +30,15 @@ export default function BirthChartRecommendation() {
       [event.target.name]: event.target.value,
     }));
     setError("");
+    setChart(null);
+  };
+
+  const generateChart = (event) => {
+    event.preventDefault();
+    setError("");
+    setChart(null);
+    try { setChart(calculateVedicChart(form)); }
+    catch(err) { setError(err.message || "Unable to calculate chart."); }
   };
 
   const submitRequest = (event) => {
@@ -81,7 +95,7 @@ export default function BirthChartRecommendation() {
           </div>
         </div>
 
-        <form className="birth-chart-form" onSubmit={submitRequest}>
+        <form className="birth-chart-form" onSubmit={generateChart}>
           <div className="birth-chart-form-heading">
             <span>REQUEST A RECOMMENDATION</span>
             <h3>Enter your birth details</h3>
@@ -138,18 +152,33 @@ export default function BirthChartRecommendation() {
             />
           </label>
 
-          {error && <p className="birth-chart-error">{error}</p>}
+          <div className="birth-chart-form-grid">
+            <label><span>Birth latitude</span><input name="latitude" type="number" step="any" min="-66" max="66" placeholder="43.6532" value={form.latitude} onChange={updateField} required /></label>
+            <label><span>Birth longitude (West negative)</span><input name="longitude" type="number" step="any" min="-180" max="180" placeholder="-79.3832" value={form.longitude} onChange={updateField} required /></label>
+          </div>
+          <label><span>Birth timezone (IANA)</span><input name="timeZone" placeholder="America/Toronto" value={form.timeZone} onChange={updateField} required /></label>
+          <p className="birth-chart-note">Confirm the exact coordinates and timezone of the birthplace. Incorrect inputs change the result.</p>
+          {error && <p className="birth-chart-error" role="alert">{error}</p>}
 
           <button type="submit" className="birth-chart-submit">
             <MessageCircle />
-            Send Request via WhatsApp
+            Display Birth Chart
           </button>
 
+          <button type="button" className="birth-chart-submit" onClick={submitRequest} style={{marginTop:12,background:"#6c1722"}}><MessageCircle /> Request Guidance via WhatsApp</button>
           <p className="birth-chart-note">
             Your information is not stored by this website. It is placed
             directly into the WhatsApp message you choose to send.
           </p>
         </form>
+        {chart && <section aria-live="polite" style={{gridColumn:"1 / -1",padding:24,background:"#fff9ef",borderRadius:16}}>
+          <h3>Vedic Birth Chart — {form.fullName}</h3>
+          <p><strong>Lagna:</strong> {chart.lagna} · <strong>Rashi:</strong> {chart.rashi} · <strong>Nakshatra:</strong> {chart.nakshatra} · <strong>Pada:</strong> {chart.pada}</p>
+          <p>{chart.ayanamsa} · {chart.houseSystem} · {chart.utc} UTC</p>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(150px,1fr))",gap:10}}>
+          {chart.houses.map((h,i)=><div key={i} style={{background:"white",border:"1px solid #d9c19c",padding:14,borderRadius:10}}><strong>House {i+1}: {h.sign}</strong><p>{h.planets.join(", ")||"—"}</p></div>)}
+          </div><p>Approximate Lahiri-style calculation for spiritual reference. Lunar nodes are not included. Results require verification against reference charts.</p>
+        </section>
       </div>
     </section>
   );
