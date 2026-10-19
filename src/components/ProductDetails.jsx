@@ -74,7 +74,7 @@ export default function ProductDetails({
   const attributes = useMemo(() => {
     // 1. Live backend attributes (Size, Certificate, etc.)
     if (product?.attributes && product.attributes.length > 0) {
-      return product.attributes.filter((a) => a.values && a.values.length > 0);
+      return product.attributes.filter((a) => a.values && a.values.length > 0 && !/certificat|x-ray|xray/i.test(a.name));
     }
 
     // 2. Fallback static product or compound variants list
@@ -115,9 +115,6 @@ export default function ProductDetails({
         const list = [];
         if (sizeSet.size > 0) {
           list.push({ id: 1, name: "Size", values: Array.from(sizeSet) });
-        }
-        if (certSet.size > 0) {
-          list.push({ id: 3, name: "Certificate", values: Array.from(certSet) });
         }
         return list;
       }
@@ -175,12 +172,16 @@ export default function ProductDetails({
   const selectedVariant = useMemo(() => {
     if (!variants || variants.length === 0) return null;
     if (!attributes || attributes.length === 0) return variants[0];
+    // Keep the backend default certificate variant when certification is not user-selectable.
+    const visibleAttributes = attributes;
 
-    if (attributes.length === 1) {
+    if (visibleAttributes.length === 1) {
       const key = attributes[0].id ?? attributes[0].name;
       const chosen = selectedOptions[key] || attributes[0].values[0];
       if (!chosen) return variants[0];
       const slugVal = chosen.replace(/\s+/g, "");
+      const matches = variants.filter((v) => v.name === chosen || v.name.replace(/\s+/g, "") === slugVal || v.name.startsWith(slugVal + "-"));
+      if (matches.length) return matches.find((v) => /FreeCertificate|Free Certificate/.test(v.name)) || matches[0];
       return (
         variants.find((v) => v.name === chosen) ||
         variants.find((v) => v.name.replace(/\s+/g, "") === slugVal) ||
@@ -220,9 +221,7 @@ export default function ProductDetails({
   const sizeAttribute = attributes.find((a) =>
     a.name.toLowerCase().includes("size")
   );
-  const certAttribute = attributes.find((a) =>
-    a.name.toLowerCase().includes("cert")
-  );
+  const certAttribute = null;
 
   const selectedSizeLabel = sizeAttribute
     ? selectedOptions[sizeAttribute.id ?? sizeAttribute.name] ||
@@ -424,11 +423,6 @@ export default function ProductDetails({
                 <Sparkles size={14} className="config-sparkle" />
                 <span>
                   Configured: <strong>{selectedSizeLabel}</strong>
-                  {certAttribute && (
-                    <>
-                      {" "}with <strong>{selectedCertLabel}</strong>
-                    </>
-                  )}
                 </span>
               </div>
             </div>
