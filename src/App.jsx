@@ -317,23 +317,23 @@ export default function App() {
 
           <nav id="main-navigation" aria-label="Main navigation" className={mobileOpen ? "open" : ""} onKeyDown={(event) => { if (event.key === "Escape") { setMobileOpen(false); setKnowledgeOpen(false); document.querySelector(".mobile-menu-button")?.focus(); } }}>
             <button className={active === "home" ? "active" : ""} onClick={() => navigate("#home")}>Home</button>
-            <button className={active === "guide" ? "active" : ""} onClick={() => navigate("#guide")}>Rudraksha Guide</button>
             <div className="shop-menu knowledge-menu" onMouseEnter={() => { if (window.matchMedia("(min-width: 901px) and (hover: hover)").matches) setKnowledgeOpen(true); }} onMouseLeave={() => setKnowledgeOpen(false)}>
               <button
                 type="button"
-                className={["knowledge", "maintenance", "lord-shiva"].includes(active) ? "active" : ""}
+                className={["guide", "knowledge", "maintenance", "lord-shiva"].includes(active) ? "active" : ""}
                 aria-expanded={knowledgeOpen}
                 aria-haspopup="true"
                 aria-controls="knowledge-navigation"
                 onClick={() => setKnowledgeOpen((open) => !open)}
               >
-                Knowledge <ChevronDown aria-hidden="true" />
+                Rudraksha Knowledge <ChevronDown aria-hidden="true" />
               </button>
               <div
                 id="knowledge-navigation"
                 className="shop-dropdown knowledge-dropdown"
                 hidden={!knowledgeOpen}
               >
+                <button type="button" onClick={() => { navigate("#guide"); setKnowledgeOpen(false); }}>1–21 Mukhi Rudraksha Guide</button>
                 <button type="button" onClick={() => { navigate("#lord-shiva"); setKnowledgeOpen(false); }}>Who is Lord Shiva?</button>
                 <button type="button" onClick={() => { navigate("#maintenance"); setKnowledgeOpen(false); }}>Rudraksha Maintenance</button>
                 <button type="button" onClick={() => { navigate("#knowledge"); setKnowledgeOpen(false); }}>Energizing & Do’s/Don’ts</button>
