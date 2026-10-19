@@ -427,7 +427,7 @@ export default function App() {
           <div className="container">
             <div className="guide-luxury-hero">
               <span className="guide-hero-eyebrow">ॐ · SHIVA RUDRAKSHA INC. · SACRED KNOWLEDGE</span>
-              <h1>Discover the <em>21 Mukhi</em><br />Rudraksha Traditions</h1>
+              <h1>Discover the 1 to 21 Mukhi Rudraksha Traditions</h1>
               <p>Explore each sacred bead's traditional deity, ruling planet, mantra, spiritual associations and wearing guidance.</p>
               <div className="guide-hero-features"><span>✦ 1–21 Mukhi</span><span>✦ Traditional wisdom</span><span>✦ Special formations</span></div>
             </div>
