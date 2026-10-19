@@ -1306,3 +1306,32 @@ footer button { padding: 0; border: 0; background: transparent; color: white; }
   white-space: nowrap !important;
   border-width: 0 !important;
 }
+
+/* Premium 1–21 Mukhi knowledge guide */
+.guide-page{background:linear-gradient(180deg,#fff8ea 0%,#fffdf8 52%,#fff6e9 100%)}
+.guide-luxury-hero{position:relative;overflow:hidden;text-align:center;padding:65px 22px 58px;margin:0 0 30px;border-radius:0 0 28px 28px;color:#fff4df;background:radial-gradient(circle at 50% 0%,#aa6d38 0%,transparent 47%),linear-gradient(125deg,#3b0d20,#731b2b 55%,#441025);box-shadow:0 20px 38px #49132218}
+.guide-luxury-hero:before,.guide-luxury-hero:after{content:"✺";position:absolute;font-size:230px;color:#e4b96c;opacity:.09;top:0;line-height:1}
+.guide-luxury-hero:before{left:-25px}.guide-luxury-hero:after{right:-25px}
+.guide-hero-eyebrow{font-size:12px;letter-spacing:.21em;color:#f5d69c;font-weight:750}
+.guide-luxury-hero h1{position:relative;font:normal clamp(2.25rem,5vw,4.4rem)/1.13 Georgia,serif;margin:18px 0;color:#fff9e8}
+.guide-luxury-hero h1 em{color:#f0c67b;font-style:italic}
+.guide-luxury-hero p{position:relative;max-width:660px;margin:0 auto;color:#f8e4d5;line-height:1.7}
+.guide-hero-features{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:25px}
+.guide-hero-features span{padding:8px 13px;border:1px solid #eac88b65;border-radius:40px;color:#f8ddb0;font-size:12px}
+.guide-discovery{background:#fff;border:1px solid #e9d8b7;border-radius:22px;padding:24px;margin-bottom:38px;box-shadow:0 12px 28px #602a1810}
+.guide-discovery-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+.guide-discovery-heading span{color:#a87537;letter-spacing:.16em;font-size:11px;font-weight:800}
+.guide-discovery-heading h2{font:normal 30px Georgia,serif;color:#641524;margin:6px 0 0}
+.guide-search-box{display:flex;align-items:center;gap:9px;padding:10px 13px;border:1px solid #e4d4bd;border-radius:30px;min-width:min(100%,320px);color:#79522f}
+.guide-search-box input{width:100%;min-width:0;border:0;background:transparent;outline:none;font:inherit}
+.guide-search-box button{border:0;background:transparent;cursor:pointer}
+.guide-number-nav{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px}
+.guide-number-nav a{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:65px;border:1px solid #e8d2ad;border-radius:13px;background:linear-gradient(#fffdf9,#f9f0df);color:#6a1c29;font:normal 25px Georgia,serif;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+.guide-number-nav a small{font:700 9px sans-serif;letter-spacing:.08em;color:#987344}
+.guide-number-nav a:hover,.guide-number-nav a:focus-visible{background:#6a1c29;color:#fff;transform:translateY(-3px);box-shadow:0 8px 20px #64152430}
+.guide-number-nav a:hover small,.guide-number-nav a:focus-visible small{color:#f5d39a}
+.detailed-guide-card{scroll-margin-top:115px;transition:transform .2s,box-shadow .2s}
+.detailed-guide-card:hover{transform:translateY(-3px);box-shadow:0 18px 34px #5623151c}
+.guide-mukhi-medallion{display:inline-flex;align-items:baseline;gap:7px;width:max-content;padding:7px 13px;border-radius:30px;background:#6a1c29;color:#ffe3a7;font:normal 24px Georgia,serif;margin-bottom:11px}
+.guide-mukhi-medallion small{font:800 10px sans-serif;letter-spacing:.08em}
+@media(max-width:720px){.guide-luxury-hero{padding:42px 15px}.guide-discovery{padding:16px}.guide-number-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.guide-number-nav a{min-height:58px}.guide-discovery-heading{display:block}.guide-search-box{margin-top:16px}.guide-luxury-hero:before,.guide-luxury-hero:after{font-size:110px}}
