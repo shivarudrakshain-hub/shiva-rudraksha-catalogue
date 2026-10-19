@@ -80,8 +80,8 @@ function GuideAccordionCard({ item }) {
 
         <div className="guide-summary-image">
           <img
-            src={item.section === "special" ? `${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif` : `${import.meta.env.BASE_URL}images/guide/${item.mukhi}-mukhi-guide.webp`}
-            alt={`${item.title || `${item.mukhi} Mukhi Rudraksha`} traditional guide artwork and benefits`}
+            src={`${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif`}
+            alt={`${item.title || `${item.mukhi} Mukhi Rudraksha`} actual Rudraksha bead`}
             loading="lazy"
             decoding="async"
             width="180"
