@@ -45,6 +45,7 @@ const categories = [
 
 function GuideAccordionCard({ item }) {
   const [openSection, setOpenSection] = useState("description");
+  const [activeGuideTab, setActiveGuideTab] = useState("benefits");
 
   const toggleSection = (section) => {
     setOpenSection((current) => (current === section ? "" : section));
@@ -106,6 +107,27 @@ function GuideAccordionCard({ item }) {
         </div>
       </div>
 
+      {item.section !== "special" && (
+        <div className="guide-premium-tabs">
+          <div className="guide-premium-tabbar" role="tablist" aria-label={`${item.title} information`}>
+            {[
+              ["benefits", "Benefits"],
+              ["description", "Description"],
+              ["who", "Who Should Wear"],
+              ["wearing", "Wearing Rules & Energization"]
+            ].map(([key, label]) => (
+              <button key={key} type="button" role="tab" aria-selected={activeGuideTab === key} className={activeGuideTab === key ? "active" : ""} onClick={() => setActiveGuideTab(key)}>{label}</button>
+            ))}
+          </div>
+          <div className="guide-premium-panel" role="tabpanel">
+            {activeGuideTab === "benefits" && <><h3>Key Benefits</h3><div className="guide-premium-benefits">{(item.benefitDetails || []).map((benefit) => <article key={benefit.title}><span aria-hidden="true">✦</span><div><h4>{benefit.title}</h4><p>{benefit.text}</p></div></article>)}</div></>}
+            {activeGuideTab === "description" && <><h3>About {item.title}</h3><p>{item.about}</p><div className="guide-premium-specs"><div><span>Origin</span><strong>{item.origin}</strong></div><div><span>Deity</span><strong>{item.deity}</strong></div><div><span>Planet</span><strong>{item.planet}</strong></div><div><span>Mantra</span><strong>{item.mantra}</strong></div></div></>}
+            {activeGuideTab === "who" && <><h3>Who Should Wear</h3><ul className="guide-list-content">{(item.whoShouldWear || []).map((line) => <li key={line}>{line}</li>)}</ul></>}
+            {activeGuideTab === "wearing" && <><h3>Wearing Rules & Energization</h3><ul className="guide-list-content">{(item.wearingRules || []).map((line) => <li key={line}>{line}</li>)}</ul><div className="guide-mantra-callout"><span>Traditional mantra</span><strong>{item.mantra}</strong></div></>}
+          </div>
+        </div>
+      )}
+      {item.section === "special" && (
       <div className="guide-accordion">
         <div className="guide-accordion-item">
           <AccordionButton section="description" label="Description" />
@@ -172,6 +194,7 @@ function GuideAccordionCard({ item }) {
           )}
         </div>
       </div>
+      )}
     </article>
   );
 }
@@ -413,10 +436,6 @@ export default function App() {
             </div>
 
             <section className="guide-section">
-              <div className="guide-section-heading">
-                <span>EXPLORE THE SACRED BEADS</span>
-                <h2>1–21 Mukhi Rudraksha</h2>
-              </div>
 
               <div className="guide-grid detailed-guide-grid">
                 {guide
