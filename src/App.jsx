@@ -80,8 +80,8 @@ function GuideAccordionCard({ item }) {
 
         <div className="guide-summary-image">
           <img
-            src={`${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif`}
-            alt={`${item.title || `${item.mukhi} Mukhi Rudraksha`} Super Collector`}
+            src={item.section === "special" ? `${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif` : `${import.meta.env.BASE_URL}images/guide/${item.mukhi}-mukhi-guide.webp`}
+            alt={`${item.title || `${item.mukhi} Mukhi Rudraksha`} traditional guide artwork and benefits`}
             loading="lazy"
             decoding="async"
             width="180"
@@ -90,7 +90,8 @@ function GuideAccordionCard({ item }) {
               const fallback =
                 `${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif`;
 
-              if (event.currentTarget.src !== fallback) {
+              if (!event.currentTarget.dataset.fallbackUsed) {
+                event.currentTarget.dataset.fallbackUsed = "true";
                 event.currentTarget.src = fallback;
               }
             }}
