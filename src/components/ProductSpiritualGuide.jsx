@@ -244,15 +244,15 @@ export default function ProductSpiritualGuide({ product }) {
         {/* ============================================================ */}
         {activeTab === "interactive" && (
           <div className="vedic-editorial">
-            <div className="vedic-overview">
-              <figure className="vedic-reference">
-                <div className="vedic-reference-label"><Sparkles size={15} /> Sacred heritage</div>
+            <div className="vedic-overview vedic-overview-featured">
+              <figure className="vedic-reference vedic-reference-featured">
+                <div className="vedic-reference-label"><Sparkles size={15} /> Illustrated Rudraksha guide · Deity & traditional benefits</div>
                 {guide.mukhi <= 15 && <img
                   src={newGuideImage}
                   alt={`${guide.title} reference card with ${guide.specs.find(item => item.id === "god")?.value}`}
                   loading="lazy"
                 />}
-                <figcaption>From the Shiva Rudraksha reference collection</figcaption>
+                <figcaption>Explore both panels of the Shiva Rudraksha illustrated reference</figcaption>
                 {guide.mukhi <= 15 && <button type="button" onClick={() => openInLightbox(newGuideImage, guide.title)}>
                   <Maximize2 size={15} /> View full reference
                 </button>}
