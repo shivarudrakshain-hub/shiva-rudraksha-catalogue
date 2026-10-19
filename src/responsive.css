@@ -159,3 +159,62 @@
 .guide-quick-facts strong{font-size:14px;line-height:1.35;font-weight:600;overflow-wrap:anywhere}
 .guide-quick-mantra{grid-column:1/-1}
 @media(max-width:700px){.guide-grid .guide-summary-grid{grid-template-columns:minmax(0,1fr);padding:18px;gap:16px}.guide-grid .guide-summary-image{height:220px}.guide-quick-facts{margin-top:14px}}
+
+/* Full-width storefront navigation: keep logo at the far left and fit menu on tablets. */
+@media (min-width: 901px) {
+  .luxury-header .luxury-nav.container {
+    width: calc(100% - 32px);
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+    gap: clamp(8px, 1.1vw, 18px);
+    justify-content: space-between;
+  }
+  .luxury-header .brand-logo {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 34%;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .luxury-header .brand-logo img { flex: 0 0 auto; width: 40px; height: 40px; }
+  .luxury-header .brand-logo strong {
+    font-size: clamp(13px, 1.2vw, 19px);
+    letter-spacing: .015em;
+    white-space: nowrap;
+  }
+  .luxury-header .luxury-nav nav {
+    flex: 0 1 auto;
+    min-width: 0;
+    margin-left: auto;
+    gap: clamp(0px, .35vw, 6px);
+  }
+  .luxury-header .luxury-nav nav > button,
+  .luxury-header .luxury-nav .shop-menu > button {
+    padding: 9px clamp(5px, .65vw, 11px);
+    font-size: clamp(11px, .92vw, 14px);
+  }
+  .luxury-header .nav-actions {
+    flex: 0 0 auto;
+    margin-left: 0;
+    gap: 4px;
+    align-items: center;
+  }
+  .luxury-header .header-cart-btn,
+  .luxury-header .header-account-btn { padding-inline: 6px; }
+}
+@media (min-width: 901px) and (max-width: 1180px) {
+  .luxury-header .brand-logo { max-width: 29%; }
+  .luxury-header .brand-logo strong { font-size: 13px; }
+  .luxury-header .brand-logo img { width: 34px; height: 34px; }
+  .luxury-header .cart-btn-text,
+  .luxury-header .account-btn-text { display: none; }
+}
+@media (max-width: 900px) {
+  .luxury-header .luxury-nav.container {
+    width: calc(100% - 24px);
+    max-width: none;
+    margin-inline: auto;
+  }
+  .luxury-header .brand-logo { margin-right: auto; }
+}
