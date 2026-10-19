@@ -147,3 +147,15 @@
 
 .gallery-image-open { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; }
 .gallery-image-open img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Compact Mukhi guide: actual bead and key information share a single row. */
+.guide-grid .guide-summary-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:24px;align-items:center;padding:24px}
+.guide-grid .guide-summary-copy{min-width:0}
+.guide-grid .guide-summary-image{width:100%;height:260px;min-height:0;aspect-ratio:auto;overflow:hidden;border-radius:16px;background:#f8f0e5}
+.guide-grid .guide-summary-image img{width:100%;height:100%;max-height:100%;object-fit:contain;object-position:center}
+.guide-quick-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;margin-top:20px}
+.guide-quick-facts>div{display:flex;flex-direction:column;gap:3px;border-top:1px solid #eadfce;padding-top:9px;min-width:0}
+.guide-quick-facts span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#906b48}
+.guide-quick-facts strong{font-size:14px;line-height:1.35;font-weight:600;overflow-wrap:anywhere}
+.guide-quick-mantra{grid-column:1/-1}
+@media(max-width:700px){.guide-grid .guide-summary-grid{grid-template-columns:minmax(0,1fr);padding:18px;gap:16px}.guide-grid .guide-summary-image{height:220px}.guide-quick-facts{margin-top:14px}}
