@@ -402,9 +402,6 @@ export default function App() {
             </div>
             <div className="guide-discovery">
               <div className="guide-discovery-heading"><div><span>EXPLORE BY MUKHI</span><h2>Find your Rudraksha</h2></div><label className="guide-search-box"><Search size={19} /><input type="search" placeholder="Search deity, planet, mantra or Mukhi…" aria-label="Search Rudraksha guide" value={guideSearch} onChange={(event) => setGuideSearch(event.target.value)} />{guideSearch && <button type="button" aria-label="Clear guide search" onClick={() => setGuideSearch("")}><X size={16}/></button>}</label></div>
-              <nav className="guide-number-nav" aria-label="Jump to Mukhi guide">
-                {Array.from({length:21},(_,i)=>i+1).map(n=><a key={n} href={`#mukhi-${n}`} onClick={(event)=>{event.preventDefault();document.getElementById(`mukhi-${n}`)?.scrollIntoView({behavior:"smooth",block:"start"});}}>{n}<small>MUKHI</small></a>)}
-              </nav>
             </div>
 
             <section className="guide-section">
