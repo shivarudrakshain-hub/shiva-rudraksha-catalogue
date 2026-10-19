@@ -139,7 +139,7 @@ const questions = [
     "id": 22,
     "category": "Wearing & Care",
     "question": "Can family members share the same Rudraksha?",
-    "answer": "Yes, family members can physically share a Rudraksha, but some spiritual traditions recommend keeping a bead for one wearer. Follow your preferred tradition."
+    "answer": "No. Rudraksha is intended for individual use and should not be shared or exchanged with family members, friends, or others. Each person should wear their own Rudraksha."
   },
   {
     "id": 23,
