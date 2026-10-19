@@ -243,3 +243,37 @@
 .shiva-purana-story-grid p{line-height:1.75;color:#53483e}
 .shiva-purana-source{margin-top:18px}
 @media(max-width:800px){.shiva-premium-hero{grid-template-columns:1fr}.shiva-premium-hero-photo{min-height:290px;background-size:cover;background-position:right center}.shiva-premium-intro{grid-template-columns:1fr}.shiva-purana-story-grid{grid-template-columns:1fr}.shiva-premium-hero-copy{padding:28px}}
+
+
+/* Mobile layout correction: Lord Shiva page and compact storefront header. */
+@media (max-width: 800px) {
+  .rs-info-page, .rs-info-container, .shiva-premium-hero { min-width: 0; max-width: 100%; }
+  .shiva-premium-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; margin: 12px 0 22px; }
+  .shiva-premium-hero-copy { min-width: 0; padding: clamp(20px, 5vw, 32px); }
+  .shiva-premium-hero h1 { font-size: clamp(30px, 8vw, 48px); overflow-wrap: break-word; }
+  .shiva-premium-mantra { width: 100%; min-width: 0; margin-top: 20px; padding: 16px; }
+  .shiva-premium-mantra strong { font-size: clamp(23px, 6vw, 29px); }
+  .shiva-premium-mantra span { line-height: 1.5; }
+  .shiva-premium-hero-photo { width: 100%; min-height: 0; aspect-ratio: 1.4; background-size: contain; background-position: center; }
+  .shiva-premium-intro { grid-template-columns: minmax(0, 1fr); }
+  .shiva-purana-story-grid { grid-template-columns: minmax(0, 1fr); }
+  .rs-info-page .rs-info-section { min-width: 0; }
+}
+@media (max-width: 620px) {
+  .luxury-header .luxury-nav.container { width: calc(100% - 20px); gap: 6px; }
+  .luxury-nav .brand-logo { flex: 1 1 auto; min-width: 0; gap: 6px; }
+  .luxury-nav .brand-logo img { width: 32px; height: 32px; }
+  .luxury-nav .brand-logo strong { font-size: clamp(10px, 2.9vw, 13px); line-height: 1.15; letter-spacing: 0; }
+  .luxury-nav .nav-actions { gap: 3px; }
+  .luxury-nav .mobile-menu-button { flex-basis: 40px; width: 40px; height: 40px; }
+  .luxury-nav .header-cart-btn { min-width: 40px; min-height: 40px; padding: 0 7px; }
+  .rs-info-container { width: calc(100% - 24px); }
+  .shiva-premium-hero { border-radius: 16px; }
+  .shiva-premium-hero-photo { aspect-ratio: 1.25; }
+  .shiva-premium-kicker { font-size: 10px; letter-spacing: .12em; }
+  .shiva-premium-hero-copy > p { font-size: 15px; }
+  .rs-info-page .rs-info-section { padding: 16px 0; margin-bottom: 16px; }
+  .rs-info-page .rs-section-title { gap: 12px; }
+  .rs-info-page .rs-section-title h2 { font-size: clamp(25px, 7vw, 32px); }
+  .shiva-purana-highlight, .shiva-purana-story-grid article { padding: 18px; }
+}
