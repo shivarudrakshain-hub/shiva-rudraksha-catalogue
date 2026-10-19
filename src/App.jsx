@@ -76,6 +76,13 @@ function GuideAccordionCard({ item }) {
           </span>
           <h2>{item.title || `${item.mukhi} Mukhi Rudraksha`}</h2>
           <p className="guide-benefits">{item.benefits}</p>
+          {item.section !== "special" && <div className="guide-quick-facts">
+            <div><span>Deity</span><strong>{item.deity}</strong></div>
+            <div><span>Planet</span><strong>{item.planet}</strong></div>
+            <div><span>Nakshatra</span><strong>{item.nakshatra}</strong></div>
+            <div><span>Chakra</span><strong>{item.chakra}</strong></div>
+            <div className="guide-quick-mantra"><span>Mantra</span><strong>{item.mantra}</strong></div>
+          </div>}
         </div>
 
         <div className="guide-summary-image">
