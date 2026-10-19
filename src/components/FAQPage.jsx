@@ -19,7 +19,7 @@ const questions = [
     "id": 2,
     "category": "Basics",
     "question": "Can anyone wear Rudraksha?",
-    "answer": "Rudraksha is worn by people of different ages and backgrounds. If choosing for a child, ensure the jewellery is age-appropriate and does not present a choking or strangulation risk."
+    "answer": "Yes, people of different ages and backgrounds can wear Rudraksha. For children, ensure the jewellery is age-appropriate and does not present a choking or strangulation risk."
   },
   {
     "id": 3,
@@ -121,7 +121,7 @@ const questions = [
     "id": 19,
     "category": "Wearing & Care",
     "question": "Can I wear Rudraksha while sleeping or bathing?",
-    "answer": "Practices vary. Removing it for bathing, swimming, strenuous activity, or sleep can help prevent damage to beads and fittings."
+    "answer": "Yes, but practices vary. Removing Rudraksha for bathing, swimming, strenuous activity, or sleep can help prevent damage to the beads and fittings."
   },
   {
     "id": 20,
@@ -133,13 +133,13 @@ const questions = [
     "id": 21,
     "category": "Wearing & Care",
     "question": "Can I apply oil to Rudraksha?",
-    "answer": "Some traditions use a very small amount of suitable oil. Avoid saturating the bead or its thread and follow care instructions for any metal fittings."
+    "answer": "Yes, some traditions use a very small amount of suitable oil. Avoid saturating the bead or its thread and follow care instructions for any metal fittings."
   },
   {
     "id": 22,
     "category": "Wearing & Care",
     "question": "Can family members share the same Rudraksha?",
-    "answer": "Some traditions prefer keeping a bead for one wearer. This is a matter of personal and spiritual practice, not a verified physical restriction."
+    "answer": "Yes, family members can physically share a Rudraksha, but some spiritual traditions recommend keeping a bead for one wearer. Follow your preferred tradition."
   },
   {
     "id": 23,
@@ -175,7 +175,7 @@ const questions = [
     "id": 28,
     "category": "Orders & Shipping",
     "question": "Can I return or exchange a Rudraksha?",
-    "answer": "Please request the applicable return, exchange, and cancellation terms before payment. Eligibility may depend on the item and order circumstances."
+    "answer": "Yes, returns or exchanges may be possible depending on the item and order circumstances. Please confirm the applicable return, exchange, and cancellation terms before payment."
   },
   {
     "id": 29,
