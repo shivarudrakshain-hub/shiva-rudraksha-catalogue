@@ -1335,3 +1335,8 @@ footer button { padding: 0; border: 0; background: transparent; color: white; }
 .guide-mukhi-medallion{display:inline-flex;align-items:baseline;gap:7px;width:max-content;padding:7px 13px;border-radius:30px;background:#6a1c29;color:#ffe3a7;font:normal 24px Georgia,serif;margin-bottom:11px}
 .guide-mukhi-medallion small{font:800 10px sans-serif;letter-spacing:.08em}
 @media(max-width:720px){.guide-luxury-hero{padding:42px 15px}.guide-discovery{padding:16px}.guide-number-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.guide-number-nav a{min-height:58px}.guide-discovery-heading{display:block}.guide-search-box{margin-top:16px}.guide-luxury-hero:before,.guide-luxury-hero:after{font-size:110px}}
+
+/* Preserve complete two-panel user-provided Mukhi artwork without cropping. */
+.guide-summary-image{height:auto;min-height:0;aspect-ratio:3/2;overflow:visible;background:#fff;border:0}
+.guide-summary-image img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:12px}
+@media(max-width:620px){.guide-summary-image{height:auto;aspect-ratio:3/2}}
