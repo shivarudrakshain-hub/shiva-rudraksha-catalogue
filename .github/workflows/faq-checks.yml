@@ -5,6 +5,7 @@ on:
       - 'src/components/faq*'
       - 'src/components/FAQ*'
       - 'tests/**'
+      - 'public/data/live-chat.json'
       - 'package*.json'
       - '.github/workflows/faq-checks.yml'
 jobs:
