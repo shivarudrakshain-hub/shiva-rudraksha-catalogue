@@ -1,4 +1,4 @@
-DirectoryIndex index.html index.php
+DirectoryIndex index.html
 
 # ----------------------------------------------------------------------
 # 1. GZIP & BROTLI COMPRESSION (MOD_DEFLATE)
@@ -104,5 +104,5 @@ DirectoryIndex index.html index.php
     # Send Requests To Front Controller if not a real file or directory
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    RewriteRule ^ index.html [L]
 </IfModule>

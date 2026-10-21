@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-10-21T05:00:00Z",
+  "storeInfo": {
+    "name": "Shiva Rudraksha Inc.",
+    "tagline": "Connect ✦ Balance ✦ Transform",
+    "motto": "Ancient Wisdom for a Better Tomorrow",
+    "location": "Scarborough, Ontario, Canada",
+    "phone": "+1 437-267-1257",
+    "whatsapp": "+1 437-267-1257",
+    "whatsappLink": "https://wa.me/14372671257",
+    "email": "shivarudrakshain@gmail.com",
+    "shippingSummary": "Fast tracked shipping across Canada, the USA, and internationally via Canada Post, UPS, FedEx and DHL.",
+    "authenticitySummary": "100% genuine Nepal and Java Rudraksha beads. Gemological laboratory certificate and X-ray radiography verification included on certified collector specimens."
+  },
+  "customKnowledge": [
+    {
+      "id": "ck-custom-malas",
+      "topic": "Custom Mala Design & Silver Stringing",
+      "keywords": ["custom mala", "silver capping", "gold wire", "stringing", "customize mala", "thread", "silk thread"],
+      "answer": "Yes! At Shiva Rudraksha Inc., we handcraft custom Rudraksha Malas tailored to your specific spiritual needs, astrological chart, or deity devotion. Options include pure silver wire/capping, gold capping upon request, or traditional auspicious red/yellow silk thread with knots between beads. Message our master stringing team on WhatsApp at +1 437-267-1257 for a consultation.",
+      "category": "Custom Orders & Crafting"
+    },
+    {
+      "id": "ck-astrology-service",
+      "topic": "Free Vedic Astrology & Kundali Rudraksha Recommendation",
+      "keywords": ["astrology", "horoscope", "kundali", "birth chart", "rashi", "nakshatra", "consultation", "which bead to wear", "recommendation"],
+      "answer": "We provide personalized Vedic astrology and birth chart (Kundali) analysis to determine which Mukhi aligns with your Lagna (Ascendant), Moon Rashi, Janma Nakshatra, and current planetary Mahadasha. We also specialize in combinations for pacifying doshas like Shani Sade Sati, Rahu/Ketu afflictions, and Manglik dosha. Visit our Birth Chart Recommendation page on the site or WhatsApp us with your birth details.",
+      "category": "Astrological Guidance"
+    },
+    {
+      "id": "ck-nepal-vs-indonesia",
+      "topic": "Nepal vs Indonesian (Java) Rudraksha Differences",
+      "keywords": ["nepal vs indonesia", "indonesian beads", "java rudraksha", "nepali beads difference", "size difference", "which is better"],
+      "answer": "Nepal Rudraksha beads are naturally large (20mm to 35mm+), heavy, with deeply defined mukhi furrows (clefts) and high electromagnetic potential. Indonesian (Java) beads are naturally smaller (8mm to 16mm), smoother, and lightweight. Both are sacred and authentic per ancient scriptures. Nepal beads are prized for individual collector pendants and high-intensity spiritual practice, while Indonesian beads are preferred for comfortable everyday 108-bead Japa Malas.",
+      "category": "Authenticity & Knowledge"
+    },
+    {
+      "id": "ck-shipping-returns",
+      "topic": "Shipping Times, Tracking & Delivery",
+      "keywords": ["shipping time", "delivery time", "how long to arrive", "tracking order", "return policy", "ship to usa"],
+      "answer": "Orders within Canada typically arrive in 2–4 business days. USA shipments take 3–6 business days via tracked expedited services. International worldwide delivery takes 5–10 business days depending on destination. Every parcel is safely packed in sacred velvet pouches, insured, and provided with full online tracking.",
+      "category": "Orders & Shipping"
+    },
+    {
+      "id": "ck-siddha-mala",
+      "topic": "Sarva Siddha Mala & Indra Mala Combinations",
+      "keywords": ["siddha mala", "indra mala", "all mukhi combination", "1 to 14 mukhi", "1 to 21 mukhi"],
+      "answer": "The Siddha Mala is a supreme Vedic combination comprising 1 to 14 Mukhi beads plus Gauri Shankar and Ganesh Rudraksha, representing all principal deities and pacifying all 9 planets (Navagrahas). The Indra Mala extends from 1 to 21 Mukhi with Gauri Shankar and Trijuti, considered the crown jewel of all spiritual treasures. Each bead is hand-selected and lab-certified.",
+      "category": "Sacred Combinations"
+    },
+    {
+      "id": "ck-stock-availability",
+      "topic": "Stock & Inventory Availability",
+      "keywords": ["stock", "availability", "available for sale", "in stock", "out of stock", "real time stock", "ready to ship", "current inventory"],
+      "answer": "All sacred Rudraksha beads and combinations listed in our online catalogue with pricing are in stock and available for immediate sale. For collector beads, each high-resolution photo and X-ray shows the exact individual specimen you will receive. For ultra-rare beads (15–21 Mukhi, collector Gauri Shankar, Indra Mala) or specific bead diameters, real-time stock can also be verified and reserved directly via WhatsApp at +1 437-267-1257.",
+      "category": "Stock & Inventory"
+    },
+    {
+      "id": "ck-how-to-order",
+      "topic": "How to Place an Order Online",
+      "keywords": ["how to order", "can i order now", "how to buy", "place an order", "buying process", "checkout", "add to cart", "purchase online"],
+      "answer": "You can order online 24/7 on our website! Browse our catalogue, select your desired Rudraksha, and click 'Add to Sacred Cart' or 'Buy Now'. Then open your Sacred Cart drawer from the top right and proceed to checkout using our fast Guest Checkout—no password or account registration required. Alternatively, you can message our team on WhatsApp at +1 437-267-1257 to place orders directly or request custom silver/gold stringing.",
+      "category": "Orders & Purchasing"
+    },
+    {
+      "id": "ck-login-account",
+      "topic": "Website Login, Registration & Customer Accounts",
+      "keywords": ["how to login", "login", "log in", "sign in", "create account", "register", "guest checkout", "need an account", "my profile", "account access"],
+      "answer": "No account or login is required to order from Shiva Rudraksha Inc.! Anyone can checkout quickly as a guest with just their delivery address and email. If you wish to review past orders or update customer preferences, you can access the Account section via the top navigation bar or visit /profile. The Admin portal (#admin) is strictly restricted to store management for catalogue maintenance; general customers do not require admin access.",
+      "category": "Account & Access"
+    },
+    {
+      "id": "ck-privileges-security",
+      "topic": "Website Privileges, Features & Confidential Secrets",
+      "keywords": ["privileges", "permissions", "what can be accessed", "features available", "what to tell", "what not to tell", "keep secret", "confidential", "admin access", "secrets", "api token", "wholesale price"],
+      "answer": "Publicly Accessible: Full 1–21 Mukhi guide, deities, mantras, live product catalogue with 360° photos and lab certificates, free Kundali calculator (#recommendations), guest checkout, care guides, and WhatsApp consultation (+1 437-267-1257). Strictly Confidential & Secret: Admin management portal (#admin), GitHub access tokens, backend credentials, direct Nepal farmer harvest wholesale contracts, and customer financial payment data.",
+      "category": "Website Features & Privileges"
+    },
+    {
+      "id": "ck-order-tracking",
+      "topic": "Order Tracking & Shipment Updates",
+      "keywords": ["track my order", "order status", "where is my order", "tracking number", "track parcel", "has my order shipped"],
+      "answer": "Once your consecrated parcel is dispatched, you receive an automated confirmation email with your courier tracking number (Canada Post, UPS, FedEx, or DHL). You can track it online or message our team on WhatsApp at +1 437-267-1257 with your Order ID or Name for immediate personal updates.",
+      "category": "Order Tracking"
+    },
+    {
+      "id": "ck-payment-currencies",
+      "topic": "Payment Methods & Multi-Currency Support",
+      "keywords": ["payment methods", "how to pay", "credit card", "debit card", "currency", "pay in inr", "pay in cad", "pay in usd", "interac"],
+      "answer": "We accept Visa, MasterCard, American Express, and major international cards with secure 256-bit SSL encryption. You can view prices and pay in USD ($), CAD ($), INR (₹), EUR (€), GBP (£), or AUD ($) using the top currency selector. Canadian customers may also pay via Interac e-Transfer upon request via WhatsApp (+1 437-267-1257).",
+      "category": "Payment & Currencies"
+    },
+    {
+      "id": "ck-returns-guarantee",
+      "topic": "Return Policy & Authenticity Guarantee",
+      "keywords": ["return policy", "refund", "exchange", "money back guarantee", "can i return", "satisfaction guarantee"],
+      "answer": "Every Rudraksha from Shiva Rudraksha Inc. comes with a 100% Genuine Authenticity Guarantee backed by gemological testing and X-ray radiography. If your order arrives damaged or incorrect, contact us within 7 days of delivery on WhatsApp at +1 437-267-1257 or email shivarudrakshain@gmail.com for an immediate replacement or full resolution.",
+      "category": "Returns & Guarantees"
+    }
+  ]
+}

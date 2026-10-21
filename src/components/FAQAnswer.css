@@ -1,7 +1,10 @@
 .faq-answer{overflow-wrap:anywhere;line-height:1.7}
 .faq-answer p{margin:0}
-.faq-answer p+p,.faq-answer ol+p{margin-top:14px}
+.faq-answer p+p,.faq-answer ol+p,.faq-answer ul+p,.faq-answer p+ul{margin-top:14px}
 .faq-answer ol{margin:14px 0;padding-left:24px}
-.faq-answer li+li{margin-top:12px}
+.faq-answer ul{margin:12px 0;padding-left:20px;list-style-type:disc}
+.faq-answer li+li{margin-top:8px}
+.faq-answer strong{color:#3d1a24;font-weight:700}
+.faq-answer a{color:#781d34;text-decoration:underline;font-weight:600}
 .faq-entry>.faq-answer{padding:0 22px 22px;color:#5b4b40}
 @media(max-width:640px){.faq-entry>.faq-answer{padding:0 17px 18px}}
