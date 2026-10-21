@@ -24,6 +24,11 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
   }, [resetKey]);
 
   const active = images[index] || images[0];
+  const isDocument = (item) => ["certificate", "xray"].includes(item.key);
+  const thumbnailGroups = [
+    { title: "Product photos", items: images.filter((item) => !isDocument(item)) },
+    { title: "Certificates & X-rays", items: images.filter(isDocument) },
+  ];
 
   const useFallback = (event, fallbackSrc) => {
     if (!fallbackSrc || event.currentTarget.dataset.fallbackApplied === "true") return;
@@ -99,6 +104,15 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
         <div
           className="detail-main-image"
         >
+          <div className="gallery-heading">
+            <div>
+              <p>{isDocument(active) ? "Certification reference" : "Product reference"}</p>
+              <h2>{active.label}{!isDocument(active) ? " view" : ""}</h2>
+            </div>
+            <button type="button" className="gallery-view-full" onClick={() => setFullscreen(true)}>
+              <Expand aria-hidden="true" /> View full size
+            </button>
+          </div>
           <div className="gallery-stage"
           onTouchStart={touchStart}
           onTouchEnd={touchEnd}
@@ -118,11 +132,6 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           <button className="gallery-button right" aria-label="Next product image" onClick={next}>
             <ChevronRight />
           </button>
-          <button className="expand-button" aria-label="Expand product image" onClick={() => setFullscreen(true)}>
-            <Expand />
-          </button>
-          <span className="image-type">{active.label}</span>
-          <span className="image-count">{index + 1}/{images.length}</span>
           </div>
           <div className="gallery-reference-notice">
             <strong>Reference images only</strong>
@@ -130,14 +139,18 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           </div>
         </div>
 
-        <div className="thumbnails">
-          {images.map((item, i) => (
+        {thumbnailGroups.filter((group) => group.items.length).map((group) => (
+        <section className="gallery-thumbnail-group" key={group.title} aria-label={group.title}>
+          <h3>{group.title}</h3>
+          <div className={`thumbnails ${group.title === "Product photos" ? "product-thumbnails" : "document-thumbnails"}`}>
+          {group.items.map((item) => (
             <button
               key={item.key}
-              className={i === index ? "active" : ""}
+              type="button"
+              className={item.key === active.key ? "active" : ""}
               aria-label={`Show ${item.label.toLowerCase()} reference image`}
-              aria-pressed={i === index}
-              onClick={() => setIndex(i)}
+              aria-pressed={item.key === active.key}
+              onClick={() => setIndex(images.indexOf(item))}
             >
               <img
                 src={item.src || item.fallbackSrc}
@@ -151,7 +164,9 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
               <span>{item.label}</span>
             </button>
           ))}
-        </div>
+          </div>
+        </section>
+        ))}
       </div>
 
       {fullscreen && (
