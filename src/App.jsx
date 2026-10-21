@@ -18,7 +18,6 @@ import ProductCard from "./components/ProductCard";
 import PromotionalBanner from "./components/PromotionalBanner";
 import HeroCarousel from "./components/HeroCarousel";
 import Footer from "./components/Footer";
-import { productPhotoUrl } from "./data/productPhotoUrl.js";
 
 // Ultra-fast Code Splitting: Lazy-load non-initial route panels on demand
 const ProductDetails = lazy(() => import("./components/ProductDetails"));
@@ -89,7 +88,7 @@ function GuideAccordionCard({ item }) {
 
         <div className="guide-summary-image">
           <img
-            src={productPhotoUrl(`${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif`, "top")}
+            src={`${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif`}
             alt={`${item.title || `${item.mukhi} Mukhi Rudraksha`} actual Rudraksha bead`}
             loading="lazy"
             decoding="async"
@@ -97,7 +96,7 @@ function GuideAccordionCard({ item }) {
             height="180"
             onError={(event) => {
               const fallback =
-                productPhotoUrl(`${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif`, "top");
+                `${import.meta.env.BASE_URL}images/products/${item.mukhi}-mukhi-nepal-rudraksha/top.avif`;
 
               if (!event.currentTarget.dataset.fallbackUsed) {
                 event.currentTarget.dataset.fallbackUsed = "true";
