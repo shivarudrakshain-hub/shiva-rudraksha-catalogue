@@ -7,6 +7,6 @@ export function productPhotoUrl(src, slot) {
   const queryAt = resource.indexOf('?');
   const path = queryAt < 0 ? resource : resource.slice(0, queryAt);
   const params = new URLSearchParams(queryAt < 0 ? '' : resource.slice(queryAt + 1));
-  params.set('product_bg', 'golden-v1');
+  params.set('product_bg', ['certificate', 'xray'].includes(slot) ? 'original-v2' : 'golden-v1');
   return `${path}?${params}${fragment}`;
 }

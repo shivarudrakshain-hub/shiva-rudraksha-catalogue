@@ -230,6 +230,19 @@ footer button { padding: 0; border: 0; background: transparent; color: white; }
 .fullscreen { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: rgba(0,0,0,.93); }
 .fullscreen figure { margin: 0; text-align: center; color: white; }
 .fullscreen img { max-height: 84vh; max-width: 86vw; object-fit: contain; }
+/* Frame complete original document photos without modifying or cropping them. */
+.card-gallery img.document-photo,
+.gallery-stage > img.document-photo,
+.details-page .thumbnails img.document-photo,
+.thumbnails img.document-photo,
+.fullscreen img.document-photo {
+  box-sizing: border-box;
+  object-fit: contain;
+  border: 8px solid #fff8eb;
+  border-radius: 0;
+  background: #fff8eb;
+}
+.thumbnails img.document-photo { border-width: 4px; }
 .close-fullscreen, .full-arrow { position: absolute; display: grid; place-items: center; border: 0; background: white; color: var(--maroon); border-radius: 50%; }
 .close-fullscreen { top: 20px; right: 20px; width: 46px; height: 46px; }
 .full-arrow { top: 50%; width: 50px; height: 50px; transform: translateY(-50%); }

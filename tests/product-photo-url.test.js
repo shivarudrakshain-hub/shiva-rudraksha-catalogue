@@ -10,10 +10,10 @@ test('replaced bead photos get one stable version tag across paths and queries',
     if (src.includes('size=')) { assert.equal(parsed.searchParams.get('size'), 'large'); assert.equal(parsed.hash, '#photo'); }
   }
 });
-test('certificate and X-ray photos refresh in galleries and fallbacks', () => {
+test('restored original certificate and X-ray photos refresh in galleries and fallbacks', () => {
   for (const slot of ['certificate', 'xray']) {
     const src = `/images/products/bead/${slot}.avif`;
-    assert.equal(productPhotoUrl(src, slot), `${src}?product_bg=golden-v1`);
+    assert.equal(productPhotoUrl(src, slot), `${src}?product_bg=original-v2`);
     assert.equal(productPhotoUrl(productPhotoUrl(src, slot), slot), productPhotoUrl(src, slot));
   }
 });
