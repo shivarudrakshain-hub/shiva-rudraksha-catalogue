@@ -427,3 +427,25 @@
 .premium-about-details .about-quote h2{font-family:Georgia,serif;font-size:clamp(23px,2.7vw,35px);color:#7d2038;line-height:1.4}
 @media(max-width:900px){.premium-about-hero{grid-template-columns:1fr}.premium-about-intro{padding:36px 25px 22px}.premium-about-photo{min-height:300px;max-height:420px;background-position:center 38%;mask-image:linear-gradient(to bottom,transparent 0%,#000 18%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 18%)}.premium-about-details .about-features{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.premium-about-details{padding:22px 20px 45px}.premium-about-details .about-features,.premium-about-details .about-promise{grid-template-columns:1fr}.premium-about-details .about-card{padding:20px}.premium-about-intro h1{font-size:36px}}
+
+/* Premium birth-chart recommendations — matches FAQ / About / Contact. */
+.recommendation-page .birth-chart-section{background:linear-gradient(120deg,#fffaf1,#fdf0de 60%,#f8e6d8);padding:clamp(35px,5vw,75px) 0}
+.recommendation-page .birth-chart-layout{max-width:1400px;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);align-items:center;gap:clamp(26px,4vw,65px)}
+.recommendation-page .birth-chart-intro{min-width:0}
+.recommendation-page .birth-chart-eyebrow{color:#b87526;letter-spacing:.16em;font-weight:700}
+.recommendation-page .birth-chart-intro h2{font-family:Georgia,serif;font-size:clamp(38px,4.6vw,68px);line-height:1.1;color:#8b1836;font-weight:400;max-width:720px}
+.recommendation-page .birth-chart-intro h2 em{color:#c17b28;font-style:normal}
+.recommendation-page .birth-chart-intro>p{font-size:clamp(16px,1.3vw,19px);line-height:1.7;color:#60564e;max-width:620px}
+.recommendation-page .birth-chart-points{display:flex;flex-direction:column;align-items:flex-start;gap:14px;color:#79273b}
+.recommendation-page .birth-chart-vedic-art{margin-top:25px;width:100%;max-width:600px;height:210px;border-radius:20px;background:#f6e4c9 url('/images/vedic-birth-chart.svg') center/cover no-repeat;box-shadow:0 12px 35px #8b5a2b20}
+.recommendation-page .birth-chart-form{background:#fffdf9;border:1px solid #e7d4bb;border-radius:20px;box-shadow:0 15px 45px #65412b20;padding:clamp(23px,3vw,44px)}
+.recommendation-page .birth-chart-form-heading h3{font-family:Georgia,serif;color:#8b1836;font-size:clamp(28px,2.6vw,38px)}
+.recommendation-page .birth-chart-form-heading>span{color:#b87526;letter-spacing:.12em}
+.recommendation-page .birth-chart-submit{background:#970c36;border-radius:32px}
+.recommendation-page .birth-chart-time-controls{display:flex;gap:8px;align-items:stretch;min-width:0}
+.recommendation-page .birth-chart-time-controls input{width:100%;min-width:0;flex:1}
+.recommendation-page .birth-chart-period{display:flex;flex-shrink:0;border:1px solid #d8c7b9;border-radius:10px;overflow:hidden}
+.recommendation-page .birth-chart-period button{border:0;background:#fff8f0;color:#713c34;padding:0 12px;cursor:pointer;font-weight:700}
+.recommendation-page .birth-chart-period button.selected{background:#970c36;color:#fff}
+@media(max-width:900px){.recommendation-page .birth-chart-layout{grid-template-columns:1fr}.recommendation-page .birth-chart-vedic-art{max-width:100%;height:220px}.recommendation-page .birth-chart-section{padding:35px 0}}
+@media(max-width:500px){.recommendation-page .birth-chart-time-controls{flex-wrap:wrap}.recommendation-page .birth-chart-time-controls input{flex-basis:100%}.recommendation-page .birth-chart-period{height:43px}.recommendation-page .birth-chart-period button{padding:0 20px}}
