@@ -111,7 +111,7 @@ export const questions = [
     "id": 18,
     "category": "Wearing & Care",
     "question": "Does Rudraksha need energization?",
-    "answer": "Some traditions perform mantra recitation or consecration before wearing. It is a spiritual practice rather than a scientifically measurable requirement."
+    "answer": "In our tradition, we follow an energization ritual before first wearing Rudraksha. See our step-by-step energization FAQ for the turmeric wash, 24 hours in full-fat cow's milk, 24 hours in desi cow ghee, pooja, and mantra chanting, or choose the Shiva temple alternative. In our tradition, once you have worn the mala, do not offer it to any deity's idol again for a second energization or re-energization; this is considered a sin."
   },
   {
     "id": 19,
@@ -411,6 +411,63 @@ export const questions = [
     "id": 68,
     "category": "Spiritual Guidance",
     "question": "How can I energize or consecrate my Rudraksha at home before wearing it?",
-    "answer": "For a simple devotional energization practice, Shiva Rudraksha Inc. suggests these steps: 1. Bathe and wear clean clothes; choose a quiet time when you can pray without rushing. 2. Gently wipe the Rudraksha with a clean, soft cloth and place it on a clean cloth in your prayer space, near an image or symbol of Lord Shiva if you wish. Avoid prolonged soaking, harsh chemicals, or coating the bead and fittings with substances that are difficult to remove. 3. Offer a sincere prayer to Lord Shiva and set your intention for devotion, meditation, or mindful living. Flowers may be offered beside the bead. 4. Hold the Rudraksha respectfully and chant Om Namah Shivaya 108 times, or follow the mantra and count given by your spiritual teacher. 5. Conclude with gratitude and wear the Rudraksha comfortably on a secure thread or suitable fitting. This is an optional devotional practice; rituals differ by tradition, and energization does not guarantee a particular outcome."
+    "answer": "Follow the energization practice of Shiva Rudraksha Inc. before first wearing your Rudraksha:\n\n1. Gently wash the Rudraksha with turmeric powder mixed into clean water or Ganga jal.\n2. Soak or fully submerge it in full-fat cow's milk for 24 hours.\n3. Remove it from the milk, rinse with plain water, then soak or fully submerge it in desi cow ghee for 24 hours.\n4. Remove it from the ghee and gently wipe it clean with a paper towel or cotton cloth. Do not wash it again.\n5. Perform pooja and chant Om Namah Shivaya 108 times. Then wear the Rudraksha while facing east, on a Monday or any auspicious day.\n\nTemple alternative: If you cannot follow these steps at home, visit a Shiva temple, offer the unworn mala to Lord Shiva, have abhishek or archana performed, and then wear it.\n\nAfter first wearing: In our tradition, once you have worn the mala, do not offer it to any deity's idol again for a second energization or re-energization; this is considered a sin.",
+    "aliases": [
+      "energization",
+      "energisation",
+      "energize",
+      "energise",
+      "consecration",
+      "prana pratishtha",
+      "how to prepare mala",
+      "ghee",
+      "how long in ghee",
+      "turmeric",
+      "which direction to face",
+      "when to wear after pooja"
+    ]
+  },
+  {
+    "id": 69,
+    "category": "Spiritual Guidance",
+    "question": "Do I need to soak my Rudraksha in milk, and for how long?",
+    "aliases": [
+      "milk",
+      "soak in milk",
+      "soaking in milk",
+      "full fat milk"
+    ],
+    "answer": "Yes. In the first-wearing energization practice followed by Shiva Rudraksha Inc., gently wash the Rudraksha with turmeric powder mixed into clean water or Ganga jal, then soak or fully submerge it in full-fat cow's milk for 24 hours.\n\nAfter the milk soak, rinse with plain water and soak it in desi cow ghee for 24 hours. Remove it and wipe with a paper towel or cotton cloth; do not wash it again. Complete pooja and chant Om Namah Shivaya 108 times, then wear it facing east on a Monday or any auspicious day."
+  },
+  {
+    "id": 70,
+    "category": "Spiritual Guidance",
+    "question": "Can a Shiva temple perform the first energization if I cannot do it at home?",
+    "aliases": [
+      "temple",
+      "abhishek",
+      "abhishekam",
+      "archana",
+      "cannot energize at home",
+      "cant energize at home"
+    ],
+    "answer": "Yes. If you cannot follow these steps at home, visit a Shiva temple, offer the unworn mala to Lord Shiva, have abhishek or archana performed, and then wear it.\n\nIn our tradition, once you have worn the mala, do not offer it to any deity's idol again for a second energization or re-energization; this is considered a sin."
+  },
+  {
+    "id": 71,
+    "category": "Spiritual Guidance",
+    "question": "Can I offer a worn mala to a deity's idol again for re-energization?",
+    "aliases": [
+      "reenergization",
+      "re energization",
+      "reenergize",
+      "re energize",
+      "second energization",
+      "2nd energization",
+      "offer worn mala",
+      "offer again",
+      "energize again"
+    ],
+    "answer": "In our tradition, once you have worn the mala, do not offer it to any deity's idol again for a second energization or re-energization; this is considered a sin.\n\nThe home ritual and temple alternative described in our FAQs are for the first energization before wearing the mala."
   }
 ];

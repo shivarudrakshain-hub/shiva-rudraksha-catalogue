@@ -1,0 +1,7 @@
+.faq-answer{overflow-wrap:anywhere;line-height:1.7}
+.faq-answer p{margin:0}
+.faq-answer p+p,.faq-answer ol+p{margin-top:14px}
+.faq-answer ol{margin:14px 0;padding-left:24px}
+.faq-answer li+li{margin-top:12px}
+.faq-entry>.faq-answer{padding:0 22px 22px;color:#5b4b40}
+@media(max-width:640px){.faq-entry>.faq-answer{padding:0 17px 18px}}

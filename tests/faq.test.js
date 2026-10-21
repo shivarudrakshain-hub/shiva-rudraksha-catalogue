@@ -4,7 +4,7 @@ import { questions } from '../src/components/faqData.js';
 import { categories, filterQuestions } from '../src/components/faqSearch.js';
 
 test('all FAQs including lifestyle guidance and energization steps remain accessible', () => {
-  assert.equal(questions.length, 69);
+  assert.equal(questions.length, 72);
   assert.equal(new Set(questions.map(q => q.id)).size, questions.length);
   assert.equal(new Set(questions.map(q => q.question)).size, questions.length);
   assert.deepEqual(filterQuestions(), questions);
@@ -31,7 +31,7 @@ test('search covers restored questions, answers, categories, whitespace and case
   assert.ok(filterQuestions('intimacy uncomfortable').some(q => q.id === 67));
   assert.equal(filterQuestions('alcohol', 'Orders & Shipping').length, 0);
   assert.equal(filterQuestions('no-such-question-xyz').length, 0);
-  assert.equal(filterQuestions('   ', 'All').length, 69);
+  assert.equal(filterQuestions('   ', 'All').length, 72);
 });
 
 test('energization steps are searchable in Spiritual Guidance', () => {
@@ -39,4 +39,17 @@ test('energization steps are searchable in Spiritual Guidance', () => {
   assert.ok(faq);
   assert.ok(faq.answer.includes('Om Namah Shivaya 108 times'));
   assert.ok(faq.answer.includes('1.') && faq.answer.includes('5.'));
+});
+
+test('customer ritual preserves order, durations, first-wearing restriction and temple alternative', () => {
+  const faq = questions.find(q => q.id === 68);
+  const steps = faq.answer.split("\n").filter(line => /^\d+\./.test(line));
+  assert.equal(steps.length, 5);
+  assert.match(steps[0], /turmeric.*Ganga jal/);
+  assert.match(steps[1], /full-fat cow's milk for 24 hours/);
+  assert.match(steps[2], /rinse with plain water.*desi cow ghee for 24 hours/);
+  assert.match(steps[3], /paper towel or cotton cloth\. Do not wash it again/);
+  assert.match(steps[4], /108 times.*facing east.*Monday or any auspicious day/);
+  assert.match(faq.answer, /abhishek or archana/);
+  assert.match(faq.answer, /In our tradition.*considered a sin/);
 });
