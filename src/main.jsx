@@ -6,6 +6,7 @@ import "./styles.css";
 import "./productEnhancements.css";
 import "./responsive.css";
 import "./guidePage.css";
+import "./headerLayout.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

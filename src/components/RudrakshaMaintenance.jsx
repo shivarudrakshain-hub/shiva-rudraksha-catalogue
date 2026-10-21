@@ -1,4 +1,5 @@
 import { Droplets, Brush, MoonStar, Sun, Sparkles } from "lucide-react";
+import "./SacredInfoPage.css";
 
 const tips = [
   {
@@ -29,14 +30,15 @@ const tips = [
 
 export default function RudrakshaMaintenance() {
   return (
-    <main className="rs-info-page">
-      <div className="container rs-info-container">
-      <section className="rs-info-hero maintenance-hero">
-        <span>RUDRAKSHA CARE</span>
-        <h1>Rudraksha Maintenance</h1>
+    <main className="rs-info-page sacred-info-page maintenance-page">
+      <section className="sacred-page-hero" aria-labelledby="maintenance-title">
+        <div className="sacred-page-copy">
+        <span className="sacred-page-kicker">RUDRAKSHA CARE</span>
+        <h1 id="maintenance-title">Rudraksha <em>Maintenance</em></h1>
         <p>Simple traditional care practices to help preserve the natural beauty and longevity of your Rudraksha.</p>
+        </div>
       </section>
-
+      <div className="container rs-info-container">
       <section className="rs-info-section rs-intro">
         <div className="rs-section-title"><span>01</span><div><small>LONG-TERM CARE</small><h2>Keep Your Rudraksha in Good Condition</h2></div></div>
         <p>Once you begin wearing Rudraksha regularly, proper maintenance becomes important. Natural beads can collect moisture, dust and body oils over time, so gentle periodic care helps preserve their surface and structure.</p>

@@ -23,7 +23,6 @@ import ProductInteractiveTabs from "./ProductInteractiveTabs";
 import ProductReviews from "./ProductReviews";
 import RelatedProducts from "./RelatedProducts";
 import RecentlyViewed from "./RecentlyViewed";
-import CurrencySwitcher from "./CurrencySwitcher";
 import { emptyImages } from "../data/catalogue";
 import { addToCart, recordRecentProduct } from "../data/cartStore";
 import { useCurrency } from "../context/CurrencyContext";
@@ -293,7 +292,6 @@ export default function ProductDetails({
             <span>Back to catalogue</span>
           </button>
           <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <CurrencySwitcher />
             <Logo compact />
           </div>
         </div>
