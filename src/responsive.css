@@ -621,3 +621,19 @@
   color:#8b1836;
   font-weight:700;
 }
+
+/* Defensive override: never visually clip the live Guide hero's children. */
+.guide-page .guide-luxury-hero.guide-contact-style-hero{aspect-ratio:auto!important}
+.guide-page .guide-luxury-hero.guide-contact-style-hero > .guide-contact-style-copy,
+.guide-page .guide-luxury-hero.guide-contact-style-hero > .guide-contact-style-photo{
+ position:relative!important;width:auto!important;height:auto!important;
+ padding:initial;margin:0!important;overflow:visible!important;
+ clip:auto!important;clip-path:none!important;white-space:normal!important;
+ border:0!important;
+}
+.guide-page .guide-luxury-hero.guide-contact-style-hero > .guide-contact-style-copy{padding:clamp(35px,5vw,75px)!important}
+.guide-page .guide-luxury-hero.guide-contact-style-hero > .guide-contact-style-photo{min-height:490px}
+@media(max-width:900px){
+ .guide-page .guide-luxury-hero.guide-contact-style-hero > .guide-contact-style-copy{padding:clamp(36px,6vw,60px) clamp(22px,5vw,40px)!important}
+ .guide-page .guide-luxury-hero.guide-contact-style-hero > .guide-contact-style-photo{display:none!important}
+}

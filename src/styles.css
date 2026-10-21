@@ -1369,7 +1369,5 @@ footer button { padding: 0; border: 0; background: transparent; color: white; }
 
 /* Uploaded Mukhi Guide banner artwork. Crop the search panel printed into the artwork,
    retaining the actual interactive search below as a separate element. */
-.guide-page .guide-luxury-hero{background-image:url('/images/guide/shiva-rudraksha-mukhi-guide-banner-1.png');background-size:100% auto;background-repeat:no-repeat;background-position:center top;aspect-ratio:2.32;padding:0;min-height:0;border-radius:18px;margin-bottom:24px;box-shadow:0 16px 32px #49132220}
-.guide-page .guide-luxury-hero::before,.guide-page .guide-luxury-hero::after{display:none}
-.guide-page .guide-luxury-hero > *{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-@media(max-width:650px){.guide-page .guide-luxury-hero{aspect-ratio:2.32;border-radius:12px;margin-bottom:16px}}
+/* The Mukhi Guide now uses accessible, live hero text and a standalone image.
+   Legacy composite-banner styles that visually hid all children were removed. */
