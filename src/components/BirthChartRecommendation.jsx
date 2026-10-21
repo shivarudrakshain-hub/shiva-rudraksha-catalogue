@@ -12,7 +12,8 @@ const initialForm = {
   fullName: "",
   dateOfBirth: "",
   placeOfBirth: "",
-  timeOfBirth: "",
+  hour: "",
+  minute: "",
   period: "AM",
 };
 
@@ -40,9 +41,10 @@ export default function BirthChartRecommendation() {
     },350);
     return () => { clearTimeout(timer); controller.abort(); };
   },[form.placeOfBirth,citySelected]);
-  const updateTime = (event) => {
-    const digits = event.target.value.replace(/\D/g,"").slice(0,4);
-    setForm(current => ({...current,timeOfBirth:digits.length > 2 ? digits.slice(0,2) + ":" + digits.slice(2) : digits}));
+  const updateTimePart = (part, raw) => {
+    const digits = raw.replace(/\D/g, "").slice(0, 2);
+    if (digits.length === 2 && Number(digits) > (part === "hour" ? 12 : 59)) return;
+    setForm(current => ({ ...current, [part]: digits }));
     setError("");
   };
 
@@ -61,7 +63,7 @@ export default function BirthChartRecommendation() {
     const fullName = form.fullName.trim();
     const placeOfBirth = form.placeOfBirth.trim();
 
-    if (!fullName || !form.dateOfBirth || !placeOfBirth || !form.timeOfBirth || !/^((0?[1-9])|(1[0-2])):[0-5][0-9]$/.test(form.timeOfBirth)) {
+    if (!fullName || !form.dateOfBirth || !placeOfBirth || !/^((0[0-9])|(1[0-2]))$/.test(form.hour) || !/^[0-5][0-9]$/.test(form.minute)) {
       setError("Please complete all birth details before submitting.");
       return;
     }
@@ -73,7 +75,7 @@ export default function BirthChartRecommendation() {
       "",
       `Full name: ${fullName}`,
       `Date of birth: ${form.dateOfBirth}`,
-      `Time of birth: ${form.timeOfBirth} ${form.period}`,
+      `Time of birth: ${form.hour}:${form.minute} ${form.period}`,
       `Place of birth: ${placeOfBirth}`,
       "",
       "Please review my birth details and recommend the suitable Rudraksha.",
@@ -105,7 +107,7 @@ export default function BirthChartRecommendation() {
             <span><MessageCircle /> Direct WhatsApp request</span>
             <span><Sparkles /> Suitable Mukhi recommendation</span>
           </div>
-          <div className="birth-chart-vedic-art" role="img" aria-label="Decorative Vedic astrology birth chart with a lotus and sacred Om symbol" />
+
         </div>
 
         <form className="birth-chart-form" onSubmit={submitRequest}>
@@ -143,7 +145,11 @@ export default function BirthChartRecommendation() {
             <label>
               <span><Clock3 /> Time of birth</span>
               <div className="birth-chart-time-controls">
-                <input type="text" name="timeOfBirth" value={form.timeOfBirth} onChange={updateTime} placeholder="hh:mm" inputMode="numeric" pattern="(0[1-9]|1[0-2]):[0-5][0-9]" title="Enter 12-hour time, for example 09:25" aria-label="Time of birth in 12-hour format" required />
+                <div className="birth-chart-clock-input">
+                  <input type="text" name="hour" value={form.hour} onChange={event => updateTimePart("hour",event.target.value)} placeholder="HH" inputMode="numeric" maxLength={2} pattern="0[0-9]|1[0-2]" title="Hours must be 00 to 12" aria-label="Birth hour (00 to 12)" required />
+                  <span aria-hidden="true">:</span>
+                  <input type="text" name="minute" value={form.minute} onChange={event => updateTimePart("minute",event.target.value)} placeholder="MM" inputMode="numeric" maxLength={2} pattern="[0-5][0-9]" title="Minutes must be 00 to 59" aria-label="Birth minutes (00 to 59)" required />
+                </div>
                 <div className="birth-chart-period" role="group" aria-label="AM or PM">
                   <button type="button" aria-pressed={form.period === "AM"} className={form.period === "AM" ? "selected" : ""} onClick={() => setForm(v => ({...v,period:"AM"}))}>AM</button>
                   <button type="button" aria-pressed={form.period === "PM"} className={form.period === "PM" ? "selected" : ""} onClick={() => setForm(v => ({...v,period:"PM"}))}>PM</button>
