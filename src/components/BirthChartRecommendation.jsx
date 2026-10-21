@@ -90,6 +90,11 @@ export default function BirthChartRecommendation() {
   };
 
   return (
+    <>
+    <picture className="birth-chart-banner">
+      <source media="(max-width:760px)" srcSet="/images/hero/birth-chart-banner-v2-mobile.avif" />
+      <img src="/images/hero/birth-chart-wide.avif" alt="Birth Chart Recommendation — Rudraksha guidance based on Vedic astrology, with a sacred chart, lamps and the Himalayas" fetchPriority="high" />
+    </picture>
     <section id="birth-chart" className="birth-chart-section">
       <div className="container birth-chart-layout">
         <div className="birth-chart-intro">
@@ -193,5 +198,6 @@ export default function BirthChartRecommendation() {
         </form>
       </div>
     </section>
+    </>
   );
 }

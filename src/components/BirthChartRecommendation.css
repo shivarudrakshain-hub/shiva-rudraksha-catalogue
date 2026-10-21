@@ -1,4 +1,7 @@
 /* Birth chart page: one responsive layout, with the form kept in focus. */
+.recommendation-page .birth-chart-banner{display:block;width:100%;background:#49301f}
+.recommendation-page .birth-chart-banner img{display:block;width:100%;height:auto;aspect-ratio:3/1;object-fit:contain}
+@media(max-width:760px){.recommendation-page .birth-chart-banner img{aspect-ratio:16/9}}
 .recommendation-page .birth-chart-section{min-height:0;padding:64px 0 72px;background:#fff8ee;border-bottom:1px solid #eadbc7}
 .recommendation-page .birth-chart-layout{width:calc(100% - 64px);max-width:1180px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:64px;align-items:center}
 .recommendation-page .birth-chart-intro{min-width:0;padding:12px 0}
