@@ -1,0 +1,118 @@
+/* Guide uses the FAQ / Contact palette and live text over PR #68's blended artwork.
+   Keep these rules together: legacy composite-banner clipping must not return. */
+.guide-page.page-shell {
+  padding: 0 0 72px;
+  background: linear-gradient(125deg, #fffaf3, #fff5e9 62%, #f8e9df);
+  color: #45332d;
+}
+.guide-contact-style-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(390px, 43vw, 570px);
+  background: #fff7eb;
+}
+.guide-contact-style-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #fff9ef 0%, rgba(255,249,239,.97) 32%, rgba(255,249,239,.72) 51%, rgba(255,249,239,.05) 75%),
+    url('/images/contact/shiva-contact-hero.jpg') right center / auto 110% no-repeat;
+}
+.guide-contact-style-copy {
+  position: relative;
+  z-index: 1;
+  width: min(62%, 830px);
+  padding: clamp(34px, 5vw, 78px) 24px clamp(34px, 4vw, 65px) clamp(24px, 6vw, 100px);
+}
+.guide-contact-style-copy .guide-hero-eyebrow {
+  display: block;
+  color: #ad6e21;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  line-height: 1.7;
+}
+.guide-contact-style-copy h1 {
+  font: 400 clamp(37px, 4.8vw, 72px) / 1.08 Georgia, serif;
+  color: #841c36;
+  margin: 20px 0;
+  text-wrap: balance;
+}
+.guide-contact-style-copy h1 em { color: #c17b28; font-style: normal; }
+.guide-contact-style-copy p {
+  font-size: clamp(16px, 1.45vw, 21px);
+  line-height: 1.6;
+  color: #645951;
+  max-width: 670px;
+  margin: 0 0 28px;
+}
+.guide-contact-style-copy .guide-hero-features {
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 0;
+}
+.guide-contact-style-copy .guide-hero-features span {
+  background: rgba(255,253,249,.94);
+  border: 1px solid #dfc5a2;
+  color: #7e2b3c;
+  padding: 10px 14px;
+}
+.guide-content { padding-top: 32px; }
+.guide-page .guide-discovery,
+.guide-page .detailed-guide-card {
+  background: rgba(255,253,248,.96);
+  border: 1px solid #e8d5bd;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(75,37,24,.08);
+}
+.guide-page .guide-discovery { margin-bottom: 32px; padding: 24px; }
+.guide-page .guide-discovery-heading { margin-bottom: 0; }
+.guide-page .guide-search-box { border-radius: 40px; background: #fff; min-width: 0; }
+.guide-page .guide-search-box:focus-within { outline: 2px solid #a98136; outline-offset: 2px; }
+.guide-page .guide-section { margin-top: 0; }
+.guide-page .guide-grid { gap: 24px; }
+.guide-page .detailed-guide-card { padding: 0; }
+.guide-page .detailed-guide-card:hover { transform: none; }
+.guide-page .guide-summary-copy h2,
+.guide-page .guide-premium-panel h3,
+.guide-page .guide-section-heading h2 { color: #81233b; font-weight: 400; }
+.guide-page .guide-summary-image:hover img { transform: none; }
+.guide-page .guide-summary-copy .guide-benefits,
+.guide-page .guide-premium-panel p { color: #5b4b40; line-height: 1.7; }
+.guide-page .guide-premium-tabs { border-color: #e8d5bd; }
+.guide-page .guide-premium-tabbar { background: #f7f0e4; }
+.guide-page .guide-premium-tabbar button { min-height: 48px; font-family: inherit; }
+.guide-page .guide-premium-tabbar button.active { color: #831c36; border-bottom-color: #b27a28; }
+.guide-page .special-guide-section { margin-top: 48px; }
+.guide-page .special-guide-section .guide-summary-grid { padding: 24px; }
+.guide-page .tradition-note { margin-top: 32px; color: #73685c; line-height: 1.7; }
+@media (max-width: 900px) {
+  .guide-contact-style-hero { min-height: 0; }
+  .guide-contact-style-hero::before {
+    background: linear-gradient(90deg, rgba(255,249,239,.96), rgba(255,249,239,.86) 48%, rgba(255,249,239,.4)),
+      url('/images/contact/shiva-contact-hero.jpg') right center / auto 100% no-repeat;
+  }
+  .guide-contact-style-copy { width: min(85%, 720px); padding: clamp(32px, 7vw, 55px) clamp(20px, 5vw, 36px) 50px; }
+}
+@media (max-width: 600px) {
+  .guide-page.page-shell { padding-bottom: 44px; }
+  .guide-contact-style-hero::before {
+    background: linear-gradient(90deg, rgba(255,249,239,.89), rgba(255,249,239,.73)),
+      url('/images/contact/shiva-contact-hero.jpg') center top / cover no-repeat;
+  }
+  .guide-contact-style-copy { width: 100%; padding: 34px 22px 44px; }
+  .guide-contact-style-copy h1 { font-size: clamp(35px, 9vw, 49px); }
+  .guide-contact-style-copy .guide-hero-features { gap: 8px; }
+  .guide-contact-style-copy .guide-hero-features span { font-size: 12px; padding: 8px 10px; }
+  .guide-content { padding-top: 24px; }
+  .guide-page .guide-discovery { padding: 18px; margin-bottom: 24px; }
+  .guide-page .guide-search-box { width: 100%; }
+  .guide-page .guide-premium-tabbar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .guide-page .guide-premium-tabbar button { overflow-wrap: anywhere; }
+  .guide-page .guide-premium-specs { grid-template-columns: minmax(0, 1fr); }
+  .guide-page .special-guide-section { margin-top: 36px; }
+}
+
