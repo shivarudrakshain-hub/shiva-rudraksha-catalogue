@@ -8,3 +8,24 @@
 /* Remove inherited page-shell side padding so the FAQ banner meets both viewport edges. */
 .faq-page.page-shell{padding-left:0;padding-right:0;margin-left:0;margin-right:0;max-width:none;width:100%;overflow-x:clip}
 .faq-banner{display:block;width:100%;margin:0;border:0}
+
+/* Premium FAQ styling matching the Contact and About Us pages. */
+.faq-page{background:linear-gradient(125deg,#fffaf3,#fff5e9 62%,#f8e9df)}
+.faq-premium-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);min-height:490px;overflow:hidden}
+.faq-premium-copy{padding:clamp(34px,5vw,78px) 20px clamp(30px,4vw,65px) clamp(24px,6vw,100px);align-self:center;position:relative;z-index:1}
+.faq-premium-copy .faq-kicker{display:block;font-size:12px;letter-spacing:.2em;color:#ad6e21;margin-bottom:20px}
+.faq-premium-copy h1{font-family:Georgia,serif;color:#841c36;font-weight:400;line-height:1.08;font-size:clamp(37px,4.8vw,72px);margin:0 0 20px}
+.faq-premium-copy h1 em{font-style:normal;color:#c17b28}
+.faq-premium-copy>p{color:#645951;font-size:clamp(16px,1.45vw,21px);line-height:1.6;max-width:670px;margin:0 0 28px}
+.faq-premium-copy .faq-search{margin:0;max-width:720px;border-radius:40px}
+.faq-premium-photo{min-height:490px;background:#e8d6c4 url('/images/Contact/shiva-contact-hero.jpg') center/cover no-repeat;mask-image:linear-gradient(to right,transparent,#000 24%);-webkit-mask-image:linear-gradient(to right,transparent,#000 24%)}
+.faq-wrap{max-width:1220px;padding-top:32px}
+.faq-filters{justify-content:flex-start;margin-bottom:22px}
+.faq-results{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px}
+.faq-entry{border-color:#eedfcc;border-radius:16px;box-shadow:0 6px 20px rgba(83,39,21,.045)}
+.faq-entry summary{min-height:90px}
+.faq-entry strong{color:#81233b;font-family:Georgia,serif;font-size:1.12rem}
+.faq-entry small{color:#aa702c}
+.faq-ask-link{display:inline-flex;align-items:center;gap:8px;margin:15px;padding:12px 18px;border-radius:28px;background:#8b1836;color:white;text-decoration:none;font-weight:700}
+@media(max-width:900px){.faq-premium-hero{grid-template-columns:1fr}.faq-premium-copy{padding:38px 26px 24px}.faq-premium-photo{min-height:290px;max-height:390px;mask-image:linear-gradient(to bottom,transparent,#000 18%);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%)}.faq-wrap{padding:24px 22px 55px}}
+@media(max-width:650px){.faq-premium-copy h1{font-size:39px}.faq-premium-photo{min-height:245px}.faq-results{grid-template-columns:1fr}.faq-entry summary{min-height:0}.faq-wrap{padding-left:18px;padding-right:18px}}
