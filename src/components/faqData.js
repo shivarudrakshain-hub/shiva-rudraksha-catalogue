@@ -381,7 +381,7 @@ export const questions = [
     "id": 63,
     "category": "Diet & Lifestyle",
     "question": "Can I eat meat or non-vegetarian food while wearing Rudraksha?",
-    "answer": "In the practice followed by Shiva Rudraksha Inc., eating meat other than beef is not a restriction on wearing Rudraksha. You do not need to remove your beads simply because you eat non-vegetarian food. We restrict beef out of reverence for Nandi, the bull who is Lord Shiva's vehicle. Dietary observances differ across families and spiritual traditions; follow any commitments you have chosen with your teacher."
+    "answer": "In the practice followed by Shiva Rudraksha Inc., eating meat other than beef is not a restriction on wearing Rudraksha. You do not need to remove your beads simply because you eat non-vegetarian food. We restrict beef out of reverence for Nandi, Lord Shiva's sacred vahana. Dietary observances differ across families and spiritual traditions; follow any commitments you have chosen with your teacher."
   },
   {
     "id": 64,
@@ -393,6 +393,18 @@ export const questions = [
     "id": 65,
     "category": "Diet & Lifestyle",
     "question": "Why is beef restricted in your Rudraksha wearing guidance?",
-    "answer": "In the practice followed by Shiva Rudraksha Inc., beef is the dietary restriction we observe while wearing Rudraksha. We follow this out of reverence for Nandi, the bull who is Lord Shiva's vehicle and a symbol of devotion to Shiva. Our guidance does not impose the same restriction on other meat or alcohol. This is our devotional practice; observances vary across traditions."
+    "answer": "In the practice followed by Shiva Rudraksha Inc., beef is the dietary restriction we observe while wearing Rudraksha. We follow this out of reverence for Nandi, Lord Shiva's sacred vahana and a symbol of devotion to Shiva. Our guidance does not impose the same restriction on other meat or alcohol. This is our devotional practice; observances vary across traditions."
+  },
+  {
+    "id": 66,
+    "category": "Diet & Lifestyle",
+    "question": "Can I smoke while wearing Rudraksha?",
+    "answer": "In the practice followed by Shiva Rudraksha Inc., smoking is not a restriction on wearing Rudraksha, and you do not need to remove your beads for that reason. This describes our spiritual wearing guidance. Practices differ across traditions; follow any personal vows or observances you have chosen."
+  },
+  {
+    "id": 67,
+    "category": "Diet & Lifestyle",
+    "question": "Can I wear Rudraksha during sexual intercourse or intimacy?",
+    "answer": "In the practice followed by Shiva Rudraksha Inc., sexual intercourse or intimacy is not a restriction on wearing Rudraksha. If you feel uncomfortable wearing your beads during intimacy, you may remove them and keep them in a clean, dry place until you are ready to wear them again. Follow your comfort and any personal spiritual observances you have chosen."
   }
 ];
