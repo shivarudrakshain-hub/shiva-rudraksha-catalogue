@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { IMAGE_SLOTS } from "../data/catalogue";
+import { productPhotoUrl } from "../data/productPhotoUrl.js";
 
 const REFERENCE_NOTICE = "Product photos and certificates are for reference only, not the exact item supplied. The actual bead, size, appearance and certificate may vary. Contact us for current photos and certification before ordering.";
 
@@ -9,8 +10,8 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
     () =>
       IMAGE_SLOTS.map((slot) => ({
         ...slot,
-        src: product.images?.[slot.key] || "",
-        fallbackSrc: product.fallbackImages?.[slot.key] || "",
+        src: productPhotoUrl(product.images?.[slot.key] || "", slot.key),
+        fallbackSrc: productPhotoUrl(product.fallbackImages?.[slot.key] || "", slot.key),
       })).filter((item) => item.src || item.fallbackSrc),
     [product]
   );
