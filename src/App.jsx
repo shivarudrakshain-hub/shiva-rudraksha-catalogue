@@ -503,10 +503,9 @@ export default function App() {
       )}
 
       {active === "about" && (
-        <main className="page-shell">
-          <div className="container text-page">
-            <div className="container text-page">
-
+        <main className="premium-about-page">
+          <section className="premium-about-hero">
+            <div className="premium-about-intro">
   <div className="page-heading">
     <span>ABOUT SHIVA RUDRAKSHA</span>
     <h1>Every Rudraksha Has a Story. So Does Ours.</h1>
@@ -525,6 +524,11 @@ export default function App() {
     or AI-generated representations.
   </p>
 
+
+            </div>
+            <div className="premium-about-photo" role="img" aria-label="Lord Shiva against the Himalayan mountains" />
+          </section>
+          <section className="premium-about-details container">
   <h3>🌿 Our Mission</h3>
 
   <p>
@@ -615,8 +619,8 @@ export default function App() {
     diagnose, treat, cure, or prevent any medical condition.
   </p>
 
-</div>
-          </div>
+
+          </section>
         </main>
       )}
 
