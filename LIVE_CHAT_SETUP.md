@@ -2,7 +2,8 @@
 
 The FAQ assistant still answers from the existing FAQ library. When it cannot
 answer, visitors can choose **Chat or leave a message** without a WhatsApp
-account. They can also request a person from the assistant footer at any time.
+account. The assistant has no permanent contact shortcut: visitors ask their
+question first and receive a handoff button only when no FAQ answer is found.
 
 ## Connect the owner's inbox before publishing
 
