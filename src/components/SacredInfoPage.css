@@ -1,0 +1,121 @@
+/* Page-scoped theme: live headings over clean artwork, never the old composite banner. */
+.rs-info-page.sacred-info-page {
+  padding: 0 0 72px;
+  color: #45332d;
+  background: linear-gradient(125deg, #fffaf3, #fff5e9 62%, #f8e9df);
+}
+.sacred-info-page .sacred-page-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 530px;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  background: #fff9ef;
+  color: #45332d;
+}
+.sacred-info-page .sacred-page-copy {
+  position: relative;
+  z-index: 1;
+}
+.rs-info-page.sacred-info-page .sacred-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, #fff9ef 0%, #fff9ef 36%, rgba(255,249,239,.94) 47%, rgba(255,249,239,.5) 63%, rgba(255,249,239,.03) 82%),
+    url('/images/contact/shiva-contact-hero.jpg') right center / auto 115% no-repeat;
+}
+.sacred-info-page .sacred-page-copy {
+  width: min(62%, 830px);
+  padding: clamp(34px, 5vw, 78px) 24px clamp(34px, 4vw, 65px) clamp(24px, 6vw, 100px);
+}
+.sacred-info-page .sacred-page-kicker { color: #ad6e21; line-height: 1.7; font-size: 12px; letter-spacing: .2em; font-weight: 700; }
+.sacred-info-page .sacred-page-hero h1 {
+  color: #841c36;
+  font: 400 clamp(37px, 4.8vw, 72px)/1.08 Georgia, serif;
+  margin: 20px 0;
+  text-wrap: balance;
+}
+.sacred-info-page .sacred-page-hero h1 em { color: #b5791e; font-style: normal; }
+.sacred-info-page .sacred-page-copy > p {
+  color: #645951;
+  font: 400 clamp(16px, 1.45vw, 21px)/1.6 Arial, sans-serif;
+  max-width: 600px;
+  margin: 0;
+}
+.sacred-info-page .sacred-page-mantra {
+  display: grid;
+  gap: 7px;
+  padding: 18px 22px;
+  max-width: 100%;
+  margin-top: 28px;
+  border: 1px solid #e4cba8;
+  background: rgba(255,253,249,.92);
+  border-radius: 16px;
+}
+.sacred-info-page .sacred-page-mantra strong { color: #841c36; font-size: 27px; }
+.sacred-info-page .sacred-page-mantra span { color: #645951; font-size: 13px; line-height: 1.6; }
+.sacred-info-page .rs-info-container { padding-top: 32px; }
+.sacred-info-page .rs-intro { max-width: none; }
+.sacred-info-page .rs-info-section { padding: 24px 0; margin-bottom: 28px; }
+.sacred-info-page .rs-section-title h2,
+.sacred-info-page .rs-final-note h2 { color: #81233b; font-weight: 400; }
+.sacred-info-page .rs-section-title > span,
+.sacred-info-page .rs-section-title small,
+.sacred-info-page .rs-final-note small { color: #a8752b; }
+.sacred-info-page .shiva-premium-intro-copy p,
+.sacred-info-page .rs-shiva-card p,
+.sacred-info-page .rs-shiva-story-grid p { color: #5b4b40; line-height: 1.75; }
+.sacred-info-page .shiva-purana-highlight,
+.sacred-info-page .shiva-purana-story-grid article,
+.sacred-info-page .rs-shiva-card,
+.sacred-info-page .rs-shiva-story-grid article,
+.sacred-info-page .rs-maintenance-card,
+.sacred-info-page .rs-guidance-card,
+.sacred-info-page .rs-callout,
+.sacred-info-page .rs-disclaimer,
+.sacred-info-page .rs-final-note {
+  border: 1px solid #e8d5bd;
+  border-radius: 16px;
+  background: rgba(255,253,248,.96);
+  box-shadow: 0 10px 28px rgba(75,37,24,.06);
+}
+.sacred-info-page .rs-shiva-card h3,
+.sacred-info-page .rs-shiva-story-grid h3 { color: #81233b; font-family: Georgia, serif; }
+.sacred-info-page .rs-maintenance-card h2,
+.sacred-info-page .rs-guidance-card h3,
+.sacred-info-page .rs-timeline-copy h3 { color: #81233b; font-family: Georgia, serif; font-weight: 400; }
+.sacred-info-page .rs-maintenance-icon { background: #f5e7c8; color: #831c36; }
+.sacred-info-page .rs-maintenance-number { color: #a8752b; }
+.sacred-info-page .rs-callout { background: #f6e9d8; }
+.sacred-info-page .rs-timeline-image-wrap { border-color: #e8d5bd; border-radius: 16px; box-shadow: 0 10px 28px rgba(75,37,24,.06); }
+.sacred-info-page .rs-shiva-card > div:first-child { background: #f5e7c8; color: #831c36; }
+.sacred-info-page .rs-final-note { background: #f6e9d8; margin-bottom: 0; }
+@media (max-width: 900px) {
+  .sacred-info-page .sacred-page-hero { min-height: 0; }
+  .rs-info-page.sacred-info-page .sacred-page-hero::before {
+    background: linear-gradient(90deg, rgba(255,249,239,.97), rgba(255,249,239,.88) 48%, rgba(255,249,239,.5)),
+      url('/images/contact/shiva-contact-hero.jpg') right center / cover no-repeat;
+  }
+  .sacred-info-page .sacred-page-copy { width: min(85%, 720px); padding: 40px 28px; }
+  .sacred-info-page .shiva-premium-intro { grid-template-columns: minmax(0, 1fr); }
+  .sacred-info-page .shiva-purana-story-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .rs-info-page.sacred-info-page { padding-bottom: 44px; }
+  .rs-info-page.sacred-info-page .sacred-page-hero::before {
+    background: linear-gradient(90deg, rgba(255,249,239,.94), rgba(255,249,239,.82)),
+      url('/images/contact/shiva-contact-hero.jpg') center top / cover no-repeat;
+  }
+  .sacred-info-page .sacred-page-copy { width: 100%; padding: 34px 22px 44px; }
+  .sacred-info-page .sacred-page-hero h1 { font-size: clamp(35px, 9vw, 49px); }
+  .sacred-info-page .sacred-page-mantra { width: 100%; padding: 16px; }
+  .sacred-info-page .rs-info-container { padding-top: 18px; }
+  .sacred-info-page .rs-info-section { margin-bottom: 20px; }
+  .sacred-info-page .rs-final-note { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+}

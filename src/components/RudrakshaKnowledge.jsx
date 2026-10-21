@@ -1,4 +1,5 @@
 import { MoonStar } from "lucide-react";
+import "./SacredInfoPage.css";
 
 const guidance = [
   ["Funerals", "Traditionally, Rudraksha is removed before attending funerals or cremation ceremonies."],
@@ -27,14 +28,15 @@ const steps = [
 
 export default function RudrakshaKnowledge() {
   return (
-    <main className="rs-info-page">
-      <div className="container rs-info-container">
-      <section className="rs-info-hero">
-        <span>RUDRAKSHA KNOWLEDGE</span>
-        <h1>Basic Energizing Method</h1>
+    <main className="rs-info-page sacred-info-page energizing-page">
+      <section className="sacred-page-hero" aria-labelledby="energizing-title">
+        <div className="sacred-page-copy">
+        <span className="sacred-page-kicker">RUDRAKSHA KNOWLEDGE</span>
+        <h1 id="energizing-title">Basic <em>Energizing Method</em></h1>
         <p>Traditional guidance for preparing, wearing and respecting your Rudraksha.</p>
+        </div>
       </section>
-
+      <div className="container rs-info-container">
       <section className="rs-info-section rs-intro">
         <div className="rs-section-title"><span>01</span><div><small>TRADITIONAL GUIDANCE</small><h2>Before You Begin</h2></div></div>
         <p>Rudraksha has been revered for centuries in Hindu spiritual traditions and is especially associated with Lord Shiva. References to Rudraksha are found across Shaiva and Puranic traditions, including the Shiva Purana and Devi Bhagavata Purana.</p>

@@ -1,5 +1,5 @@
 import { Flame, Eye, Mountain, Waves, Moon, Heart, Sparkles, CircleDot } from "lucide-react";
-import "./LordShiva.css";
+import "./SacredInfoPage.css";
 
 const aspects = [
   [<Sparkles />, "Creation & Transformation", "Shiva’s role as the ‘Destroyer’ represents transformation rather than malevolence—the ending of one state so that renewal and new beginnings can emerge."],
@@ -14,13 +14,13 @@ const aspects = [
 
 export default function LordShiva() {
   return (
-    <main className="rs-info-page lord-shiva-page">
-      <section className="shiva-premium-hero" aria-labelledby="lord-shiva-title">
-        <div className="shiva-premium-hero-copy">
-          <span className="shiva-premium-kicker">🔱 THE ADIYOGI · MAHADEVA</span>
+    <main className="rs-info-page sacred-info-page lord-shiva-page">
+      <section className="sacred-page-hero" aria-labelledby="lord-shiva-title">
+        <div className="sacred-page-copy">
+          <span className="sacred-page-kicker">🔱 THE ADIYOGI · MAHADEVA</span>
           <h1 id="lord-shiva-title">Who Is <em>Lord Shiva?</em></h1>
           <p>Discover the symbolism, sacred stories and spiritual significance of Mahadeva through Hindu tradition and the Shiva Purana.</p>
-          <div className="shiva-premium-mantra"><strong>ॐ नमः शिवाय</strong><span>Om Namah Shivaya · A traditional mantra of devotion to Shiva</span></div>
+          <div className="sacred-page-mantra"><strong>ॐ नमः शिवाय</strong><span>Om Namah Shivaya · A traditional mantra of devotion to Shiva</span></div>
         </div>
       </section>
       <div className="container rs-info-container">

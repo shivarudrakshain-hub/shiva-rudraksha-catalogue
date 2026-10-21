@@ -17,7 +17,6 @@ import Logo from "./components/Logo";
 import ProductCard from "./components/ProductCard";
 import PromotionalBanner from "./components/PromotionalBanner";
 import HeroCarousel from "./components/HeroCarousel";
-import CurrencySwitcher from "./components/CurrencySwitcher";
 import Footer from "./components/Footer";
 
 // Ultra-fast Code Splitting: Lazy-load non-initial route panels on demand
@@ -381,8 +380,6 @@ export default function App() {
           </nav>
 
           <div className="nav-actions">
-            <CurrencySwitcher />
-
             <button
               type="button"
               className="header-cart-btn"

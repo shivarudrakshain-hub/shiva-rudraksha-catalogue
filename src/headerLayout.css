@@ -1,0 +1,45 @@
+/* Balance the logo, navigation and actions with the currency selector hidden. */
+@media (min-width: 1100px) {
+  .luxury-header .luxury-nav.container {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    width: min(1440px, calc(100% - 48px));
+    gap: 20px;
+    min-height: 82px;
+  }
+  .luxury-header .brand-logo { max-width: none; min-width: 0; }
+  .luxury-header .luxury-nav nav { justify-content: center; margin: 0; gap: 4px; }
+  .luxury-header .luxury-nav nav > button,
+  .luxury-header .luxury-nav .shop-menu > button {
+    min-height: 44px;
+    padding: 10px 9px;
+    font-size: 13px;
+    line-height: 1.4;
+    justify-content: center;
+  }
+  .luxury-header .nav-actions { gap: 8px; margin: 0; }
+  .luxury-header .header-cart-btn,
+  .luxury-header .header-account-btn { min-height: 44px; }
+  .luxury-header .knowledge-dropdown { top: 100%; }
+}
+@media (min-width: 901px) and (max-width: 1099px) {
+  .luxury-header .luxury-nav.container { gap: 10px; }
+  .luxury-header .luxury-nav nav { margin-left: auto; gap: 0; }
+  .luxury-header .luxury-nav nav > button,
+  .luxury-header .luxury-nav .shop-menu > button { min-height: 44px; font-size: 12px; padding: 10px 6px; }
+}
+@media (max-width: 900px) {
+  .luxury-header .luxury-nav nav { gap: 4px; }
+  .luxury-header .luxury-nav nav > button,
+  .luxury-header .luxury-nav .shop-menu > button,
+  .luxury-header .luxury-nav .mobile-account-link {
+    padding: 12px 14px;
+    min-height: 46px;
+    line-height: 1.4;
+    font-size: 15px;
+  }
+  .luxury-header .luxury-nav .shop-menu > button { justify-content: space-between; }
+  .luxury-header .knowledge-dropdown { margin: 4px 0; padding: 6px; border-radius: 12px; }
+  .luxury-header .knowledge-dropdown button { padding: 12px 14px; }
+}
