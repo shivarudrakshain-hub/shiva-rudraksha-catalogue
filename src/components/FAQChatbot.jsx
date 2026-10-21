@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import "./FAQChatbot.css";
 
-import { findAnswer } from "./faqAnswers.js";
+import { getChatReply } from "./faqAnswers.js";
 import FAQAnswer from "./FAQAnswer";
 import { openLiveChat } from "./faqLiveChat";
 
@@ -48,8 +48,7 @@ export default function FAQChatbot() {
     event.preventDefault();
     const question=input.trim();
     if(!question) return;
-    const match=findAnswer(question);
-    setMessages(prev=>[...prev,{role:"user",text:question},match?{role:"bot",text:match.answer,source:match.question}:{role:"bot",text:"I couldn't find a confident answer in our FAQs. You can chat with our team here. If we're offline, leave your name, email and message so we can reply later.",unanswered:question}]);
+    setMessages(prev=>[...prev,{role:"user",text:question},getChatReply(question)]);
     setInput("");
   };
   return <div className="faq-chat-widget" hidden={liveChatOpen}>
@@ -59,7 +58,7 @@ export default function FAQChatbot() {
         {messages.map((message,index)=><div key={index} className={`faq-chat-message ${message.role}`}>
           {message.source && <small>FAQ: {message.source}</small>}
           <FAQAnswer text={message.text} />
-          {message.unanswered && <button className="faq-live-chat-button" type="button" disabled={connecting} onClick={()=>startLiveChat(message.unanswered)}>{connecting ? "Connecting…" : "Chat or leave a message"}</button>}
+          {message.unanswered && <button className="faq-live-chat-button" type="button" disabled={connecting} onClick={()=>startLiveChat(message.unanswered)}>{connecting ? "Connecting…" : message.agentRequested ? "Connect to an agent" : "Chat or leave a message"}</button>}
         </div>)}
         <div ref={endRef}/>
       </div>

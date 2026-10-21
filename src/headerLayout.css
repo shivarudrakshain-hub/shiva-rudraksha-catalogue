@@ -1,4 +1,28 @@
 /* Balance the logo, navigation and actions with the currency selector hidden. */
+.luxury-header .header-cart-btn,
+.luxury-header .header-account-btn {
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #dfcdb4;
+  border-radius: 999px;
+  background: #fffaf3;
+  color: #781d34;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.luxury-header .header-cart-btn svg,
+.luxury-header .header-account-btn svg { width: 19px; height: 19px; flex-shrink: 0; }
+.luxury-header .header-cart-btn:hover,
+.luxury-header .header-account-btn:hover { background: #f4ead9; border-color: #b27a28; transform: none; box-shadow: none; }
+@media (max-width: 1180px) {
+  .luxury-header .header-cart-btn,
+  .luxury-header .header-account-btn { padding: 10px; }
+}
 @media (min-width: 1100px) {
   .luxury-header .luxury-nav.container {
     display: grid;
