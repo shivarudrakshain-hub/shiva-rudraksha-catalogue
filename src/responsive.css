@@ -548,3 +548,16 @@
   }
   .recommendation-page .birth-chart-layout{position:relative;z-index:1}
 }
+
+/* Birth chart: inspired by home slide 3's Himalayan/Vedic palette, not its baked-in artwork. */
+.recommendation-page .birth-chart-section{background:radial-gradient(ellipse at 78% 22%,#e5cbb3 0%,transparent 46%),linear-gradient(115deg,#f6e8dc 0%,#f8e8d5 55%,#e4c6aa 100%)!important;position:relative;isolation:isolate}
+.recommendation-page .birth-chart-section::before{background-image:none!important;content:none!important;display:none!important}
+.recommendation-page .birth-chart-section::after{content:"";position:absolute;inset:auto 0 0;height:45%;pointer-events:none;z-index:-1;opacity:.22;background:linear-gradient(135deg,transparent 48%,#997b72 49% 51%,transparent 52%) 0 100%/210px 190px repeat-x,linear-gradient(145deg,transparent 48%,#8e7e8c 49% 51%,transparent 52%) 30px 100%/300px 210px repeat-x;mask-image:linear-gradient(to bottom,transparent,#000)}
+.recommendation-page .birth-chart-vedic-art{display:none!important}
+.recommendation-page .birth-chart-intro h2{color:#861d38}
+.recommendation-page .birth-chart-form{background:rgba(255,253,249,.97);border:1px solid #e3cdb7;box-shadow:0 16px 50px #5030291a}
+.recommendation-page .birth-chart-clock-input{display:flex;align-items:center;flex:1;min-width:0;border:1px solid #dcc7b8;border-radius:10px;background:#fff;overflow:hidden}
+.recommendation-page .birth-chart-clock-input input{width:42px!important;min-width:0!important;flex:1!important;text-align:center;border:0!important;box-shadow:none!important;padding:10px 3px!important;background:transparent!important;font-variant-numeric:tabular-nums}
+.recommendation-page .birth-chart-clock-input span{font-weight:700;color:#8b1836}
+.recommendation-page .birth-chart-time-controls{flex-wrap:nowrap!important}
+@media(max-width:500px){.recommendation-page .birth-chart-clock-input{flex-basis:auto!important}.recommendation-page .birth-chart-period{height:auto}.recommendation-page .birth-chart-period button{padding:0 9px}}
