@@ -1,0 +1,21 @@
+name: FAQ checks
+on:
+  pull_request:
+    paths:
+      - 'src/components/faq*'
+      - 'src/components/FAQ*'
+      - 'tests/**'
+      - 'package*.json'
+      - '.github/workflows/faq-checks.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
