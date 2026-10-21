@@ -426,11 +426,14 @@ export default function App() {
       {active === "guide" && (
         <main className="page-shell guide-page">
           <div className="container">
-            <div className="guide-luxury-hero">
-              <span className="guide-hero-eyebrow">ॐ · SHIVA RUDRAKSHA INC. · SACRED KNOWLEDGE</span>
-              <h1>Discover the 1 to 21 Mukhi Rudraksha Traditions</h1>
-              <p>Explore each sacred bead's traditional deity, ruling planet, mantra, spiritual associations and wearing guidance.</p>
-              <div className="guide-hero-features"><span>✦ 1–21 Mukhi</span><span>✦ Traditional wisdom</span><span>✦ Special formations</span></div>
+            <div className="guide-luxury-hero guide-contact-style-hero">
+              <div className="guide-contact-style-copy">
+                <span className="guide-hero-eyebrow">ॐ · SHIVA RUDRAKSHA INC. · SACRED KNOWLEDGE</span>
+                <h1>Discover the <em>1 to 21 Mukhi</em> Rudraksha Traditions</h1>
+                <p>Explore each sacred bead's traditional deity, ruling planet, mantra, spiritual associations and wearing guidance.</p>
+                <div className="guide-hero-features"><span>✦ 1–21 Mukhi</span><span>✦ Traditional wisdom</span><span>✦ Special formations</span></div>
+              </div>
+              <div className="guide-contact-style-photo" role="img" aria-label="Lord Shiva in the Himalayas" />
             </div>
             <div className="guide-discovery">
               <div className="guide-discovery-heading"><div><span>EXPLORE BY MUKHI</span><h2>Find your Rudraksha</h2></div><label className="guide-search-box"><Search size={19} /><input type="search" placeholder="Search deity, planet, mantra or Mukhi…" aria-label="Search Rudraksha guide" value={guideSearch} onChange={(event) => setGuideSearch(event.target.value)} />{guideSearch && <button type="button" aria-label="Clear guide search" onClick={() => setGuideSearch("")}><X size={16}/></button>}</label></div>
