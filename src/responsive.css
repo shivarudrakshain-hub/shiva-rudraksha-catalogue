@@ -383,3 +383,26 @@
     background-position: 98% 47%;
   }
 }
+
+/* Dedicated, clean Shiva photo — no embedded Mukhi Guide UI. */
+.elegant-contact-page .elegant-contact-photo {
+  background-image: url('/images/contact/shiva-contact-hero.jpg');
+  background-size: cover;
+  background-position: 50% center;
+  background-color: #e9d2b3;
+  min-height: 610px;
+  mask-image: linear-gradient(to right, transparent 0%, #000 28%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 28%);
+}
+@media (max-width: 950px) {
+  .elegant-contact-page .elegant-contact-photo {
+    position: absolute;
+    inset: 0;
+    min-height: 100%;
+    opacity: .17;
+    background-size: cover;
+    background-position: 65% center;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
