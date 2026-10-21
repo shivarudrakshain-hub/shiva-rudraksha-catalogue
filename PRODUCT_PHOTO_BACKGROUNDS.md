@@ -1,32 +1,33 @@
-# Product photo presentation
+# Golden-beige catalogue photo backgrounds
 
-The 264 uploaded bead/product-view files use the approved softly blurred
-golden-beige backdrop with moderate framing. Their foregrounds come from the
-original photographs; only the empty backdrop was generated with the built-in
-image generation tool. Original foreground RGB values were checked before
-scaling/compositing and AVIF encoding. Existing paths and descriptions remain.
+264 bead/product-view files use the approved softly blurred golden-beige backdrop
+with moderate framing. The foregrounds come from the original photographs; only
+the empty backdrop was generated with the built-in image generation tool.
 
-Certificate and X-ray slots retain their FULL ORIGINAL photographs. At the
-owner's request, the earlier document cutouts have been removed. All 148 files
-in these slots match the original input SHA-256 hashes, including the 129 files
-restored from the local original-documents ZIP. Nothing in these photographs is
-cropped, masked, redrawn, resized on disk or re-encoded. The original cloth,
-protective sleeves, document content, report numbers and QR codes remain.
+129 uploaded certificate/X-ray-slot files (97 distinct photos) use clean,
+axis-aligned RECTANGULAR crops of the original photographs, centered on the same
+golden backdrop with comfortable margins. No irregular masks or shaped cutouts
+are used for documents. The crop contains the document and protective sleeve;
+small portions of the original cloth can remain inside the rectangle, especially
+when a sleeve is tilted. Text, report numbers, QR codes and X-ray content are
+photographed originals, never generated. Crops are scaled and AVIF encoded.
+Some document slots contain product photos; those contents are retained with the
+same rectangular presentation. Empty placeholders remain unchanged at 19 document
+paths and 36 product-view paths. No missing photos are invented.
 
-A cream CSS border frames document-slot photos in compact galleries, detail
-views, thumbnails and fullscreen. Object-fit contain preserves the complete
-photo at every size. URL version tags refresh restored document photos using
-original-v2, while bead photos retain golden-v1.
+Existing asset paths, descriptions and variants remain unchanged. Gallery and
+fallback URL version tags use rectangle-v3 for documents and golden-v1 for bead
+views. Earlier irregular document masks and the full-photo cream-border revision
+are superseded by this rectangular crop treatment at the owner's request.
 
-Missing-photo placeholders remain unchanged. Original bead photographs remain
-recoverable from the pre-PR Git revision and local ZIP backup. Local intermediate
-outputs in background-preview/ are not published.
+Original photographs remain recoverable from Git and local ZIP backups. Input
+hashes were checked before replacement. Crop coordinates and local preview sheets
+are in background-preview/documents/, outside the published assets.
 
-Backdrop prompt: an empty landscape 4:3 catalogue backdrop matching the owner's
-reference: soft warm golden-beige tabletop in the lower third and a defocused
-golden-beige studio background above, gentle light from upper left, no objects,
-beads, text, borders, UI, or cast shadows. Real photographed products are
-composited over that backdrop with a soft contact shadow.
+Backdrop prompt: empty landscape 4:3 catalogue backdrop; soft warm golden-beige
+tabletop in the lower third and a defocused golden-beige studio background above,
+gentle light from upper left, no objects, beads, text, borders, UI or cast shadows.
 
-Validation: 22 tests and production build; document input hash comparison; local
-certificate/X-ray gallery and fullscreen visual checks. No merge or deployment.
+Validation: 22 tests and production build pass; all crop preview sheets reviewed;
+12 Mukhi Super Collector X-ray checked in local gallery/fullscreen. No merge or
+deployment performed.

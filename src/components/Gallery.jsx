@@ -25,7 +25,6 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
   }, [resetKey]);
 
   const active = images[index] || images[0];
-  const documentClass = (item) => ['certificate', 'xray'].includes(item.key) ? 'document-photo' : undefined;
 
   const useFallback = (event, fallbackSrc) => {
     if (!fallbackSrc || event.currentTarget.dataset.fallbackApplied === "true") return;
@@ -55,7 +54,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
       <div className="card-gallery" onTouchStart={touchStart} onTouchEnd={touchEnd}>
         <button type="button" className="gallery-image-open" onClick={onOpen} aria-label={`View ${product.name}`}>
           <img
-            className={documentClass(active)} src={active.src || active.fallbackSrc}
+            src={active.src || active.fallbackSrc}
             onError={(event) => useFallback(event, active.fallbackSrc)}
             alt={`${product.name} ${active.label}`}
             loading="lazy"
@@ -106,7 +105,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           onTouchEnd={touchEnd}
         >
           <img
-            className={documentClass(active)} src={active.src || active.fallbackSrc}
+            src={active.src || active.fallbackSrc}
             key={active.src || active.fallbackSrc}
             onError={(event) => useFallback(event, active.fallbackSrc)}
             alt={`${product.name} ${active.label}`}
@@ -142,7 +141,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
               onClick={() => setIndex(i)}
             >
               <img
-                className={documentClass(item)} src={item.src || item.fallbackSrc}
+                src={item.src || item.fallbackSrc}
                 onError={(event) => useFallback(event, item.fallbackSrc)}
                 alt={item.label}
                 loading="lazy"
@@ -165,7 +164,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
             <ChevronLeft />
           </button>
           <figure>
-            <img className={documentClass(active)} src={active.src || active.fallbackSrc} onError={(event) => useFallback(event, active.fallbackSrc)} alt={`${product.name} ${active.label}`} />
+            <img src={active.src || active.fallbackSrc} onError={(event) => useFallback(event, active.fallbackSrc)} alt={`${product.name} ${active.label}`} />
             <figcaption>
               {product.name} — {active.label} ({index + 1}/{images.length})
               <p className="fullscreen-reference-note">{REFERENCE_NOTICE}</p>
