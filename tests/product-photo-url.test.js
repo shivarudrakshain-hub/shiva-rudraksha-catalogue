@@ -10,6 +10,14 @@ test('replaced bead photos get one stable version tag across paths and queries',
     if (src.includes('size=')) { assert.equal(parsed.searchParams.get('size'), 'large'); assert.equal(parsed.hash, '#photo'); }
   }
 });
-test('documents, missing images, and unrelated uploads remain unchanged', () => {
-  for (const [src, slot] of [['images/products/bead/certificate.avif','certificate'],['images/products/bead/xray.avif','xray'],['images/products/bead/certificate.avif','front'],['/uploads/bead.jpg','front'],['','top']]) assert.equal(productPhotoUrl(src,slot),src);
+test('certificate and X-ray photos refresh in galleries and fallbacks', () => {
+  for (const slot of ['certificate', 'xray']) {
+    const src = `/images/products/bead/${slot}.avif`;
+    assert.equal(productPhotoUrl(src, slot), `${src}?product_bg=golden-v1`);
+    assert.equal(productPhotoUrl(productPhotoUrl(src, slot), slot), productPhotoUrl(src, slot));
+  }
+});
+
+test('missing images, unknown slots, and unrelated uploads remain unchanged', () => {
+  for (const [src, slot] of [['/uploads/bead.jpg','front'],['','top'],['/images/products/bead/front.avif','other']]) assert.equal(productPhotoUrl(src,slot),src);
 });

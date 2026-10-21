@@ -12,7 +12,10 @@ or invented grooves were applied. Original reflections, surface color, hands and
 display stands remain where photographed.
 
 Existing image paths are retained so the catalogue, variant galleries and Mukhi
-guide continue using the same files. Certificates and X-ray assets are excluded.
+guide continue using the same files. Certificate and X-ray photographs also use
+the matching backdrop. Their original printed content, report numbers, QR codes,
+and X-ray imagery are retained from the source photographs, never generated.
+Document views use larger framing for readability and high-quality AVIF encoding.
 Empty cloth placeholders are excluded; no missing product photos are invented.
 
 Original product photos remain recoverable from the preceding Git revision.
@@ -28,4 +31,14 @@ composited over that backdrop with a soft contact shadow.
 Review product edges, existing props and small natural openings at full size.
 No deployment or merge is authorized by this asset preparation.
 
-Applied scope: 198 distinct compositions replace 264 photo files. All 148 certificate/X-ray files were hash-checked unchanged. The same blank placeholder at 36 paths remains unchanged. Verification: 21 tests pass, production build passes, and the product detail gallery was visually checked locally.
+Initial bead-photo scope: 198 distinct compositions replace 264 photo files.
+The same blank product placeholder at 36 paths remains unchanged.
+The owner subsequently requested matching backgrounds for certificate and X-ray
+photos in every uploaded variant. These use the same original-foreground checks,
+and their originals have a separate local ZIP backup in
+`background-preview/documents/`. Empty document placeholders remain unchanged.
+The image-version helper covers all six gallery slots and fallback paths.
+Verification: 22 tests pass, production build passes, and local gallery views and
+the full image contact sheets are visually reviewed.
+
+Document-slot scope: 97 distinct compositions replace 129 uploaded certificate/X-ray-slot files. The blank document placeholder reused at 19 paths is unchanged. Combined PR scope: 393 photo files, including the original 264 bead/product views. The 12 Mukhi Super Collector X-ray was checked in the local gallery and fullscreen view.
