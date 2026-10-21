@@ -406,5 +406,11 @@ export const questions = [
     "category": "Diet & Lifestyle",
     "question": "Can I wear Rudraksha during sexual intercourse or intimacy?",
     "answer": "In the practice followed by Shiva Rudraksha Inc., sexual intercourse or intimacy is not a restriction on wearing Rudraksha. If you feel uncomfortable wearing your beads during intimacy, you may remove them and keep them in a clean, dry place until you are ready to wear them again. Follow your comfort and any personal spiritual observances you have chosen."
+  },
+  {
+    "id": 68,
+    "category": "Spiritual Guidance",
+    "question": "How can I energize or consecrate my Rudraksha at home before wearing it?",
+    "answer": "For a simple devotional energization practice, Shiva Rudraksha Inc. suggests these steps: 1. Bathe and wear clean clothes; choose a quiet time when you can pray without rushing. 2. Gently wipe the Rudraksha with a clean, soft cloth and place it on a clean cloth in your prayer space, near an image or symbol of Lord Shiva if you wish. Avoid prolonged soaking, harsh chemicals, or coating the bead and fittings with substances that are difficult to remove. 3. Offer a sincere prayer to Lord Shiva and set your intention for devotion, meditation, or mindful living. Flowers may be offered beside the bead. 4. Hold the Rudraksha respectfully and chant Om Namah Shivaya 108 times, or follow the mantra and count given by your spiritual teacher. 5. Conclude with gratitude and wear the Rudraksha comfortably on a secure thread or suitable fitting. This is an optional devotional practice; rituals differ by tradition, and energization does not guarantee a particular outcome."
   }
 ];
