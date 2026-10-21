@@ -8,6 +8,8 @@ import {
   UserRound,
 } from "lucide-react";
 
+import "./BirthChartRecommendation.css";
+
 const initialForm = {
   fullName: "",
   dateOfBirth: "",
@@ -88,33 +90,38 @@ export default function BirthChartRecommendation() {
   };
 
   return (
+    <>
+    <picture className="birth-chart-banner">
+      <source media="(max-width:760px)" srcSet="/images/hero/birth-chart-banner-v2-mobile.avif" />
+      <img src="/images/hero/birth-chart-wide.avif" alt="Birth Chart Recommendation — Rudraksha guidance based on Vedic astrology, with a sacred chart, lamps and the Himalayas" fetchPriority="high" />
+    </picture>
     <section id="birth-chart" className="birth-chart-section">
       <div className="container birth-chart-layout">
         <div className="birth-chart-intro">
           <span className="birth-chart-eyebrow">
             <Sparkles />
-            VEDIC ASTROLOGY · PERSONALIZED GUIDANCE
+            BIRTH CHART · PERSONALIZED GUIDANCE
           </span>
 
-          <h2>Birth Chart <em>Rudraksha Recommendation</em></h2>
+          <h1>Your birth chart.<br /><em>Your Rudraksha.</em></h1>
 
           <p>
             Share your birth details for a personalized Rudraksha recommendation informed by Vedic astrology traditions. Our team will review your request and reply via WhatsApp.
           </p>
 
           <div className="birth-chart-points">
-            <span><UserRound /> Personalized review</span>
-            <span><MessageCircle /> Direct WhatsApp request</span>
-            <span><Sparkles /> Suitable Mukhi recommendation</span>
+            <span><UserRound aria-hidden="true" /> A personal review of your birth details</span>
+            <span><MessageCircle aria-hidden="true" /> Guidance directly from our team</span>
+            <span><Sparkles aria-hidden="true" /> Help choosing a suitable Mukhi</span>
           </div>
 
         </div>
 
-        <form className="birth-chart-form" onSubmit={submitRequest}>
+        <form className="birth-chart-form" onSubmit={submitRequest} aria-label="Birth chart recommendation request">
           <div className="birth-chart-form-heading">
             <span>REQUEST A RECOMMENDATION</span>
-            <h3>Enter your birth details</h3>
-            <p>All fields are required.</p>
+            <h2>Let’s find your Rudraksha</h2>
+            <p>Enter your details below. Our team will reply on WhatsApp.</p>
           </div>
 
           <label>
@@ -185,11 +192,12 @@ export default function BirthChartRecommendation() {
           </button>
 
           <p className="birth-chart-note">
-            Your information is not stored by this website. It is placed
+            Review your details in WhatsApp before sending. Your information is not stored by this website; it is placed
             directly into the WhatsApp message you choose to send.
           </p>
         </form>
       </div>
     </section>
+    </>
   );
 }
