@@ -449,3 +449,71 @@
 .recommendation-page .birth-chart-period button.selected{background:#970c36;color:#fff}
 @media(max-width:900px){.recommendation-page .birth-chart-layout{grid-template-columns:1fr}.recommendation-page .birth-chart-vedic-art{max-width:100%;height:220px}.recommendation-page .birth-chart-section{padding:35px 0}}
 @media(max-width:500px){.recommendation-page .birth-chart-time-controls{flex-wrap:wrap}.recommendation-page .birth-chart-time-controls input{flex-basis:100%}.recommendation-page .birth-chart-period{height:43px}.recommendation-page .birth-chart-period button{padding:0 20px}}
+
+/* Unified Shiva Rudraksha visual language across informational pages. */
+.premium-about-page,.faq-page,.recommendation-page,.rs-info-page,.guide-page,.elegant-contact-page{
+  --sri-wine:#831c36;--sri-gold:#b27a28;--sri-cream:#fff8ee;
+}
+.premium-about-page .premium-about-details .about-card,
+.faq-page .faq-entry,
+.recommendation-page .birth-chart-form{
+  background:rgba(255,253,248,.96);
+  border:1px solid #e8d5bd;
+  box-shadow:0 10px 28px rgba(75,37,24,.08);
+}
+@media(max-width:900px){
+  /* Same soft Shiva image treatment as Contact; artwork sits BEHIND text,
+     not as a separate block consuming screen height. */
+  .premium-about-page .premium-about-hero,
+  .faq-page .faq-premium-hero{
+    position:relative;display:block;isolation:isolate;overflow:hidden;
+    background:linear-gradient(125deg,#fff9ed,#f7e6d4);
+  }
+  .premium-about-page .premium-about-hero::before,
+  .faq-page .faq-premium-hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:linear-gradient(90deg,rgba(255,249,239,.79),rgba(255,249,239,.67)),
+      url('/images/Contact/shiva-contact-hero.jpg') center 35%/cover no-repeat;
+  }
+  .premium-about-page .premium-about-photo,
+  .faq-page .faq-premium-photo{display:none}
+  .premium-about-page .premium-about-intro,
+  .faq-page .faq-premium-copy{position:relative;z-index:1;padding:clamp(32px,7vw,55px) clamp(20px,5vw,36px) 50px}
+  .premium-about-page .premium-about-intro h1,
+  .faq-page .faq-premium-copy h1{color:#811c37;text-wrap:balance}
+  .premium-about-page .premium-about-intro p,
+  .faq-page .faq-premium-copy>p{color:#45332d}
+  .faq-page .faq-premium-copy .faq-search{background:rgba(255,255,255,.95)}
+  /* Vedic page gets a birth-chart illustration instead of reusing Shiva. */
+  .recommendation-page .birth-chart-section{
+    position:relative;isolation:isolate;
+    background:linear-gradient(125deg,#fff9ee,#f8e7d5);
+  }
+  .recommendation-page .birth-chart-section::before{
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:linear-gradient(90deg,rgba(255,249,239,.88),rgba(255,249,239,.74)),
+      url('/images/vedic-birth-chart.svg') center top/cover no-repeat;
+    opacity:.85;
+  }
+  .recommendation-page .birth-chart-layout{position:relative;z-index:1}
+  .recommendation-page .birth-chart-vedic-art{display:none}
+  .recommendation-page .birth-chart-form{background:rgba(255,253,249,.97)}
+  /* Lord Shiva article follows the same overlaid-image mobile hero. */
+  .rs-info-page .shiva-premium-hero{position:relative;display:block;isolation:isolate;overflow:hidden;background:#fff8ed}
+  .rs-info-page .shiva-premium-hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:linear-gradient(90deg,rgba(255,249,238,.90),rgba(255,249,238,.74)),
+      url('/images/Contact/shiva-contact-hero.jpg') center 35%/cover no-repeat;
+  }
+  .rs-info-page .shiva-premium-hero-photo,
+  .rs-info-page .shiva-premium-hero-photo::before{display:none!important}
+  .rs-info-page .shiva-premium-hero-copy{position:relative;z-index:1;padding:clamp(30px,6vw,52px)}
+}
+@media(max-width:600px){
+  .premium-about-page .premium-about-intro,
+  .faq-page .faq-premium-copy{padding:34px 22px 44px}
+  .premium-about-page .premium-about-intro h1,
+  .faq-page .faq-premium-copy h1{font-size:clamp(35px,9vw,49px)}
+  .premium-about-page .premium-about-details .about-card,
+  .faq-page .faq-entry{border-radius:16px}
+}
