@@ -625,16 +625,27 @@ export default function App() {
       )}
 
       {active === "contact" && (
-        <main className="page-shell">
-          <div className="container contact-page">
-            <div className="page-heading"><span>CONTACT</span><h1>We reply personally.</h1><p>Message us and you will hear back from a person, not an auto-responder.</p></div>
-            <div className="contact-grid">
-              <a href="https://wa.me/14372671257"><MessageCircle /><span><small>WHATSAPP (FASTEST)</small><strong>Chat with us</strong></span></a>
-              <a href="tel:+14372671257"><span className="contact-icon">☎</span><span><small>CALL</small><strong>+1 437-267-1257</strong></span></a>
-              <a href="mailto:shivarudrakshain@gmail.com"><span className="contact-icon">✉</span><span><small>EMAIL</small><strong>shivarudrakshain@gmail.com</strong></span></a>
-              <div><span className="contact-icon">⌖</span><span><small>ADDRESS</small><strong>Scarborough, Ontario, Canada</strong></span></div>
+        <main className="elegant-contact-page">
+          <section className="elegant-contact-hero">
+            <div className="elegant-contact-copy">
+              <span className="elegant-contact-kicker">ॐ &nbsp; GET IN TOUCH</span>
+              <h1>We reply <em>personally.</em></h1>
+              <p>Message us and you will hear back from a person, not an auto-responder.</p>
+              <div className="elegant-contact-grid">
+                <a className="contact-whatsapp" href="https://wa.me/14372671257" target="_blank" rel="noreferrer"><span className="contact-icon"><MessageCircle /></span><span><small>WHATSAPP (FASTEST)</small><strong>Chat with us</strong><span className="contact-card-subtitle">Send us a message</span></span><span aria-hidden="true">›</span></a>
+                <a href="tel:+14372671257"><span className="contact-icon">☎</span><span><small>CALL US</small><strong>+1 437-267-1257</strong></span><span aria-hidden="true">›</span></a>
+                <a href="mailto:shivarudrakshain@gmail.com"><span className="contact-icon">✉</span><span><small>EMAIL US</small><strong>shivarudrakshain@gmail.com</strong></span><span aria-hidden="true">›</span></a>
+                <div className="contact-location"><span className="contact-icon">⌖</span><span><small>OUR LOCATION</small><strong>Scarborough, Ontario, Canada</strong></span></div>
+              </div>
             </div>
-          </div>
+            <div className="elegant-contact-photo" role="img" aria-label="Lord Shiva devotional artwork with Rudraksha beads" />
+          </section>
+          <section className="elegant-contact-trust">
+            <div><span className="trust-symbol">♧</span><span><strong>Worldwide Shipping</strong><p>Across Canada, the USA and internationally</p></span></div>
+            <div><span className="trust-symbol">✧</span><span><strong>Authenticity &amp; Care</strong><p>Certificate and X-ray options where available</p></span></div>
+            <div><span className="trust-symbol">ॐ</span><span><strong>Personal Guidance</strong><p>Rudraksha selection and custom combinations</p></span></div>
+          </section>
+          <div className="elegant-contact-footer">ॐ NAMAH SHIVAYA <span>·</span> SHIVA RUDRAKSHA INC.</div>
         </main>
       )}
 
