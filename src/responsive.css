@@ -517,3 +517,8 @@
   .premium-about-page .premium-about-details .about-card,
   .faq-page .faq-entry{border-radius:16px}
 }
+
+.recommendation-page .birth-city-suggestions{position:relative;z-index:20;background:#fffdf9;border:1px solid #dec6a9;border-radius:12px;margin-top:6px;max-height:230px;overflow-y:auto;box-shadow:0 10px 24px #3d241d24}
+.recommendation-page .birth-city-suggestions button{display:block;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid #f1e5d9;color:#593a32;padding:11px 14px;cursor:pointer;font:inherit}
+.recommendation-page .birth-city-suggestions button:hover,.recommendation-page .birth-city-suggestions button:focus{background:#f9e8d8}
+.recommendation-page .birth-city-status{display:block;color:#735c4c;margin-top:7px;font-size:12px}

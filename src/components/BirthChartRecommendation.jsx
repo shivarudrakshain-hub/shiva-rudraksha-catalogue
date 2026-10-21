@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CalendarDays,
   Clock3,
@@ -19,6 +19,33 @@ const initialForm = {
 export default function BirthChartRecommendation() {
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState("");
+  const [cities, setCities] = useState([]);
+  const [cityStatus, setCityStatus] = useState("");
+  const [citySelected, setCitySelected] = useState(false);
+  useEffect(() => {
+    const query = form.placeOfBirth.trim();
+    if (citySelected || query.length < 2) { setCities([]); setCityStatus(""); return; }
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      setCityStatus("Searching cities…");
+      try {
+        const response = await fetch("https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(query) + "&count=8&language=en&format=json", {signal:controller.signal});
+        if (!response.ok) throw new Error("Geocoding unavailable");
+        const data = await response.json();
+        setCities((data.results || []).map(city => [city.name,city.admin1,city.country].filter(Boolean).join(", ")));
+        setCityStatus(data.results?.length ? "" : "No suggestions found. You may enter the location manually.");
+      } catch (err) {
+        if (err.name !== "AbortError") { setCities([]); setCityStatus("Suggestions unavailable. Enter the city manually."); }
+      }
+    },350);
+    return () => { clearTimeout(timer); controller.abort(); };
+  },[form.placeOfBirth,citySelected]);
+  const updateTime = (event) => {
+    const digits = event.target.value.replace(/\D/g,"").slice(0,4);
+    setForm(current => ({...current,timeOfBirth:digits.length > 2 ? digits.slice(0,2) + ":" + digits.slice(2) : digits}));
+    setError("");
+  };
+
 
   const updateField = (event) => {
     setForm((current) => ({
@@ -116,7 +143,7 @@ export default function BirthChartRecommendation() {
             <label>
               <span><Clock3 /> Time of birth</span>
               <div className="birth-chart-time-controls">
-                <input type="text" name="timeOfBirth" value={form.timeOfBirth} onChange={updateField} placeholder="hh:mm" inputMode="numeric" pattern="(0?[1-9]|1[0-2]):[0-5][0-9]" title="Enter 12-hour time, for example 09:25" aria-label="Time of birth in 12-hour format" required />
+                <input type="text" name="timeOfBirth" value={form.timeOfBirth} onChange={updateTime} placeholder="hh:mm" inputMode="numeric" pattern="(0[1-9]|1[0-2]):[0-5][0-9]" title="Enter 12-hour time, for example 09:25" aria-label="Time of birth in 12-hour format" required />
                 <div className="birth-chart-period" role="group" aria-label="AM or PM">
                   <button type="button" aria-pressed={form.period === "AM"} className={form.period === "AM" ? "selected" : ""} onClick={() => setForm(v => ({...v,period:"AM"}))}>AM</button>
                   <button type="button" aria-pressed={form.period === "PM"} className={form.period === "PM" ? "selected" : ""} onClick={() => setForm(v => ({...v,period:"PM"}))}>PM</button>
@@ -131,11 +158,17 @@ export default function BirthChartRecommendation() {
               type="text"
               name="placeOfBirth"
               value={form.placeOfBirth}
-              onChange={updateField}
-              placeholder="City, state/province, country"
-              autoComplete="address-level2"
+              onChange={(event) => { setCitySelected(false); updateField(event); }}
+              placeholder="Start typing a city, e.g. Erode"
+              autoComplete="off"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded={cities.length > 0}
+              aria-controls="birth-city-suggestions"
               required
             />
+            {cities.length > 0 && <div id="birth-city-suggestions" className="birth-city-suggestions" role="listbox">{cities.map((city,index) => <button key={city + index} type="button" role="option" aria-selected={false} onClick={() => { setForm(current => ({...current,placeOfBirth:city})); setCitySelected(true); setCities([]); setCityStatus(""); }}>{city}</button>)}</div>}
+            {cityStatus && <small className="birth-city-status" role="status">{cityStatus}</small>}
           </label>
 
           {error && <p className="birth-chart-error">{error}</p>}
