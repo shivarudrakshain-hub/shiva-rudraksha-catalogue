@@ -6,6 +6,6 @@ export function filterQuestions(query = "", category = "All") {
   const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
   return questions.filter((item) =>
     (category === "All" || item.category === category) &&
-    words.every((word) => `${item.question} ${item.answer} ${item.category}`.toLowerCase().includes(word))
+    words.every((word) => `${item.question} ${item.answer} ${item.category} ${(item.aliases || []).join(" ")}`.toLowerCase().includes(word))
   );
 }

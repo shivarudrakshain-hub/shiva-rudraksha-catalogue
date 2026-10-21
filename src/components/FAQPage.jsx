@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Search, X, MessageCircle, ChevronDown } from "lucide-react";
 import "./FAQPage.css";
+import FAQAnswer from "./FAQAnswer";
 
 import { questions } from "./faqData";
 
@@ -34,7 +35,7 @@ export default function FAQPage() {
         <div className="faq-results">
           {results.map((item) => <details className="faq-entry" key={item.id}>
             <summary><span><small>{item.category}</small><strong>{item.question}</strong></span><ChevronDown size={21} aria-hidden="true" /></summary>
-            <p>{item.answer}</p>
+            <FAQAnswer text={item.answer} />
           </details>)}
           {!results.length && <div className="faq-empty"><h2>Can't find your question?</h2><p>Send your question directly to Shiva Rudraksha Inc. and we'll respond personally.</p><a className="faq-ask-link" href={`https://wa.me/14372671257?text=${encodeURIComponent("Hello Shiva Rudraksha Inc., I have a question: " + query.trim())}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={19}/> Send Us Your Question</a><button type="button" onClick={clearFilters}>Clear filters</button></div>}
         </div>

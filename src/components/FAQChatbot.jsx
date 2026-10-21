@@ -1,30 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, ExternalLink } from "lucide-react";
-import { questions } from "./faqData";
 import "./FAQChatbot.css";
 
-const stopWords = new Set(["what","which","where","when","how","why","does","do","can","could","is","are","a","an","the","to","of","for","i","me","my","you","your","and","in","on","with","about","please","rudraksha","bead","beads"]);
-const normalize = (value) => value.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
-const words = (value) => [...new Set(normalize(value).split(" ").filter(w => w.length > 2 && !stopWords.has(w)))];
-function findAnswer(query) {
-  const q = normalize(query);
-  if (!q) return null;
-  const terms = words(q);
-  if (!terms.length) return null;
-  const ranked = questions.map(item => {
-    const title = normalize(item.question);
-    const titleTerms = words(title);
-    const category = normalize(item.category);
-    const matches = terms.filter(term => titleTerms.some(t => t === term || (term.length > 4 && t.startsWith(term)))).length;
-    const categoryMatches = terms.filter(term => category.includes(term)).length;
-    const score = (title === q ? 100 : title.includes(q) ? 20 : 0) + matches * 4 + categoryMatches;
-    return { item, score, matches };
-  }).sort((a,b) => b.score-a.score);
-  const best = ranked[0];
-  if (!best || best.matches === 0 || (terms.length >= 3 && best.matches / terms.length < .5)) return null;
-  if (ranked[1] && best.score === ranked[1].score && best.matches <= 1) return null;
-  return best.item;
-}
+import { findAnswer } from "./faqAnswers.js";
+import FAQAnswer from "./FAQAnswer";
+
 const whatsapp = question => "https://wa.me/14372671257?text=" + encodeURIComponent("Hello Shiva Rudraksha Inc., I have a question: " + question);
 export default function FAQChatbot() {
   const [open,setOpen] = useState(false);
@@ -46,7 +26,7 @@ export default function FAQChatbot() {
       <div className="faq-chat-messages" role="log" aria-live="polite">
         {messages.map((message,index)=><div key={index} className={`faq-chat-message ${message.role}`}>
           {message.source && <small>FAQ: {message.source}</small>}
-          <p>{message.text}</p>
+          <FAQAnswer text={message.text} />
           {message.unanswered && <a href={whatsapp(message.unanswered)} target="_blank" rel="noopener noreferrer">Send Us Your Question <ExternalLink size={14}/></a>}
         </div>)}
         <div ref={endRef}/>
