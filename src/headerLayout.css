@@ -5,7 +5,7 @@
     grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     width: min(1440px, calc(100% - 48px));
-    gap: 20px;
+    gap: 12px;
     min-height: 82px;
   }
   .luxury-header .brand-logo { max-width: none; min-width: 0; }
@@ -14,7 +14,8 @@
   .luxury-header .luxury-nav .shop-menu > button {
     min-height: 44px;
     padding: 10px 9px;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 1.4;
     justify-content: center;
   }
@@ -27,7 +28,7 @@
   .luxury-header .luxury-nav.container { gap: 10px; }
   .luxury-header .luxury-nav nav { margin-left: auto; gap: 0; }
   .luxury-header .luxury-nav nav > button,
-  .luxury-header .luxury-nav .shop-menu > button { min-height: 44px; font-size: 12px; padding: 10px 6px; }
+  .luxury-header .luxury-nav .shop-menu > button { min-height: 44px; font-size: 15px; font-weight: 500; padding: 10px 4px; }
 }
 @media (max-width: 900px) {
   .luxury-header .luxury-nav nav { gap: 4px; }
@@ -37,9 +38,11 @@
     padding: 12px 14px;
     min-height: 46px;
     line-height: 1.4;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 500;
   }
   .luxury-header .luxury-nav .shop-menu > button { justify-content: space-between; }
   .luxury-header .knowledge-dropdown { margin: 4px 0; padding: 6px; border-radius: 12px; }
   .luxury-header .knowledge-dropdown button { padding: 12px 14px; }
 }
+.luxury-header .knowledge-dropdown button { font-size: 16px; line-height: 1.5; }
