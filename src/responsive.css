@@ -522,3 +522,29 @@
 .recommendation-page .birth-city-suggestions button{display:block;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid #f1e5d9;color:#593a32;padding:11px 14px;cursor:pointer;font:inherit}
 .recommendation-page .birth-city-suggestions button:hover,.recommendation-page .birth-city-suggestions button:focus{background:#f9e8d8}
 .recommendation-page .birth-city-status{display:block;color:#735c4c;margin-top:7px;font-size:12px}
+
+/* Reuse actual homepage carousel slide 3 on the Birth Chart page. */
+.recommendation-page .birth-chart-section{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:linear-gradient(105deg,#fff9ee,#f6e4d5);
+}
+.recommendation-page .birth-chart-section::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(90deg,rgba(255,250,241,.90) 0%,rgba(255,250,241,.76) 48%,rgba(255,250,241,.48) 100%),url('/images/hero/birth-chart-wide.avif');
+  background-position:center,center center;
+  background-size:cover,cover;background-repeat:no-repeat;opacity:1;
+}
+.recommendation-page .birth-chart-vedic-art{
+  display:none!important;
+}
+.recommendation-page .birth-chart-form{
+  background:rgba(255,253,249,.96);backdrop-filter:blur(5px);
+}
+@media(max-width:900px){
+  .recommendation-page .birth-chart-section::before{
+    background-image:linear-gradient(180deg,rgba(255,250,242,.76),rgba(255,250,242,.88)),url('/images/hero/birth-chart-banner-v2-mobile.avif');
+    background-position:center,center top;background-size:cover,cover;
+    opacity:1;
+  }
+  .recommendation-page .birth-chart-layout{position:relative;z-index:1}
+}
