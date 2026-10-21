@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, lazy, Suspense } from "react";
+import FAQChatbot from "./components/FAQChatbot";
 import {
   ArrowRight,
   BadgeCheck,
@@ -653,7 +654,7 @@ export default function App() {
         </main>
       )}
 
-      <a className="floating-whatsapp" href="https://wa.me/14372671257" target="_blank" rel="noreferrer" aria-label="Chat with Shiva Rudraksha Inc. on WhatsApp" title="WhatsApp Us"><MessageCircle /><span className="sr-only">Chat with Shiva Rudraksha Inc. on WhatsApp</span></a>
+      <FAQChatbot />
 
       {isCartOpen && (
         <Suspense fallback={null}>
