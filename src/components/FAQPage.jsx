@@ -16,18 +16,20 @@ export default function FAQPage() {
   }, [query, category]);
   return (
     <main className="faq-page page-shell">
-      <section className="faq-banner" role="img" aria-label="Lord Shiva meditating in the Himalayas with Rudraksha beads; Divine Guidance for a Balanced Life" />
-      <div className="container faq-wrap">
-        <header className="faq-hero">
-          <span className="faq-kicker">SHIVA RUDRAKSHA INC. · HELP CENTRE</span>
-          <h1>Frequently Asked Questions</h1>
-          <p>Clear answers about Rudraksha, authenticity, sizes, wearing, care, and ordering.</p>
+      <section className="faq-premium-hero">
+        <div className="faq-premium-copy">
+          <span className="faq-kicker">ॐ &nbsp; SHIVA RUDRAKSHA INC. · FAQ</span>
+          <h1>Your Questions,<br /><em>Our Guidance.</em></h1>
+          <p>Find answers about Rudraksha beads, authenticity, care, wearing guidelines and more. If you still have questions, feel free to contact us.</p>
           <label className="faq-search">
             <Search size={21} aria-hidden="true" />
-            <input type="search" aria-label="Search frequently asked questions" placeholder="Search a question, e.g. certificate, size, delivery…" value={query} onChange={(e) => setQuery(e.target.value)} />
+            <input type="search" aria-label="Search frequently asked questions" placeholder="Search FAQs, e.g. certificate, cleaning, delivery…" value={query} onChange={(e) => setQuery(e.target.value)} />
             {query && <button type="button" aria-label="Clear search" onClick={() => setQuery("")}><X size={19}/></button>}
           </label>
-        </header>
+        </div>
+        <div className="faq-premium-photo" role="img" aria-label="Lord Shiva in the Himalayas" />
+      </section>
+      <div className="container faq-wrap">
         <div className="faq-filters" role="group" aria-label="FAQ categories">
           {categories.map((name) => <button type="button" key={name} aria-pressed={category === name} className={category === name ? "selected" : ""} onClick={() => setCategory(name)}>{name}</button>)}
         </div>
