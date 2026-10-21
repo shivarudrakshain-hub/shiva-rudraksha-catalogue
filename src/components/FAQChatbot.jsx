@@ -4,10 +4,25 @@ import "./FAQChatbot.css";
 
 import { getChatReply } from "./faqAnswers.js";
 import FAQAnswer from "./FAQAnswer";
+import { openLiveChat } from "./faqLiveChat.js";
 
 export default function FAQChatbot() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [liveChatError, setLiveChatError] = useState("");
+  const [connecting, setConnecting] = useState(false);
+  const connectAgent = async (question) => {
+    setConnecting(true);
+    setLiveChatError("");
+    try {
+      await openLiveChat(question, () => setOpen(true));
+      setOpen(false);
+    } catch (error) {
+      setLiveChatError("Live chat is temporarily unavailable. Please try again or contact us by WhatsApp or email.");
+    } finally {
+      setConnecting(false);
+    }
+  };
   const [messages, setMessages] = useState([{
     role: "bot",
     text: "Namaste! Ask me about Rudraksha mukhis (1–21 Mukhi), astrological recommendations, custom malas, authenticity, care rituals, or order shipping."
@@ -20,7 +35,7 @@ export default function FAQChatbot() {
   useEffect(() => {
     const request = (event) => {
       const q = typeof event.detail === "string" ? event.detail : "";
-      window.open(`https://wa.me/14372671257?text=${encodeURIComponent(q ? `Hello Shiva Rudraksha Inc., I have a question: ${q}` : "Hello Shiva Rudraksha Inc., I would like to consult with you.")}`, "_blank");
+      connectAgent(q);
     };
     window.addEventListener("request-live-chat", request);
     return () => window.removeEventListener("request-live-chat", request);
@@ -42,23 +57,15 @@ export default function FAQChatbot() {
           <FAQAnswer text={message.text} />
           {message.productUrl && <a href={message.productUrl} className="faq-chat-product-link" onClick={()=>{setOpen(false);if(message.productUrl.startsWith("#")){window.location.hash=message.productUrl.slice(1);}}}>View in Collection →</a>}
           {message.unanswered && (
-            <a
-              href={`https://wa.me/14372671257?text=${encodeURIComponent(
-                message.agentRequested
-                  ? `Hello Shiva Rudraksha Inc., I would like to speak directly with your team about: ${message.unanswered}`
-                  : `Hello Shiva Rudraksha Inc., I have a question about: ${message.unanswered}`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="faq-whatsapp-handoff-button"
-            >
+            <button type="button" className="faq-whatsapp-handoff-button" disabled={connecting} onClick={() => connectAgent(message.unanswered)}>
               <MessageCircle size={16} aria-hidden="true" />
-              <span>Discuss on WhatsApp (+1 437-267-1257)</span>
-            </a>
+              <span>{connecting ? "Connecting…" : "Connect to a live agent"}</span>
+            </button>
           )}
         </div>)}
         <div ref={endRef}/>
       </div>
+      {liveChatError && <p role="alert" className="faq-chat-error">{liveChatError}</p>}
       <form className="faq-chat-form" onSubmit={submit}><input aria-label="Ask a Rudraksha question" placeholder="Type your question…" value={input} onChange={e=>setInput(e.target.value)} maxLength={500}/><button type="submit" aria-label="Send question" disabled={!input.trim()}><Send size={18}/></button></form>
       <div className="faq-chat-foot"><p>Direct consultation: <a href="https://wa.me/14372671257" target="_blank" rel="noopener noreferrer">WhatsApp +1 437-267-1257</a> • <a href={email}>Email</a></p></div>
     </section>}
