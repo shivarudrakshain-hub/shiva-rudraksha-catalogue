@@ -591,3 +591,33 @@
  .guide-page .guide-contact-style-copy .guide-hero-features{gap:8px}
  .guide-page .guide-contact-style-copy .guide-hero-features span{font-size:12px;padding:8px 10px}
 }
+
+/* Birth time: focus ring belongs to the whole HH:MM control, not each half. */
+.recommendation-page .birth-chart-clock-input{
+  border:1px solid #dcc7b8!important;
+  border-radius:10px!important;
+  overflow:hidden;
+  transition:border-color .15s,box-shadow .15s;
+}
+.recommendation-page .birth-chart-clock-input:focus-within{
+  border-color:#9c6a37!important;
+  box-shadow:0 0 0 2px rgba(156,106,55,.15)!important;
+}
+.recommendation-page .birth-chart-clock-input input,
+.recommendation-page .birth-chart-clock-input input:hover,
+.recommendation-page .birth-chart-clock-input input:focus,
+.recommendation-page .birth-chart-clock-input input:focus-visible{
+  border:0!important;
+  border-radius:0!important;
+  outline:none!important;
+  box-shadow:none!important;
+  background:transparent!important;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.recommendation-page .birth-chart-clock-input span{
+  flex:0 0 auto;
+  padding:0 2px;
+  color:#8b1836;
+  font-weight:700;
+}
