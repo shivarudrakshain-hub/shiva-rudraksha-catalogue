@@ -1,12 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { MessageCircle, X, Send, ExternalLink } from "lucide-react";
+import { MessageCircle, X, Send } from "lucide-react";
 import "./FAQChatbot.css";
 
 import { findAnswer } from "./faqAnswers.js";
 import FAQAnswer from "./FAQAnswer";
 import { openLiveChat } from "./faqLiveChat";
 
-const whatsapp = question => "https://wa.me/14372671257?text=" + encodeURIComponent("Hello Shiva Rudraksha Inc., I have a question: " + question);
 export default function FAQChatbot() {
   const [open,setOpen] = useState(false);
   const [input,setInput] = useState("");
@@ -65,12 +64,7 @@ export default function FAQChatbot() {
         <div ref={endRef}/>
       </div>
       <form className="faq-chat-form" onSubmit={submit}><input aria-label="Ask a Rudraksha question" placeholder="Type your question…" value={input} onChange={e=>setInput(e.target.value)} maxLength={500}/><button type="submit" aria-label="Send question" disabled={!input.trim()}><Send size={18}/></button></form>
-      <div className="faq-chat-foot">
-        {chatError && <p role="alert">{chatError} <a href={email}>Email our team</a></p>}
-        <button className="faq-live-chat-button" type="button" disabled={connecting} onClick={()=>startLiveChat(input.trim() || latestQuestion)}>{connecting ? "Connecting…" : "Chat with our team"}</button>
-        <small>Chat here without WhatsApp. Offline? Leave a message with your email.</small>
-        <a href={whatsapp(input.trim() || latestQuestion || "I need help with Rudraksha.")} target="_blank" rel="noopener noreferrer">Prefer WhatsApp? <ExternalLink size={12}/></a>
-      </div>
+      {chatError && <div className="faq-chat-foot"><p role="alert">{chatError} <a href={email}>Email our team</a></p></div>}
     </section>}
     <button ref={toggleRef} className="faq-chat-toggle" type="button" aria-label={open?"Close FAQ assistant":"Open FAQ assistant"} aria-expanded={open} onClick={()=>setOpen(v=>!v)}>{open?<X size={25}/>:<MessageCircle size={27}/>}</button>
   </div>;
