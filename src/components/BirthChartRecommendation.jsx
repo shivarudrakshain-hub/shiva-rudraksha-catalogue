@@ -13,6 +13,7 @@ const initialForm = {
   dateOfBirth: "",
   placeOfBirth: "",
   timeOfBirth: "",
+  period: "AM",
 };
 
 export default function BirthChartRecommendation() {
@@ -33,7 +34,7 @@ export default function BirthChartRecommendation() {
     const fullName = form.fullName.trim();
     const placeOfBirth = form.placeOfBirth.trim();
 
-    if (!fullName || !form.dateOfBirth || !placeOfBirth || !form.timeOfBirth) {
+    if (!fullName || !form.dateOfBirth || !placeOfBirth || !form.timeOfBirth || !/^((0?[1-9])|(1[0-2])):[0-5][0-9]$/.test(form.timeOfBirth)) {
       setError("Please complete all birth details before submitting.");
       return;
     }
@@ -45,7 +46,7 @@ export default function BirthChartRecommendation() {
       "",
       `Full name: ${fullName}`,
       `Date of birth: ${form.dateOfBirth}`,
-      `Time of birth: ${form.timeOfBirth}`,
+      `Time of birth: ${form.timeOfBirth} ${form.period}`,
       `Place of birth: ${placeOfBirth}`,
       "",
       "Please review my birth details and recommend the suitable Rudraksha.",
@@ -63,15 +64,13 @@ export default function BirthChartRecommendation() {
         <div className="birth-chart-intro">
           <span className="birth-chart-eyebrow">
             <Sparkles />
-            PERSONALIZED GUIDANCE
+            VEDIC ASTROLOGY · PERSONALIZED GUIDANCE
           </span>
 
-          <h2>Birth chart Rudraksha recommendation</h2>
+          <h2>Birth Chart <em>Rudraksha Recommendation</em></h2>
 
           <p>
-            Share your birth details to request a personalized Rudraksha
-            recommendation. After submitting, WhatsApp will open with your
-            information ready to send.
+            Share your birth details for a personalized Rudraksha recommendation informed by Vedic astrology traditions. Our team will review your request and reply via WhatsApp.
           </p>
 
           <div className="birth-chart-points">
@@ -79,6 +78,7 @@ export default function BirthChartRecommendation() {
             <span><MessageCircle /> Direct WhatsApp request</span>
             <span><Sparkles /> Suitable Mukhi recommendation</span>
           </div>
+          <div className="birth-chart-vedic-art" role="img" aria-label="Decorative Vedic astrology birth chart with a lotus and sacred Om symbol" />
         </div>
 
         <form className="birth-chart-form" onSubmit={submitRequest}>
@@ -115,13 +115,13 @@ export default function BirthChartRecommendation() {
 
             <label>
               <span><Clock3 /> Time of birth</span>
-              <input
-                type="time"
-                name="timeOfBirth"
-                value={form.timeOfBirth}
-                onChange={updateField}
-                required
-              />
+              <div className="birth-chart-time-controls">
+                <input type="text" name="timeOfBirth" value={form.timeOfBirth} onChange={updateField} placeholder="hh:mm" inputMode="numeric" pattern="(0?[1-9]|1[0-2]):[0-5][0-9]" title="Enter 12-hour time, for example 09:25" aria-label="Time of birth in 12-hour format" required />
+                <div className="birth-chart-period" role="group" aria-label="AM or PM">
+                  <button type="button" aria-pressed={form.period === "AM"} className={form.period === "AM" ? "selected" : ""} onClick={() => setForm(v => ({...v,period:"AM"}))}>AM</button>
+                  <button type="button" aria-pressed={form.period === "PM"} className={form.period === "PM" ? "selected" : ""} onClick={() => setForm(v => ({...v,period:"PM"}))}>PM</button>
+                </div>
+              </div>
             </label>
           </div>
 
