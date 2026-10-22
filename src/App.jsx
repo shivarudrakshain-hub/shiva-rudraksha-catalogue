@@ -273,12 +273,9 @@ export default function App() {
   const featuredProducts = useMemo(() => {
     if (!products || !products.length) return [];
     const available = products.filter(isAvailableForTenant);
-    const p1 = available.find((p) => p.mukhi === 1 || p.id?.includes("1-mukhi"));
-    const p4 = available.find((p) => p.mukhi === 4 || p.id?.includes("4-mukhi"));
-    const p3 = available.find((p) => p.mukhi === 3 || p.id?.includes("3-mukhi"));
-    const p5 = available.find((p) => p.mukhi === 5 || p.id?.includes("5-mukhi"));
-    const result = [p1, p4, p3, p5].filter(Boolean);
-    return result.length === 4 ? result : available.slice(0, 4);
+    return [12, 14, 7].map((mukhi) => available.find((product) =>
+      Number(product.mukhi) === mukhi || product.id === `${mukhi}-mukhi-nepal-rudraksha`
+    )).filter(Boolean);
   }, [products, isAvailableForTenant]);
 
   const navigate = (hash) => {

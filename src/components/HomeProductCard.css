@@ -1,7 +1,7 @@
 .home-featured .home-featured-intro { max-width: 650px; margin: 0 auto 34px; text-align: center; }
 .home-featured .home-featured-intro h2 { font-size: clamp(28px, 3vw, 40px); }
 .home-featured-intro > p { color: var(--muted); line-height: 1.65; }
-.home-featured-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.home-featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .home-featured-reference { margin: 24px auto 0; max-width: 720px; text-align: center; font-size: 12px; color: var(--muted); line-height: 1.65; }
 .home-product-card { position: relative; min-width: 0; border: 1px solid #e4d6c1; border-radius: 16px; background: #fffaf2; box-shadow: 0 5px 22px #4f080c07; }
 .home-product-visual { position: relative; overflow: hidden; border-radius: 15px 15px 0 0; padding: 14px 14px 40px; background: #f5ecdd; }

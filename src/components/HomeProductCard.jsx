@@ -30,6 +30,9 @@ export default function HomeProductCard({ product, onOpen }) {
     3: ["Confidence", "Positive energy", "Letting go"],
     4: ["Learning", "Memory", "Creativity"],
     5: ["Peace", "Spiritual practice", "Meditation"],
+    7: ["Prosperity", "Stability", "Positive opportunities"],
+    12: ["Confidence", "Vitality", "Leadership"],
+    14: ["Intuition", "Wisdom", "Clarity"],
   }[product.mukhi] || [product.origin || "Natural Rudraksha", "Explore available options", "Personal selection guidance"];
 
   return (
