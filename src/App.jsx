@@ -233,9 +233,9 @@ export default function App() {
     loadProducts().then(setProducts).catch(console.error);
   }, []);
 
-  // Load 50KB guide data on demand only when visiting #guide route
+  // Share the documented associations between home cards and the Mukhi guide.
   useEffect(() => {
-    if (guide.length > 0 || active !== "guide") return;
+    if (guide.length > 0 || !["home", "guide"].includes(active)) return;
     fetch(`${import.meta.env.BASE_URL}data/rudraksha-guide.json`)
       .then((response) => response.json())
       .then(setGuide)
@@ -414,7 +414,7 @@ export default function App() {
             </div>
             <div className="home-featured-grid">
               {featuredProducts.map((product) => (
-                <HomeProductCard key={product.id} product={product} onOpen={openProduct} />
+                <HomeProductCard key={product.id} product={product} guideEntry={guide.find((entry) => Number(entry.mukhi) === Number(product.mukhi))} onOpen={openProduct} />
               ))}
             </div>
             <p className="home-featured-reference">Reference photos only. The actual bead, size and certificate may vary. Contact us for current photos before ordering.</p>

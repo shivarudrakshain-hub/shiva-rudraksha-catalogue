@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useCurrency } from "../context/CurrencyContext";
 import "./HomeProductCard.css";
 
-export default function HomeProductCard({ product, onOpen }) {
+export default function HomeProductCard({ product, guideEntry, onOpen }) {
   const [photo, setPhoto] = useState(0);
   const [hoveringPhoto, setHoveringPhoto] = useState(false);
   const touchX = useRef(null);
@@ -65,6 +65,10 @@ export default function HomeProductCard({ product, onOpen }) {
         <ul aria-label="Traditional associations">
           {keyPoints.map((point) => <li key={point}>{point}</li>)}
         </ul>
+        {(guideEntry?.deity || guideEntry?.nakshatra) && <dl className="home-preview-associations">
+          {guideEntry.deity && <div><dt>Associated deity</dt><dd>{guideEntry.deity}</dd></div>}
+          {guideEntry.nakshatra && <div><dt>Nakshatra</dt><dd>{guideEntry.nakshatra}</dd></div>}
+        </dl>}
         <strong>{priceText}</strong>
         <button type="button" onClick={() => onOpen(product)}>Explore product <ArrowRight aria-hidden="true" /></button>
       </div>
