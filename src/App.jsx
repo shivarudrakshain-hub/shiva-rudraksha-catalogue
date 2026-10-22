@@ -14,7 +14,7 @@ import {
   X,
 } from "lucide-react";
 import Logo from "./components/Logo";
-import ProductCard from "./components/ProductCard";
+import HomeProductCard from "./components/HomeProductCard";
 import PromotionalBanner from "./components/PromotionalBanner";
 import HeroCarousel from "./components/HeroCarousel";
 import Footer from "./components/Footer";
@@ -276,8 +276,9 @@ export default function App() {
     const p1 = available.find((p) => p.mukhi === 1 || p.id?.includes("1-mukhi"));
     const p4 = available.find((p) => p.mukhi === 4 || p.id?.includes("4-mukhi"));
     const p3 = available.find((p) => p.mukhi === 3 || p.id?.includes("3-mukhi"));
-    const result = [p1, p4, p3].filter(Boolean);
-    return result.length === 3 ? result : available.slice(0, 3);
+    const p5 = available.find((p) => p.mukhi === 5 || p.id?.includes("5-mukhi"));
+    const result = [p1, p4, p3, p5].filter(Boolean);
+    return result.length === 4 ? result : available.slice(0, 4);
   }, [products, isAvailableForTenant]);
 
   const navigate = (hash) => {
@@ -409,13 +410,17 @@ export default function App() {
           <HeroCarousel onNavigate={navigate} />
 
           <section className="home-featured container">
-            <div className="section-kicker">FEATURED COLLECTION</div>
-            <h2>Discover authentic Nepal Rudraksha</h2>
-            <div className="product-grid">
+            <div className="home-featured-intro">
+              <div className="section-kicker">FEATURED COLLECTION</div>
+              <h2>Find your connection with Rudraksha</h2>
+              <p>Explore our Nepal Rudraksha collection, view each bead from different angles, and find guidance for your selection.</p>
+            </div>
+            <div className="home-featured-grid">
               {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} onOpen={openProduct} />
+                <HomeProductCard key={product.id} product={product} onOpen={openProduct} />
               ))}
             </div>
+            <p className="home-featured-reference">Reference photos only. The actual bead, size and certificate may vary. Contact us for current photos before ordering.</p>
           </section>
         </main>
       )}
