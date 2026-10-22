@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { IMAGE_SLOTS } from "../data/catalogue";
+import { imageLensGeometry } from "../data/imageLens.js";
 
 const REFERENCE_NOTICE = "Product photos and certificates are for reference only, not the exact item supplied. The actual bead, size, appearance and certificate may vary. Contact us for current photos and certification before ordering.";
 
@@ -17,6 +18,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
 
   const [index, setIndex] = useState(0);
   const [fullscreen, setFullscreen] = useState(false);
+  const [lens, setLens] = useState(null);
   const startX = useRef(null);
   useEffect(() => {
     setIndex(0);
@@ -24,6 +26,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
   }, [resetKey]);
 
   const active = images[index] || images[0];
+  useEffect(() => { setLens(null); }, [index, resetKey, fullscreen, active?.src, product.id]);
   const isDocument = (item) => ["certificate", "xray"].includes(item.key);
   const thumbnailGroups = [
     { title: "Product photos", items: images.filter((item) => !isDocument(item)) },
@@ -34,6 +37,17 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
     if (!fallbackSrc || event.currentTarget.dataset.fallbackApplied === "true") return;
     event.currentTarget.dataset.fallbackApplied = "true";
     event.currentTarget.src = fallbackSrc;
+  };
+
+  const magnify = (event) => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const img = event.currentTarget;
+    const bounds = img.getBoundingClientRect();
+    const geometry = imageLensGeometry({ width: bounds.width, height: bounds.height,
+      naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight,
+      x: event.clientX - bounds.left, y: event.clientY - bounds.top });
+    setLens(geometry ? { ...geometry, left: geometry.left + img.offsetLeft,
+      top: geometry.top + img.offsetTop, src: img.currentSrc || img.src } : null);
   };
 
   if (!active) return <div className="no-image">No image available</div>;
@@ -120,12 +134,19 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           <img
             src={active.src || active.fallbackSrc}
             key={active.src || active.fallbackSrc}
+            onMouseMove={magnify}
+            onMouseLeave={() => setLens(null)}
             onError={(event) => useFallback(event, active.fallbackSrc)}
             alt={`${product.name} ${active.label}`}
             decoding="async"
             width="600"
             height="600"
           />
+          {lens && <span className="gallery-lens" aria-hidden="true" style={{
+            width: lens.size, height: lens.size, left: lens.left, top: lens.top,
+            backgroundImage: `url(${JSON.stringify(lens.src)})`,
+            backgroundSize: lens.backgroundSize, backgroundPosition: lens.backgroundPosition,
+          }} />}
           <button className="gallery-button left" aria-label="Previous product image" onClick={previous}>
             <ChevronLeft />
           </button>

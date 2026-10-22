@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import FAQChatbot from "./components/FAQChatbot";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import {
   ArrowRight,
   BadgeCheck,
@@ -320,17 +321,8 @@ export default function App() {
             />
           </Suspense>
         )}
-        <a
-          className="floating-whatsapp"
-          href="https://wa.me/14372671257"
-          target="_blank"
-          rel="noreferrer"
-          title="WhatsApp Us"
-          aria-label="Chat with Shiva Rudraksha Inc. on WhatsApp"
-        >
-          <MessageCircle />
-          <span className="sr-only">Chat with Shiva Rudraksha Inc. on WhatsApp</span>
-        </a>
+        <FloatingWhatsApp />
+        <FAQChatbot />
         <Footer onNavigate={navigate} />
       </Suspense>
     );
@@ -656,6 +648,7 @@ export default function App() {
       )}
 
       <FAQChatbot />
+      <FloatingWhatsApp />
 
       {isCartOpen && (
         <Suspense fallback={null}>

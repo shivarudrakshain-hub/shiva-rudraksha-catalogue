@@ -169,8 +169,14 @@ img { max-width: 100%; height: auto; }
 .contact-grid small { letter-spacing: .12em; color: var(--muted); }
 .contact-grid strong { margin-top: 5px; color: var(--maroon); font-size: 18px; }
 
-.floating-whatsapp { position: fixed; right: 28px; bottom: 28px; z-index: 90; width: 62px; height: 62px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: white; box-shadow: 0 14px 35px rgba(20,100,40,.3); }
+.floating-whatsapp { position: fixed; left: 22px; right: auto; bottom: max(22px, env(safe-area-inset-bottom)); z-index: 90; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: white; box-shadow: 0 14px 35px rgba(20,100,40,.3); }
 .floating-whatsapp svg { width: 30px; }
+.floating-whatsapp .whatsapp-phone-icon { position: absolute; width: 14px; height: 14px; top: 21px; left: 22px; }
+a.floating-whatsapp { right: auto; }
+@media (max-width: 600px) {
+  a.floating-whatsapp { left: 12px; }
+  .floating-whatsapp .whatsapp-phone-icon { width: 12px; height: 12px; top: 17px; left: 18px; }
+}
 
 footer { padding: 55px 0; background: #5b080c; color: white; }
 .footer-layout { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 35px; }
