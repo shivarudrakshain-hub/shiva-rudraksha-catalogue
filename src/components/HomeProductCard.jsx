@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useCurrency } from "../context/CurrencyContext";
 import "./HomeProductCard.css";
 
@@ -24,6 +24,13 @@ export default function HomeProductCard({ product, onOpen }) {
   const startingPrice = prices.length ? Math.min(...prices) : Number(product.price || product.unit_price);
   const comingSoon = product.coming_soon || product.stockStatus === "Coming Soon";
   const priceText = comingSoon ? "Coming soon" : product.disable_price || !(startingPrice > 0) ? "Price on request" : `From ${formatPrice(startingPrice, product)}`;
+  const shortName = product.mukhi ? `${product.mukhi} Mukhi` : product.name;
+  const keyPoints = {
+    1: ["Spiritual growth", "Inner peace", "Meditation"],
+    3: ["Confidence", "Positive energy", "Letting go"],
+    4: ["Learning", "Memory", "Creativity"],
+    5: ["Peace", "Spiritual practice", "Meditation"],
+  }[product.mukhi] || [product.origin || "Natural Rudraksha", "Explore available options", "Personal selection guidance"];
 
   return (
     <article className="home-product-card" aria-label={product.name}>
@@ -52,18 +59,12 @@ export default function HomeProductCard({ product, onOpen }) {
       </div>
       <div className="home-product-caption">
         <h3><button type="button" onClick={() => onOpen(product)}>{product.name}</button></h3>
-        <p>{priceText}</p>
       </div>
       <div className="home-product-preview">
-        <span className="home-preview-eyebrow">Explore this Rudraksha</span>
-        <h4>{product.name}</h4>
-        <p>{product.description}</p>
-        <ul>
-          {product.origin && <li className="home-preview-origin">Origin: {product.origin}</li>}
-          {product.variants?.length > 0 && <li>Explore available sizes and options</li>}
-          <li>{product.certificateAvailable ? "Certificate reference available" : "Ask us about verification"}</li>
+        <h4>{shortName}</h4>
+        <ul aria-label="Traditional associations">
+          {keyPoints.map((point) => <li key={point}>{point}</li>)}
         </ul>
-        <span className="home-preview-trust"><ShieldCheck aria-hidden="true" /> Personal selection guidance</span>
         <strong>{priceText}</strong>
         <button type="button" onClick={() => onOpen(product)}>Explore product <ArrowRight aria-hidden="true" /></button>
       </div>
