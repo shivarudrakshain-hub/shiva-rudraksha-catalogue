@@ -53,7 +53,6 @@ export default function HomeProductCard({ product, onOpen }) {
       <div className="home-product-caption">
         <h3><button type="button" onClick={() => onOpen(product)}>{product.name}</button></h3>
         <p>{priceText}</p>
-        <button type="button" className="home-product-open" onClick={() => onOpen(product)}>View details <ArrowRight aria-hidden="true" /></button>
       </div>
       <div className="home-product-preview">
         <span className="home-preview-eyebrow">Explore this Rudraksha</span>
