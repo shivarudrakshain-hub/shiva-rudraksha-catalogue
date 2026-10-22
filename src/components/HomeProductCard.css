@@ -29,7 +29,15 @@
 .home-product-preview > button { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; width: 100%; padding: 10px; border: 0; border-radius: 8px; background: var(--maroon); color: white; font-weight: 700; cursor: pointer; }
 .home-product-card button:focus-visible { outline: 3px solid #b7832a; outline-offset: 3px; }
 @media (hover: hover) and (pointer: fine) and (min-width: 1100px) {
-  .home-product-preview { position: absolute; top: -1px; bottom: -1px; left: 100%; width: calc(100% + 21px); border: 1px solid #e4d6c1; border-radius: 0 16px 16px 0; visibility: hidden; opacity: 0; transform: translateX(-8px); transition: opacity .2s, transform .2s, visibility .2s; overflow-y: auto; }
+  .home-product-card { min-height: 470px; }
+  .home-product-preview { position: absolute; top: -1px; left: 100%; width: calc(100% + 21px); min-height: calc(100% + 2px); display: flex; flex-direction: column; gap: 10px; padding: 20px; border: 1px solid #e4d6c1; border-radius: 0 16px 16px 0; visibility: hidden; opacity: 0; transform: translateX(-8px); transition: opacity .2s, transform .2s, visibility .2s; }
+  .home-product-preview h4 { margin: 0; font-size: 22px; line-height: 1.2; }
+  .home-product-preview p { margin: 0; line-height: 1.5; }
+  .home-product-preview ul { margin: 0; }
+  .home-product-preview li { margin-block: 3px; line-height: 1.5; }
+  .home-product-preview .home-preview-origin, .home-product-preview .home-preview-trust { display: none; }
+  .home-product-preview strong { margin: 0; }
+  .home-product-preview > button { margin-top: auto; flex-shrink: 0; }
   .home-product-card:last-child .home-product-preview { left: auto; right: 100%; border-radius: 16px 0 0 16px; transform: translateX(8px); }
   .home-product-card:hover, .home-product-card:focus-within { z-index: 5; box-shadow: 0 12px 32px #4f080c15; }
   .home-product-card:hover .home-product-preview, .home-product-card:focus-within .home-product-preview { visibility: visible; opacity: 1; transform: translateX(0); }

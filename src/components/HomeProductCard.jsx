@@ -59,7 +59,7 @@ export default function HomeProductCard({ product, onOpen }) {
         <h4>{product.name}</h4>
         <p>{product.description}</p>
         <ul>
-          {product.origin && <li>Origin: {product.origin}</li>}
+          {product.origin && <li className="home-preview-origin">Origin: {product.origin}</li>}
           {product.variants?.length > 0 && <li>Explore available sizes and options</li>}
           <li>{product.certificateAvailable ? "Certificate reference available" : "Ask us about verification"}</li>
         </ul>
