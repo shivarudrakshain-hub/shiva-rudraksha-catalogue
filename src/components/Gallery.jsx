@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
 import { IMAGE_SLOTS } from "../data/catalogue";
+import { imageLensGeometry } from "../data/imageLens.js";
 
 const REFERENCE_NOTICE = "Product photos and certificates are for reference only, not the exact item supplied. The actual bead, size, appearance and certificate may vary. Contact us for current photos and certification before ordering.";
 
@@ -17,6 +18,7 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
 
   const [index, setIndex] = useState(0);
   const [fullscreen, setFullscreen] = useState(false);
+  const [lens, setLens] = useState(null);
   const startX = useRef(null);
   useEffect(() => {
     setIndex(0);
@@ -24,11 +26,28 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
   }, [resetKey]);
 
   const active = images[index] || images[0];
+  useEffect(() => { setLens(null); }, [index, resetKey, fullscreen, active?.src, product.id]);
+  const isDocument = (item) => ["certificate", "xray"].includes(item.key);
+  const thumbnailGroups = [
+    { title: "Product photos", items: images.filter((item) => !isDocument(item)) },
+    { title: "Certificates & X-rays", items: images.filter(isDocument) },
+  ];
 
   const useFallback = (event, fallbackSrc) => {
     if (!fallbackSrc || event.currentTarget.dataset.fallbackApplied === "true") return;
     event.currentTarget.dataset.fallbackApplied = "true";
     event.currentTarget.src = fallbackSrc;
+  };
+
+  const magnify = (event) => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const img = event.currentTarget;
+    const bounds = img.getBoundingClientRect();
+    const geometry = imageLensGeometry({ width: bounds.width, height: bounds.height,
+      naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight,
+      x: event.clientX - bounds.left, y: event.clientY - bounds.top });
+    setLens(geometry ? { ...geometry, left: geometry.left + img.offsetLeft,
+      top: geometry.top + img.offsetTop, src: img.currentSrc || img.src } : null);
   };
 
   if (!active) return <div className="no-image">No image available</div>;
@@ -99,6 +118,15 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
         <div
           className="detail-main-image"
         >
+          <div className="gallery-heading">
+            <div>
+              <p>{isDocument(active) ? "Certification reference" : "Product reference"}</p>
+              <h2>{active.label}{!isDocument(active) ? " view" : ""}</h2>
+            </div>
+            <button type="button" className="gallery-view-full" onClick={() => setFullscreen(true)}>
+              <Expand aria-hidden="true" /> View full size
+            </button>
+          </div>
           <div className="gallery-stage"
           onTouchStart={touchStart}
           onTouchEnd={touchEnd}
@@ -106,23 +134,25 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           <img
             src={active.src || active.fallbackSrc}
             key={active.src || active.fallbackSrc}
+            onMouseMove={magnify}
+            onMouseLeave={() => setLens(null)}
             onError={(event) => useFallback(event, active.fallbackSrc)}
             alt={`${product.name} ${active.label}`}
             decoding="async"
             width="600"
             height="600"
           />
+          {lens && <span className="gallery-lens" aria-hidden="true" style={{
+            width: lens.size, height: lens.size, left: lens.left, top: lens.top,
+            backgroundImage: `url(${JSON.stringify(lens.src)})`,
+            backgroundSize: lens.backgroundSize, backgroundPosition: lens.backgroundPosition,
+          }} />}
           <button className="gallery-button left" aria-label="Previous product image" onClick={previous}>
             <ChevronLeft />
           </button>
           <button className="gallery-button right" aria-label="Next product image" onClick={next}>
             <ChevronRight />
           </button>
-          <button className="expand-button" aria-label="Expand product image" onClick={() => setFullscreen(true)}>
-            <Expand />
-          </button>
-          <span className="image-type">{active.label}</span>
-          <span className="image-count">{index + 1}/{images.length}</span>
           </div>
           <div className="gallery-reference-notice">
             <strong>Reference images only</strong>
@@ -130,14 +160,18 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
           </div>
         </div>
 
-        <div className="thumbnails">
-          {images.map((item, i) => (
+        {thumbnailGroups.filter((group) => group.items.length).map((group) => (
+        <section className="gallery-thumbnail-group" key={group.title} aria-label={group.title}>
+          <h3>{group.title}</h3>
+          <div className={`thumbnails ${group.title === "Product photos" ? "product-thumbnails" : "document-thumbnails"}`}>
+          {group.items.map((item) => (
             <button
               key={item.key}
-              className={i === index ? "active" : ""}
+              type="button"
+              className={item.key === active.key ? "active" : ""}
               aria-label={`Show ${item.label.toLowerCase()} reference image`}
-              aria-pressed={i === index}
-              onClick={() => setIndex(i)}
+              aria-pressed={item.key === active.key}
+              onClick={() => setIndex(images.indexOf(item))}
             >
               <img
                 src={item.src || item.fallbackSrc}
@@ -151,7 +185,9 @@ export default function Gallery({ product, compact = false, onOpen, resetKey = "
               <span>{item.label}</span>
             </button>
           ))}
-        </div>
+          </div>
+        </section>
+        ))}
       </div>
 
       {fullscreen && (

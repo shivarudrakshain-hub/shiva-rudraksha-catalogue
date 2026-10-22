@@ -13,7 +13,7 @@ import {
   Clock,
   Star,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Gallery from "./Gallery";
 import "./ProductGallery.css";
 import Logo from "./Logo";
@@ -35,6 +35,17 @@ export default function ProductDetails({
   onOpenCart,
 }) {
   const { formatPrice, getTenantStockStatus } = useCurrency();
+  const purchaseActionsRef = useRef(null);
+  const [showStickyActions, setShowStickyActions] = useState(false);
+  useEffect(() => {
+    setShowStickyActions(false);
+    if (!purchaseActionsRef.current || !window.IntersectionObserver) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      setShowStickyActions(!entry.isIntersecting && entry.boundingClientRect.bottom < 0);
+    });
+    observer.observe(purchaseActionsRef.current);
+    return () => observer.disconnect();
+  }, [product.id]);
   // Record in recently viewed history on mount
   useEffect(() => {
     if (product) {
@@ -279,6 +290,9 @@ export default function ProductDetails({
         : "Please share availability and dispatch schedule."
     }`
   );
+  const askMore = (pricing = false) => window.dispatchEvent(new CustomEvent("request-product-question", {
+    detail: `${pricing ? "What is the current price and availability of" : "I'd like to know more about"} ${product.name} (${selectedVariant?.name || selectedSizeLabel})?`,
+  }));
 
   return (
     <div className="details-page">
@@ -497,6 +511,7 @@ export default function ProductDetails({
           </div>
 
           {/* Action Buttons: If price disabled, show Enquire / Contact Owner; otherwise Cart & Buy Now */}
+          <div ref={purchaseActionsRef}>
           {isPriceDisabled ? (
             <div className="product-enquire-actions">
               <a
@@ -571,6 +586,7 @@ export default function ProductDetails({
               </div>
             </>
           )}
+          </div>
 
           <p className="disclaimer">
             Traditional spiritual attributes are documented from sacred Puranic texts.
@@ -578,6 +594,17 @@ export default function ProductDetails({
           </p>
         </section>
       </main>
+
+      {showStickyActions && <aside className="product-sticky-actions" aria-label="Selected product actions">
+        <div className="sticky-product-summary">
+          {galleryProduct.images?.front && <img src={galleryProduct.images.front} alt="" width="56" height="56" onError={(event) => { event.currentTarget.style.display = "none"; }} />}
+          <div><strong>{product.name}</strong><small>{selectedVariant?.name || selectedSizeLabel}</small><span>{isPriceDisabled ? (isComingSoon ? "Coming soon" : "Price on request") : formatPrice(price, selectedVariant || product)}</span></div>
+        </div>
+        <button type="button" className="sticky-ask" onClick={() => askMore()}><MessageCircle size={17} aria-hidden="true" /> Ask more</button>
+        <button type="button" className="sticky-cart" onClick={isPriceDisabled ? () => askMore(true) : handleAddToCart}>
+          {isPriceDisabled ? "Request price" : <><ShoppingBag size={17} aria-hidden="true" /> Add to cart</>}
+        </button>
+      </aside>}
 
       {/* Floating Add to Cart Confirmation Toast */}
       {addedToast && (

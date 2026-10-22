@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, lazy, Suspense } from "react";
 import FAQChatbot from "./components/FAQChatbot";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import {
   ArrowRight,
   BadgeCheck,
@@ -14,7 +15,7 @@ import {
   X,
 } from "lucide-react";
 import Logo from "./components/Logo";
-import ProductCard from "./components/ProductCard";
+import HomeProductCard from "./components/HomeProductCard";
 import PromotionalBanner from "./components/PromotionalBanner";
 import HeroCarousel from "./components/HeroCarousel";
 import Footer from "./components/Footer";
@@ -233,9 +234,9 @@ export default function App() {
     loadProducts().then(setProducts).catch(console.error);
   }, []);
 
-  // Load 50KB guide data on demand only when visiting #guide route
+  // Share the documented associations between home cards and the Mukhi guide.
   useEffect(() => {
-    if (guide.length > 0 || active !== "guide") return;
+    if (guide.length > 0 || !["home", "guide"].includes(active)) return;
     fetch(`${import.meta.env.BASE_URL}data/rudraksha-guide.json`)
       .then((response) => response.json())
       .then(setGuide)
@@ -273,11 +274,9 @@ export default function App() {
   const featuredProducts = useMemo(() => {
     if (!products || !products.length) return [];
     const available = products.filter(isAvailableForTenant);
-    const p1 = available.find((p) => p.mukhi === 1 || p.id?.includes("1-mukhi"));
-    const p4 = available.find((p) => p.mukhi === 4 || p.id?.includes("4-mukhi"));
-    const p3 = available.find((p) => p.mukhi === 3 || p.id?.includes("3-mukhi"));
-    const result = [p1, p4, p3].filter(Boolean);
-    return result.length === 3 ? result : available.slice(0, 3);
+    return [12, 14, 7].map((mukhi) => available.find((product) =>
+      Number(product.mukhi) === mukhi || product.id === `${mukhi}-mukhi-nepal-rudraksha`
+    )).filter(Boolean);
   }, [products, isAvailableForTenant]);
 
   const navigate = (hash) => {
@@ -322,17 +321,8 @@ export default function App() {
             />
           </Suspense>
         )}
-        <a
-          className="floating-whatsapp"
-          href="https://wa.me/14372671257"
-          target="_blank"
-          rel="noreferrer"
-          title="WhatsApp Us"
-          aria-label="Chat with Shiva Rudraksha Inc. on WhatsApp"
-        >
-          <MessageCircle />
-          <span className="sr-only">Chat with Shiva Rudraksha Inc. on WhatsApp</span>
-        </a>
+        <FloatingWhatsApp />
+        <FAQChatbot />
         <Footer onNavigate={navigate} />
       </Suspense>
     );
@@ -409,13 +399,17 @@ export default function App() {
           <HeroCarousel onNavigate={navigate} />
 
           <section className="home-featured container">
-            <div className="section-kicker">FEATURED COLLECTION</div>
-            <h2>Discover authentic Nepal Rudraksha</h2>
-            <div className="product-grid">
+            <div className="home-featured-intro">
+              <div className="section-kicker">FEATURED COLLECTION</div>
+              <h2>Find your connection with Rudraksha</h2>
+              <p>Explore our Nepal Rudraksha collection, view each bead from different angles, and find guidance for your selection.</p>
+            </div>
+            <div className="home-featured-grid">
               {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} onOpen={openProduct} />
+                <HomeProductCard key={product.id} product={product} guideEntry={guide.find((entry) => Number(entry.mukhi) === Number(product.mukhi))} onOpen={openProduct} />
               ))}
             </div>
+            <p className="home-featured-reference">Reference photos only. The actual bead, size and certificate may vary. Contact us for current photos before ordering.</p>
           </section>
         </main>
       )}
@@ -654,6 +648,7 @@ export default function App() {
       )}
 
       <FAQChatbot />
+      <FloatingWhatsApp />
 
       {isCartOpen && (
         <Suspense fallback={null}>

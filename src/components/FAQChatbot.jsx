@@ -33,6 +33,15 @@ export default function FAQChatbot() {
   const email = "mailto:shivarudrakshain@gmail.com?subject=" + encodeURIComponent("Website question") + "&body=" + encodeURIComponent(input.trim() || latestQuestion);
 
   useEffect(() => {
+    const askProduct = (event) => {
+      if (typeof event.detail !== "string" || !event.detail.trim()) return;
+      setInput(event.detail);
+      setOpen(true);
+    };
+    window.addEventListener("request-product-question", askProduct);
+    return () => window.removeEventListener("request-product-question", askProduct);
+  }, []);
+  useEffect(() => {
     const request = (event) => {
       const q = typeof event.detail === "string" ? event.detail : "";
       connectAgent(q);
