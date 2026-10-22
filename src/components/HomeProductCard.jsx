@@ -53,12 +53,10 @@ export default function HomeProductCard({ product, onOpen }) {
           }} /> : <span>Photo available on request</span>}
         </button>
         <span className="home-product-origin">{product.origin || "Rudraksha"}</span>
+        <span className="home-product-label">{shortName}</span>
         {images.length > 1 && <div className="home-photo-dots" role="group" aria-label={`Photo views for ${product.name}`}>
           {images.map((item, index) => <button type="button" key={item.key} aria-label={`Show ${item.key} view of ${product.name}`} aria-pressed={photo === index} onClick={() => setPhoto(index)}><span /></button>)}
         </div>}
-      </div>
-      <div className="home-product-caption">
-        <h3><button type="button" onClick={() => onOpen(product)}>{product.name}</button></h3>
       </div>
       <div className="home-product-preview">
         <h4>{shortName}</h4>
